@@ -1,0 +1,324 @@
+<div class="hold-transition skin-blue sidebar-mini">
+  <!--<div style="height: 100%;-->
+  <!--overflow-x: hidden;-->
+  <!--overflow-y: auto;-->
+  <!--position: static;">-->
+  <div>
+    <!--<app-header></app-header>-->
+
+
+    <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+
+      <mat-toolbar class="example-toolbar example-header">
+    <span>
+      <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    </span>
+        <span class="example-fill-remaining-space icon-center">
+          <ul class="icon-class">
+            <li>
+
+      <a [matMenuTriggerFor]="menu9" *ngIf="notifications$ | async as data"><i
+        [matBadgeHidden]='[data.length]>0 ? false:true' matBadge="{{ data.length }}" matBadgeSize="small" matBadgeColor="warn" class="fa fa-envelope-o" aria-hidden="true"></i>
+          </a>
+
+      <mat-menu #menu9="matMenu" [overlapTrigger]="false" class="mat-menu-panel1">
+       <mat-list role="list" class="list-noti" style="height: 280px; overflow: auto;">
+             <mat-list-item role="listitem" *ngIf="notifications$ | async as data">
+               <p class="notification-color">You have {{ data.length }} Consultation Requests</p></mat-list-item>
+  <mat-list-item role="listitem" *ngFor="let book_noti of (notifications$| async)" style="padding-top: 3%;padding-bottom: 3%;">
+    <!--<div><img  alt="User Image" class="img-circle" src="assets/styles/dashboard_assets/new/images/user_icon.jpg"></div>-->
+    <!--<div class="mar-note"><h4>&nbsp;Video Consult</h4>-->
+      <!--<p class="request">&nbsp;Request</p>-->
+      <!--<span class="min"><i class="fa fa-clock-o"></i>&nbsp;min</span>-->
+    <!--</div>-->
+    <a [routerLink]="['pending/request/'+book_noti['booking_type'] +'/'+book_noti['booking_id']]" style="text-decoration: none;">
+                    <div class="pull-left" style="padding: 3%;">
+                      <!--<img src="{{book_noti['pat_img']}}" class="img-circle" alt="User Image">-->
+                      <img  alt="User Image" class="img-circle" src="assets/styles/dashboard_assets/new/images/user_icon.jpg">
+                    </div>
+                    <h4 style="text-decoration: none; font-size: 14px;">
+                      {{book_noti['booking_type'] | capitalize}} Consult Request
+                      <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                    </h4>
+                    <p style="font-size: 13px;">Click to confirm</p>
+                  </a>
+
+  </mat-list-item>
+
+</mat-list>
+        <!--<mat-list-item role="listitem" style="text-align: center;">-->
+           <!--<a [routerLink]="['dashboard/pending/requests/'+['booking_type']+'/'+['doctor_id_c']]" style="text-decoration: none;">-->
+             <!--View All Requests</a>-->
+         <!--</mat-list-item>-->
+      </mat-menu>
+            </li>
+      <!--<a mat-button [matMenuTriggerFor]="menu10" style="min-width:0px;height:35px;width:61px;color:white;"><i  aria-hidden="true" class="fa fa-bell-o "></i></a>-->
+      <!--<mat-menu #menu10="matMenu">-->
+      <!--<button mat-menu-item>Item 31</button>-->
+      <!--<button mat-menu-item>Item 41</button>-->
+      <!--</mat-menu>-->
+<li>
+      <a [matMenuTriggerFor]="menu11" *ngIf="que_noti$ | async as data"><i
+        [matBadgeHidden]='[data.length]>0 ? false:true' matBadge="{{ data.length }}" matBadgeSize="small" matBadgeColor="warn" aria-hidden="true" class="fa fa-flag-o"></i></a>
+      <mat-menu #menu11="matMenu" [overlapTrigger]="false" class="mat-menu-panel2">
+        <mat-list style="height: 280px; overflow: auto;" class="list-noti">
+        <mat-list-item role="listitem" *ngIf="que_noti$ | async as data">
+          <p class="notification-color"> You have {{data.length}} Question notifications</p>
+        </mat-list-item>
+
+        <mat-list class="menu">
+        <mat-list-item role="listitem" *ngFor="let q_noti  of (que_noti$| async)" style="padding-top: 3%;padding-bottom: 3%;">
+        <a [routerLink]="['question/reply/'+q_noti['q_id']]" style="text-decoration:none">
+          <div class="pull-left" style="padding: 3%;">
+            <!--<img src="{{book_noti['pat_img']}}" class="img-circle" alt="User Image">-->
+            <img  alt="User Image" class="img-circle" src="assets/styles/dashboard_assets/new/images/user_icon.jpg">
+          </div>
+          <h4 style="text-decoration: none; font-size: 14px;">
+            {{q_noti['pat_name']}}
+            <small><i class="fa fa-clock-o"></i> 5 mins</small>
+          </h4>
+          <p style="font-size: 13px;">Click to answer</p>
+        </a>
+        </mat-list-item>
+
+        </mat-list>
+
+        </mat-list>
+        <mat-list-item class="footer" style="text-align: center;"><a [routerLink]="['Question-Answer']" style="text-decoration: none;">View all</a></mat-list-item>
+
+
+        <!--<button mat-menu-item>Item 51</button>-->
+        <!--<button mat-menu-item>Item 61</button>-->
+    </mat-menu>
+</li>
+
+
+      <li>
+
+        <a [matMenuTriggerFor]="menu1" class="fabutton" *ngIf="con_rem_noti$ | async as data"><i
+          [matBadgeHidden]='[data.length]>0 ? false:true' matBadge="{{ data.length }}" matBadgeSize="small" matBadgeColor="warn" aria-hidden="true" class="fa fa-bell-o"></i></a>
+        <mat-menu #menu1="matMenu" [overlapTrigger]="false" class="mat-menu-panel3">
+          <mat-list style="height: 280px; overflow: auto;" class="list-noti">
+            <mat-list-item *ngIf="con_rem_noti$ | async as data" class="header" >
+              <p class="notification-color"> You have {{data.length}} appointments today</p></mat-list-item>
+              <mat-list class="menu">
+                <mat-list-item *ngFor="let consult of (con_rem_noti$| async)" style="padding-top: 3%;padding-bottom: 3%;">
+                  <a [routerLink]="['scheduled/consultations/'+consult['booking_type']+'/'+consult['doctor_id_c']]">
+                    <div class="pull-left" style="padding: 3%;">
+                      <img  alt="User Image" class="img-circle" src="assets/styles/dashboard_assets/new/images/user_icon.jpg">
+                    </div>
+                    <h4 style="text-decoration: none; font-size: 14px;">
+                      You have an appointment today
+                      <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                    </h4>
+                    <p style="font-size: 13px;">Click to see details</p>
+                  </a>
+                </mat-list-item>
+              </mat-list>
+            <!--<mat-list-item>-->
+              <!--&lt;!&ndash;<a [routerLink]="['/dashboard/scheduled/consultations/appoinment+'/'+consult['doctor_id_c']]">View all reminders</a>&ndash;&gt;&ndash;&gt;-->
+            <!--</mat-list-item>-->
+
+          </mat-list>
+
+          <!--<button mat-menu-item>Item 1</button>-->
+          <!--<button mat-menu-item>Item 2</button>-->
+        </mat-menu>
+
+      </li>
+          <!--<li><i  aria-hidden="true" class="fa fa-bell-o "></i></li>-->
+          <!--<li><i  aria-hidden="true" class="fa fa-flag-o "></i></li>-->
+          <!--<li><i  aria-hidden="true" class="fa fa-bell-o "></i></li>-->
+        <li>
+          <span fxShow.xs="true" fxShow.lg="false" fxShow.xl="false" fxShow.md="false" fxShow.sm="false" (click)="logout()"><i class="fa fa-power-off" aria-hidden="true"></i></span>
+        </li>
+          </ul>
+        </span>
+
+        <span class="hello" fxShow.xs="false" fxShow.lg="true" fxShow.xl="true" fxShow.md="true" fxShow.sm="true">
+ <button (click)="logout()" mat-button class="logout" style="padding: 0px; line-height: 32px;"><i class="fa fa-power-off" aria-hidden="true"></i> &nbsp;Log out</button>
+        </span>
+
+
+      </mat-toolbar>
+
+      <mat-sidenav-container class="example-sidenav-container"
+                             [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+
+
+        <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                     [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" class="example-sidenav">
+          <mat-nav-list #shoes>
+            <mat-card class="example-header-image" style="text-align: center;">
+              <!--<img mat-card-avatar src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">-->
+              <img src="{{headeuser['userinfo'][0]['image']}}">
+              <mat-card-content>
+                <p>
+                 Dr. {{headeuser['userinfo'][0]['name']}} {{headeuser['userinfo'][0]['lname']}}
+                </p>
+                <p>
+                  {{headeuser['userinfo'][0]['email']}}
+                </p>
+              </mat-card-content>
+            </mat-card>
+
+            <div *ngIf="(headeuser['subscription'][0]['ACCOUNT_STATUS']=='active' &&
+          headeuser['userinfo'][0]['cnfm_ref1']=='true' &&
+          headeuser['userinfo'][0]['cnfm_ref2']=='true' && headeuser['userinfo'][0]['cnfm_ref3']=='true')">
+            <a mat-list-item [routerLink]="['/dashboard']" class="navcls">
+              <i class="fa fa-dashboard icc"></i> <span style="font-size: 16px!important;">Dashboard</span>
+            </a>
+            <a mat-list-item [routerLink]="['/dashboard/set-availability']" class="navcls">
+              <i class="fa fa-calendar icc"></i> <span style="font-size: 16px!important;">Set availability</span>
+            </a>
+            <mat-accordion>
+              <mat-expansion-panel style="box-shadow:none;">
+                <mat-expansion-panel-header style="height: 35px!important;">
+                  <mat-panel-title>
+                    <a>
+                      <i class="fa fa-wheelchair icc1"></i> <span style="font-size: 16px!important;">Patients</span>
+                    </a>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <mat-panel-title>
+                  <a [routerLink]="['/dashboard/add-patient']" style="padding-left: 27px;padding-bottom: 9px;font-size: 14px!important;" id="add_new">Add New</a>
+                </mat-panel-title>
+
+                <mat-panel-title>
+                   <a [routerLink]="['/dashboard/patient-list']" style="padding-left: 27px;font-size: 14px!important;" id="list">Patient List</a>
+                </mat-panel-title>
+              </mat-expansion-panel>
+
+              <mat-expansion-panel style="box-shadow:none;">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <a  id="prescr">
+                      <i class="fa fa-file-powerpoint-o icc1"></i> <span style="font-size: 16px!important;">Prescriptions</span>
+                    </a>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <mat-panel-title >
+
+                  <a [routerLink]="['/dashboard/select-patient']" style="padding-left: 27px;padding-bottom: 9px;font-size: 14px!important;" >Add New</a>
+                </mat-panel-title>
+
+                <mat-panel-title >
+                   <a [routerLink]="['/dashboard/prescription-list']" style="padding-left: 27px;padding-bottom: 9px;font-size: 14px!important;">Prescription List</a>
+                </mat-panel-title>
+              </mat-expansion-panel>
+
+
+              <mat-expansion-panel style="box-shadow:none;">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <a>
+                      <i class="fa fa-video-camera icc1"></i> <span style="font-size: 16px!important;">Video Consult</span>
+                    </a>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <mat-panel-title >
+                      <a [routerLink]="['/dashboard/pending/requests/video/'+id]" style="padding-left: 27px;padding-bottom: 9px;font-size: 14px!important;">Pending Requests</a>
+                </mat-panel-title>
+
+                <mat-panel-title >
+                    <a [routerLink]="['/dashboard/scheduled/consultations/video/'+id]" style="padding-left: 27px;padding-bottom: 9px;font-size: 14px!important;">Confirmed Consultations</a>
+                </mat-panel-title>
+                <mat-panel-title >
+                  <a [routerLink]="['/dashboard/consultation/history/video/'+id]" style="padding-left: 27px;font-size: 14px!important;">History</a>
+                </mat-panel-title>
+              </mat-expansion-panel>
+
+              <mat-expansion-panel style="box-shadow:none;">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <a>
+                      <i class="fa fa-phone icc1"></i> <span style="font-size: 16px!important;">Tele Consult</span>
+                    </a>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <mat-panel-title >
+                   <a [routerLink]="['/dashboard/pending/requests/tele/'+id]" style="padding-left: 27px;padding-bottom: 9px;font-size: 14px!important;">Pending Requests</a>
+                </mat-panel-title>
+
+                <mat-panel-title >
+                    <a [routerLink]="['/dashboard/scheduled/consultations/tele/'+id]" style="padding-left: 27px;padding-bottom: 9px;font-size: 14px!important;">Confirmed Consultations</a>
+                </mat-panel-title>
+                <mat-panel-title >
+                   <a [routerLink]="['/dashboard/consultation/history/tele/'+id]" style="padding-left: 27px;font-size: 14px!important;">History</a>
+                </mat-panel-title>
+              </mat-expansion-panel>
+
+
+              <mat-expansion-panel style="box-shadow:none;">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <a>
+                      <i class="fa fa-star icc1"></i> <span style="font-size: 16px!important;">Priority Consult</span>
+                    </a>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <mat-panel-title >
+                   <a [routerLink]="['/dashboard/pending/requests/priority/'+id]" style="padding-left: 27px;padding-bottom: 9px;font-size: 14px!important;"> Pending Requests</a>
+                </mat-panel-title>
+
+                <mat-panel-title >
+                  <a [routerLink]="['/dashboard/scheduled/consultations/priority/'+id]" style="padding-left: 27px;padding-bottom: 9px;font-size: 14px!important;">Confirmed Consultations</a>
+                </mat-panel-title>
+                <mat-panel-title >
+                  <a [routerLink]="['/dashboard/consultation/history/priority/'+id]" style="padding-left: 27px;font-size: 14px!important;">History</a>
+                </mat-panel-title>
+              </mat-expansion-panel>
+
+
+              <mat-expansion-panel style="box-shadow:none;">
+                <mat-expansion-panel-header>
+                  <mat-panel-title  >
+                    <a>
+                      <i class="fa fa-calendar-plus-o icc1"></i> <span style="font-size: 16px!important;">Appoinments</span></a>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <mat-panel-title >
+                   <a [routerLink]="['/dashboard/pending/requests/appoinment/'+id]" style="padding-left: 27px;padding-bottom: 9px;font-size: 14px!important;">Pending Requests</a>
+                </mat-panel-title>
+
+                <mat-panel-title >
+                  <a [routerLink]="['/dashboard/scheduled/consultations/appoinment/'+id]" style="padding-left: 27px;padding-bottom: 9px;font-size: 14px!important;">Confirmed Appointments</a>
+                </mat-panel-title>
+
+                <mat-panel-title >
+                  <a [routerLink]="['/dashboard/consultation/history/appoinment/'+id]" style="padding-left: 27px;font-size: 14px!important;">History</a>
+                </mat-panel-title>
+              </mat-expansion-panel>
+            </mat-accordion>
+
+            <a mat-list-item [routerLink]="['/dashboard/archiving-list']" class="navcls">
+              <i class="fa fa-list-alt icc"></i> <span style="font-size: 16px!important;">Archiving List</span>
+            </a>
+            <a mat-list-item [routerLink]="['/dashboard/Question-Answer']" class="navcls">
+              <i class="fa fa-question icc"></i> <span style="font-size: 16px!important;">Questions-Answers</span>
+            </a>
+
+            <a mat-list-item [routerLink]="['/dashboard/settings']" class="navcls">
+              <i class="fa fa-cogs icc"></i> <span style="font-size: 16px!important;">Settings</span>
+            </a>
+
+            <a mat-list-item [routerLink]="['/dashboard/invoice/list']" class="navcls">
+              <i class="fa fa-credit-card icc"></i> <span style="font-size: 16px!important;">Invoice</span>
+            </a>
+            </div>
+          </mat-nav-list>
+        </mat-sidenav>
+        <router-outlet></router-outlet>
+      </mat-sidenav-container>
+    </div>
+    <app-footer>Loading...........</app-footer>
+  </div>
+</div>

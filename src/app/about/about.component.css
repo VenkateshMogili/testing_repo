@@ -1,0 +1,39 @@
+@media (max-width:599px){
+  .clr-back{
+    padding:5px 10px;
+
+  }
+
+
+}
+.list-about mat-list-item{
+  font-size:14px;
+  border-bottom:1px dotted #ccc;
+
+
+}
+.list-about span{
+ color: #0c58a5;
+  padding-left: 10px;
+}
+@media (max-width:599px){
+.mat-raised-button{
+    line-height: 32px;
+    padding: 0 12px;
+}
+.list-about mat-list-item{
+ height:34px!important;
+}
+  .content-wrapper {
+    background: #ECF0F5;
+    height: 100%;
+    padding: 11px 10px;
+  }
+}
+h3{
+  font-weight: 600;
+  font-size: 14px !important;
+}
+.hooo{
+  padding: 5%;
+}

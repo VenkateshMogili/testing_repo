@@ -1,0 +1,11 @@
+.list-about{
+  padding:10px;
+}
+.value-proflle mat-list-item{
+  color:#000;
+  font-weight:600;
+  border-bottom: 1px dotted #ccc;
+}
+.head-responsive strong{
+  font-size:14px;
+}

@@ -1,0 +1,58 @@
+<div class="content-wrapper">
+  <section class="clr-back">
+    <h2 class="mrg_btm2" style="text-align: center;">My Contact Health</h2>
+    <div fxLayout="row" fxLayoutAlign="end center" fxShow="false" fxShow.xs="true">
+    </div>
+      <div fxLayout="column" class="border-part"  fxShow="false" fxShow.xs="true">
+        <h2 class="conditions" style="padding-top: 2%;text-align: center;">Conditions and Symptoms</h2>
+        <ng-template ngFor let-item [ngForOf]="createRange(list['health_list'].length)"
+                     let-innerIndex="index">
+        <mat-list style="border-bottom: 1px dotted #ccc;">
+          <mat-list-item><div fxFlex="40"><b>Conditions:</b></div><div fxFlex="60" class="pull-right">{{list['health_list'][innerIndex]['conditions_symptoms']}}</div></mat-list-item>
+          <mat-list-item><div fxFlex="40"><b>Conditions Have:</b></div><div fxFlex="60" class="pull-right">{{list['health_list'][innerIndex]['conditions_have']}}</div></mat-list-item>
+          <mat-list-item><div fxFlex="40"><b>Notes:</b></div><div fxFlex="60" class="pull-right">{{list['health_list'][innerIndex]['conditions_note']}}</div></mat-list-item>
+        </mat-list>
+        </ng-template>
+      </div>
+
+    <div fxLayout="column" class="border-part" fxShow="false" fxShow.xs="true">
+      <h2 class="conditions" style="padding-top: 2%;text-align: center;">Medications</h2>
+      <ng-template ngFor let-item [ngForOf]="createRange(list['medication_list'].length)"
+                   let-innerIndex="index" *ngIf="list['medication_list'].length>0">
+      <mat-list style="border-bottom: 1px dotted #ccc;">
+        <mat-list-item><div fxFlex="40"><b>Medicine:</b></div><div fxFlex="60" class="pull-right">{{list['medication_list'][innerIndex]['medication']}}</div></mat-list-item>
+        <mat-list-item><div fxFlex="40"><b>Medication Take:</b></div><div fxFlex="60" class="pull-right">{{list['medication_list'][innerIndex]['medication_take']}}</div></mat-list-item>
+        <mat-list-item><div fxFlex="40"><b>Notes:</b></div><div fxFlex="60" class="pull-right">{{list['medication_list'][innerIndex]['medication_note']}}</div></mat-list-item>
+
+      </mat-list>
+      </ng-template>
+    </div>
+
+    <div fxLayout="column" class="border-part" fxShow="false" fxShow.xs="true">
+      <h2 class="conditions" style="padding-top: 2%;text-align: center;">Treatment or Procedure</h2>
+      <ng-template ngFor let-item [ngForOf]="createRange(list['treatment_list'].length)"
+                   let-innerIndex="index" *ngIf="list['treatment_list'].length>0">
+      <mat-list style="border-bottom: 1px dotted #ccc;">
+        <mat-list-item><div fxFlex="40"><b>Treatment:</b></div><div fxFlex="60" class="pull-right">{{list['treatment_list'][innerIndex]['treatment']}}</div></mat-list-item>
+        <mat-list-item><div fxFlex="40"><b>Date Preformed:</b></div><div fxFlex="60" class="pull-right">{{list['treatment_list'][innerIndex]['treatment_date']}}</div></mat-list-item>
+        <mat-list-item><div fxFlex="40"><b>Notes:</b></div><div fxFlex="60" class="pull-right">{{list['treatment_list'][innerIndex]['treatment_note']}}</div></mat-list-item>
+
+      </mat-list>
+      </ng-template>
+    </div>
+
+    <div fxLayout="column" class="border-part" fxShow="false" fxShow.xs="true">
+      <h2 class="conditions" style="padding-top: 2%;text-align: center;">Allergy</h2><ng-template ngFor let-item [ngForOf]="createRange(list['allergy_list'].length)"
+                                                      let-innerIndex="index" *ngIf="list['allergy_list'].length>0">
+
+      <mat-list style="border-bottom: 1px dotted #ccc;">
+        <mat-list-item><div fxFlex="40"><b>Allergy:</b></div><div fxFlex="60" class="pull-right">{{list['allergy_list'][innerIndex]['allegry']}}</div></mat-list-item>
+        <mat-list-item><div fxFlex="40"><b>Allergy Have:</b></div><div fxFlex="60" class="pull-right">{{list['allergy_list'][innerIndex]['allergy_have']}}</div></mat-list-item>
+        <mat-list-item><div fxFlex="40"><b>Notes:</b></div><div fxFlex="60" class="pull-right">{{list['allergy_list'][innerIndex]['allergy_note']}}</div></mat-list-item>
+
+      </mat-list>
+    </ng-template>
+    </div>
+
+  </section>
+</div>

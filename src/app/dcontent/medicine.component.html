@@ -1,0 +1,529 @@
+<!--<div [formGroup]="medForm">-->
+
+<!--<div class="container"-->
+<!--fxLayout-->
+<!--fxLayout.xs="column"-->
+<!--fxLayoutGap="10px"-->
+<!--fxLayoutGap.xs="0"-->
+<!--&gt;-->
+<!--<div class="mrg_btm2" fxFlex="50%" >-->
+<!--<div style="min-width: 150px;-->
+<!--max-width: 500px;-->
+<!--width: 100%;">-->
+
+<!--<div style="padding-top: 10px;">-->
+<!--&lt;!&ndash;<label>Medicine Name</label>&ndash;&gt;-->
+<!--&lt;!&ndash;<div>&ndash;&gt;-->
+<!--&lt;!&ndash;<input formControlName="name"  type="text" placeholder="Medicine Name (e.g. PAN)">&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div></div>&ndash;&gt;-->
+<!--<mat-form-field class="example-full-width" style="width: 380px;">-->
+<!--<input matInput placeholder="Medicine Name (e.g. PAN)">-->
+<!--</mat-form-field>-->
+<!--</div>-->
+<!--<div style="padding-top: 10px;">-->
+<!--&lt;!&ndash;<label>Mornning</label>&ndash;&gt;-->
+<!--&lt;!&ndash;<div>&ndash;&gt;-->
+<!--&lt;!&ndash;<input formControlName="frequency" type="number" step=0.5 min=0&ndash;&gt;-->
+<!--&lt;!&ndash;placeholder="frequency" #f1>&ndash;&gt;-->
+<!--&lt;!&ndash;<input type="checkbox" value="" name="BB" formControlName="BB"> Before Breakfast&ndash;&gt;-->
+<!--&lt;!&ndash;<input type="checkbox" value="" name="AB" formControlName="AB"> After Breakfast&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div></div>&ndash;&gt;-->
+<!--<mat-form-field class="example-full-width" style="width: 380px;">-->
+<!--<input matInput placeholder="Mornning(frequency)" formControlName="frequency" step=0.5 min=0 #f1>-->
+<!--</mat-form-field>-->
+<!--<mat-radio-group style="margin: 0 10px;">-->
+<!--<mat-checkbox value="" name="BB" formControlName="BB">Before Breakfast</mat-checkbox>-->
+<!--<mat-checkbox value="" name="AB" formControlName="AB">After Breakfast</mat-checkbox>-->
+<!--</mat-radio-group>-->
+<!--</div>-->
+
+<!--<div style="padding-top: 10px;">-->
+<!--&lt;!&ndash;<label>Afternoon</label>&ndash;&gt;-->
+<!--&lt;!&ndash;<div>&ndash;&gt;-->
+<!--&lt;!&ndash;<input formControlName="frequency_2" type="number" step=0.5 min=0&ndash;&gt;-->
+<!--&lt;!&ndash;placeholder="frequency" #f2>&ndash;&gt;-->
+<!--&lt;!&ndash;<input type="checkbox" name="BL" formControlName="BL"> Before Lunch&ndash;&gt;-->
+<!--&lt;!&ndash;<input type="checkbox" name="AL" formControlName="AL"> After Lunch&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div></div>&ndash;&gt;-->
+<!--<mat-form-field class="example-full-width" style="width: 380px;">-->
+<!--<input matInput placeholder="Afternoon(frequency)" formControlName="frequency_2" step=0.5 min=0 #f2>-->
+<!--</mat-form-field>-->
+<!--<mat-radio-group style="margin: 0 10px;">-->
+<!--<mat-checkbox name="BL" formControlName="BL" value="">Before Lunch</mat-checkbox>-->
+<!--<mat-checkbox name="AL" formControlName="AL" value="">After Lunch</mat-checkbox>-->
+<!--</mat-radio-group>-->
+<!--</div>-->
+
+
+<!--<div style="padding-top: 10px;">-->
+<!--&lt;!&ndash;<label>Night</label>&ndash;&gt;-->
+<!--&lt;!&ndash;<div>&ndash;&gt;-->
+<!--&lt;!&ndash;<input formControlName="frequency_3" type="number" step=0.5 min=0&ndash;&gt;-->
+<!--&lt;!&ndash;placeholder="frequency" #f3>&ndash;&gt;-->
+<!--&lt;!&ndash;<input type="checkbox" value="" name="BD" formControlName="BD"> Before Dinner&ndash;&gt;-->
+<!--&lt;!&ndash;<input type="checkbox" value="" name="AD" formControlName="AD"> After Dinner&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div></div>&ndash;&gt;-->
+
+<!--<mat-form-field class="example-full-width" style="width: 380px;" >-->
+<!--<input matInput  formControlName="frequency_3" step=0.5 min=0 placeholder="Night(frequency)" #f3>-->
+<!--</mat-form-field>-->
+<!--<mat-radio-group style="margin: 0 10px;">-->
+<!--<mat-checkbox value="" name="BD" formControlName="BD">Before Dinner</mat-checkbox>-->
+<!--<mat-checkbox value="" name="AD" formControlName="AD">After Dinner</mat-checkbox>-->
+<!--</mat-radio-group>-->
+<!--</div>-->
+
+
+<!--<div style="padding-top: 10px;">-->
+<!--&lt;!&ndash;<div style="margin: 0;" class="has-feedback">&ndash;&gt;-->
+<!--&lt;!&ndash;<label>Special Instruction</label>&ndash;&gt;-->
+<!--&lt;!&ndash;<div><textarea formControlName="special_instruction" name="special_instruction"&ndash;&gt;-->
+<!--&lt;!&ndash;placeholder="Special Instruction" style="resize: none;" rows="2"&ndash;&gt;-->
+<!--&lt;!&ndash;&gt;</textarea>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div></div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--<textarea formControlName="clinical_impression" rows="4"-->
+<!--style="resize: none;"-->
+<!--placeholder="Describe Clinical Impression of patient"  style="width: 75%;" fxFlex.xs="0%" ></textarea>-->
+<!--</div>-->
+
+
+<!--&lt;!&ndash;<div>&ndash;&gt;-->
+<!--&lt;!&ndash;<input id="cnfm_ref1" type="text" value="true">&ndash;&gt;-->
+<!--&lt;!&ndash;<input id="cnfm_ref2" type="text" value="true">&ndash;&gt;-->
+<!--&lt;!&ndash;<input id="cnfm_ref3" type="text" value="true">&ndash;&gt;-->
+<!--&lt;!&ndash;<div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+
+<!--</div>-->
+<!--<div fxFlex="50%">-->
+
+<!--<div>-->
+<!--<label>Drug Form</label>-->
+<!--<div>-->
+<!--<select id="drug_form" formControlName="drug_form" name="Drug Form">-->
+
+<!--<option value="">Drug Form</option>-->
+<!--<option value="cap.">Capsules</option>-->
+<!--<option value="Dispersible Tablet">Dispersible Tablet</option>-->
+
+<!--<option value="Infusions">Infusions</option>-->
+<!--<option value="Liniments">Liniments</option>-->
+
+<!--<option value="Ointments">Ointments</option>-->
+<!--<option value="Pills">Pills</option>-->
+<!--<option value="Plasters">Plasters</option>-->
+<!--<option value="Powders">Powders</option>-->
+<!--<option value="Suppositories">Suppositories</option>-->
+<!--<option value="Syrups">Syrups</option>-->
+<!--<option value="tab">Tablets</option>-->
+
+<!--</select>-->
+<!--</div>-->
+<!--<div></div>-->
+<!--</div>-->
+
+<!--<div>-->
+<!--<label>Strength</label>-->
+<!--<div>-->
+<!--<div>-->
+<!--<div>-->
+<!--<input id="dose" type="text" name="Strength" formControlName="dose"-->
+<!--placeholder="">-->
+<!--</div>-->
+<!--<div>-->
+<!--<select class=" mrg_top_m" formControlName="unit" id="unit" name="No. of Units">-->
+<!--<option value="" class="" selected="selected">Select Unit</option>-->
+<!--<option value="gm">gm</option>-->
+<!--<option value="NA">NA</option>-->
+<!--<option value="% w/w">% w/w</option>-->
+<!--<option value="% w/v">% w/v</option>-->
+<!--<option value="%">%</option>-->
+<!--<option value="units">units</option>-->
+<!--<option value="IU">IU</option>-->
+<!--<option value="ml">ml</option>-->
+<!--<option value="million spores">million spores</option>-->
+<!--<option value="mg SR">mg SR</option>-->
+<!--<option value="mg">mg</option>-->
+<!--<option value="mcg">mcg</option>-->
+<!--<option value="ONE PACKET DAILY">ONE PACKET DAILY</option>-->
+<!--<option value="mg/ml">mg/ml</option>-->
+<!--<option value="mg/5ml">mg/5ml</option>-->
+
+<!--</select>-->
+<!--</div>-->
+<!--</div>-->
+
+
+<!--</div>-->
+<!--<div></div>-->
+<!--</div>-->
+
+<!--<div>-->
+<!--<label>Route</label>-->
+<!--<div>-->
+<!--<select id="administer_route" formControlName="administer_route"-->
+<!--name="Route of Administartion">-->
+<!--<option value="">Route</option>-->
+<!--<option value="Oral">Oral</option>-->
+<!--<option value="Topical">Topical</option>-->
+<!--<option value="Sublingual">Sublingual</option>-->
+<!--<option value="Inhalation">Inhalation</option>-->
+<!--<option value="Injection">Injection</option>-->
+<!--</select>-->
+<!--</div>-->
+<!--<div></div>-->
+<!--</div>-->
+
+<!--<div>-->
+<!--<label>Start Date </label>-->
+<!--<div>-->
+<!--<input  [bsConfig]="{dateInputFormat: 'YYYY-MM-DD'}" type="text" [minDate]="minDate"-->
+<!--bsDatepicker formControlName="start_date_time" name="Start Date" id="start_time" #start>-->
+<!--</div>-->
+<!--<div></div>-->
+<!--</div>-->
+
+<!--<div>-->
+<!--<label>End Date </label>-->
+<!--<div>-->
+<!--<input  [bsConfig]="{dateInputFormat: 'YYYY-MM-DD'}" type="text" [minDate]="minDate"-->
+<!--bsDatepicker formControlName="end_date_time" name="End Date" id="end_time" #end>-->
+<!--</div>-->
+<!--<div></div>-->
+<!--</div>-->
+
+<!--<div (mouseover)="date(start.value, end.value)">-->
+<!--<label>Duration</label>-->
+<!--<div>-->
+<!--<input id="duration" formControlName="duration" type="text"  placeholder="Duration" value="{{this.duration}}">-->
+<!--</div>-->
+<!--<div></div>-->
+<!--</div>-->
+
+<!--<div>-->
+<!--<label>No. of Units</label>-->
+<!--<div>-->
+<!--<input formControlName="no_of_medicine" name="No Of Units" type="text"-->
+<!--placeholder="No. of Units" value="{{(f1.value&#45;&#45;f2.value&#45;&#45;f3.value) * (this.duration)}}">-->
+<!--</div>-->
+<!--<div></div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--<div>-->
+<!--<div></div>-->
+<!--</div>-->
+<!--</div>1-->
+<!--</div>-->
+
+<script
+  src="../../../../dpm patient final/angular5-dpm-patient/src/app/todays-consult/todays-consult.component.ts"></script>
+<div [formGroup]="medForm">
+
+  <div class="container"
+       fxLayout
+       fxLayout.xs="column"
+       fxLayoutAlign="center"
+       fxLayoutGap="10px"
+       fxLayoutGap.xs="0">
+    <div fxFlex="50%">
+      <div style="min-width: 150px;max-width: 400px;width: 100%;">
+        <div style="padding-top: 10px;">
+          <mat-form-field class="example-full-width" style="width: 100%;">
+            <input matInput placeholder="Medicine Name (e.g. PAN)" formControlName="name">
+          </mat-form-field>
+        </div>
+        <div style="padding-top: 10px;">
+          <mat-form-field class="example-full-width" style="width: 100%;">
+            <input matInput type="number" placeholder="Morning(frequency)" formControlName="frequency" step=0.5 min=0 style="
+                                                     background-color: #fafafa;
+                                                     border: none;box-shadow: none;
+                                                     -webkit-transition: none;
+                                                     transition: none;" #f1>
+          </mat-form-field>
+          <mat-radio-group style="margin: 0 10px;">
+            <mat-checkbox value="" name="BB" formControlName="BB" style="padding-right: 16px;">Before Breakfast</mat-checkbox>
+            <mat-checkbox value="" name="AB" formControlName="AB">After Breakfast</mat-checkbox>
+          </mat-radio-group>
+        </div>
+
+        <div style="padding-top: 10px;">
+          <mat-form-field class="example-full-width" style="width: 100%;">
+            <input matInput placeholder="Afternoon(frequency)" type="number" formControlName="frequency_2" step=0.5 min=0 style="
+                                                     background-color: #fafafa;
+                                                     border: none;box-shadow: none;
+                                                     -webkit-transition: none;
+                                                     transition: none;" #f2>
+          </mat-form-field>
+          <mat-radio-group style="margin: 0 10px;">
+            <mat-checkbox class="hell" name="BL" formControlName="BL" value="" style="padding-right: 16px;">Before Lunch</mat-checkbox>
+            <mat-checkbox name="AL" formControlName="AL" value="">After Lunch</mat-checkbox>
+          </mat-radio-group>
+        </div>
+        <div style="padding-top: 10px;">
+          <mat-form-field class="example-full-width" style="width: 100%;" >
+            <input matInput  formControlName="frequency_3" step=0.5 min=0 type="number" placeholder="Night(frequency)" style="
+                                                     background-color: #fafafa;
+                                                     border: none;box-shadow: none;
+                                                     -webkit-transition: none;
+                                                     transition: none;" #f3>
+          </mat-form-field>
+          <mat-radio-group style="margin: 0 10px;">
+            <mat-checkbox value="" name="BD" formControlName="BD" style="padding-right: 16px;">Before Dinner</mat-checkbox>
+            <mat-checkbox value="" name="AD" formControlName="AD">After Dinner</mat-checkbox>
+          </mat-radio-group>
+        </div>
+        <div style="padding-top: 10px;">
+          <textarea formControlName="special_instruction" rows="4"
+                    placeholder="Special Instruction"  style="width: 100%;resize: none;" ></textarea>
+          <span style="font-size: 9px;">Please click below option if special instruction has to send as a reminder </span>
+          <mat-radio-group class="mar" fxLayout="row">
+            <mat-checkbox name="sir_m" style="padding-right: 16px;" formControlName="sir_m">
+              Morning
+            </mat-checkbox>
+            <mat-checkbox name="sir_a" style="padding-right: 16px;" formControlName="sir_a">
+              Afternoon
+            </mat-checkbox>
+            <mat-checkbox name="sir_e" style="padding-right: 16px;" formControlName="sir_e">
+              Night
+            </mat-checkbox>
+          </mat-radio-group>
+
+        </div>
+      </div>
+    </div>
+    <div>
+      <div style="min-width: 150px;max-width: 500px;width: 100%;">
+        <div>
+          <!--<label>Drug Form</label>-->
+          <!--<div>-->
+          <!--<select id="drug_form" formControlName="drug_form" name="Drug Form">-->
+
+          <!--<option value="">Drug Form</option>-->
+          <!--<option value="cap.">Capsules</option>-->
+          <!--<option value="Dispersible Tablet">Dispersible Tablet</option>-->
+
+          <!--<option value="Infusions">Infusions</option>-->
+          <!--<option value="Liniments">Liniments</option>-->
+
+          <!--<option value="Ointments">Ointments</option>-->
+          <!--<option value="Pills">Pills</option>-->
+          <!--<option value="Plasters">Plasters</option>-->
+          <!--<option value="Powders">Powders</option>-->
+          <!--<option value="Suppositories">Suppositories</option>-->
+          <!--<option value="Syrups">Syrups</option>-->
+          <!--<option value="tab">Tablets</option>-->
+
+          <!--</select>-->
+          <!--</div>-->
+          <!--<div></div>-->
+          <mat-form-field class="example-full-width" style="width: 100%;">
+            <mat-select id="drug_form" formControlName="drug_form" name="Drug Form">
+              <mat-option value="">Drug Form</mat-option>
+              <mat-option value="cap.">Capsules</mat-option>
+              <mat-option value="Dispersible Tablet">Dispersible Tablet</mat-option>
+              <mat-option value="Infusions">Infusions</mat-option>
+              <mat-option value="Liniments">Liniments</mat-option>
+              <mat-option value="Ointments">Ointments</mat-option>
+              <mat-option value="Pills">Pills</mat-option>
+              <mat-option value="Plasters">Plasters</mat-option>
+              <mat-option value="Powders">Powders</mat-option>
+              <mat-option value="Suppositories">Suppositories</mat-option>
+              <mat-option value="Syrups">Syrups</mat-option>
+              <mat-option value="tab">Tablets</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <!--<label>Strength</label>-->
+          <!--<div>-->
+          <!--<div>-->
+          <!--<div>-->
+          <!--<input id="dose" type="text" name="Strength" formControlName="dose"-->
+          <!--placeholder="">-->
+          <!--</div>-->
+          <!--<div>-->
+          <!--<select class=" mrg_top_m" formControlName="unit" id="unit" name="No. of Units">-->
+          <!--<option value="" class="" selected="selected">Select Unit</option>-->
+          <!--<option value="gm">gm</option>-->
+          <!--<option value="NA">NA</option>-->
+          <!--<option value="% w/w">% w/w</option>-->
+          <!--<option value="% w/v">% w/v</option>-->
+          <!--<option value="%">%</option>-->
+          <!--<option value="units">units</option>-->
+          <!--<option value="IU">IU</option>-->
+          <!--<option value="ml">ml</option>-->
+          <!--<option value="million spores">million spores</option>-->
+          <!--<option value="mg SR">mg SR</option>-->
+          <!--<option value="mg">mg</option>-->
+          <!--<option value="mcg">mcg</option>-->
+          <!--<option value="ONE PACKET DAILY">ONE PACKET DAILY</option>-->
+          <!--<option value="mg/ml">mg/ml</option>-->
+          <!--<option value="mg/5ml">mg/5ml</option>-->
+
+          <!--</select>-->
+          <!--</div>-->
+          <!--</div>-->
+
+
+          <!--</div>-->
+          <!--<div></div>-->
+
+
+          <div>
+            <div class="container"
+                 fxLayout
+                 fxLayout.xs="column"
+                 fxLayoutAlign="center"
+                 fxLayoutGap="10px"
+                 fxLayoutGap.xs="0">
+
+              <!--<div style="padding-top: 10px;" fxFlex="50%">-->
+              <div fxFlex="50%">
+                <mat-form-field class="example-full-width" style="width: 100%;">
+                  <input matInput id="dose" type="number" name="Strength" formControlName="dose" placeholder="Strength" style="background-color: #fafafa;border: none;box-shadow: none;-webkit-transition: none;transition: none;">
+                </mat-form-field>
+              </div>
+              <div fxFlex="50%">
+                <mat-form-field class="example-full-width" style="width: 100%;">
+                  <mat-select formControlName="unit" id="unit" name="No. of Units">
+                    <mat-option value="" class="" selected="selected">Select Unit</mat-option>
+                    <mat-option value="gm">gm</mat-option>
+                    <mat-option value="NA">NA</mat-option>
+                    <mat-option value="% w/w">% w/w</mat-option>
+                    <mat-option value="% w/v">% w/v</mat-option>
+                    <mat-option value="%">%</mat-option>
+                    <mat-option value="units">units</mat-option>
+                    <mat-option value="IU">IU</mat-option>
+                    <mat-option value="ml">ml</mat-option>
+                    <mat-option value="million spores">million spores</mat-option>
+                    <mat-option value="mg SR">mg SR</mat-option>
+                    <mat-option value="mg">mg</mat-option>
+                    <mat-option value="mcg">mcg</mat-option>
+                    <mat-option value="ONE PACKET DAILY">ONE PACKET DAILY</mat-option>
+                    <mat-option value="mg/ml">mg/ml</mat-option>
+                    <mat-option value="mg/5ml">mg/5ml</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <!--<label>Route</label>-->
+          <!--<div>-->
+          <!--<select id="administer_route" formControlName="administer_route"-->
+          <!--name="Route of Administartion">-->
+          <!--<option value="">Route</option>-->
+          <!--<option value="Oral">Oral</option>-->
+          <!--<option value="Topical">Topical</option>-->
+          <!--<option value="Sublingual">Sublingual</option>-->
+          <!--<option value="Inhalation">Inhalation</option>-->
+          <!--<option value="Injection">Injection</option>-->
+          <!--</select>-->
+          <!--</div>-->
+          <!--<div></div>-->
+          <mat-form-field class="example-full-width" style="width: 100%;">
+            <mat-select id="administer_route" formControlName="administer_route" name="Route of Administartion">
+              <mat-option value="" class="">Route</mat-option>
+              <mat-option value="Oral">Oral</mat-option>
+              <mat-option value="Topical">Topical</mat-option>
+              <mat-option value="Sublingual">Sublingual</mat-option>
+              <mat-option value="Inhalation">Inhalation</mat-option>
+              <mat-option value="Injection">Injection</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <!--<label>Start Date </label>-->
+          <div>
+            <mat-form-field class="example-full-width" style="width: 100%;">
+              <input matInput placeholder="Start Date" [bsConfig]="{dateInputFormat: 'YYYY-MM-DD'}" type="text" [minDate]="minDate"
+                     bsDatepicker formControlName="start_date_time" name="Start Date" id="start_time" style="
+                                                     background-color: #fafafa;
+                                                     border: none;box-shadow: none;
+                                                      -webkit-transition: none;
+                                                     transition: none;" #start>
+            </mat-form-field>
+            <!--<mat-form-field class="example-full-width" style="width: 100%;">-->
+              <!--<input matInput [matDatepicker]="picker" [min]="minDate" placeholder="Start Date"-->
+                      <!--formControlName="start_date_time" name="Start Date" id="start_time">-->
+              <!--<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>-->
+              <!--<mat-datepicker #picker></mat-datepicker>-->
+            <!--</mat-form-field>-->
+          <!--</div>-->
+          <div></div>
+          <!--<mat-form-field class="example-full-width" style="width: 100%;">-->
+          <!--<input matInput [matDatepicker]="picker"  #start placeholder="Start Date" >-->
+          <!--<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>-->
+          <!--<mat-datepicker #picker></mat-datepicker>-->
+          <!--</mat-form-field>-->
+        </div>
+
+        <div>
+          <!--<label>End Date </label>-->
+          <div>
+            <mat-form-field class="example-full-width" style="width: 100%;">
+              <input  matInput placeholder="End Date" [bsConfig]="{dateInputFormat: 'YYYY-MM-DD'}" type="text" [minDate]="minDate"
+                      bsDatepicker formControlName="end_date_time" name="End Date" id="end_time"   style="
+                                                     background-color: #fafafa;
+                                                     border: none;box-shadow: none;
+                                                      -webkit-transition: none;
+                                                     transition: none;" #end>
+            </mat-form-field>
+            <!--<mat-form-field class="example-full-width" style="width: 100%;">-->
+              <!--<input matInput [matDatepicker]="picker1" placeholder="End Date" [min]="minDate"-->
+                     <!--formControlName="end_date_time" name="End Date" id="end_time">-->
+              <!--<mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>-->
+              <!--<mat-datepicker #picker1></mat-datepicker>-->
+            <!--</mat-form-field>-->
+
+          </div>
+          <div></div>
+          <!--<mat-form-field class="example-full-width" style="width: 100%;">-->
+          <!--<input matInput [matDatepicker]="picker1"  placeholder="End Date"-->
+          <!--[bsConfig]="{dateInputFormat: 'YYYY-MM-DD'}" type="text" [minDate]="minDate" #end>-->
+          <!--<mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>-->
+          <!--<mat-datepicker #picker1></mat-datepicker>-->
+          <!--</mat-form-field>-->
+        </div>
+
+        <div (mouseover)="date(start.value, end.value)">
+          <!--<label>Duration</label>-->
+          <!--<div>-->
+          <!--<input id="duration" formControlName="duration" type="text"  placeholder="Duration" value="{{this.duration}}">-->
+          <!--</div>-->
+          <!--<div></div>-->
+          <mat-form-field class="example-full-width" style="width: 100%;">
+            <input matInput pid="duration" formControlName="duration" placeholder="Duration" value="{{this.duration}}">
+          </mat-form-field>
+        </div>
+
+        <div>
+          <!--<label>No. of Units</label>-->
+          <!--<div>-->
+          <!--<input formControlName="no_of_medicine" name="No Of Units" type="text"-->
+          <!--placeholder="No. of Units" value="{{(f1.value&#45;&#45;f2.value&#45;&#45;f3.value) * (this.duration)}}">-->
+          <!--</div>-->
+          <!--<div></div>-->
+          <mat-form-field class="example-full-width" style="width: 100%;">
+            <input matInput formControlName="no_of_medicine" name="No Of Units" placeholder="No. of Units" value="{{(f1.value&#45;&#45;f2.value&#45;&#45;f3.value) * (this.duration)}}">
+          </mat-form-field>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,213 @@
+<!--<div class="content-wrapper" style="min-height: 382px;">-->
+<!--<section class="content-header">-->
+<!--<h1>-->
+<!--Choose your Plan-->
+<!--</h1>-->
+<!--</section>-->
+<!--&lt;!&ndash; Main content &ndash;&gt;-->
+<!--<section class="content">-->
+<!--<input type="hidden" id="pl" name="pl">-->
+<!--<div class="box">-->
+<!--<div class="row base">-->
+<!--<div class="col-md-10 col-md-offset-1">-->
+<!--<div class="row">-->
+<!--<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" data-scrollreveal="enter left and move 40px over 0.8s">-->
+<!--<ul class="plan planone">-->
+<!--<li class="name">Lite-->
+<!--</li>-->
+<!--<li class="price">Rs.1000<br/>-->
+<!--<div class="font_sm-price">/month<sup>*</sup></div>-->
+<!--</li>-->
+<!--<li>DPM Account</li>-->
+<!--<li>Digital Prescription</li>-->
+<!--<li>Browser Based App</li>-->
+<!--<li>&nbsp;</li>-->
+<!--<li>&nbsp;</li>-->
+<!--<li class="below">-->
+<!--&lt;!&ndash;<button class="btn btn-default">Buy Now</button>&ndash;&gt;-->
+<!--<button (click)="openWin('basic')" class="btn btn-default">Paytm Wallet</button>-->
+
+<!--</li>-->
+<!--</ul>-->
+<!--</div>-->
+
+<!--<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" data-scrollreveal="enter bottom and move 40px over 0.8s">-->
+<!--<ul class="plan planthree">-->
+<!--<li class="name">Plus-->
+<!--</li>-->
+<!--<li class="price">Rs.1200<br/>-->
+<!--<div class="font_sm-price">/month<sup>*</sup></div>-->
+<!--</li>-->
+<!--<li class="plus_pricing">Get all basic features plus</li>-->
+
+<!--<li>Reminders for Every Medicine</li>-->
+<!--<li>Adherence dashboard</li>-->
+
+<!--<li>Patient Can Upload Personal Data</li>-->
+<!--<li>&nbsp;</li>-->
+<!--<li class="below">-->
+<!--&lt;!&ndash;<button class="btn btn-default">Buy Now</button>&ndash;&gt;-->
+<!--<button (click)="openWin('medium')" class="btn btn-default">Paytm Wallet</button>-->
+<!--</li>-->
+
+<!--</ul>-->
+<!--</div>-->
+
+<!--<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" data-scrollreveal="enter bottom and move 40px over 0.8s">-->
+<!--<ul class="plan planthree">-->
+<!--<li class="name">Pro-->
+<!--</li>-->
+<!--<li class="price">Rs.1500<br/>-->
+<!--<div class="font_sm-price">/month<sup>*</sup></div>-->
+<!--</li>-->
+
+
+<!--<li class="plus_pricing">Get all Intermediate features plus</li>-->
+<!--<li>Tele Consult</li>-->
+
+<!--<li>Video Consult</li>-->
+
+<!--<li>Priority Consult</li>-->
+
+<!--<li>Regular Appointment</li>-->
+
+<!--<li class="below">-->
+<!--&lt;!&ndash; <button class="btn btn-default">Buy Now</button>&ndash;&gt;-->
+<!--<button (click)="openWin('advance')" class="btn btn-default">Paytm Wallet</button>-->
+<!--</li>-->
+
+<!--</ul>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--</section>-->
+<!--</div>&lt;!&ndash; /.content-wrapper &ndash;&gt;-->
+
+
+
+<div style="min-height: 382px;">
+  <section>
+    <h1 class="sub_head">
+      Choose your Plan
+    </h1>
+  </section>
+  <!-- Main content -->
+  <section class="content">
+    <input type="hidden" id="pl" name="pl">
+    <div class="box" ngStyle.xs="width:94%">
+
+      <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center" fxLayoutGap="20px" fxLayoutGap.xs="0">
+        <div fxFlex="25" ngStyle.xs="width:100%" style="text-align:center;border-radius:10px;">
+          <ul class="plan planthree">
+            <li class="name">Lite</li>
+            <mat-divider></mat-divider>
+            <li class="price">Rs.1000  <br/> <div class="font_sm-price">/month<sup>*</sup></div></li>
+            <mat-divider></mat-divider>
+            <li>DPM Account</li>
+            <mat-divider></mat-divider>
+            <li>Digital Prescription</li>
+            <mat-divider></mat-divider>
+            <li>Browser Based App</li>
+            <mat-divider></mat-divider>
+            <li>&nbsp;</li>
+            <mat-divider></mat-divider>
+            <li>&nbsp;</li>
+            <mat-divider></mat-divider>
+            <li class="below">
+              <button mat-raised-button (click)="openWin('basic')" color="default" ngStyle.xs="height:34px;line-height:10px;font-size:12px;">Paytm Wallet</button>
+            </li>
+          </ul>
+        </div>
+
+        <div fxFlex="25" style="text-align:center;border-radius:10px;" ngStyle.xs="width:100%">
+          <ul class="plan planthree">
+            <li class="name">Plus</li>
+            <mat-divider></mat-divider>
+            <li class="price">Rs.1200  <br/> <div class="font_sm-price">/month<sup>*</sup></div></li>
+            <mat-divider></mat-divider>
+            <li class="plus_pricing">Get all basic features plus</li>
+            <mat-divider></mat-divider>
+            <li>Reminders for Every Medicine</li>
+            <mat-divider></mat-divider>
+            <li>Adherence dashboard</li>
+            <mat-divider></mat-divider>
+            <li>Patient Can Upload Personal Data</li>
+            <mat-divider></mat-divider>
+            <li>&nbsp;</li>
+            <mat-divider></mat-divider>
+            <li class="below">
+              <button mat-raised-button (click)="openWin('medium')" color="default" ngStyle.xs="height:34px;line-height:10px;font-size:12px;">Paytm Wallet</button>
+            </li>
+          </ul>
+        </div>
+
+        <div fxFlex="25" style="text-align:center;border-radius:10px;" ngStyle.xs="width:100%">
+          <ul class="plan planthree">
+            <li class="name">Pro</li>
+            <mat-divider></mat-divider>
+            <li class="price">Rs.1500  <br/> <div class="font_sm-price">/month<sup>*</sup></div></li>
+            <mat-divider></mat-divider>
+            <li class="plus_pricing">Get all Intermediate features plus</li>
+            <mat-divider></mat-divider>
+            <li>Tele Consult</li>
+            <mat-divider></mat-divider>
+            <li>Video Consult</li>
+            <mat-divider></mat-divider>
+            <li>Priority Consult</li>
+            <mat-divider></mat-divider>
+            <li>Regular Appointment</li>
+            <mat-divider></mat-divider>
+            <li class="below">
+              <button mat-raised-button (click)="openWin('advance')" color="default" ngStyle.xs="height:34px;line-height:10px;font-size:12px;">Paytm Wallet</button>
+            </li>
+          </ul>
+        </div>
+        <!--<div class="item item-2" fxFlex="33%" style="border:1px solid lightgray;border-radius:10px;background-color:#666">-->
+        <!--<mat-card class="top_head">Plus</mat-card>-->
+        <!--<mat-list>-->
+        <!--<mat-list-item></mat-list-item>-->
+        <!--<mat-divider></mat-divider>-->
+        <!--<mat-list-item><h3>Rs.1200 </h3>/month<sup>*</sup></mat-list-item>-->
+        <!--<mat-divider></mat-divider>-->
+        <!--<mat-list-item class="active">Get all basic features plus</mat-list-item>-->
+        <!--<mat-divider></mat-divider>-->
+        <!--<mat-list-item>Reminders for Every Medicine</mat-list-item>-->
+        <!--<mat-divider></mat-divider>-->
+        <!--<mat-list-item>Adherence dashboard</mat-list-item>-->
+        <!--<mat-divider></mat-divider>-->
+        <!--<mat-list-item>Patient Can Upload Personal Data</mat-list-item>-->
+        <!--<mat-divider></mat-divider>-->
+        <!--<mat-list-item></mat-list-item>-->
+        <!--<mat-divider></mat-divider>-->
+        <!--</mat-list>-->
+        <!--<mat-card class="bottom_head"><button mat-raised-button color="accent" (click)="openWin('medium')">Paytm Wallet</button></mat-card>-->
+        <!--</div>-->
+        <!--<div class="item item-3" fxFlex="33%" style="border:1px solid lightgray;border-radius:10px;background-color:#666">-->
+
+        <!--<mat-card class="top_head">Pro</mat-card>-->
+        <!--<mat-list>-->
+        <!--<mat-list-item></mat-list-item>-->
+        <!--<mat-divider></mat-divider>-->
+        <!--<mat-list-item><h3>Rs.1500</h3>/month<sup>*</sup></mat-list-item>-->
+        <!--<mat-divider></mat-divider>-->
+        <!--<mat-list-item class="active">Get all Intermediate features plus</mat-list-item>-->
+        <!--<mat-divider></mat-divider>-->
+        <!--<mat-list-item>Tele Consult</mat-list-item>-->
+        <!--<mat-divider></mat-divider>-->
+        <!--<mat-list-item>Video Consult</mat-list-item>-->
+        <!--<mat-divider></mat-divider>-->
+        <!--<mat-list-item>Priority Consult</mat-list-item>-->
+        <!--<mat-divider></mat-divider>-->
+        <!--<mat-list-item>Regular Appointment</mat-list-item>-->
+        <!--<mat-divider></mat-divider>-->
+        <!--</mat-list>-->
+        <!--<mat-card class="bottom_head"><button mat-raised-button color="accent" (click)="openWin('advance')">Paytm Wallet</button></mat-card>-->
+        <!--</div>-->
+      </div>
+    </div>
+
+  </section>
+</div><!-- /.content-wrapper -->

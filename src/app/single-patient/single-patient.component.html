@@ -1,0 +1,144 @@
+<!-- Content Wrapper. Contains page content -->
+<!--<div class="content-wrapper">
+
+
+  <!-- Content Header (Page header) -->
+<!--<section class="content-header">
+  <h1>{{ patients[0]['name']}} {{ patients[0]['l_name']}}</h1>
+  <!--  <h1 ng-bind="success">loading.......</h1> -->
+<!--</section>
+<!-- Main content -->
+<!--<section class="content">
+
+  <div class="box no-padding mrg_btm2">
+
+    <div class="row">
+
+      <div class="col-md-12">
+
+        <div class="patient_header pres_patint">
+          <a href="/dashboard/patient-list">
+            <img src="assets/styles/dashboard_assets/dashboard/images/all_patient.png">
+            <span><strong>All Patients</strong></span></a>
+          <div class="text-center">
+            <div *ngIf="patients[0]['image'].length<0">
+              <img src="assets/styles/dashboard_assets/dashboard/images/user_icon.jpg" class="" width="50">
+            </div>
+            <img src="{{patients[0]['image']}}" class="" width="50">
+            <span><strong>{{ patients[0]['name']}} {{ patients[0]['l_name']}}</strong></span></div>
+        </div>
+
+        <div class="patient_header pres_patint" style="padding: 10px 20px;">
+          <p><span class="no-margin"><strong>Clinical Impression:</strong>
+{{ patients[0]['med_history']}}</span>
+            <span><strong>Gender:</strong> {{ patients[0]['gender']}}</span>
+            <span><strong>Age:</strong> {{ patients[0]['age']}}</span>
+            <span><strong>Visit History:</strong> </span>
+<span>Video Consult : {{v}}, Tele Consult : {{t}}, Priority Consult : {{p}}, Appointment : {{a}}</span>
+            <span><strong>Address: </strong> {{ patients[0]['state']}}, {{ patients[0]['city']}} - {{ patients[0]['zip']}} </span></p>
+        </div>
+
+        <div class="cont">
+          <div class="pl left-column">
+            <div class="nav_panel_patient">
+              <ul class="nav_patient">
+                <li class="active" title="Profile">
+                  <a href="/dashboard/single-patient/{{id}}/profile" class="tablinks" id="defaultOpen">
+                    <i class="fa fa-user"></i>
+                    <span class="text">Profile</span>
+                  </a>
+                </li>
+
+                <li title="Prescription">
+                  <a [routerLink]="['/dashboard/single-patient/'+id+'/prescriptions']" class="tablinks">
+                    <i class="fa fa-pencil-square-o"></i>
+                    <span class="text">Prescriptions</span>
+                  </a>
+                </li>
+
+                <li title="Adherence">
+                  <a [routerLink]="['/dashboard/single-patient/'+id+'/consultations']" class="tablinks">
+                    <i class="fa fa-history"></i>
+                    <span class="text">Consultations</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a [routerLink]="['/dashboard/single-patient/'+id+'/reports']" class="tablinks">
+                    <i class="fa fa-file-text-o"></i>
+                    <span class="text">Reports</span>
+                  </a>
+                </li>
+
+                <!--  <li title="payment" class="">
+                 <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'payment')">
+                  <i class="fa fa-money" aria-hidden="true"></i>
+                   <span class="text">&nbsp;Payment</span>
+                 </a>
+                 </li>
+            -->
+
+<!-- <li title="patient_payment">
+   <a [routerLink]="['/dashboard/single-patient/'+id+'/payments']" class="tablinks">
+     <i class="fa fa-money"></i>
+     <span class="text">&nbsp;Payments</span>
+   </a>
+ </li>
+</ul>
+</div>
+</div>
+<div class="pr right-column">
+
+<router-outlet></router-outlet>
+
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- /.col -->
+
+
+<!-- /.row -->
+<!--</section><!-- /.content -->
+<!--</div><!-- /.content-wrapper -->
+<section class="content">
+  <div fxLayout="column"  fxShow.xs="true"  fxShow="false">
+
+    <mat-list class="list-item-response">
+      <a  [routerLink]="['/dashboard/single-patient/'+id+'/profile-view']"><mat-list-item><i class="fa fa-user icon-class" aria-hidden="true" ></i> Profile  </mat-list-item></a>
+      <a  [routerLink]="['/dashboard/single-patient/'+id+'/prescriptions-view']"><mat-list-item><i class="fa fa-cog icon-class" aria-hidden="true" ></i> Prescriptions </mat-list-item></a>
+      <a  [routerLink]="['/dashboard/single-patient/'+id+'/consultations-view']"> <mat-list-item><i class="fa fa-key icon-class" aria-hidden="true" ></i> Consultations </mat-list-item></a>
+      <a  [routerLink]="['/dashboard/single-patient/'+id+'/reports-view']"><mat-list-item><i class="fa fa-line-chart icon-class" aria-hidden="true" ></i> Reports  </mat-list-item></a>
+      <a  [routerLink]="['/dashboard/single-patient/'+id+'/payments-view']"><mat-list-item><i class="fa fa-money icon-class" aria-hidden="true"></i> Payments  </mat-list-item></a>
+    </mat-list>
+
+  </div>
+
+  <div fxLayout="column" fxShow.xs="false">
+    <nav mat-tab-nav-bar >
+
+      <a mat-tab-link  [routerLink]="['/dashboard/single-patient/'+id+'/profile']"   id="defaultOpen">
+        <i class="fa fa-user" aria-hidden="true" style="padding-right: 5px;"></i> <span class="text" fxShow.xs="false">Profile</span>
+      </a>
+      <a  mat-tab-link [routerLink]="['/dashboard/single-patient/'+id+'/prescriptions']"  >
+        <i class="fa fa-cog" aria-hidden="true" style="padding-right: 5px;"></i> <span class="text" fxShow.xs="false">Prescriptions</span>
+      </a>
+      <a  mat-tab-link [routerLink]="['/dashboard/single-patient/'+id+'/consultations']" routerLinkActive #rla="routerLinkActive"
+      >
+        <i class="fa fa-key" aria-hidden="true" style="padding-right: 5px;"></i> <span class="text" fxShow.xs="false">Consultations</span>
+      </a>
+      <a  mat-tab-link [routerLink]="['/dashboard/single-patient/'+id+'/reports']" >
+        <i class="fa fa-line-chart" aria-hidden="true"></i><span class="text" fxShow.xs="false">Reports</span>
+      </a>
+
+    </nav>
+    <router-outlet></router-outlet>
+
+  </div>
+
+
+</section>

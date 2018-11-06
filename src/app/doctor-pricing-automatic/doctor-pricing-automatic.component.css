@@ -1,0 +1,70 @@
+.mat-card{
+  text-align:center;
+  width:100%;
+  border-top:10px;
+}
+.mat-list-item{
+  align-content:center;
+}
+.bor-drpart{
+  border:1px solid #ccc;
+  padding: 10px 10px 3px 10px;
+  margin-bottom:15px;
+}
+.top_head{
+  border-top-left-radius:10px;
+  border-top-right-radius:10px;
+  background-color: #52b6ec;
+  font-size:25px;
+  color:white;
+  padding:10px;
+}
+.bottom_head{
+  border-bottom-left-radius:10px;
+  border-bottom-right-radius:10px;
+  background-color: #52b6ec;
+  font-size:25px;
+  color:white;
+}
+mat-list-item{
+  text-align: center;
+}
+.active{
+  background-color:lightgray;
+}
+.plan{
+  border-radius: 6px;
+  list-style: none;
+  padding: 0 0 20px;
+  margin: 0 0 20px;
+  background: #F1F1F1;
+  text-align: center;
+}
+.name{
+  border-radius: 6px 6px 0 0;
+  padding: 15px;
+  font-size: 24px;
+  line-height: 24px;
+  color: #fff;
+  background: #52b6ec;
+  margin-bottom: 30px;
+  border-top: 0;
+}
+.price{
+  color: #666;
+  padding: 15px 0;
+  font-size: 24px;
+}
+.below{
+  font-size: 20px;
+  line-height: 30px;
+  background-color: #52b6ec;
+}
+li{
+  padding: 10px 15px;
+}
+@media (max-width:600px){
+  .box{
+    padding:10px;
+  }
+}

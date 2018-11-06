@@ -1,0 +1,446 @@
+<div>
+  <!-- Main content start -->
+  <section style="margin: 10px;">
+    <!--<button id="openModal" #openModal [hidden]="true"-->
+    <!--data-toggle="modal" data-target="#doc_pay_modal"></button>-->
+    <!--<div class="modal fade" id="doc_pay_modal" role="dialog">-->
+    <!--<div class="modal-dialog">-->
+    <!--<div class="modal-content">-->
+    <!--<div class="modal-header">-->
+    <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+    <!--<h4 class="modal-title">Choose your payment option</h4>-->
+    <!--</div>-->
+    <!--<div class="modal-body">-->
+    <!--<p class="mrg_btm2">Please choose your plan to enable digital prescription, data dashboard, online-->
+    <!--appointments, video consult, tele consult, priority consult </p>-->
+    <!--<button id="pay_fee_monthly" type="button" (click)="open_pay_monthly()" class="btn btn-primary mrg_btm">-->
+    <!--Click to pay monthly-->
+    <!--</button>-->
+    <!--<button id="pay_fee_anually" type="button" (click)="open_pay_anually()" class="btn btn-primary mrg_btm">-->
+    <!--Click to pay automatically-->
+    <!--</button>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <div class="container">
+
+      <div class="prescriptn">
+        <div class="vdo_inr_line2 mrg_btm2" style="overflow: hidden;">
+          <div>
+            <div fxLayoutAlign="center">
+              <div class="pres_doc_name mrg mrg_m2 text-center"><h1 class="prescrip_doc_name">Dr. {{
+                doc_details[0]['name'] }}
+                {{ doc_details[0]['lname'] }}</h1>
+                <h2 style="text-align: center;">{{ doc_details[0]['qualification'] }}, {{degree_list}}, {{ doc_details[0]['specialty'] }} </h2>
+              </div>
+            </div>
+
+            <div class="pdg1 mrg_btm2">
+
+              <!--<div class="pull-right">-->
+              <div class="hospital_pan">
+                <div class="pull-right">
+                  <h2>Reg No:
+                    {{user['userinfo'][0]['licence_number']}}/{{user['userinfo'][0]['gender']}}</h2>
+                  <h2><i class="fa fa-phone"></i> : +(91)-{{user['userinfo'][0]['mobile']}}</h2>
+                  <h2><i class="fa fa-envelope"></i> : {{user['userinfo'][0]['email']}}</h2>
+                </div>
+              </div>
+              <!--</div>-->
+
+              <!--<div fxLayoutAlign="left">-->
+              <!--<div class="hospital_pan mrg_top_m">-->
+              <!--<h2>{{hospital_list[0]['cn']}} </h2>-->
+              <!--<h2>{{hospital_list[0]['hc']}} </h2>-->
+              <!--<h2><i class="fa fa-phone"></i> : {{hospital_list[0]['cp']}} </h2>-->
+              <!--&lt;!&ndash;<button data-target="#myModal1">Edit</button>&ndash;&gt;-->
+              <!--&lt;!&ndash;<button data-target="#myModal2">Change</button>&ndash;&gt;-->
+
+              <!--<button mat-raised-button color="primary" >Edit</button>-->
+              <!--<button mat-raised-button color="primary" >Change</button>-->
+              <!--<div></div>-->
+              <!--</div>-->
+              <!--</div>-->
+              <!--<div fxLayoutAlign="left">-->
+                <!--<div class="hospital_pan">-->
+                  <!--<h2>{{hos['cn']}}</h2>-->
+                  <!--<h2>{{hos['hc']}}</h2>-->
+                  <!--<h2> <i class="fa fa-phone"></i> : {{hos['cp']}}</h2>-->
+                  <!--<h2>{{ hos['doctor_hospital_list_id'] }}</h2>-->
+                  <!--&lt;!&ndash;<h2>{{ hospital_list[0]['doctor_hospital_list_id'] }}</h2>&ndash;&gt;-->
+                <!--</div>-->
+              <!--</div>-->
+
+              <div fxLayoutAlign="left" *ngIf = "view">
+                <div class="hospital_pan">
+                  <h2>{{hos[0]['cn']}}</h2>
+                  <h2>{{hos[0]['hc']}}</h2>
+                  <h2> <i class="fa fa-phone"></i> : {{hos[0]['cp']}}</h2>
+                  <!--<h2>{{ hospital_list[0]['doctor_hospital_list_id'] }}</h2>-->
+                </div>
+              </div>
+
+              <div fxLayoutAlign="left" *ngIf = "!view">
+                <div class="hospital_pan">
+                  <h2>{{hos['cn']}}</h2>
+                  <h2>{{hos['hc']}}</h2>
+                  <h2> <i class="fa fa-phone"></i> : {{hos['cp']}}</h2>
+                  <!--<h2>{{ hospital_list[0]['doctor_hospital_list_id'] }}</h2>-->
+                </div>
+              </div>
+
+              <div class="pull_center_m">
+                <div class="hospital_pan">
+                  <a style="padding-right: 3px;">
+                    <button mat-raised-button color="primary" data-target="#myModal1" (click)="editP()" >Edit</button></a>
+                  <button mat-raised-button color="primary" data-target="#myModal2" (click)="addH()">Change</button>
+                  <div></div>
+                </div>
+              </div>
+
+              <!-- Modal1 -->
+              <!--<div class="modal fade" id="myModal1" role="dialog">-->
+              <!--<div class="modal-dialog">-->
+
+              <!--&lt;!&ndash; Modal content&ndash;&gt;-->
+              <!--<div class="modal-content">-->
+              <!--<div class="modal-header">-->
+              <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+              <!--<h4 class="modal-title text-bold text-primary">Choose Hospital</h4>-->
+              <!--</div>-->
+              <!--<div class="modal-body">-->
+              <!--<div class="row">-->
+              <!--<div class="col-md-6" *ngFor="let hospital of hospital_list[0]">-->
+              <!--<form role="form">-->
+              <!--<div>-->
+              <!--<input data-dismiss="modal"-->
+              <!--(click)="change_hospital(hospital['doctor_hospital_list_id'])" type="radio"-->
+              <!--value="{{hospital['doctor_hospital_list_id']">{{hospital['cn']}} Hospital-->
+              <!--</div>-->
+              <!--<div class="form-group">-->
+              <!--<label>Name</label>-->
+              <!--<input type="text" class="form-control" value="{{hospital['cn']}}">-->
+              <!--</div>-->
+              <!--<div class="form-group">-->
+              <!--<label>Address</label>-->
+              <!--<textarea class="form-control">{{hospital['cn']}} {{hospital['hc']}}, {{hospital['cc']}} {{hospital['cs']}} {{hospital['hcc']}} {{hospital['cpn']}}</textarea>-->
+              <!--</div>-->
+              <!--<div class="form-group">-->
+              <!--<label>Phone Number</label>-->
+              <!--<input type="text" class="form-control" value="{{hospital['cp']}}">-->
+              <!--</div>-->
+              <!--</form>-->
+              <!--</div>-->
+              <!--</div>-->
+              <!--</div>-->
+              <!--<div class="modal-footer">-->
+              <!--&lt;!&ndash; <div style="margin-bottom: 5px;">-->
+              <!--<small class="text-primary">(Click on any one Radio Button  to choose hospital)</small>-->
+              <!--</div>&ndash;&gt;-->
+              <!--&lt;!&ndash;<button type="submit" class="btn btn-primary">Add new Hospital</button>&ndash;&gt;-->
+              <!--</div>-->
+              <!--</div>-->
+
+              <!--</div>-->
+              <!--</div>-->
+
+              <!-- Modal2 -->
+              <!--<div class="modal fade" id="myModal2" role="dialog">-->
+              <!--<div class="modal-dialog">-->
+
+              <!--&lt;!&ndash; Modal content&ndash;&gt;-->
+              <!--<div class="modal-content">-->
+              <!--<div class="modal-header">-->
+              <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+              <!--<h4 class="modal-title text-bold text-primary">Add Hospital Details</h4>-->
+              <!--</div>-->
+              <!--<div class="modal-body">-->
+              <!--<form name="form" (ngSubmit)="add_hos()" id="loginform" novalidate #f="ngForm">-->
+              <!--<div class="form-group">-->
+              <!--<label>Name</label>-->
+              <!--<input type="text" id="clinic_name" name="clinic_name" [(ngModel)]="model.clinic_name"-->
+              <!--#clinic_name="ngModel" class="form-control" required>-->
+              <!--<div *ngIf="clinic_name.invalid && (clinic_name.dirty || clinic_name.touched)"-->
+              <!--class="alert alert-danger">-->
+              <!--<div *ngIf="clinic_name.errors.required">-->
+              <!--Name is required.-->
+              <!--</div>-->
+              <!--</div>-->
+              <!--</div>-->
+
+              <!--<div class="form-group">-->
+              <!--<label>Hospital City</label>-->
+              <!--<textarea class="form-control" name="hospital_city" required-->
+              <!--[(ngModel)]="model.hospital_city" #hospital_city="ngModel"></textarea>-->
+              <!--<div *ngIf="hospital_city.invalid && (hospital_city.dirty || hospital_city.touched)"-->
+              <!--class="alert alert-danger">-->
+              <!--<div *ngIf="hospital_city.errors.required">-->
+              <!--Hospital City is required.-->
+              <!--</div>-->
+              <!--</div>-->
+              <!--</div>-->
+
+              <!--<div class="form-group">-->
+              <!--<label>Hospital city code </label>-->
+              <!--<textarea class="form-control" name=" hospital_city_c" required-->
+              <!--[(ngModel)]="model.hospital_city_c" #hospital_city_c="ngModel"></textarea>-->
+              <!--<div-->
+              <!--*ngIf=" hospital_city_c.invalid && ( hospital_city_c.dirty ||  hospital_city_c.touched)"-->
+              <!--class="alert alert-danger">-->
+              <!--<div *ngIf=" hospital_city_c.errors.required">-->
+              <!--Hospital City code is required.-->
+              <!--</div>-->
+              <!--</div>-->
+              <!--</div>-->
+
+
+              <!--<div class="form-group">-->
+              <!--<label>Clinic City</label>-->
+              <!--<textarea class="form-control" name="clinic_city" required [(ngModel)]="model.clinic_city"-->
+              <!--#clinic_city="ngModel"></textarea>-->
+              <!--<div *ngIf="clinic_city.invalid && (clinic_city.dirty || clinic_city.touched)"-->
+              <!--class="alert alert-danger">-->
+              <!--<div *ngIf="clinic_city.errors.required">-->
+              <!--Clinic City is required.-->
+              <!--</div>-->
+              <!--</div>-->
+              <!--</div>-->
+
+
+              <!--<div class="form-group">-->
+              <!--<label>State</label>-->
+              <!--<textarea class="form-control" name="clinic_state" required [(ngModel)]="model.clinic_state"-->
+              <!--#clinic_state="ngModel"></textarea>-->
+              <!--<div *ngIf="clinic_state.invalid && (clinic_state.dirty || clinic_state.touched)"-->
+              <!--class="alert alert-danger">-->
+              <!--<div *ngIf="clinic_state.errors.required">-->
+              <!--State is required.-->
+              <!--</div>-->
+              <!--</div>-->
+              <!--</div>-->
+
+
+              <!--<div class="form-group">-->
+              <!--<label>Pin</label>-->
+              <!--<textarea class="form-control" name="pin" required [(ngModel)]="model.pin"-->
+              <!--#pin="ngModel"></textarea>-->
+              <!--<div *ngIf="pin.invalid && (pin.dirty || pin.touched)"-->
+              <!--class="alert alert-danger">-->
+              <!--<div *ngIf="pin.errors.required">-->
+              <!--Pin is required.-->
+              <!--</div>-->
+              <!--</div>-->
+              <!--</div>-->
+
+              <!--<div class="form-group">-->
+              <!--<label>Phone Number</label>-->
+              <!--<input type="text" class="form-control" name="clinic_ph" [(ngModel)]="model.clinic_ph"-->
+              <!--#clinic_ph="ngModel" required>-->
+              <!--<div *ngIf="clinic_ph.invalid && (clinic_ph.dirty || clinic_ph.touched)"-->
+              <!--class="alert alert-danger">-->
+              <!--<div *ngIf="clinic_ph.errors.required">-->
+              <!--Phone No is required.-->
+              <!--</div>-->
+              <!--</div>-->
+              <!--</div>-->
+
+              <!--<div class="modal-footer">-->
+              <!--<button type="submit" [disabled]="!f.form.valid" class="btn btn-primary">Add Hospital-->
+              <!--</button>-->
+              <!--</div>-->
+              <!--</form>-->
+              <!--</div>-->
+              <!--</div>-->
+
+              <!--</div>-->
+              <!--</div>-->
+
+              <div></div>
+            </div>
+
+          </div>
+
+          <div></div>
+
+        </div>
+
+        <div>
+          <div>
+
+            <div class="pdg1">
+
+              <div class="mrg_btm2 vdo_inr_line" style="overflow: hidden;">
+                <div>
+                  <div>
+                    <div class="hospital_pan hospital_pan_m" style="overflow:hidden;">
+                      <!--<button class="btn btn-primary btn-sm" (click)="router.navigate(['/dashboard/select-patient'])">
+       Change Patient</button>-->
+                      <h3>Patient Details</h3>
+                      <h2>{{ prescription[0]['patient_name']}}, {{ prescription[0]['age']}} Years, {{
+                        prescription[0]['gender']}} (ID: {{prescription[0]['patient_id_c']}}) </h2>
+
+                      <h2>{{prescription[0]['paddress']}}
+                        {{ prescription[0]['pcity'] }}
+                        {{prescription[0]['pstate']}},
+                        {{prescription[0]['pcountry']}} -
+                        {{prescription[0]['pzip']}} </h2>
+
+                      <h2>Phone: +(91)-{{ prescription[0]['patient_mobile']}}</h2>
+                      <h2>Email Id: {{ prescription[0]['patient_email']}}</h2>
+                      <h2 class="mrg_no">Medical History: {{ prescription[0]['med_history']}}</h2>
+                    </div>
+                  </div>
+
+                  <div>
+
+                    <div class="pull-right pull_center_m">
+                      <!-- <h3>Choose Patient</h3> -->
+
+
+                      <a [routerLink]="['select-patient']" id="select_patient" style="padding-right: 3px;">
+                        <button mat-raised-button color="primary">Select Patient</button>
+                      </a>
+                      <a [routerLink]="['add-patient']">
+                        <button mat-raised-button color="primary">Add New Patient</button>
+                      </a>
+
+                    </div>
+
+                  </div>
+                </div>
+                <div></div>
+              </div>
+
+              <form [formGroup]="prescriptionForm" (ngSubmit)="onSubmit(prescriptionForm.value)" #f="ngForm" novalidate>
+                <div>
+                  <div>
+                    <div class="hospital_pan">
+                      <h4>Clinical Impression</h4>
+                      <div class="hospital_pan34">
+                        <label>Patient Clinical Impression</label>
+                        <div fxLayoutAlign="center">
+                            <textarea
+                              formControlName="clinical_impression" rows="4" style="resize: none;"
+                              placeholder="Describe Clinical Impression of patient" fxFlex="31%" fxFlex.xs="0%" required>{{ prescription[0]['clinical_impression']}}</textarea>
+                        </div>
+                        <div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <div class="hospital_pan">
+                      <h4>Prescription</h4>
+                      <div class="hospital_pan2" id="presc">
+                        <div formArrayName="medicine_list">
+                          <div *ngFor="let medicine of medicine_list.controls; let j=index">
+                            <div [formGroupName]="j">
+                              <medicine-edit [group]="medicine_list.controls[j]"></medicine-edit>
+                            </div>
+                            <a style="padding-right: 3px;">
+                            <button *ngIf="medicine_list.controls.length > 1" (click)="deleteRow(j)"
+                                    mat-raised-button color="primary" type="button"><i class="fa fa-remove"></i> remove
+                            </button></a>
+                            <!--<label>medicine {{j}}</label>-->
+                            <button mat-raised-button color="primary" type="button">medicine {{j}}</button>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <div>
+                          <button mat-raised-button color="primary" type="button" (click)="addNewRow()" ><i
+                            class="fa fa-add"></i> add
+                          </button>
+                        </div>
+                      </div>
+                      <div></div>
+                      <hr style="margin-bottom: 0;">
+                      <div></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <div>
+                    <div class="hospital_pan">
+                      <h4>Investigations</h4>
+                      <div class="hospital_pan34">
+                        <label>Investigation Name</label>
+                        <div fxLayoutAlign="center" >
+                            <textarea formControlName="investigation_name"
+                                      style="resize: none;"
+                                      placeholder="Enter Investigation Name" fxFlex="31%" fxFlex.xs="0%" required></textarea>
+                        </div>
+                        <div></div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <div>
+                    <div class="hospital_pan">
+                      <h4>Notes</h4>
+                      <div class="hospital_pan34">
+                        <div class="">
+                          <div class="">
+                            <label>Add Notes</label>
+                            <div fxLayoutAlign="center">
+                                <textarea rows="4"
+                                          style="resize: none;" placeholder="Add Notes"
+                                          formControlName="doctor_note" fxFlex="31%" fxFlex.xs="0%" required>{{ prescription[0]['doctor_note']}}</textarea>
+                            </div>
+
+                          </div>
+                          <div></div>
+                        </div>
+
+                        <div></div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div>
+                  <div>
+
+                    <div class="hospital_pan2" style="margin: 0 0 20px 0; padding: 0 20px;">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+
+                      <div></div>
+                      <div>
+                        <button type="submit" mat-raised-button color="primary" [disabled]="!f.form.valid"><i class="fa fa-floppy-o"
+                                                                                   style="margin-right: 10px; font-size: 18px;"></i>Save
+                        </button>
+                        <!--<button type="button" (click)="preview(prescriptionForm.value)" class="btn btn-primary btn-lg"><i class="fa fa-floppy-o"  style="margin-right: 10px; font-size: 18px;"></i>Preview</button>-->
+                      </div>
+                      <div></div>
+                      <div></div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- /.col -->
+
+    </div>
+    <!-- /.row -->
+  </section><!-- /.content -->
+</div>
+<!-- /.content-wrapper end -->

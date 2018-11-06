@@ -1,0 +1,38 @@
+<div>
+  <h4 mat-dialog-title color="primary">Choose Hospital</h4>
+</div>
+
+<ng-template ngFor let-item [ngForOf]="createRange(hospital_list.length)" let-innerIndex="index" *ngIf="hospital_list.length>0">
+
+  <form role="form">
+    <mat-radio-button (click)="hospital_id(hospital_list[innerIndex]['doctor_hospital_list_id'],hospital_list[innerIndex]['cn'],hospital_list[innerIndex]['hc'],hospital_list[innerIndex]['cc'],hospital_list[innerIndex]['cs'],hospital_list[innerIndex]['hcc'])"> {{hospital_list[innerIndex]['cn'] | capitalize}} </mat-radio-button>
+    <div fxShow.lg="true" fxShow.xl="true" fxShow.md="true" fxShow.sm="true" fxShow.xs="false">
+      <mat-form-field style="width:100%">
+        <input matInput placeholder="Enter Hospital Name" value="{{hospital_list[innerIndex]['cn'] | capitalize}}">
+      </mat-form-field>
+      <mat-form-field style="width:100%">
+        <textarea matInput placeholder="Enter Hospital Address Line 1">{{hospital_list[innerIndex]['hc']}}, {{hospital_list[innerIndex]['cc']}}, {{hospital_list[innerIndex]['cs']}} {{hospital_list[innerIndex]['hcc']}}</textarea>
+      </mat-form-field>
+      <mat-form-field style="width:100%">
+        <textarea matInput placeholder="Enter Hospital Address Line 2">Madhapur</textarea>
+      </mat-form-field>
+      <mat-form-field style="width:100%">
+        <input matInput placeholder="Enter Phone Number" value="{{hospital_list[innerIndex]['cp']}}" type="number">
+      </mat-form-field>
+    </div>
+
+  </form>
+
+</ng-template>
+
+<div fxLayout="row" fxFlex="100%">
+  <div fxLayout="column" fxFlex="100%">
+    <div style="margin-bottom: 5px;">
+      <small class="text-primary">(Click on below button to Add new hospital)</small>
+    </div>
+    <button mat-raised-button style="background:rgb(51, 122, 183);" (click)="openDialog2()" class="details_b">
+      Add Hospital
+    </button>
+  </div>
+</div>
+

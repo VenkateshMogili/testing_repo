@@ -1,0 +1,68 @@
+<!-- Content Wrapper. Contains page content -->
+<div>
+  <!-- Content Header (Page header) -->
+  <section>
+    <h1 class="sub_head" style="text-align: center;">
+      Archiving list
+    </h1>
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="box">
+
+    <div fxLayout="column" fxLayout.xs="column">
+
+      <div fxFlex="100" *ngIf="list.length>0">
+        <table ngStyle.xs="font-size:7px">
+
+          <thead>
+          <tr>
+            <th>S.No.</th>
+            <!--<th width="10%">Patient ID</th>-->
+            <th>Patient Name</th>
+            <th>Consultation type</th>
+            <th>Date (dd-mm-yyyy)</th>
+            <th>Time (hrs)</th>
+            <th>Duration</th>
+            <th>View</th>
+          </tr>
+          </thead>
+          <tbody>
+          <!-- <ng-template ngFor let-item [ngForOf]="createRange(list.length)" let-currentIndex="index">-->
+
+          <tr *ngFor="let $item of list | paginate: { itemsPerPage: 10, currentPage: p }; let i=index">
+            <td>{{i+1}}</td>
+            <!--<td>{{$item['patient_id_c']}}</td>-->
+            <td>{{$item['patient_name']}}</td>
+            <td>{{$item['booking_type']}}</td>
+            <td>{{ $item['appoinment_date']}}</td>
+            <td>{{$item['start_time']}}</td>
+            <td>15mins</td>
+            <td>
+              <a rel="#overlay"
+                 href="https://storage.googleapis.com/archving/{{$item['archving_id']}}.mp4">Click here
+                to view</a>
+              <!--    <button type="button" class="show-modal">Show Video</button> -->
+
+            </td>
+          </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+      <div fxFlex="100">
+        <div style="float: right" *ngIf="list.length>0">
+          <mat-paginator (pageChange)="p = $event"></mat-paginator>
+        </div>
+        <br/>
+        <div *ngIf="list.length<=0"> You don't have Archiving list</div>
+
+        <!-- <div id="overlay"><a class="close"></a><div id="player">&amp;nbsp;</div></div>-->
+      </div>
+    </div>
+    </div>
+  </section>
+</div>
+<!-- /.content-wrapper -->

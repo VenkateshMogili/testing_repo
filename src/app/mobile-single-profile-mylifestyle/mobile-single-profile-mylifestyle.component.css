@@ -1,0 +1,20 @@
+.list-que{
+  padding:10px;
+}
+.value-proflle mat-list-item{
+  color:#000;
+  font-weight:400;
+  height:25px!important;
+  border-bottom: 1px dotted #ccc;
+}
+.question mat-list-item{
+  height:25px!important;
+}
+
+.head-responsive strong{
+  font-size:14px;
+}
+@media (min-width: 599px){
+
+
+}

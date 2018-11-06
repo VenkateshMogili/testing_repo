@@ -1,0 +1,251 @@
+<!--<section class="top-header1">
+  <div class="container">
+    <div class="mrg2">
+      <div class="pull-left"><img src="assets/styles/new-home-page/single/images/Transparent.png" height="50"/></div>
+      <button class="pull-right btn btn-default btn-sm" style="margin: 10px 0;" (click)="logout()"><i
+        class="fa fa-power-off"></i> Logout
+      </button>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</section>
+
+<section class="back2">
+  <section class="container">
+    <div class="row">
+        <div fxFlex="100%" >
+          <div class="text-center" >
+
+            <h4 class="head-login">Log in as Doctor</h4>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-md-6 col-md-offset-3 col-sm-12 col-sm-offset-0">
+        <div class="white">
+          <form name="form" (ngSubmit)="onSubmit()" id="personalform" novalidate #f="ngForm" class="form-horizontal2"
+                enctype="multipart/form-data">
+            <h4 class="mrg_btm r_h4">Personal Details</h4>
+
+            <div class="form-group">
+
+              <div class="input-append">
+                <input class="form-control" type="text" name="dob"
+                       [(ngModel)]="personal_model.dob" #dob="ngModel" placeholder="Date Of Birth">
+                <span class="add-on" style="bottom:-22px">
+      <i class="glyphicon glyphicon-calendar" data-date-icon="icon-calendar" data-time-icon="icon-time">
+      </i></span>
+              </div>
+
+              &lt;!&ndash;<div class="input-append" id="datetimepicker1">
+
+              <input class="form-control" [bsConfig]="{dateInputFormat: 'YYYY-MM-DD'}" type="text"
+                       [minDate]="minDate" bsDatepicker name="dob"
+                       [(ngModel)]="personal_model.dob" #dob="ngModel">
+
+                <input placeholder="Date of Birth" data-format="yyyy-MM-dd" class="form-control" name="dob"
+                       [(ngModel)]="personal_model.dob" #dob="ngModel" required style="border-radius: 4px;">
+                <span class="add-on">
+      <i class="glyphicon glyphicon-calendar" data-date-icon="icon-calendar" data-time-icon="icon-time">
+      </i> </span></div>&ndash;&gt;
+            </div>
+
+
+            <div class="form-group">
+              <input type="hidden" name="token" class="form-control" value="trd_token">
+            </div>
+
+            <div class="form-group">
+              <textarea class="form-control" style="resize: none; height: 60px;" placeholder="Address"
+                        name="doc_address" [(ngModel)]="personal_model.doc_address" #doc_address="ngModel"></textarea>
+            </div>
+
+            <div class="form-group">
+              &lt;!&ndash;<select class="form-control" name="tt">
+                <option value="">Select Country</option>
+              </select>&ndash;&gt;
+              <select class="form-control" (change)="onSelect($event.target.value)" name="country"
+                      [(ngModel)]="personal_model.country" #country="ngModel">
+                <option value="Select Country">Select Country</option>
+                <option *ngFor="let country of all_countries" value="{{country.country_id}}">{{country.country_name}}
+                </option>
+              </select>
+
+            </div>
+
+            <div class="form-group">
+              <select class="form-control" name="state" (change)="onSelectstate($event.target.value)"
+                      [(ngModel)]="personal_model.state" #state="ngModel">
+                <option value="">Select State</option>
+                <option *ngFor="let state of all_states" value="{{state.state_id}}">{{state.state_name}}</option>
+              </select>
+
+            </div>
+
+            <div class="form-group">
+              <select class="form-control" name="city" (change)="onSelectcity($event.target.value)"
+                      [(ngModel)]="personal_model.city" #city="ngModel">
+                <option value="">Select City</option>
+                <option *ngFor="let city of all_cities" value="{{city.city_id}}">{{city.city_name}}</option>
+              </select>
+
+            </div>
+
+            <div class="form-group">
+              <input class="form-control" type="text" name="zip" placeholder="Pincode"/>
+            </div>
+
+            <div class="form-group"><textarea class="form-control" id="" style="resize: none; height: 60px;"
+                                              placeholder="About Me" name="topic_name"
+                                              [(ngModel)]="personal_model.topic_name" #topic_name="ngModel"></textarea>
+            </div>
+
+
+            <a [routerLink]="['/dashboard']">
+              <div class="btn btn-info">skip</div>
+            </a>
+            &lt;!&ndash;<a href="/doctor/skip/account_setup"><div class="btn btn-info">skip</div></a>&ndash;&gt;
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    &lt;!&ndash;<pre> {{form.value | json}} </pre>&ndash;&gt;
+  </section>
+</section>
+<section class="top-header1">
+  <div class="container">
+    <div class="mrg2">
+      <div class="pull-left"><img src="assets/styles/new-home-page/single/images/Transparent.png" height="50"/></div>
+      <button class="pull-right btn btn-default btn-sm" style="margin: 10px 0;" (click)="logout()"><i
+        class="fa fa-power-off"></i> Logout
+      </button>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</section>-->
+<!--<section class="header1">
+  <div class="mrg2">
+    <div class="pull-left"><img src="assets/styles/new-home-page/single/images/Transparent.png" height="80"/></div>
+    <button class="pull-right btn btn-default btn-sm" style="margin: 10px 0;" (click)="logout()"><i
+      class="fa fa-power-off"></i> Logout
+    </button>
+    <div class="clearfix"></div>
+  </div>
+</section>-->
+<!--<section class="top-header1">-->
+  <!--<div class="container">-->
+    <!--<div fxLayout fxLayoutAlign="center center">-->
+      <!--<div fxFlex="100%">-->
+        <!--<img src="assets/styles/new-home-page/single/images/Transparent.png" height="50"/>-->
+      <!--</div>-->
+      <!--<button class="pull-right btn btn-default btn-sm" style="margin: 10px 0;margin-right: 13px;" (click)="logout()"><i-->
+        <!--class="fa fa-power-off"></i> Logout-->
+      <!--</button>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</section>-->
+
+<section class="top-header1">
+  <div class="container">
+    <div fxLayout="row" fxLayoutAlign="center">
+      <div fxFlex="100" >
+        <img src="https://storage.googleapis.com/web-assets/dpm_doctor.png" height="60" style="    padding-left: 13%;"/>
+      </div>
+      <span class="hello" style="padding-top: 0.75%;">
+ <button (click)="logout()" mat-button class="logout" style="padding: 0px; line-height: 32px;background-color: #ffffff!important;">
+   <i class="fa fa-power-off" aria-hidden="true"></i> &nbsp;Log out</button></span>
+    </div>
+  </div>
+</section>
+
+
+<div fxFlex="100%" >
+  <h4 class="head-login" align="center">Personal Details</h4>
+</div>
+<div class="contain">
+  <div flex="50%">
+    <mat-card align="center">
+      <form class="example-form" (ngSubmit)="onSubmit()" id="personalform" novalidate #f="ngForm" class="form-horizontal2"
+            enctype="multipart/form-data">
+        <!--<mat-form-field class="intro">-->
+          <!--<input matInput [matDatepicker]="picker" placeholder="Date of Birth" name="dob" [(ngModel)]="personal_model.dob" #dob="ngModel">-->
+          <!--<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>-->
+          <!--<mat-datepicker #picker></mat-datepicker>-->
+        <!--</mat-form-field>-->
+        <mat-form-field class="example-full-width" style="width: 100%;">
+          <input matInput placeholder="Choose a date" name="dob" [(ngModel)]="personal_model.dob" #dob="ngModel"
+                 data-format="yyyy-MM-dd" style="
+                                                     background-color: #fafafa;
+                                                     border: none;box-shadow: none;
+                                                      -webkit-transition: none;
+                                                     transition: none;"
+                 [bsConfig]="{dateInputFormat: 'YYYY-MM-DD'}" bsDatepicker required>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Date of birth is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="intro">
+          <textarea matInput placeholder="Address" name="doc_address" [(ngModel)]="personal_model.doc_address" #doc_address="ngModel" required></textarea>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Doctor Address is <strong>required</strong>
+          </mat-error>
+        </mat-form-field><br>
+
+        <mat-form-field class="intro">
+          <mat-select placeholder="select country" (selectionChange)="onSelect(country.value)" name="country" [(ngModel)]="personal_model.country" #country>
+            <mat-option *ngFor="let country of all_countries" [value]="country.country_id">{{country.country_name}}</mat-option>
+          </mat-select>
+        </mat-form-field><br>
+
+        <mat-form-field class="intro">
+          <mat-select placeholder="select state"  (selectionChange)="onSelectstate(state.value)" name="state"
+                      [(ngModel)]="personal_model.state" #state>
+            <mat-option value="select state">select state</mat-option>
+            <mat-option *ngFor="let state of all_states" [value]="state.state_id">{{state.state_name}}</mat-option >
+          </mat-select>
+        </mat-form-field><br>
+
+        <mat-form-field class="intro">
+          <mat-select placeholder="select city" (selectionChange)="onSelectcity(city.value)" name="city" #city>
+            <mat-option value="select city">select city</mat-option>
+            <mat-option *ngFor="let city of all_cities" [value]="city.city_id">{{city.city_name}}</mat-option>
+          </mat-select>
+        </mat-form-field><br>
+
+        <mat-form-field class="intro">
+          <input matInput placeholder="Pincode" class="type-input"
+                 type="number" name="zip" pattern="[0-9]*" required style="
+                                                     background-color: #fff;
+                                                     border: none;box-shadow: none;
+                                                     -webkit-transition: none;
+                                                     transition: none;">
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Pin Code is <strong>required</strong>
+          </mat-error>
+
+          <!--<div [hidden]="!zip.hasError('pattern')"></div>-->
+        </mat-form-field><br>
+
+        <mat-form-field class="intro">
+          <textarea matInput placeholder="About me" name="topic_name" [(ngModel)]="personal_model.topic_name" #topic_name="ngModel" required></textarea>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            About me is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <a [routerLink]="['/dashboard']">
+          <!--<div class="btn btn-info" id="sk" align="center">skip</div>-->
+          <button mat-raised-button color="primary" type="button">Skip</button>
+        </a>
+
+        <button mat-raised-button type="submit" style="color: #ffffff;">Submit</button>
+
+      </form>
+
+
+    </mat-card>
+  </div>
+</div>

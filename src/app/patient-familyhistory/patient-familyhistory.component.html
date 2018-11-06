@@ -1,0 +1,68 @@
+<div>
+  <form class="form-horizontal form-horizontal2">
+    <h3 class="mrg_btm2">My Family History</h3>
+
+    <h4>Conditions that caused a close relative to pass away before the age of 60:</h4>
+    <ng-template ngFor let-item [ngForOf]="createRange(list['pr_list'].length)"
+                 let-innerIndex="index" *ngIf="list['pr_list'].length>0">
+
+      <div class="form-group">
+        <label class="control-label col-lg-3 col-md-12 col-sm-12 col-sm-3">conditions:</label>
+        <div class="col-lg-9 col-md-12 col-sm-12">
+          <div class="control-label">
+            {{list['pr_list'][innerIndex]['relative_pass_away_condition']}}
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-lg-3 col-md-12 col-sm-12 col-sm-3">Relation:</label>
+        <div class="col-lg-9 col-md-12 col-sm-12">
+          <div class="control-label">
+            {{list['pr_list'][innerIndex]['relative_pass_away_relation']}}
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-lg-3 col-md-12 col-sm-12 col-sm-3">Age:</label>
+        <div class="col-lg-9 col-md-12 col-sm-12">
+          <div class="control-label">{{list['pr_list'][innerIndex]['relative_pass_away_age']}}
+          </div>
+        </div>
+      </div>
+    </ng-template>
+    <hr>
+
+
+    <h4>Do your living grandparents, parents or siblings have any major medical conditions
+      (life-threatening or otherwise?)</h4>
+    <ng-template ngFor let-item [ngForOf]="createRange(list['lr_list'].length)"
+                 let-innerIndex="index" *ngIf="list['lr_list'].length>0">
+
+      <div class="form-group">
+        <label class="control-label col-lg-3 col-md-12 col-sm-12 col-sm-3">conditions:</label>
+        <div class="col-lg-9 col-md-12 col-sm-12">
+          <div class="control-label">{{list['lr_list'][innerIndex]['relative_live_condition']}}
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-lg-3 col-md-12 col-sm-12 col-sm-3">Relation:</label>
+        <div class="col-lg-9 col-md-12 col-sm-12">
+          <div class="control-label">{{list['lr_list'][innerIndex]['relative_live_relation']}}
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-lg-3 col-md-12 col-sm-12 col-sm-3">Age:</label>
+        <div class="col-lg-9 col-md-12 col-sm-12">
+          <div class="control-label">{{list['lr_list'][innerIndex]['relative_live_age']}}</div>
+        </div>
+      </div>
+    </ng-template>
+    <hr>
+  </form>
+</div>

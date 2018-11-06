@@ -1,0 +1,139 @@
+<!--<div class="content-wrapper">
+  <section class="content-header">
+    <h1>Set Availability
+
+      &lt;!&ndash;<span class="pull-right"><button type="button" class="btn btn-primary"><a href="add-patient">
+Set Availability </a></button></span>&ndash;&gt;
+
+    </h1>
+  </section>
+  <div class="clearfix"></div>
+  &lt;!&ndash; Main content &ndash;&gt;
+  <section class="content">
+
+    <label> Select Day : </label> <select [ngModel]="model['start_day']" (ngModelChange)="model.start_day=$event"
+                                          name="start_day" class="form-control">
+    <option *ngFor="let day of days" [value]="day">{{day}}</option>
+  </select>
+
+
+    <label> Select Time : </label> <select [ngModel]="model['segrp']" (ngModelChange)="model.segrp=$event"
+                                           name="start_time" class="form-control">
+    <option *ngFor="let time of times" [value]="time">{{time}}</option>
+  </select>
+
+    <label> Select Consultation : </label> <select [ngModel]="model['cunsultation_type']"
+                                                   (ngModelChange)="model.cunsultation_type=$event"
+                                                   name="cunsultation_type" class="form-control">
+    <option value="Video Consult">Video Consult</option>
+    <option value="Tele Consult">Tele Consult</option>
+    <option value="Priority Consult">Priority Consult</option>
+    <option value="Appointment">Appointment</option>
+    <option value="Ask a question">Ask a question</option>
+  </select>
+
+    <label> Select Day : </label> <input type="text" [ngModel]="model['cunsulation_fee']"
+                                         (ngModelChange)="model.cunsulation_fee=$event" name="cunsulation_fee"
+                                         id="cunsulation_fee" class="form-control" placeholder="Fees in Rupees">
+
+    <input type="text" [ngModel]="model['venue']" (ngModelChange)="model.venue=$event" name="venue" class="form-control"
+           placeholder="Venue">
+    <input type="text" [ngModel]="model['adress']" (ngModelChange)="model.adress=$event" name="adress"
+           class="form-control"
+           placeholder="Address">
+    <button (click)="setAvailability()" type="button" class="use-address btn btn-info">Save</button>
+
+  </section>
+</div>-->
+<div>
+  <section style="margin: 10px 0 12px 0;">
+    <h1 style="text-align:center;">Set Availability</h1>
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+
+    <div class="box2" style="border:0px;background:none;">
+
+      <div fxLayout="column" fxFlex="50%" fxFlexOffset="25" fxFlexOffset.xs="0" fxFlexOffset.md="0" fxFlexOffset.sm="0" fxFlex.xs="100%" fxFlex.sm="100%" fxFlex.md="100%" fxLayoutAlign="center center" style="padding:10px 30px;border:1px solid lightgray;border-radius:10px;">
+        <div>
+          <form (ngSubmit)="setAvailability()" #f="ngForm" novalidate>
+            <mat-form-field class="example_full_width">
+              <mat-select placeholder="Day" [ngModel]="model['Day']" (ngModelChange)="model.Day=$event; onDaychange($event)" name="Day" required>
+                <mat-option *ngFor="let day of days" [value]="day">{{day}}</mat-option>
+              </mat-select>
+              <mat-error *ngIf="errorChecking.hasError('required')">
+                Day is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="example_full_width">
+              <mat-select placeholder="Time" multiple [ngModel]="model['Time']" (ngModelChange)="model.Time=$event" name="Time" required>
+                <mat-option *ngFor="let time of times" [value]="time">{{time}}</mat-option>
+                <mat-optgroup [label]="groupname"></mat-optgroup>
+                <ul *ngFor="let timeb of timesbooked"> <li style="margin:16px"> <i class="fa fa-check-square" style="font-size:1.7em;margin-right:10px;"></i> <div style="margin-top:-23px;margin-left:30px;">{{ timeb }}</div></li></ul>
+              </mat-select>
+              <mat-error *ngIf="errorChecking.hasError('required')">
+                Time is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="example_full_width">
+              <mat-select placeholder="ConsultationType" [ngModel]="model['ConsultationType']" (ngModelChange)="model.ConsultationType=$event" name="ConsultationType" required>
+                <mat-option value="Video Consult">Video Consult</mat-option>
+                <mat-option value="Tele Consult">Tele Consult</mat-option>
+                <mat-option value="Priority Consult">Priority Consult</mat-option>
+                <mat-option value="Appointment">Appointment</mat-option>
+                <mat-option value="Ask a question">Ask a question</mat-option>
+              </mat-select>
+              <mat-error *ngIf="errorChecking.hasError('required')">
+                Consultation Type is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="example_full_width">
+              <input [ngModel]="model['ConsultationFee']" (ngModelChange)="model.ConsultationFee=$event" name="ConsultationFee" id="ConsultationFee" matInput placeholder="Fees in INR" type="number" class="example-right-align" required>
+
+              <span matSuffix>.00</span>
+              <mat-error *ngIf="errorChecking.hasError('required')">
+                Consultation Fee is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+
+
+
+
+            <div *ngIf="model['ConsultationType'] !== 'Video Consult' && model['ConsultationType'] !== 'Tele Consult'">
+
+              <mat-form-field class="example_full_width">
+                <mat-select placeholder="Venue" [ngModel]="model['Venue']" (ngModelChange)="model.Venue=$event" name="Venue" required>
+                  <mat-option *ngFor="let hos of hos_list" [value]="hos['cn']">{{hos['cn'] | capitalize}}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="errorChecking.hasError('required')">
+                  Venue is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+
+              <mat-form-field class="example_full_width">
+                <textarea matInput placeholder="Address" [ngModel]="model['Address']" (ngModelChange)="model.Address=$event" name="Address" required></textarea>
+                <mat-error *ngIf="errorChecking.hasError('required')">
+                  Address is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+
+            </div>
+            <div fxLayoutAlign.xs="center center">
+              <button mat-raised-button  style="line-height: 34px;" class="details_b" [disabled]="!f.form.valid"><span style="color: #fff !important;line-height:35px!important;">Save</span></button>
+            </div>
+          </form>
+
+        </div>
+        <br/>
+
+
+      </div>
+
+    </div>
+
+  </section>
+</div>

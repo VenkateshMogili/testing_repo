@@ -1,0 +1,22 @@
+@media (max-width:599px) {
+  .clr-back {
+    background: #fff;
+    padding: 10px 20px;
+  }
+  .mat-raised-button{
+    line-height: 32px;
+    padding: 0 12px;
+  }
+  .question-list mat-list-item{
+    height:34px !important;
+  }
+  .content-wrapper {
+    background: #ECF0F5;
+    height: 100%;
+    padding: 10px 10px;
+  }
+}
+.question-list mat-list-item{
+  font-size:14px;
+  border-bottom: 1px dotted #ccc;
+}

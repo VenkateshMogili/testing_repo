@@ -1,0 +1,33 @@
+@media (max-width: 991px) {
+  .box {
+    padding: 10px;
+  }
+  .resp-tab-content {
+    padding: 12px 14px;
+  }
+  .mrg_btm2 {
+    margin: 0 0 15px 0;
+  }
+  h3, .regis_hd2 {
+    font-size: 14px;
+  }
+  h4{
+    font-size: 13px;
+  }
+  .form-horizontal2 .control-label {
+    font-size: 13px;
+  }
+}
+.icon-class{
+  color:#0a97b9;
+  padding-right:15px;
+}
+.list-item-response mat-list-item{
+  border:1px solid #ccc;
+  height:35px;
+  margin-bottom:10px;
+}
+.list-item-response a{
+  text-decoration: none;
+}
+

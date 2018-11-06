@@ -1,0 +1,26 @@
+<div class="content-wrapper">
+
+  <section class="clr-back">
+    <h2 class="mrg_btm2" style="text-align: center;">My Lifestyle</h2>
+    <div fxLayout="row" fxLayoutAlign="end center" >
+    </div>
+       <div fxLayout="row" fxFlex="100">
+
+         <mat-list class="question-list">
+           <mat-list-item style="border: none!important; font-weight: 500;"> Do you get at least 7 hours of sleep daily? </mat-list-item>
+           <mat-list-item style="border-bottom: 1px dotted #ccc;">{{patients[0]['sleep_daily'] }}</mat-list-item>
+           <mat-list-item style="border: none!important; font-weight: 500;"> Do you exercise? </mat-list-item>
+           <mat-list-item style="border-bottom: 1px dotted #ccc;">{{patients[0]['exercise'] }}</mat-list-item>
+           <mat-list-item style="border: none!important; font-weight: 500;">Do you get yearly flu shots?</mat-list-item>
+           <mat-list-item style="border-bottom: 1px dotted #ccc;">{{patients[0]['yearly_flu_shots']}}</mat-list-item>
+           <mat-list-item style="border: none!important; font-weight: 500;">Do you smoke or use tobacco?</mat-list-item>
+           <mat-list-item style="border-bottom: 1px dotted #ccc;">{{patients[0]['smoke_tobacco'] }}</mat-list-item>
+           <mat-list-item style="border: none!important; font-weight: 500;">Do you drink alcohol?</mat-list-item>
+           <mat-list-item style="border-bottom: 1px dotted #ccc;">{{patients[0]['alcohol']}}</mat-list-item>
+           <mat-list-item style="border: none!important; font-weight: 500;">Do you use recreational drugs?</mat-list-item>
+           <mat-list-item style="border-bottom: 1px dotted #ccc;">{{patients[0]['drugs']}}</mat-list-item>
+         </mat-list>
+
+       </div>
+  </section>
+</div>

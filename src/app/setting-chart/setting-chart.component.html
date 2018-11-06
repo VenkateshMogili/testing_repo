@@ -1,0 +1,69 @@
+<!--<div fxLayout="row" fxLayoutAlign="center">-->
+  <!--<h3 class="personal">Adherence Chart</h3>-->
+<!--</div>-->
+
+<!--<div fxLayout="row" fxLayout.xs="column" class="marg-top">-->
+  <!--<div fxFlex="20" fxShow.xs="false"></div>-->
+  <!--<div class="pers">-->
+    <!--<div fxLayout="row" fxLayout.xs="column">-->
+      <!--<div fxFlex="40" fxFlex.xs="100">-->
+
+        <!--Adherence Chart :-->
+
+      <!--</div>-->
+
+      <!--</div>-->
+    <!--<div fxFlex="60" fxFlex.xs="100">-->
+
+      <!--<mat-form-field class="wid-select" name="name" [(ngModel)]="model.name" #name="ngModel">-->
+        <!--<mat-select >-->
+          <!--<mat-option>None</mat-option>-->
+          <!--<mat-option value="BarChart">BarChart</mat-option>-->
+          <!--<mat-option value="ColumnChart">ColumnChart</mat-option>-->
+          <!--<mat-option value="GeoChart">GeoChart</mat-option>-->
+          <!--<mat-option value="LineChart">LineChart</mat-option>-->
+          <!--<mat-option value="ScatterChart">ScatterChart</mat-option>-->
+          <!--<mat-option value="GaugeChart">GaugeChart</mat-option>-->
+        <!--</mat-select>-->
+      <!--</mat-form-field>-->
+
+
+    <!--</div>-->
+    <!--<div fxLayout="row" >-->
+      <!--<button mat-raised-button class="btn-save" (click)="onsubbmit()">Submit</button></div>-->
+  <!--</div>-->
+  <!--<div fxFlex="20" fxShow.xs="false"></div>-->
+<!--</div>-->
+
+
+
+
+<div fxLayout="row" fxLayoutAlign="center">
+  <h3 class="personal"><strong>Adherence Chart</strong></h3>
+</div>
+<div fxLayout="row" fxLayout.xs="column" class="marg-top">
+  <div fxFlex="20" fxShow.xs="false"></div>
+  <div fxFlex="60">
+    <div fxLayout="row" fxLayout.xs="column">
+      <div fxFlex="40" fxFlex.xs="100">
+        Adherence Chart :
+      </div>
+      <div fxFlex="60" fxFlex.xs="100">
+        <mat-form-field class="wid-select">
+          <mat-select placeholder="Select" name="name" [(ngModel)]="model.name" #name="ngModel">
+          <mat-option>None</mat-option>
+          <mat-option value="BarChart">BarChart</mat-option>
+          <mat-option value="ColumnChart">ColumnChart</mat-option>
+          <mat-option value="GeoChart">GeoChart</mat-option>
+          <mat-option value="LineChart">LineChart</mat-option>
+          <mat-option value="ScatterChart">ScatterChart</mat-option>
+          <mat-option value="GaugeChart">GaugeChart</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxLayout="row" >
+      <button mat-raised-button class="btn-save" (click)="onsubbmit()">Submit</button></div>
+  </div>
+  <div fxFlex="20" fxShow.xs="false"></div>
+</div>

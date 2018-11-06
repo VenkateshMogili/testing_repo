@@ -1,0 +1,30 @@
+<div class="modal-body" fxLayout="row">
+  <div fxFlex="92">
+    <h4 class="modal-title" style="padding-bottom: 3%;">Choose your payment option</h4>
+    <p class="mrg_btm2">Please choose your plan to enable digital prescription, data dashboard, online
+      appointments, video consult, tele consult, priority consult </p>
+    <!--<button id="pay_fee_monthly" type="button" (click)="open_pay_monthly()" class="btn btn-primary mrg_btm">-->
+    <!--Click to pay monthly-->
+    <!--</button>-->
+    <!--<button id="pay_fee_anually" type="button" (click)="open_pay_anually()" class="btn btn-primary mrg_btm">-->
+    <!--Click to pay automatically-->
+    <!--</button>-->
+
+  </div>
+  <div fxFlex="5"><button mat-raised-button style="color: red;min-width: 0px;height: 0px;width: 22px;" (click) = "pay()">X</button></div>
+
+</div>
+<div fxFlex="row" fxLayout.xs="column">
+  <a [routerLink]="['/dashboard/pricing']" style="padding-right: 1%;">
+    <button mat-raised-button  id="pay_fee_monthly" type="button" (click) = "pay()" style="margin-bottom: 1%;
+    color: #fff;margin-right: 1%;background-color: #0c58a5!important;">
+      Click to pay monthly
+    </button>
+  </a>
+  <a [routerLink]="['/dashboard/automatic-pricing']">
+    <button mat-raised-button color="primary" id="pay_fee_anually" type="button" (click) = "pay()" style="margin-bottom: 1%;background-color: #0c58a5!important;">
+      Click to pay automatically
+    </button>
+  </a>
+
+</div>

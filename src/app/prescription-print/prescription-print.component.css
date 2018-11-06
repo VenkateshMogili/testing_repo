@@ -1,0 +1,164 @@
+.ul {
+  list-style-type: disc;
+}
+
+.form-horizontal .control-label {
+  padding-top: 0px;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+@media (max-width: 991px) {
+  .form-group {
+    margin-bottom: 5px;
+  }
+  .pres_print_pan {
+    padding: 5px;
+  }
+}
+/*.p_align {
+  text-align: left;
+  color: #333;
+  font-weight: 600;
+  font-size: 14px;
+}
+.prescriptn label {
+  font-size: 14px;
+  color: #333;
+  font-weight: 600;
+}*/
+
+
+
+.pull-right p{
+  line-height: 32px;
+  text-align-last: end;
+}
+.pull-right b{
+  color:#807e7e;
+}
+.list-span mat-list-item{
+
+  font-size:13px;
+
+}
+mat-list-item span{
+  color:#999;
+  font-weight:600;
+}
+
+.clr-back-prcption{
+  background-color: #fff;
+  padding:20px 25px;
+}
+.para-name p{
+  line-height:32px;
+
+}
+.para-name b{
+  color:#807e7e;
+}
+.para-name i{
+  color:#807e7e;
+}
+
+.clinical-impression{
+  padding:20px 0px;
+}
+.medicine p{
+
+
+
+  font-size: 14px;
+  line-height:30px;
+
+}
+.medicine b{
+  color: #807e7e;}
+
+
+.form-horizontal .control-label {
+  padding-top: 0px;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+@media (max-width: 600px){
+  .pull-right p{
+    line-height: 32px;
+    text-align-last: start;
+    font-size:13px;
+  }
+}
+
+
+@media (max-width: 991px) {
+  .form-group {
+    margin-bottom: 5px;
+  }
+  .pres_print_pan {
+    padding: 0px;
+  }
+}
+
+.material-icons{
+  font-size:1em;
+}
+material-icons{
+  position: relative;
+  top: 5px;
+  left: 5px;
+}
+.hospital_pan h1{
+  margin: 0 0 8px 0;
+  color: #333;
+  font-weight:600;
+}
+.hospital_pan h2{
+  margin: 0 0 8px 0;
+  color: #333;
+  font-weight:600;
+}
+@media (max-width:425px){
+  span{
+    font-size:12px;
+  }
+  h4 strong{
+    font-size:12px;
+  }
+  p b{
+    font-size:12px;
+  }
+  h4 b{
+    font-size:12px;
+  }
+  .font_h1 p{
+    font-size:12px;
+  }
+}
+@media (max-width:320px){
+  h1{
+    font-size:15px;
+  }
+  h2{
+    font-size:10px;
+  }
+}
+#edit,#email,#print{
+  margin:1px;
+}
+.pdivider{
+  padding:0 20px;
+}
+@media (max-width:600px){
+  .pdivider{
+    padding:0 5px;
+  }
+}
+@media (max-width:320px){
+  .prescrip_doc_name{
+    padding-top:15px;
+    padding-bottom:15px;
+    font-size:18px!important;
+  }
+}

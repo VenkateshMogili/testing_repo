@@ -1,0 +1,382 @@
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1200px;
+  position: relative;
+}
+
+.pres_print {
+  margin: 7px 0 0;
+  line-height: 22px;
+  color: #666;
+  font-size: 14px;
+
+}
+
+.pres_patint {
+  background: #fff;
+  border: 1px solid #f4f4f4;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.pres_patint span {
+  margin: 0 0 0 10px;
+  color: #0e80f2;
+  font-size: 20px;
+
+}
+
+.patient_box img {
+  width: 100%;
+}
+
+.patient_box {
+  padding: 10px;
+  margin: 10px 0;
+  background: #fff;
+  border: 1px solid #dbdbdb;
+}
+
+.patient_box h1 {
+
+  font-weight: 600;
+  font-size: 16px;
+  color: #0e80f2;
+  margin: 0 0 8px 0;
+}
+
+.patient_box h2 {
+
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 8px 0;
+}
+
+.patient_box h2:last-child {
+  margin: 0;
+}
+
+.btn a {
+  color: #fff;
+}
+
+.btn-default {
+  padding: 6px 12px !important;
+  height: 34px !important;
+  background: #fff !important;
+  font-weight: 400 !important;
+}
+
+.skin-blue .main-header .navbar .nav > li > a {
+  margin-left: 0 !important;
+}
+
+#custom-search-input {
+  margin: 0;
+  margin-top: 10px;
+  padding: 0;
+}
+
+#custom-search-input .search-query {
+  padding-right: 3px;
+  padding-right: 4px \9;
+  padding-left: 3px;
+  padding-left: 4px \9;
+  /* IE7-8 doesn't have border-radius, so don't indent the padding */
+
+  margin-bottom: 0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+#custom-search-input button {
+  border: 0;
+  background: none;
+  /** belows styles are working good */
+  padding: 2px 5px;
+  margin-top: 2px;
+  position: relative;
+  left: -28px;
+  /* IE7-8 doesn't have border-radius, so don't indent the padding */
+  margin-bottom: 0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  color: #0e80f2;
+}
+
+.search-query:focus + button {
+  z-index: 3;
+}
+
+/*pagination*/
+.paging-nav {
+  text-align: right;
+  padding-top: 2px;
+}
+
+.paging-nav a {
+  margin: auto 1px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 1px 7px;
+  background: #91b9e6;
+  color: white;
+  border-radius: 2px;
+}
+
+.paging-nav a:hover, .paging-nav a:active {
+  color: #000 !important;
+}
+
+.paging-nav .selected-page {
+  background: #187ed5;
+  font-weight: bold;
+}
+
+.paging-nav,
+#tableData {
+  margin: 20px auto 0;
+}
+
+/*//pagination*/
+
+.remainder_mail {
+  font-size: 14px !important;
+}
+
+.rm_label {
+  padding: 0 !important;
+  margin: 0 !important;
+  font-weight: 400 !important;
+  font-size: 14px;
+  line-height: 35px;
+}
+
+/*opm*/
+
+.omp_hd1 {
+
+  font-size: 20px;
+  text-align: center;
+  color: #333;
+  margin: 10px 0;
+}
+
+.omp_hd1 a {
+  color: #333;
+}
+
+.omp_hd1 a:hover {
+  color: #0e80f2;
+}
+
+.pms_btn1 {
+  border: none;
+  border-radius: 4px;
+  background: #0e80f2;
+
+  font-size: 14px;
+  padding: 5px 12px;
+}
+
+.opm a {
+  color: #fff !important;
+}
+
+.opm a:hover {
+  -webkit-filter: brightness(100%) !important;
+  filter: brightness(100%) !important;
+  color: #000 !important;
+}
+
+/*//opm*/
+
+/*doctor_profile start*/
+
+.transcription_pan_rt h1 {
+  text-align: center;
+
+  font-size: 24px;
+  margin: 10px 0 20px 0;
+}
+
+.panel-body {
+  /*border: 1px solid #dbdbdb;*/
+  padding: 0;
+}
+
+.transcription_pan_rt span {
+  color: #333;
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.transcription_pan_rt p {
+  color: #666;
+
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  margin-top: -21px;
+}
+
+.trans_details {
+  margin: 20px 0;
+}
+
+.trans_details h1 {
+  color: #333;
+
+  font-size: 16px;
+  font-weight: 400;
+  margin: 10px 0 0;
+}
+
+.trans_details h2 {
+  color: #333;
+
+  font-size: 14px;
+  font-weight: 400;
+  margin: 10px 0 0;
+}
+
+.trans_details h3 {
+  color: #666;
+
+  font-size: 12px;
+  font-weight: 400;
+  margin: 10px 0 0;
+}
+
+.lang {
+  color: #666;
+
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.transcription_pan {
+  padding: 20px 0 40px;
+}
+
+.transcription_hdg {
+  color: #333;
+
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 26px;
+  margin: 10px 0;
+}
+
+.return_txt {
+  color: #666;
+
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.return_txt a {
+  color: #aaa;
+}
+
+.return_txt a:hover {
+  color: #666;
+}
+
+.return_txt p {
+  float: left;
+  margin: -3px 0 0 0;
+}
+
+.fr {
+  padding-right: 10px;
+  font-size: 20px !important;
+  float: left;
+}
+
+.doc_background {
+  background: url(../images/doc_background.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 170px;
+
+}
+
+.doc_pro_pic {
+  margin-top: -110px;
+}
+
+.doc_pro_pic img {
+  border-radius: 4px;
+  border: 4px solid #fff;
+}
+
+/*doctor_profile end*/
+
+.speacer {
+  clear: both;
+}
+
+@media screen and (max-width: 991px) {
+  .pd_rt {
+    padding: 0 30px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .vws_pan {
+    margin: 10px 0 0 0;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .patient_box h1 {
+    margin-top: 10px;
+  }
+
+  .pres_patint span {
+    font-size: 14px;
+  }
+
+  .pres_patint {
+    position: relative;
+  }
+
+  .pres_patint .dropdown {
+    position: absolute;
+    right: 0;
+    top: -47px;
+  }
+
+}
+
+@media screen and (max-width: 400px) {
+
+  .logn_div {
+    position: absolute;
+    width: 100%;
+    height: 380px;
+    /* Center form in page horizontally & vertically */
+    top: 50%;
+    left: 0;
+    margin-top: -190px;
+    margin-left: 0;
+  }
+
+  .logn_form {
+    width: 93%;
+    margin: 0 10px;
+  }
+
+}

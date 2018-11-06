@@ -1,0 +1,52 @@
+.clearfix:before,
+.clearfix:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+.wrapper {
+  margin: 0 auto;
+}
+
+.main, .sidebar {
+  /*float: left;*/
+}
+
+.main {
+
+}
+
+.sidebar {
+
+}
+
+.faux .container {
+  background-color: Tomato;
+}
+
+.faux .sidebar {
+  background-color: inherit;
+}
+
+.table .container {
+  display: table;
+}
+
+.table .main {
+  float: none;
+  display: table-cell;
+  vertical-align: top;
+}
+
+.table .sidebar {
+  float: none;
+  display: table-cell;
+}

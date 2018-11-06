@@ -1,0 +1,8 @@
+@media (max-width:600px){
+  .box {
+    padding: 10px;
+  }
+  label{
+    font-size: 12px;
+  }
+}

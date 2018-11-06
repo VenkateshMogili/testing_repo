@@ -1,0 +1,64 @@
+<div class="modal fade" id="myModal1" role="dialog">
+  <div>
+
+    <!-- Modal content-->
+    <div style="background-color: #fff;">
+      <div style="background-color: #fff;">
+        <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+        <h4>Choose Hospital</h4>
+      </div>
+      <div>
+        <div>
+          <div *ngFor="let hospital of user['hosp_list']" style="background-color: #fff;">
+            <form role="form">
+              <div>
+                <!--<input data-dismiss="modal"-->
+                <!--(click)="change_hospital(hospital['doctor_hospital_list_id'])" type="radio"-->
+                <!--value="{{hospital['doctor_hospital_list_id']">{{hospital['cn']}} Hospital-->
+                <!--<input data-dismiss="modal"-->
+                       <!--(click)="change_hospital(hospital['doctor_hospital_list_id'])" type="radio"-->
+                       <!--value="{{hospital['doctor_hospital_list_id']">{{hospital['cn']}}-->
+                <mat-radio-group>
+                  <mat-radio-button (click)="change_hospital(hospital['doctor_hospital_list_id'])" type="radio"
+                                    value="{{hospital['doctor_hospital_list_id']">{{hospital['cn']}}</mat-radio-button>
+                </mat-radio-group>
+              </div>
+              <div>
+                <!--<label>Name</label>-->
+                <!--<input type="text" class="form-control" value="{{hospital['cn']}}">-->
+                <mat-form-field style="width: 100%;">
+                  <input matInput value="{{hospital['cn']}}">
+                </mat-form-field>
+              </div>
+              <div class="form-group">
+                <!--<label>Address</label>-->
+                <!--<textarea class="form-control">{{hospital['cn']}} {{hospital['hc']}}, {{hospital['cc']}} {{hospital['cs']}} {{hospital['hcc']}} {{hospital['cpn']}}</textarea>-->
+                <mat-form-field style="width: 100%;">
+                  <input matInput value="{{hospital['cn']}} {{hospital['hc']}}, {{hospital['cc']}} {{hospital['cs']}} {{hospital['hcc']}} {{hospital['cpn']}}">
+                </mat-form-field>
+              </div>
+              <div>
+                <!--<label>Phone Number</label>-->
+                <!--<input type="text" class="form-control" value="{{hospital['cp']}}">-->
+                <mat-form-field style="width: 100%;">
+                  <input matInput value="{{hospital['cp']}}" type="number" style="
+                                                     background-color: #fff;
+                                                     border: none;box-shadow: none;
+                                                     -webkit-transition: none;
+                                                     transition: none;">
+                </mat-form-field>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div style="margin-bottom: 5px;">
+          <small class="text-primary">(Click on any one Radio Button  to choose hospital)</small>
+        </div>
+        <!--<button type="submit" mat-raised-button color="primary">Add new Hospital</button>-->
+      </div>
+    </div>
+
+  </div>
+</div>

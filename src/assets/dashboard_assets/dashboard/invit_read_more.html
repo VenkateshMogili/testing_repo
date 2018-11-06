@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Untitled Document</title>
+  <!-- Bootstrap 3.3.5 -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="css/font-awesome.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- fullCalendar 2.2.5-->
+  <link rel="stylesheet" href="css/fullcalendar.min.css">
+  <link rel="stylesheet" href="css/fullcalendar.print.css" media="print">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="css/_all-skins.min.css">
+
+  <link rel="stylesheet" href="css/style2.css">
+
+  <!--appointment -->
+  <link href="css/jquery.bdt.css" type="text/css" rel="stylesheet">
+  <link href="css/appointment.css" type="text/css" rel="stylesheet">
+  <!-- // appointment-->
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+<div class="wrapper">
+
+
+  <div id="global-error">
+  </div>
+
+
+  <div id="popmain" class="plaintext">
+    <h2><a name="top" id="top">Creating and Uploading a Contacts File</a></h2>
+    <p>Contacts Files are exported by your email program or personal information manager. Currently, TheRightDoctors
+      supports CSV (comma-separated value) files exported from Outlook®,the Palm® Desktop, or ACT!, tab-separated files
+      from the Palm Desktop, or vCard files.</p>
+
+    <ul>
+      <li><a href="#a">To export a CSV file from Outlook</a></li>
+      <li><a href="#b">To export a CSV or tab-separated file from Palm Desktop</a></li>
+      <li><a href="#c">To export a CSV file from ACT!</a></li>
+      <li><a href="#d">To export a vCard file from Palm Desktop</a></li>
+      <li><a href="#e">To export a vCard file from Mac OS X Address Book</a></li>
+    </ul>
+
+    <h3><a name="a" id="a">To export a CSV file from Outlook:</a></h3>
+    <ol>
+      <li>Open Outlook</li>
+      <li>Select “Import and Export” from the File menu</li>
+      <li>When the wizard opens, select “Export to a file” and click the “Next” button</li>
+      <li>Select “Comma separated values (Windows)” and click the “Next” button</li>
+      <li>Select the Contacts folder you would like to export and click the “Next” button</li>
+      <li>Choose a filename and a place to save the file (for instance, “Contacts.csv” on the Desktop) and click the
+        “Next” button
+      </li>
+      <li>Confirm what you are exporting: make sure the checkbox next to “Export…” is checked and click the “Next”
+        button
+      </li>
+    </ol>
+    <p>To upload the file to TheRightDoctors, simply click the “Choose File” button on the upload page and choose your
+      newly-exported CSV file. Then click the “Upload Contacts” button.</p>
+    <p class="helper" align="right"><a href="#top">Back to top</a></p>
+
+    <h3><a name="b" id="b">To export a CSV or tab-separated file from Palm Desktop:</a></h3>
+    <ol>
+      <li>Open Palm Desktop</li>
+      <li>Display your contacts list by clicking the “Addresses” icon on the lefthand side of the screen</li>
+      <li>Select “Export” from the “File” menu</li>
+      <li>When the dialog box opens:
+        <ul>
+          <li>Enter a name for the file you are creating in the “File name:” field</li>
+          <li>Select “Comma Separated” in the “Export Type” pulldown menu</li>
+          <li>Be sure to select the “All” radio button from the two “Range:” radio buttons</li>
+        </ul>
+      </li>
+      <li>A second dialog box “Specify Export Fields” opens. Leave all of the checkboxes checked, and click “OK”</li>
+    </ol>
+    <p>To upload the file to TheRightDoctors, simply click the “Choose File” button on the upload page and choose your
+      newly-exported CSV file. Then click the “Upload Contacts” button.</p>
+    <p class="helper" align="right"><a href="#top">Back to top</a></p>
+
+    <h3><a name="c" id="c">To export a CSV file from ACT!:</a></h3>
+    <ol>
+      <li>Open the ACT! database that contains the contacts you want to export. If you do not want to export the entire
+        database, perform a lookup of the contacts that you want to export.
+      </li>
+      <li>Choose the “File” menu, point to “Data Exchange” and click “Export”. The “Export Wizard” appears. In the
+        “File” type list box, choose “Text - Delimited”.
+      </li>
+      <li>Click the “Browse” button next to “Filename and Location”. The “Save As” dialog box appears.</li>
+      <li>Type a file name in the “File Name” box and change the “Save as Type” to “Text - Delimited (*.csv)”. Click
+        “Save”. Click “Next”.
+      </li>
+      <li>Click “Contact records only”, and then click the “Options” button. The “Export Options” dialog box appears. In
+        the “Select Field Separator” group box, check “Comma”. In the “Do You Want to Export Field Names?” group box,
+        check “Yes, export field names”. Click “OK”.
+      </li>
+      <li>Click “Next”. Select which contact records you want to export.
+        <ul>
+          <li>“Current Record” exports only the currently selected record</li>
+          <li>“Current Lookup” exports only the current lookup</li>
+          <li>“All Records” exports all records in the database</li>
+        </ul>
+        Click “Next”.
+      </li>
+      <li>Change the field export order or remove fields from the export as desired. Please be sure to export with email
+        addresses! Click “Finish” to begin the export.
+      </li>
+    </ol>
+    <p>To upload the file to TheRightDoctors, simply click the “Choose File” button on the upload page and choose your
+      newly-exported vCard file. Then click the “Upload Contacts” button.</p>
+    <p class="helper" align="right"><a href="#top">Back to top</a></p>
+
+    <h3><a name="d" id="d">To export a vCard file from Palm Desktop:</a></h3>
+    <ol>
+      <li>Open Palm Desktop</li>
+      <li>Display your contacts list by clicking the “Addresses” icon on the lefthand side of the screen</li>
+      <li>Select the contacts you would like to export</li>
+      <li>Select “Export vCard…” from the “File” menu</li>
+      <li>Choose a filename and a place to save the file (for instance, “Contacts” on the Desktop) and click the “Save”
+        button
+      </li>
+    </ol>
+    <p>To upload the file to TheRightDoctors, simply click the “Choose File” button on the upload page and choose your
+      newly-exported vCard file. Then click the “Upload Contacts” button.</p>
+    <p class="helper" align="right"><a href="#top">Back to top</a></p>
+
+    <h3><a name="e" id="e">To export a vCard file from Mac OS X Address Book:</a></h3>
+    <ol>
+      <li>Open Address Book</li>
+      <li>Select the contacts you would like to export</li>
+      <li>Select “Export vCards…” from the File menu</li>
+      <li>Choose a filename and a place to save the file (for instance, “Contacts” on the Desktop) and click the “Save”
+        button
+      </li>
+    </ol>
+    <p>To upload the file to TheRightDoctors, simply click the “Choose File” button on the upload page and choose your
+      newly-exported vCard file. Then click the “Upload Contacts” button.</p>
+    <p class="helper" align="right"><a href="#top">Back to top</a></p>
+  </div>
+
+
+</div>
+</body>
+<!-- jQuery 2.1.4 -->
+<script src="js/jQuery-2.1.4.min.js"></script>
+<!-- Bootstrap 3.3.5 -->
+<script src="js/bootstrap.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<!-- Slimscroll -->
+<script src="js/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="js/fastclick.min.js"></script>
+<!-- AdminLTE App -->
+<script src="js/app.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="js/demo.js"></script>
+<!-- fullCalendar 2.2.5 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
+<script src="js/fullcalendar.min.js"></script>
+<!-- Page specific script -->
+
+
+<script type="text/javascript" src="js/paging.js"></script>
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('#tableData2').paging({limit: 8});
+  });
+</script>
+
+
+<!--validator-->
+<link rel="stylesheet" href="css/bootstrapValidator.css"/>
+<script type="text/javascript" src="js/bootstrapValidator.js"></script>
+<!--//validator-->
+
+<script>
+  $(document).on('click', '.browse', function () {
+    var file = $(this).parent().parent().parent().find('.file');
+    file.trigger('click');
+  });
+  $(document).on('change', '.file', function () {
+    $(this).parent().find('.form-control').val($(this).val().replace(/C:\\fakepath\\/i, ''));
+  });
+</script>
+</html>

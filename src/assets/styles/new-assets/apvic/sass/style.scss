@@ -1,0 +1,27 @@
+@import 'variables';
+
+body {
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  color: $base-color;
+  line-height: $base-line-height;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @include margin(0);
+}
+
+p {
+  @include margin(0);
+  @include padding(5px 0);
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  width: 70%;
+  margin: auto;
+}

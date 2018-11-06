@@ -1,0 +1,36 @@
+<div class="content-wrapper">
+  <section class="clr-back">
+    <h2 class="mrg_btm2" style="text-align: center;">My Family History</h2>
+    <div fxLayout="row" fxLayoutAlign="end center" fxShow="false" fxShow.xs="true">
+    </div>
+    <div fxLayout="column" fxShow="false" fxShow.xs="true" class="border-part">
+        <p class="conditions" style="font-weight: 700!important;">Conditions that caused a close relative to pass away before the age of 60:</p>
+      <ng-template ngFor let-item [ngForOf]="createRange(list['pr_list'].length)"
+                   let-innerIndex="index" *ngIf="list['pr_list'].length>0">
+      <mat-list class="list-condition" style="border-bottom: 1px dotted #ccc;">
+        <mat-list-item><div fxFlex="40"><b>Condition:</b></div> <div fxFlex="60" class="pull-right"><span>{{list['pr_list'][innerIndex]['relative_pass_away_condition']}}</span></div></mat-list-item>
+        <mat-list-item><div fxFlex="40"><b>Relation:</b></div> <div fxFlex="60" class="pull-right"><span>{{list['pr_list'][innerIndex]['relative_pass_away_relation']}}</span></div></mat-list-item>
+        <mat-list-item><div fxFlex="40"><b>Age:</b></div><div fxFlex="60" class="pull-right"><span>{{list['pr_list'][innerIndex]['relative_pass_away_age']}}</span></div></mat-list-item>
+      </mat-list>
+      </ng-template>
+
+
+    </div>
+
+    <div fxLayout="column" fxShow="false" fxShow.xs="true" class="border-part">
+      <p class="conditions" style="font-weight: 700!important;">Do your living grandparents, parents or siblings have any major medical conditions
+        (life-threatening or otherwise?)</p>
+      <ng-template ngFor let-item [ngForOf]="createRange(list['lr_list'].length)"
+                   let-innerIndex="index" *ngIf="list['lr_list'].length>0">
+      <mat-list class="list-condition" style="border-bottom: 1px dotted #ccc;">
+        <mat-list-item><div fxFlex="40"><b>Condition:</b></div> <div fxFlex="60" class="pull-right"><span>{{list['lr_list'][innerIndex]['relative_live_condition']}}</span></div></mat-list-item>
+        <mat-list-item><div fxFlex="40"><b>Relation:</b></div> <div fxFlex="60" class="pull-right"><span>{{list['lr_list'][innerIndex]['relative_live_relation']}}</span></div></mat-list-item>
+        <mat-list-item><div fxFlex="40"><b>Age:</b></div><div fxFlex="60" class="pull-right"><span>{{list['lr_list'][innerIndex]['relative_live_age']}}</span></div></mat-list-item>
+      </mat-list>
+
+      </ng-template>
+    </div>
+
+
+  </section>
+</div>

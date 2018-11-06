@@ -1,0 +1,50 @@
+<div id="consult_history" class="tabcontent">
+  <h1 class="sub_head">Consultation History</h1>
+  <section class="content">
+  <div class="box">
+  <div class="table-responsive" *ngIf="prescription_list.length>0">
+    <table id="tableData2">
+
+      <thead>
+      <tr>
+        <th width="20%" ngStyle.xs="width:5%">Appointment ID</th>
+        <!--  <th width="20%">Doctor Name</th> -->
+        <th width="20%" ngStyle.xs="width:5%">Consultation type</th>
+        <th width="10%" ngStyle.xs="width:10%">Date</th>
+        <th width="10%" fxShow.xs="false">Time (hrs)</th>
+        <th width="10%" fxShow.xs="false">Status</th>
+        <th width="10%" fxShow.xs="false">Duration</th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <ng-template ngFor let-item1 [ngForOf]="Range(prescription_list.length)" let-innerIndex="index">
+
+        <tr>
+          <td>{{prescription_list[innerIndex]['booking_id']}}</td>
+          <!--  <td class="mailbox-name"><b>Dr.{{$item['doctor_name']}}</b></td> -->
+          <td class="mailbox-subject">{{prescription_list[innerIndex]['booking_type']}} consult
+          </td>
+          <td>{{ prescription_list[innerIndex]['appoinment_date'] | amDateFormat: 'DD-MM-YYYY'}}</td>
+          <td fxShow.xs="false">{{prescription_list[innerIndex]['start_time']}}</td>
+          <td fxShow.xs="false"><span *ngIf="prescription_list[innerIndex]['booking_flag'] == 'request'">
+                           Pending
+                        </span>
+            <span *ngIf="prescription_list[innerIndex]['booking_flag'] == 'confirm'">
+                           Confirmed
+                        </span>
+            <span *ngIf="prescription_list[innerIndex]['booking_flag'] == 'completed'">
+                           Completed
+                        </span>
+          </td>
+          <td fxShow.xs="false">15mins</td>
+        </tr>
+      </ng-template>
+
+      </tbody>
+
+    </table>
+  </div>
+  </div>
+  </section>
+</div>

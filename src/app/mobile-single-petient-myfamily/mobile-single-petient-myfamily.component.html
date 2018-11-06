@@ -1,0 +1,42 @@
+<div class="content-myfamily">
+  <h4 >Conditions that caused a close relative to pass away before the age of 60:</h4>
+  <ng-template ngFor let-item [ngForOf]="createRange(list['lr_list'].length)" let-innerIndex="index" *ngIf="list['lr_list'].length>0">
+    <div fxLayout="row">
+      <div fxFlex="50" class="value-proflle">
+        <mat-list>
+          <mat-list-item> conditions: </mat-list-item>
+        </mat-list>
+      </div>
+      <div fxFlex="50" class="mat-list-value">
+        <mat-list>
+          <mat-list-item> {{list['pr_list']['innerIndex']['relative_pass_away_condition']}}</mat-list-item>
+        </mat-list>
+      </div>
+    </div>
+    <div fxLayout="row">
+      <div fxFlex="50" class="value-proflle">
+        <mat-list>
+          <mat-list-item>  Relation: </mat-list-item>
+        </mat-list>
+      </div>
+      <div fxFlex="50" class="mat-list-value">
+        <mat-list>
+          <mat-list-item> {{list['pr_list'][innerIndex]['relative_pass_away_relation']}}</mat-list-item>
+        </mat-list>
+      </div>
+    </div>
+    <div fxLayout="row">
+      <div fxFlex="50" class="value-proflle">
+        <mat-list>
+          <mat-list-item>  Age </mat-list-item>
+        </mat-list>
+      </div>
+      <div fxFlex="50" class="mat-list-value">
+        <mat-list>
+          <mat-list-item> {{list['pr_list'][innerIndex]['relative_pass_away_age']}}</mat-list-item>
+        </mat-list>
+      </div>
+    </div>
+  </ng-template>
+</div>
+

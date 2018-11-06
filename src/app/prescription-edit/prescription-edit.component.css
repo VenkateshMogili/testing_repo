@@ -1,0 +1,16 @@
+.hospital_pan34 {
+  margin: 10px 0;
+  padding: 10px 10px;
+  background: #fafafa;
+}
+
+@media (max-width: 991px) {
+  .hospital_pan34 {
+    margin: 10px 0;
+    padding: 0px;
+    background: #fafafa;
+  }
+}
+button{
+  background-color: #0c58a5!important;
+}

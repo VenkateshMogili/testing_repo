@@ -1,0 +1,11 @@
+@media (max-width:600px){
+  .box{
+    padding:10px;
+  }
+  .details_b span{
+    color:white!important;
+  }
+}
+button{
+  background-color: #0c58a5!important;
+}

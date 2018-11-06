@@ -1,0 +1,391 @@
+<!--&lt;!&ndash;&lt;!&ndash; Content Wrapper. Contains page content &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="content-wrappe">&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash; Content Header (Page header) &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;<section class="content-header">&ndash;&gt;-->
+<!--&lt;!&ndash;<h1>Settings</h1>&ndash;&gt;-->
+<!--&lt;!&ndash;</section>&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash; Main content &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;<section class="content">&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="box no-padding mrg_btm2">&ndash;&gt;-->
+
+<!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
+
+<!--&lt;!&ndash;<div class="col-md-12">&ndash;&gt;-->
+
+<!--&lt;!&ndash;<div class="cont">&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="pl left-column">&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="nav_panel_patient">&ndash;&gt;-->
+
+<!--&lt;!&ndash;<ul class="nav_patient">&ndash;&gt;-->
+<!--&lt;!&ndash;<li class="active">&ndash;&gt;-->
+<!--&lt;!&ndash;<a [routerLink]="['general']" class="tablinks active" id="defaultOpen">&ndash;&gt;-->
+<!--&lt;!&ndash;<i class="fa fa-cog" aria-hidden="true"></i><span class="text">General</span>&ndash;&gt;-->
+<!--&lt;!&ndash;</a>&ndash;&gt;-->
+<!--&lt;!&ndash;</li>&ndash;&gt;-->
+<!--&lt;!&ndash;<li>&ndash;&gt;-->
+<!--&lt;!&ndash;<a [routerLink]="['practise']" class="tablinks">&ndash;&gt;-->
+<!--&lt;!&ndash;<i class="fa fa-plus" aria-hidden="true"></i><span class="text">Practice details</span>&ndash;&gt;-->
+<!--&lt;!&ndash;</a>&ndash;&gt;-->
+<!--&lt;!&ndash;</li>&ndash;&gt;-->
+<!--&lt;!&ndash;<li>&ndash;&gt;-->
+<!--&lt;!&ndash;<a [routerLink]="['password']" class="tablinks">&ndash;&gt;-->
+<!--&lt;!&ndash;<i class="fa fa-key" aria-hidden="true"></i><span class="text">Change password</span>&ndash;&gt;-->
+<!--&lt;!&ndash;</a>&ndash;&gt;-->
+<!--&lt;!&ndash;</li>&ndash;&gt;-->
+<!--&lt;!&ndash;<li>&ndash;&gt;-->
+<!--&lt;!&ndash;<a [routerLink]="['chart']" class="tablinks">&ndash;&gt;-->
+<!--&lt;!&ndash;<i class="fa fa-line-chart" aria-hidden="true"></i><span class="text">Adherence Chart</span>&ndash;&gt;-->
+<!--&lt;!&ndash;</a>&ndash;&gt;-->
+<!--&lt;!&ndash;</li>&ndash;&gt;-->
+<!--&lt;!&ndash;<li>&ndash;&gt;-->
+<!--&lt;!&ndash;<a [routerLink]="['email']" class="tablinks">&ndash;&gt;-->
+<!--&lt;!&ndash;<i class="fa fa-envelope-o" aria-hidden="true"></i><span class="text">Email notification</span>&ndash;&gt;-->
+<!--&lt;!&ndash;</a>&ndash;&gt;-->
+<!--&lt;!&ndash;</li>&ndash;&gt;-->
+<!--&lt;!&ndash;<li>&ndash;&gt;-->
+<!--&lt;!&ndash;<a [routerLink]="['sms']" class="tablinks">&ndash;&gt;-->
+<!--&lt;!&ndash;<i class="fa fa-comment-o" aria-hidden="true"></i><span class="text">SMS notification</span>&ndash;&gt;-->
+<!--&lt;!&ndash;</a>&ndash;&gt;-->
+<!--&lt;!&ndash;</li>&ndash;&gt;-->
+<!--&lt;!&ndash;<li>&ndash;&gt;-->
+<!--&lt;!&ndash;<a [routerLink]="['account']" class="tablinks">&ndash;&gt;-->
+<!--&lt;!&ndash;<i class="fa fa-times" aria-hidden="true"></i><span class="text">Deactivate account</span>&ndash;&gt;-->
+<!--&lt;!&ndash;</a>&ndash;&gt;-->
+<!--&lt;!&ndash;</li>&ndash;&gt;-->
+<!--&lt;!&ndash;</ul>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;<div class="pr right-column">&ndash;&gt;-->
+<!--&lt;!&ndash;<router-outlet></router-outlet>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;</section>&lt;!&ndash; /.content &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&lt;!&ndash; /.content-wrapper &ndash;&gt;&ndash;&gt;-->
+
+
+
+
+<!--&lt;!&ndash; Content Wrapper. Contains page content &ndash;&gt;-->
+<!--<div>-->
+<!--&lt;!&ndash; Content Header (Page header) &ndash;&gt;-->
+<!--<section>-->
+<!--<h1>Settings</h1>-->
+<!--</section>-->
+
+<!--&lt;!&ndash; Main content &ndash;&gt;-->
+<!--<section>-->
+<!--<div>-->
+
+<!--<div class="container"-->
+<!--fxLayout-->
+<!--fxLayoutGap="10px"-->
+<!--fxLayoutGap.xs="0">-->
+
+<!--<div fxLayoutAlign="left">-->
+
+<!--<div>-->
+<!--<div  style="    float: left;width: 70%;height: 100%;/* position: absolute; */border-right: 1px solid #dbdbdb;">-->
+<!--<div>-->
+
+<!--<ul>-->
+<!--<li>-->
+<!--<a [routerLink]="['general']" class="pr" id="defaultOpen">-->
+<!--<i class="fa fa-cog" aria-hidden="true" style="padding-right: 5%;"></i><span class="text">General</span>-->
+<!--</a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<a [routerLink]="['practise']" class="pr">-->
+<!--<i class="fa fa-plus" aria-hidden="true" style="padding-right: 5%;"></i><span class="text">Practice details</span>-->
+<!--</a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<a [routerLink]="['password']" class="pr">-->
+<!--<i class="fa fa-key" aria-hidden="true" style="padding-right: 5%;"></i><span class="text">Change password</span>-->
+<!--</a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<a [routerLink]="['chart']" class="pr">-->
+<!--<i class="fa fa-line-chart" aria-hidden="true" style="padding-right: 5%;"></i><span class="text">Adherence Chart</span>-->
+<!--</a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<a [routerLink]="['email']" class="pr">-->
+<!--<i class="fa fa-envelope-o" aria-hidden="true" style="padding-right: 5%;"></i><span class="text">Email notification</span>-->
+<!--</a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<a [routerLink]="['sms']" class="pr">-->
+<!--<i class="fa fa-comment-o" aria-hidden="true" style="padding-right: 5%;"></i><span class="text">SMS notification</span>-->
+<!--</a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<a [routerLink]="['account']" class="pr" >-->
+<!--<i class="fa fa-times" aria-hidden="true" style="padding-right: 5%;"></i><span class="text">Deactivate account</span>-->
+<!--</a>-->
+<!--</li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--</div>-->
+
+
+<!--<div fxLayoutAlign="right" style="padding-left: 10%;">-->
+<!--<router-outlet></router-outlet>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--</div>-->
+<!--</div>-->
+<!--</section>&lt;!&ndash; /.content &ndash;&gt;-->
+<!--</div>&lt;!&ndash; /.content-wrapper &ndash;&gt;-->
+
+<!-- Content Header (Page header) -->
+<!--<section class="content-header">
+  <h1>Settings</h1>
+</section>
+
+<!-- Main content -->
+<!-- <section class="content">
+   <div class="box no-padding mrg_btm2">
+     <ng2-toasty></ng2-toasty>
+     <div class="row">
+       <div class="col-md-12">
+
+         <div class="cont">
+           <div class="pl left-column">
+             <div class="nav_panel_patient">
+
+               <ul class="nav_patient">
+                 <li class="active">
+                   <a [routerLink]="['general']" class="tablinks" id="defaultOpen">
+                     <i class="fa fa-cog" aria-hidden="true" style="padding-right: 5px;"></i> <span class="text">General</span>
+                   </a>
+                 </li>
+
+                 <li>
+                   <a [routerLink]="['zone']" class="tablinks" >
+                     <i class="fa fa-cog" aria-hidden="true" style="padding-right: 5px;"></i> <span class="text">zone</span>
+                   </a>
+                 </li>
+
+                 <li>
+                   <a [routerLink]="['change-password']" class="tablinks">
+                     <i class="fa fa-key" aria-hidden="true" style="padding-right: 5px;"></i> <span class="text">Change password</span>
+                   </a>
+                 </li>
+                 <li>
+                   <a [routerLink]="['adherence-chart']" class="tablinks" >
+                     <i class="fa fa-line-chart" aria-hidden="true"></i><span class="text">Adherence Chart</span>
+                   </a>
+                 </li>
+
+                 <li>
+                   <a [routerLink]="['email-notifications']" class="tablinks" >
+                     <i class="fa fa-envelope-o" aria-hidden="true" style="padding-right: 5px;"></i> <span class="text">Email notification</span>
+                   </a>
+                 </li>
+
+                 <li>
+                   <a [routerLink]="['sms-notifications']" class="tablinks" >
+                     <i class="fa fa-comment-o" aria-hidden="true" style="padding-right: 5px;"></i> <span class="text">SMS notification</span>
+                   </a>
+                 </li>
+                 <li>
+                   <a [routerLink]="['deactivate']" class="tablinks" >
+                     <i class="fa fa-times" aria-hidden="true" style="padding-right: 5px;"></i> <span class="text">Deactivate account</span>
+                   </a>
+                 </li>
+               </ul>
+             </div>
+           </div>
+           <div class="pr right-column">
+             <router-outlet></router-outlet>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </section>
+</div>-->
+
+
+
+<!--<div>-->
+  <!--<h1 [fxShow.xs]="false"  class="head-h1" style="padding-left: 2%;">Settings</h1>-->
+  <!--<section style="padding: 35px 25px;background: #fff;">-->
+
+    <!--<nav mat-tab-nav-bar fxShow.lg="true" fxShow.xl="true" fxShow.md="false" fxShow.sm="false" fxShow.xs="false">-->
+
+      <!--<a mat-tab-link  [routerLink]="['general']"   id="defaultOpen">-->
+        <!--<i class="fa fa-cog" aria-hidden="true" style=""></i> <span class="text">General</span>-->
+      <!--</a>-->
+      <!--<a  mat-tab-link [routerLink]="['practise']"  >-->
+        <!--<i class="fa fa-cog" aria-hidden="true" style=""></i> <span class="text">Practice details</span>-->
+      <!--</a>-->
+      <!--<a  mat-tab-link [routerLink]="['password']" routerLinkActive #rla="routerLinkActive"-->
+      <!--&gt;-->
+        <!--<i class="fa fa-key" aria-hidden="true" style=""></i> <span class="text">Change password</span>-->
+      <!--</a>-->
+      <!--<a  mat-tab-link [routerLink]="['chart']" >-->
+        <!--<i class="fa fa-line-chart" aria-hidden="true"></i><span class="text">Adherence Chart</span>-->
+      <!--</a>-->
+
+      <!--<a  mat-tab-link [routerLink]="['email']" >-->
+        <!--<i class="fa fa-envelope-o" aria-hidden="true" style=""></i> <span class="text">Email notification</span>-->
+      <!--</a>-->
+
+
+
+      <!--<a  mat-tab-link [routerLink]="['sms']" >-->
+        <!--<i class="fa fa-comment-o" aria-hidden="true" style=""></i> <span class="text">SMS notification</span>-->
+      <!--</a>-->
+
+
+      <!--<a  mat-tab-link [routerLink]="['account']" >-->
+        <!--<i class="fa fa-times" aria-hidden="true" style=""></i> <span class="text">Deactivate account</span>-->
+      <!--</a>-->
+
+    <!--</nav>-->
+
+
+    <!--<nav mat-tab-nav-bar fxShow.lg="false" fxShow.xl="false" fxShow.md="false" fxShow.sm="true" fxShow.xs="false">-->
+
+      <!--<a mat-tab-link  [routerLink]="['general']"   id="defaultOpen">-->
+        <!--<i class="fa fa-cog" aria-hidden="true" style="padding-right: 5px;"></i> <span class="text">General</span>-->
+      <!--</a>-->
+      <!--<a  mat-tab-link [routerLink]="['practise']"  >-->
+        <!--<i class="fa fa-cog" aria-hidden="true" style="padding-right: 5px;"></i> <span class="text">Practice details</span>-->
+      <!--</a>-->
+      <!--<a  mat-tab-link [routerLink]="['password']" routerLinkActive #rla="routerLinkActive"-->
+      <!--&gt;-->
+        <!--<i class="fa fa-key" aria-hidden="true" style="padding-right: 5px;"></i> <span class="text">Change password</span>-->
+      <!--</a>-->
+      <!--<a  mat-tab-link [routerLink]="['chart']" >-->
+        <!--<i class="fa fa-line-chart" aria-hidden="true"></i><span class="text">Adherence Chart</span>-->
+      <!--</a>-->
+
+      <!--<a  mat-tab-link [routerLink]="['email']" >-->
+        <!--<i class="fa fa-envelope-o" aria-hidden="true" style="padding-right: 5px;"></i> <span class="text">Email notification</span>-->
+      <!--</a>-->
+
+
+
+      <!--<a  mat-tab-link [routerLink]="['sms']" >-->
+        <!--<i class="fa fa-comment-o" aria-hidden="true" style="padding-right: 5px;"></i> <span class="text">SMS notification</span>-->
+      <!--</a>-->
+
+
+      <!--<a  mat-tab-link [routerLink]="['account']" >-->
+        <!--<i class="fa fa-times" aria-hidden="true" style="padding-right: 5px;"></i> <span class="text">Deactivate account</span>-->
+      <!--</a>-->
+
+    <!--</nav>-->
+
+
+
+    <!--<nav mat-tab-nav-bar fxShow.lg="false" fxShow.xl="false" fxShow.md="false" fxShow.sm="false" fxShow.xs="true"-->
+         <!--flex fxLayout = "row" style="padding-left: 8%;padding-bottom: 9%;">-->
+
+      <!--&lt;!&ndash;<a mat-tab-link  [routerLink]="['general']"   id="defaultOpen">&ndash;&gt;-->
+      <!--&lt;!&ndash;<i class="fa fa-cog" aria-hidden="true" style="padding-right: 5px;"></i>&ndash;&gt;-->
+      <!--&lt;!&ndash;</a>&ndash;&gt;-->
+      <!--&lt;!&ndash;<a  mat-tab-link [routerLink]="['practise']"  >&ndash;&gt;-->
+      <!--&lt;!&ndash;<i class="fa fa-cog" aria-hidden="true" style="padding-right: 5px;"></i>&ndash;&gt;-->
+      <!--&lt;!&ndash;</a>&ndash;&gt;-->
+      <!--&lt;!&ndash;<a  mat-tab-link [routerLink]="['password']" routerLinkActive #rla="routerLinkActive"&ndash;&gt;-->
+      <!--&lt;!&ndash;&gt;&ndash;&gt;-->
+      <!--&lt;!&ndash;<i class="fa fa-key" aria-hidden="true" style="padding-right: 5px;"></i>&ndash;&gt;-->
+      <!--&lt;!&ndash;</a>&ndash;&gt;-->
+      <!--&lt;!&ndash;<a  mat-tab-link [routerLink]="['chart']" >&ndash;&gt;-->
+      <!--&lt;!&ndash;<i class="fa fa-line-chart" aria-hidden="true"></i>&ndash;&gt;-->
+      <!--&lt;!&ndash;</a>&ndash;&gt;-->
+
+      <!--&lt;!&ndash;<a  mat-tab-link [routerLink]="['email']" >&ndash;&gt;-->
+      <!--&lt;!&ndash;<i class="fa fa-envelope-o" aria-hidden="true" style="padding-right: 5px;"></i>&ndash;&gt;-->
+      <!--&lt;!&ndash;</a>&ndash;&gt;-->
+      <!--&lt;!&ndash;<a  mat-tab-link [routerLink]="['sms']" >&ndash;&gt;-->
+      <!--&lt;!&ndash;<i class="fa fa-comment-o" aria-hidden="true" style="padding-right: 5px;"></i>&ndash;&gt;-->
+      <!--&lt;!&ndash;</a>&ndash;&gt;-->
+      <!--&lt;!&ndash;<a  mat-tab-link [routerLink]="['account']" >&ndash;&gt;-->
+      <!--&lt;!&ndash;<i class="fa fa-times" aria-hidden="true" style="padding-right: 5px;"></i>&ndash;&gt;-->
+      <!--&lt;!&ndash;</a>&ndash;&gt;-->
+      <!--<ul>-->
+        <!--<li><a  [routerLink]="['general']"   id="defaultOpen">-->
+          <!--<i class="fa fa-cog" aria-hidden="true"></i>-->
+        <!--</a></li>-->
+        <!--<li><a   [routerLink]="['practise']"  >-->
+          <!--<i class="fa fa-cog" aria-hidden="true"></i>-->
+        <!--</a></li>-->
+        <!--<li><a   [routerLink]="['password']" routerLinkActive #rla="routerLinkActive">-->
+          <!--<i class="fa fa-key" aria-hidden="true"></i>-->
+        <!--</a></li>-->
+        <!--<li><a   [routerLink]="['chart']" >-->
+          <!--<i class="fa fa-line-chart" aria-hidden="true"></i>-->
+        <!--</a></li>-->
+        <!--<li><a [routerLink]="['email']" >-->
+          <!--<i class="fa fa-envelope-o" aria-hidden="true"></i>-->
+        <!--</a></li>-->
+        <!--<li><a  [routerLink]="['sms']" >-->
+          <!--<i class="fa fa-comment-o" aria-hidden="true"></i>-->
+        <!--</a></li>-->
+        <!--<li><a [routerLink]="['account']" >-->
+          <!--<i class="fa fa-times" aria-hidden="true"></i>-->
+        <!--</a></li>-->
+      <!--</ul>-->
+
+    <!--</nav>-->
+
+    <!--<router-outlet></router-outlet>-->
+  <!--</section>-->
+
+<!--</div>-->
+
+<div>
+  <!--<h1 [fxShow.xs]="false"  class="head-h1" style="padding-left: 2%; text-align: center;">Settings</h1>-->
+  <section style="margin: 10px 0 12px 0;">
+    <h1 style="text-align:center;font-size: 24px;">Settings</h1>
+  </section>
+
+  <section style="padding: 35px 25px;background: #fff;">
+    <nav mat-tab-nav-bar>
+
+      <a mat-tab-link  [routerLink]="['general']"   id="defaultOpen">
+        <i class="fa fa-cog" aria-hidden="true" style="padding-right: 5px;"></i> <span class="text" style="font-size: 16px;" fxShow.xs="false" fxShow.md = "true">General</span>
+      </a>
+      <a  mat-tab-link [routerLink]="['practise']"  >
+        <i class="fa fa-cog" aria-hidden="true" style="padding-right: 5px;"></i> <span class="text" style="font-size: 16px;" fxShow.xs="false">Practice details</span>
+      </a>
+      <a  mat-tab-link [routerLink]="['password']" routerLinkActive #rla="routerLinkActive">
+        <i class="fa fa-key" aria-hidden="true" style="padding-right: 5px;"></i> <span class="text" style="font-size: 16px;" fxShow.xs="false">Change password</span>
+      </a>
+      <a  mat-tab-link [routerLink]="['chart']" >
+        <i class="fa fa-line-chart" aria-hidden="true"></i><span class="text" style="font-size: 16px;" fxShow.xs="false">Adherence Chart</span>
+      </a>
+
+      <a  mat-tab-link [routerLink]="['email']" >
+        <i class="fa fa-envelope-o" aria-hidden="true" style="padding-right: 5px;"></i> <span class="text" style="font-size: 16px;" fxShow.xs="false">Email notification</span>
+      </a>
+
+
+
+      <a  mat-tab-link [routerLink]="['sms']" >
+        <i class="fa fa-comment-o" aria-hidden="true" style="padding-right: 5px;"></i> <span class="text" style="font-size: 16px;" fxShow.xs="false">SMS notification</span>
+      </a>
+
+
+      <a  mat-tab-link [routerLink]="['account']" >
+        <i class="fa fa-times" aria-hidden="true" style="padding-right: 5px;"></i> <span class="text" style="font-size: 16px;" fxShow.xs="false">Deactivate account</span>
+      </a>
+
+    </nav>
+    <router-outlet></router-outlet>
+  </section>
+
+</div>

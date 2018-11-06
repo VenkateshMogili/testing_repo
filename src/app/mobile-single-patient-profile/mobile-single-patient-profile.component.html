@@ -1,0 +1,13 @@
+<section class="content">
+  <div fxLayout="column"  fxShow.xs="true"  fxShow="false">
+
+    <mat-list class="list-item-response">
+      <a [routerLink]="['/dashboard/single-patient/'+id+'/profile-view/about']"><mat-list-item><span style="padding-right: 3%;"><i class="fa fa-user" aria-hidden="true"></i></span> About Me </mat-list-item></a>
+      <a  [routerLink]="['/dashboard/single-patient/'+id+'/profile-view/my-health']"><mat-list-item><span style="padding-right: 3%;"><i class="fa fa-medkit" aria-hidden="true"></i></span> My Health </mat-list-item></a>
+      <a [routerLink]="['/dashboard/single-patient/'+id+'/profile-view/my-lifesyle']" ><mat-list-item><span style="padding-right: 3%;"><i class="fa fa-plus-circle" aria-hidden="true"></i></span> My Life Style </mat-list-item></a>
+      <a [routerLink]="['/dashboard/single-patient/'+id+'/profile-view/my-family-history']" ><mat-list-item><span style="padding-right: 3%;"><i class="fa fa-star-o" aria-hidden="true"></i></span> My Family History </mat-list-item></a>
+      <a [routerLink]="['/dashboard/single-patient/'+id+'/profile-view/my-contact']" ><mat-list-item><span style="padding-right: 3%;"><i class="fa fa-map-marker" aria-hidden="true"></i></span> Contact </mat-list-item></a>
+    </mat-list>
+
+  </div>
+</section>

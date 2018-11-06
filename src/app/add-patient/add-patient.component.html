@@ -1,0 +1,530 @@
+<div>
+  <section>
+    <h1 style="text-align:center">Add New Patient</h1>
+    <!-- <button (click)="increment()">Increment</button>
+     <div>Current Count: {{ count$ | async }}</div>
+     <button (click)="decrement()">Decrement</button>
+
+     <button (click)="reset()">Reset Counter</button>-->
+  </section>
+
+  <div>
+
+    <section class="content">
+      <div class="box2" style="border:0px;background:none;">
+        <div fxLayout="column" fxFlex="50%" fxFlexOffset="25" fxFlexOffset.xs="0" fxFlexOffset.md="0" fxFlexOffset.sm="0" fxFlex.xs="100%" fxFlex.sm="100%" fxFlex.md="100%" fxLayoutAlign="center center" style="padding:10px 30px;border:1px solid lightgray;border-radius:10px;">
+
+          <form id="defaultForm" name="form" (ngSubmit)="onSubmit();f.reset()" #f="ngForm"
+                class="example-form form-horizontal ng-pristine ng-valid bv-form" enctype="multipart/form-data" novalidate>
+
+            <mat-form-field class="example-full-width">
+              <input matInput name="name" [(ngModel)]="patient_model.name" required placeholder="First Name">
+              <!--<mat-error *ngIf="firstName.hasError('required')">-->
+              <!--First Name is <strong>required</strong>-->
+              <!--</mat-error>-->
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+              <input matInput name="l_name" placeholder="Last Name" [(ngModel)]="patient_model.l_name" required>
+              <!--<mat-error *ngIf="lastName.hasError('required')">-->
+              <!--Last name is <strong>required</strong>-->
+              <!--</mat-error>-->
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+              <input matInput name="email" [(ngModel)]="patient_model.email" placeholder="Enter Patient Email Address" required>
+              <!--<mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">-->
+              <!--Please enter a valid email address<br/>-->
+              <!--Email format should be-->
+              <!--<small><b>joe@abc.com</b></small>-->
+              <!--</mat-error>-->
+              <!--<mat-error *ngIf="emailFormControl.hasError('required')">-->
+              <!--Email is <strong>required</strong>-->
+              <!--</mat-error>-->
+
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+              <mat-select placeholder="Select Country Code" (selectionChange)="function(selected)" name="country_code" [(ngModel)]="selected" required>
+                <mat-option value="+91">India +91</mat-option>
+                <mat-option value="+1"> +1 United state +1</mat-option>
+                <mat-option value="+44">+44 United Kingdom</mat-option>
+                <mat-option value="+971"> +971 United Arab Emirates</mat-option>
+                <mat-option value="+92">+92 pakistan</mat-option>
+                <mat-option value="+977"> +977 Nepal</mat-option>
+              </mat-select>
+              <!--<mat-error *ngIf="countryCode.hasError('required')">-->
+              <!--Country Code is <strong>required</strong>-->
+              <!--</mat-error>-->
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+              <input matInput name="mobile" type="number" placeholder="Enter 10 digit mobile number"
+                     [(ngModel)]="patient_model.mobile_number" required maxlength="10" minlength="10">
+              <!--<mat-error *ngIf="mobileNumber.hasError('required')">-->
+              <!--Mobile Number is <strong>required</strong>-->
+              <!--</mat-error>-->
+              <!--  <div *ngIf="f.submitted && !mobile_number.valid" class="help-block">Phone Number is required</div>-->
+            </mat-form-field>
+
+            <div fxLayout="row" fxLayoutGap="3%" fxFlex="100%">
+              <div class="item item1" fxFlex="100%" fxLayoutAlign="center">
+                <button type="button" mat-raised-button color="primary" class="details_b" (click)="phone_btn_onclick()">Verify mobile number</button>
+              </div>
+            </div>
+            <div fxLayout="row" fxLayoutGap="3%" fxFlex="100%">
+              <div class="item item1" fxFlex="30%">
+                <div style="margin:10px;"><span>Gender: </span></div>
+              </div>
+              <div class="item item1" fxFlex="70%">
+
+                <mat-radio-group  [(ngModel)]="patient_model.gender" name="gender" value="patient_model.gender">
+                  <mat-radio-button class="close_dtp" value="Male" required style="margin:10px;">
+                    Male
+                  </mat-radio-button>
+                  <mat-radio-button class="close_dtp" value="Female"
+                                    required style="margin:10px;">
+                    Female
+                  </mat-radio-button>
+                </mat-radio-group>
+              </div>
+
+            </div>
+
+            <div fxLayout="row" fxLayoutGap="3%" fxFlex="100%">
+              <!--<mat-form-field class="example_full_width" style="width: 100%;">-->
+              <!--<input matInput [matDatepicker]="picker" placeholder="Date Of Birth : YYYY-MM-DD" [(ngModel)]="patient_model.DOBTotal" name="DOBTotal">-->
+              <!--<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>-->
+              <!--<mat-datepicker #picker></mat-datepicker>-->
+              <!--&lt;!&ndash;<mat-error *ngIf="dateOfBirth.hasError('required')">&ndash;&gt;-->
+              <!--&lt;!&ndash;Date Of Birth is <strong>required</strong>&ndash;&gt;-->
+              <!--&lt;!&ndash;</mat-error>&ndash;&gt;-->
+              <!--</mat-form-field>-->
+              <mat-form-field class="example-full-width" style="width: 100%;">
+                <input  matInput [bsConfig]="{dateInputFormat: 'YYYY-MM-DD'}" placeholder="Date Of Birth : YYYY-MM-DD" [(ngModel)]="patient_model.DOBTotal" name="DOBTotal"
+                        bsDatepicker style="
+                                                     background-color: #fafafa;
+                                                     border: none;box-shadow: none;
+                                                      -webkit-transition: none;
+                                                     transition: none;">
+              </mat-form-field>
+            </div>
+
+
+            <mat-form-field class="example-full-width">
+              <input matInput name="med_history" [(ngModel)]="patient_model.med_history" placeholder="Type your medical history" required>
+              <!--<small class="help-block" data-bv-validator="notEmpty" data-bv-for="history"-->
+              <!--data-bv-result="NOT_VALIDATED" style="display: none;">The history is required-->
+              <!--</small>-->
+              <!--<mat-error *ngIf="medicalHistory.hasError('required')">-->
+              <!--Medical History is <strong>required</strong>-->
+              <!--</mat-error>-->
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+              <input matInput name="paddress" [(ngModel)]="patient_model.paddress" placeholder="Enter Patient Address (Line 1)" required>
+              <!--<mat-error *ngIf="paddress.hasError('required')">-->
+              <!--Patient Address Line 1 is <strong>required</strong>-->
+              <!--</mat-error>-->
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+              <input matInput name="paddress_1" [(ngModel)]="patient_model.paddress_1" placeholder="Enter Patient Address (Line 2)">
+              <!--<mat-error *ngIf="paddress_1.hasError('required')">-->
+              <!--Patient Address Line 2 is <strong>required</strong>-->
+              <!--</mat-error>-->
+            </mat-form-field>
+
+            <!-- <div class="form-group">
+               <label class="col-lg-3 control-label">Hospital Name</label>
+               <div class="col-lg-5">
+                 <input type="text" class="form-control" name="history" placeholder="Enter Hospital Name" data-bv-field="history">
+                 <small class="help-block" data-bv-validator="notEmpty" data-bv-for="history" data-bv-result="NOT_VALIDATED" style="display: none;">The history is required</small></div>
+             </div>-->
+
+
+            <!--<mat-form-field class="example-full-width">-->
+            <!--<textarea matInput placeholder="Enter Hospital Address" [formControl]="pad" name="pad" value="" required></textarea>-->
+            <!--&lt;!&ndash;<mat-error *ngIf="hospitalAddress.hasError('required')">&ndash;&gt;-->
+            <!--&lt;!&ndash;Hospital Address is <strong>required</strong>&ndash;&gt;-->
+            <!--&lt;!&ndash;</mat-error>&ndash;&gt;-->
+            <!--</mat-form-field>-->
+
+            <mat-form-field class="example-full-width">
+              <mat-select placeholder="Select Country" #t2 (selectionChange)="onChange(t2.value)" name="country" [(ngModel)]="patient_model.country">
+                <mat-option *ngFor="let country of all_countries" value="{{country.country_id}}">{{country.country_name}}
+                </mat-option>
+              </mat-select>
+              <!--<mat-error *ngIf="country.hasError('required')">-->
+              <!--Country is <strong>required</strong>-->
+              <!--</mat-error>-->
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+              <mat-select placeholder="Select State" name="state" #t3 (selectionChange)="onSelectstate(t3.value)"
+                          [(ngModel)]="patient_model.state">
+                <mat-option *ngFor="let state of all_states" value="{{state.state_id}}">{{state.state_name}}</mat-option>
+              </mat-select>
+              <!--<mat-error *ngIf="state.hasError('required')">-->
+              <!--State is <strong>required</strong>-->
+              <!--</mat-error>-->
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+              <mat-select placeholder="Select City" name="city" #t4 (selectionChange)="onSelectcity(t4.value)"
+                          [(ngModel)]="patient_model.city">
+                <mat-option *ngFor="let city of all_cities" value="{{city.city_id}}">{{city.city_name}}</mat-option>
+              </mat-select>
+              <!--<mat-error *ngIf="city.hasError('required')">-->
+              <!--City is <strong>required</strong>-->
+              <!--</mat-error>-->
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+              <input matInput name="zip" type="number" placeholder="Enter Pincode" [(ngModel)]="patient_model.zip"
+                     required>
+              <!--<mat-error *ngIf="pincode.hasError('required')">-->
+              <!--Pincode is <strong>required</strong>-->
+              <!--</mat-error>-->
+            </mat-form-field>
+
+            <!--  <div class="form-group">
+                <label class="col-md-3 control-label">Upload Patient Photo</label>
+                <div class="col-md-5">
+                 <input type="file" class="inputFile" name="userImage">
+                </div>
+              </div> -->
+            <mat-form-field class="example-full-width">
+
+              <textarea matInput placeholder="Address" name="doc_hospital_id" [(ngModel)]="patient_model.doc_hospital_id" required></textarea>
+
+              <!--<mat-error *ngIf="address.hasError('required')">-->
+              <!--Address is <strong>required</strong>-->
+              <!--</mat-error>-->
+            </mat-form-field>
+            <small (click)="openDialog()" style="color:#257fef">click to change hospital</small>
+            <br/><br/>
+
+            <div fxLayout="row" fxLayoutGap="3%" fxFlex="100%">
+              <div class="item item1" fxFlex="100%" fxLayoutAlign="center">
+                <button mat-raised-button color="accent"[disabled]="!f.form.valid" type="submit" id="saveBtn" name="signup" value="Sign up" class="details_b">Save Patient
+                </button>
+              </div>
+            </div>
+
+
+
+          </form>
+
+        </div>
+      </div>
+    </section>
+    <!-- /.content -->
+  </div><!-- /.content-wrapper -->
+
+</div>
+
+
+<!-- Main content -->
+<!--<button id="openModal" #openModal [hidden]="true"-->
+<!--data-toggle="modal" data-target="#myModal"></button>-->
+<!--&lt;!&ndash; Modal &ndash;&gt;-->
+<!--<div class="modal fade" id="myModal" role="dialog">-->
+<!--<div class="modal-dialog">-->
+
+<!--&lt;!&ndash; Modal content&ndash;&gt;-->
+<!--<div class="modal-content" style="padding:10px;">-->
+<!--<div class="modal-header">-->
+<!--<button mat-mini-fab class="close" data-dismiss="modal" color="warn">-->
+<!--<mat-icon aria-label="Example icon-button with a heart icon">cancel</mat-icon>-->
+<!--</button>-->
+<!--<h4 class="modal-title text-primary">Choose Hospitalfhgfhgh</h4>-->
+<!--</div>-->
+<!--<div class="modal-body">-->
+<!--<div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="5%" fxFlex="100%">-->
+
+<!--<ng-template ngFor let-item [ngForOf]="Range(hospital_list.length)" let-innerIndex="index"-->
+<!--*ngIf="hospital_list.length>0">-->
+
+<!--<div fxLayout="column" fxFlex="50%">-->
+<!--<form role="form">-->
+<!--<div class="checkbox" style="font-weight:600">-->
+<!--<mat-radio-button data-dismiss="modal" (click)="hospital_id(hospital_list[innerIndex]['doctor_hospital_list_id'],hospital_list[innerIndex]['cn'],hospital_list[innerIndex]['hc'],hospital_list[innerIndex]['cc'],hospital_list[innerIndex]['cs'],hospital_list[innerIndex]['hcc'])"> {{hospital_list[innerIndex]['cn'] | capitalize}}</mat-radio-button>-->
+<!--</div>-->
+<!--<mat-form-field class="example_full_width">-->
+<!--<input matInput placeholder="Enter Hospital Name" value="{{hospital_list[innerIndex]['cn'] | capitalize}}">-->
+<!--</mat-form-field>-->
+<!--<mat-form-field class="example_full_width">-->
+<!--<textarea matInput placeholder="Enter Hospital Address Line 1">{{hospital_list[innerIndex]['hc']}}, {{hospital_list[innerIndex]['cc']}}, {{hospital_list[innerIndex]['cs']}} {{hospital_list[innerIndex]['hcc']}}</textarea>-->
+<!--</mat-form-field>-->
+<!--<mat-form-field class="example_full_width">-->
+<!--<textarea matInput placeholder="Enter Hospital Address Line 2">Madhapur</textarea>-->
+<!--</mat-form-field>-->
+<!--<mat-form-field class="example_full_width">-->
+<!--<input matInput placeholder="Enter Phone Number" value="{{hospital_list[innerIndex]['cp']}}">-->
+<!--</mat-form-field>-->
+<!--</form>-->
+<!--</div>-->
+<!--</ng-template>-->
+
+<!--</div>-->
+<!--</div>-->
+<!--<div class="modal-footer">-->
+<!--<div style="margin-bottom: 5px;">-->
+<!--<small class="text-primary">(Click on below button to Add new hospital)</small>-->
+<!--</div>-->
+<!--<button mat-raised-button color="accent" (click)="choose_hospital()" data-toggle="modal" data-target="#myModal2">-->
+<!--Add Hospital-->
+<!--</button>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--</div>-->
+<!--</div>-->
+
+<!-- Modal2 -->
+<!-- Modal2 -->
+<!--<div class="modal fade" id="myModal2" role="dialog">-->
+<!--<div class="modal-dialog">-->
+
+<!--&lt;!&ndash; Modal content&ndash;&gt;-->
+
+<!--<div class="modal-body" style="background-color:white;">-->
+<!--<div class="modal-header">-->
+<!--<button mat-mini-fab class="close" data-dismiss="modal" color="warn">-->
+<!--<mat-icon>cancel</mat-icon>-->
+<!--</button>-->
+<!--<h4 class="modal-title text-bold text-primary">Add Hospital Details</h4>-->
+<!--</div>-->
+<!--<div fxLayout="column" class="container" fxLayoutAlign="center" fxFlex="100%">-->
+<!--<form id="hform" name="hform"  role="form" (submit)="add_hospital()" #fh="ngForm" data-dismiss="model" data-target="#openModel">-->
+<!--<div fxLayout="column" fxFlex="100%">-->
+<!--<mat-form-field class="example_full_width">-->
+<!--&lt;!&ndash;   <label for="exampleInputEmail1">Name</label> &ndash;&gt;-->
+<!--<input matInput placeholder="Enter Hospital Name" name="clinic_name"-->
+<!--[(ngModel)]="model.clinic_name"  required  #clinic_name="ngModel">-->
+<!--<div *ngIf="clinic_name.errors &&  (clinic_name.touched || clinic_name.dirty) " class="alert alert-danger">-->
+<!--<div [hidden]="!clinic_name.errors.required">-->
+<!--Hospital Name is Required !-->
+<!--</div>-->
+<!--</div>-->
+<!--</mat-form-field>-->
+<!--</div>-->
+
+<!--<div fxLayout="column" fxFlex="100%">-->
+<!--<mat-form-field class="example_full_width">-->
+<!--&lt;!&ndash;     <label for="exampleInputPassword1">Address</label> &ndash;&gt;-->
+<!--<textarea matInput name="hospital_city" [(ngModel)]="model.hospital_city"-->
+<!--#hospital_city="ngModel" required  placeholder="Enter Hospital Address Line 1"></textarea>-->
+<!--<div *ngIf="hospital_city.errors &&  (hospital_city.touched || hospital_city.dirty) " class="alert alert-danger">-->
+<!--<div [hidden]="!hospital_city.errors.required">-->
+<!--Hospital Address is Required !-->
+<!--</div>-->
+<!--</div>-->
+<!--</mat-form-field>-->
+<!--</div>-->
+
+<!--<div fxLayout="column" fxFlex="100%">-->
+<!--<mat-form-field class="example_full_width">-->
+<!--&lt;!&ndash;     <label for="exampleInputPassword1">Address</label> &ndash;&gt;-->
+<!--<textarea matInput id="caddress1" name="address2" [(ngModel)]="model.address2"-->
+<!--#address2="ngModel" placeholder="Enter Hospital Address Line 2"></textarea>-->
+<!--</mat-form-field>-->
+<!--</div>-->
+
+
+<!--<div fxLayout="column" fxFlex="100%">-->
+<!--<mat-form-field class="example_full_width">-->
+<!--&lt;!&ndash; <label for="exampleInputPassword1">City</label> &ndash;&gt;-->
+<!--<input matInput name="clinic_city" [(ngModel)]="model.clinic_city"-->
+<!--#clinic_city="ngModel" required  placeholder="Enter Hospital City">-->
+<!--<div *ngIf="clinic_city.errors &&  (clinic_city.touched || clinic_city.dirty) " class="alert alert-danger">-->
+<!--<div [hidden]="!clinic_city.errors.required">-->
+<!--Hospital City is Required !-->
+<!--</div>-->
+<!--</div>-->
+<!--</mat-form-field>-->
+<!--</div>-->
+
+<!--<div fxLayout="column" fxFlex="100%">-->
+<!--<mat-form-field class="example_full_width">-->
+<!--&lt;!&ndash;   <label for="exampleInputPassword1">State</label> &ndash;&gt;-->
+<!--<input matInput name="clinic_state" [(ngModel)]="model.clinic_state"-->
+<!--#clinic_state="ngModel" required  placeholder="Enter Hospital State">-->
+<!--<div *ngIf="clinic_state.errors &&  (clinic_state.touched || clinic_state.dirty) " class="alert alert-danger">-->
+<!--<div [hidden]="!clinic_state.errors.required">-->
+<!--Clinic State is Required !-->
+<!--</div>-->
+<!--</div>-->
+<!--</mat-form-field>-->
+<!--</div>-->
+
+<!--<div fxLayout="column" fxFlex="100%">-->
+<!--<mat-form-field class="example_full_width">-->
+<!--&lt;!&ndash;  <label for="exampleInputPassword1">Country</label> &ndash;&gt;-->
+<!--<input matInput name="hospital_city_c" [(ngModel)]="model.hospital_city_c"-->
+<!--#hospital_city_c="ngModel" required  placeholder="Enter Hospital Country">-->
+<!--<div *ngIf="hospital_city_c.errors &&  (hospital_city_c.touched || hospital_city_c.dirty) " class="alert alert-danger">-->
+<!--<div [hidden]="!hospital_city_c.errors.required">-->
+<!--Hospital Country is Required !-->
+<!--</div>-->
+<!--</div>-->
+<!--</mat-form-field>-->
+<!--</div>-->
+
+<!--<div fxLayout="column" fxFlex="100%">-->
+<!--<mat-form-field class="example_full_width">-->
+<!--&lt;!&ndash; <label for="exampleInputPassword1">Pincode</label> &ndash;&gt;-->
+<!--<input matInput required placeholder="Pincode" name="pin" [(ngModel)]="model.pin"-->
+<!--#pin="ngModel">-->
+<!--<div *ngIf="pin.errors &&  (pin.touched || pin.dirty) " class="alert alert-danger" >-->
+<!--<div [hidden]="!pin.errors.required">-->
+<!--Pincode is Required !-->
+<!--</div>-->
+<!--</div>-->
+<!--</mat-form-field></div>-->
+
+<!--<div fxLayout="column" fxFlex="100%">-->
+<!--<mat-form-field class="example_full_width">-->
+<!--&lt;!&ndash; <label for="exampleInputEmail1">Phone Number</label> &ndash;&gt;-->
+<!--<input matInput name="clinic_ph" required  [(ngModel)]="model.clinic_ph" #clinic_ph="ngModel" placeholder="Enter Hospital Phone Number">-->
+<!--<div *ngIf="clinic_ph.errors &&  (clinic_ph.dirty || clinic_ph.touched ) " class="alert alert-danger">-->
+<!--<div [hidden]="!clinic_ph.errors.required">-->
+<!--Phone Number is Required !-->
+<!--</div>-->
+<!--</div>-->
+<!--</mat-form-field>-->
+<!--</div>-->
+<!--<div fxLayout="row" fxLayoutGap="3%" fxFlex="100%">-->
+<!--<div class="item item1" fxFlex="100%" fxLayoutAlign="right">-->
+<!--<button  mat-raised-button color="accent" type="submit" [disabled]="!fh.valid">Save Hospital Details</button>-->
+<!--</div>-->
+<!--</div>-->
+<!--</form>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--</div>-->
+<!--</div>-->
+
+<!--<div class="item item1" fxFlex="40%">-->
+<!--<mat-select name="DOBMonth" placeholder="Month" [(ngModel)]="patient_model.DOBMonth" #t required style="margin:10px;">-->
+<!--<mat-option value="0" disabled selected> -Month-</mat-option>-->
+<!--<mat-option value="1">1</mat-option>-->
+<!--<mat-option value="2">2</mat-option>-->
+<!--<mat-option value="3">3</mat-option>-->
+<!--<mat-option value="4">4</mat-option>-->
+<!--<mat-option value="5">5</mat-option>-->
+<!--<mat-option value="6">6</mat-option>-->
+<!--<mat-option value="7">7</mat-option>-->
+<!--<mat-option value="8">8</mat-option>-->
+<!--<mat-option value="9">9</mat-option>-->
+<!--<mat-option value="10">10</mat-option>-->
+<!--<mat-option value="11">11</mat-option>-->
+<!--<mat-option value="12">12</mat-option>-->
+<!--</mat-select>-->
+<!--</div>-->
+
+<!--<div class="item item12" fxFlex="40%">-->
+<!--<mat-select name="DOBDay" placeholder="Day" [(ngModel)]="patient_model.DOBDay" #ttt required style="margin:10px;">-->
+<!--<mat-option value="0" disabled selected> -Day-</mat-option>-->
+<!--<mat-option value="1">1</mat-option>-->
+<!--<mat-option value="2">2</mat-option>-->
+<!--<mat-option value="3">3</mat-option>-->
+<!--<mat-option value="4">4</mat-option>-->
+<!--<mat-option value="5">5</mat-option>-->
+<!--<mat-option value="6">6</mat-option>-->
+<!--<mat-option value="7">7</mat-option>-->
+<!--<mat-option value="8">8</mat-option>-->
+<!--<mat-option value="9">9</mat-option>-->
+<!--<mat-option value="10">10</mat-option>-->
+<!--<mat-option value="11">11</mat-option>-->
+<!--<mat-option value="12">12</mat-option>-->
+<!--<mat-option value="13">13</mat-option>-->
+<!--<mat-option value="14">14</mat-option>-->
+<!--<mat-option value="15">15</mat-option>-->
+<!--<mat-option value="16">16</mat-option>-->
+<!--<mat-option value="17">17</mat-option>-->
+<!--<mat-option value="18">18</mat-option>-->
+<!--<mat-option value="19">19</mat-option>-->
+<!--<mat-option value="20">20</mat-option>-->
+<!--<mat-option value="21">21</mat-option>-->
+<!--<mat-option value="22">22</mat-option>-->
+<!--<mat-option value="23">23</mat-option>-->
+<!--<mat-option value="24">24</mat-option>-->
+<!--<mat-option value="25">25</mat-option>-->
+<!--<mat-option value="26">26</mat-option>-->
+<!--<mat-option value="27">27</mat-option>-->
+<!--<mat-option value="28">28</mat-option>-->
+<!--<mat-option value="29">29</mat-option>-->
+<!--<mat-option value="30">30</mat-option>-->
+<!--<mat-option value="31">31</mat-option>-->
+<!--</mat-select>-->
+<!--</div>-->
+
+
+<!--<div class="item item13" fxFlex="40%">-->
+<!--<mat-select name="DOBYear" placeholder="Year" [(ngModel)]="patient_model.DOBYear" #tt required style="margin:10px;">-->
+<!--<mat-option value="0" disabled selected> -Year-</mat-option>-->
+<!--<mat-option value="1993">1999</mat-option>-->
+<!--<mat-option value="1992">1998</mat-option>-->
+<!--<mat-option value="1991">1997</mat-option>-->
+<!--<mat-option value="1990">1996</mat-option>-->
+<!--<mat-option value="1989">1995</mat-option>-->
+<!--<mat-option value="1988">1994</mat-option>-->
+<!--<mat-option value="1993">1993</mat-option>-->
+<!--<mat-option value="1992">1992</mat-option>-->
+<!--<mat-option value="1991">1991</mat-option>-->
+<!--<mat-option value="1990">1990</mat-option>-->
+<!--<mat-option value="1989">1989</mat-option>-->
+<!--<mat-option value="1988">1988</mat-option>-->
+<!--<mat-option value="1987">1987</mat-option>-->
+<!--<mat-option value="1986">1986</mat-option>-->
+<!--<mat-option value="1985">1985</mat-option>-->
+<!--<mat-option value="1984">1984</mat-option>-->
+<!--<mat-option value="1983">1983</mat-option>-->
+<!--<mat-option value="1982">1982</mat-option>-->
+<!--<mat-option value="1981">1981</mat-option>-->
+<!--<mat-option value="1980">1980</mat-option>-->
+<!--<mat-option value="1979">1979</mat-option>-->
+<!--<mat-option value="1978">1978</mat-option>-->
+<!--<mat-option value="1977">1977</mat-option>-->
+<!--<mat-option value="1976">1976</mat-option>-->
+<!--<mat-option value="1975">1975</mat-option>-->
+<!--<mat-option value="1974">1974</mat-option>-->
+<!--<mat-option value="1973">1973</mat-option>-->
+<!--<mat-option value="1972">1972</mat-option>-->
+<!--<mat-option value="1971">1971</mat-option>-->
+<!--<mat-option value="1970">1970</mat-option>-->
+<!--<mat-option value="1969">1969</mat-option>-->
+<!--<mat-option value="1968">1968</mat-option>-->
+<!--<mat-option value="1967">1967</mat-option>-->
+<!--<mat-option value="1966">1966</mat-option>-->
+<!--<mat-option value="1965">1965</mat-option>-->
+<!--<mat-option value="1964">1964</mat-option>-->
+<!--<mat-option value="1963">1963</mat-option>-->
+<!--<mat-option value="1962">1962</mat-option>-->
+<!--<mat-option value="1961">1961</mat-option>-->
+<!--<mat-option value="1960">1960</mat-option>-->
+<!--<mat-option value="1959">1959</mat-option>-->
+<!--<mat-option value="1958">1958</mat-option>-->
+<!--<mat-option value="1957">1957</mat-option>-->
+<!--<mat-option value="1956">1956</mat-option>-->
+<!--<mat-option value="1955">1955</mat-option>-->
+<!--<mat-option value="1954">1954</mat-option>-->
+<!--<mat-option value="1953">1953</mat-option>-->
+<!--<mat-option value="1952">1952</mat-option>-->
+<!--<mat-option value="1951">1951</mat-option>-->
+<!--<mat-option value="1950">1950</mat-option>-->
+<!--<mat-option value="1949">1949</mat-option>-->
+<!--<mat-option value="1948">1948</mat-option>-->
+<!--<mat-option value="1947">1947</mat-option>-->
+<!--</mat-select>-->
+<!--</div>-->
+
+<!--<div class="form-group">
+  <label class="col-lg-3 control-label">Age</label>
+  <div class="col-lg-5">
+    <input type="text" class="form-control" name="age" placeholder="Enter age" data-bv-field="age">
+    <small class="help-block" data-bv-validator="notEmpty" data-bv-for="age" data-bv-result="NOT_VALIDATED" style="display: none;">The age is required</small><small class="help-block" data-bv-validator="digits" data-bv-for="age" data-bv-result="NOT_VALIDATED" style="display: none;">The age is required</small></div>
+</div>-->

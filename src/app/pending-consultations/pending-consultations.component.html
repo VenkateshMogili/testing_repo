@@ -1,0 +1,146 @@
+<!-- Content Wrapper. Contains page content -->
+<div style="min-height: 382px;">
+  <!-- Content Header (Page header) -->
+  <section>
+    <h1 class="sub_head">
+      {{type | capitalize}} Consult : Pending Requests
+    </h1>
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+    <mat-card style="width:95%;padding:30px" ngStyle.xs="width:94%;padding:10px;">
+      <mat-card-content>
+    <div class="clearfix">
+
+      <ng-template ngFor let-item [ngForOf]="createRange(pending_consultations.length)" let-currentIndex="index" *ngIf="pending_consultations.length>0">
+
+        <div fxLayout="row" fxFlex="100%" fxLayout.xs="column" fxLayoutGap="2%" fxLayoutAlign="center">
+
+          <div fxLayout="column" fxFlex="20%">
+            <span>Patient Prefered Date & Time</span>
+          </div>
+
+          <div fxLayout="column" fxFlex="20%">
+            <p>Patient Name: <b>{{pending_consultations[currentIndex]['patient_name']}}</b></p>
+            <p>Date : <b>{{pending_consultations[currentIndex]['appoinment_date'] | amDateFormat: 'DD-MM-YYYY'}} </b></p>
+            <p>Time : <b>{{pending_consultations[currentIndex]['start_time']}} </b></p>
+            <p>Fee: <b>{{pending_consultations[currentIndex]['fee']}}</b></p>
+          </div>
+
+          <div fxLayout="column" fxFlex="30%" fxLayoutGap="2%" fxLayoutAlign="center center" fxLayoutAlign.xs="start">
+
+            <div fxLayout="row" fxLayoutGap="2%" fxLayoutGap.xs="1%" ngStyle.xs="margin-right:100%">
+              <div fxLayout="column" fxFlex="100%">
+                <button
+                  (click)="Confirm('confirm', pending_consultations[currentIndex]['booking_id'], pending_consultations[currentIndex]['patient_id_c'], pending_consultations[currentIndex]['booking_type'])"
+                  mat-raised-button style="background-color:#365899;color:white;margin-right:1%" class="details_b"><i class="material-icons">done</i>
+                </button>
+              </div>
+              <div fxLayout="column" fxFlex="100%">
+                <button
+                  (click)="Reject('reject', pending_consultations[currentIndex]['booking_id'], pending_consultations[currentIndex]['patient_id_c'], pending_consultations[currentIndex]['booking_type'])"
+                  mat-raised-button style="background-color:#f6f7f9!important;color:red!important;margin-right:1%" color="warn" class="details_bc"><i class="material-icons">clear</i>
+                </button>
+              </div>
+              <div fxLayout="column" fxFlex="50%">
+                <a href="/dashboard/single-patient/{{pending_consultations[currentIndex]['patient_id_c']}}">
+                  <button mat-raised-button color="default" class="details_b"><i class="material-icons">visibility</i> <b ngStyle.xs="display:none" style="font-size: 18px;">Patient Details</b>
+                  </button>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        <br/>
+        <mat-divider></mat-divider>
+        <br/>
+
+      </ng-template>
+      <div fxLayout="row" fxFlex="100%">
+        <div *ngIf="pending_consultations.length<=0">
+          Lucky Day.. All pending requests cleared.. we will notify you as soon as you receive fresh request
+        </div>
+      </div>
+
+
+    </div>
+      </mat-card-content>
+    </mat-card>
+  </section>
+</div>
+
+
+<!--&lt;!&ndash; Content Wrapper. Contains page content &ndash;&gt;-->
+<!--<div class="content-wrapper" style="min-height: 382px;">-->
+<!--&lt;!&ndash; Content Header (Page header) &ndash;&gt;-->
+<!--<section class="content-header">-->
+<!--<h1>-->
+<!--{{type | capitalize}} Consult : Pending requests-->
+<!--</h1>-->
+<!--</section>-->
+
+<!--&lt;!&ndash; Main content &ndash;&gt;-->
+<!--<section class="content">-->
+
+<!--<div class="box clearfix">-->
+
+<!--<div class="row">-->
+<!--<div class="col-md-12">-->
+
+<!--<div class="form-horizontal form-horizontal2">-->
+<!--<div class="mrg_btm2" *ngIf="pending_consultations.length>0">-->
+<!--<ng-template ngFor let-item [ngForOf]="Range(pending_consultations.length)" let-currentIndex="index">-->
+
+<!--&lt;!&ndash;<div class="text-right text_left_m">-->
+
+<!--<a href="/doctor/patient/list/{{$req['patient_id_c']}}">-->
+<!--<button type="button" class="btn btn-primary btn-sm active"><i class="fa fa-plus-circle"></i>-->
+<!--Show Patient details</button></a>-->
+
+<!--</div>&ndash;&gt;-->
+
+<!--<div class="row">-->
+<!--<label class="col-md-3">Patient Prefered Date & Time</label>-->
+<!--<div class="col-md-6">-->
+<!--Patient Name: <b>{{pending_consultations[currentIndex]['patient_name']}}</b> <br>-->
+<!--Date : {{pending_consultations[currentIndex]['appoinment_date'] | amDateFormat: 'DD-MM-YYYY'}} <br>-->
+<!--Time : {{pending_consultations[currentIndex]['start_time']}} <br>-->
+<!--Fee: {{pending_consultations[currentIndex]['fee']}}-->
+<!--</div>-->
+
+<!--<div class="col-md-3">-->
+<!--<div class="mrg_btm">-->
+<!--<button-->
+<!--(click)="Confirm('confirm', pending_consultations[currentIndex]['booking_id'], pending_consultations[currentIndex]['patient_id_c'], pending_consultations[currentIndex]['booking_type'])"-->
+<!--mat-raised-button color="primary">Confirm-->
+<!--</button>-->
+<!--<button-->
+<!--(click)="Reject('reject', pending_consultations[currentIndex]['booking_id'], pending_consultations[currentIndex]['patient_id_c'], pending_consultations[currentIndex]['booking_type'])"-->
+<!--mat-raised-button color="warn">Reject-->
+<!--</button>-->
+<!--</div>-->
+<!--<div><a href="/dashboard/single-patient/{{pending_consultations[currentIndex]['patient_id_c']}}">-->
+<!--<button mat-raised-button color="default"><i class="fa fa-floppy-o"></i>-->
+<!--Show Patient details-->
+<!--</button>-->
+<!--</a></div>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--</ng-template>-->
+<!--</div>-->
+<!--<div *ngIf="pending_consultations.length<=0">-->
+<!--Lucky Day.. All pending requests cleared.. we will notify you as soon as you receive fresh request-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="clearfix"></div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+
+<!--</section>-->
+<!--</div>&lt;!&ndash; /.content-wrapper &ndash;&gt;-->

@@ -1,0 +1,125 @@
+<div>
+  <form class="form-horizontal form-horizontal2">
+    <h3 class="mrg_btm2">My Health</h3>
+
+    <h3 class="mrg_btm2">Conditions and Symptoms</h3>
+    <ng-template ngFor let-item [ngForOf]="createRange(list['health_list'].length)"
+                 let-innerIndex="index">
+
+      <!--  @foreach($health_list as $health)-->
+      <div class="form-group">
+        <label class="control-label col-lg-3 col-md-12 col-sm-12 col-xs-6" for="email">Conditions:</label>
+        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-6">
+          <div class="control-label">{{list['health_list'][innerIndex]['conditions_symptoms']}}
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <div class=" col-md-3 col-sm-12"></div>
+        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-6">
+          <div class="control-label">{{list['health_list'][innerIndex]['conditions_have']}}</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-lg-3 col-md-12 col-sm-12 col-xs-6" for="">Notes:</label>
+        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-6">
+          <div class="control-label">{{list['health_list'][innerIndex]['conditions_note']}}</div>
+        </div>
+      </div>
+    </ng-template>
+    <hr>
+
+
+    <h3 class="mrg_btm2">Medications</h3>
+    <ng-template ngFor let-item [ngForOf]="createRange(list['medication_list'].length)"
+                 let-innerIndex="index" *ngIf="list['medication_list'].length>0">
+
+      <div class="form-group">
+        <label class="control-label col-lg-3 col-md-12 col-sm-12 col-xs-6" for="email">Medicine:</label>
+        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-6">
+          <div class="control-label">{{list['medication_list'][innerIndex]['medication']}}</div>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <div class="col-md-3 col-sm-12"></div>
+        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-6">
+          <div class="control-label">{{list['medication_list'][innerIndex]['medication_take']}}
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-lg-3 col-md-12 col-sm-12 col-xs-6" for="">Notes:</label>
+        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-6">
+          <div class="control-label">{{list['medication_list'][innerIndex]['medication_note']}}
+          </div>
+        </div>
+      </div>
+    </ng-template>
+    <hr>
+
+    <h3 class="mrg_btm2">Treatment or Procedure</h3>
+    <ng-template ngFor let-item [ngForOf]="createRange(list['treatment_list'].length)"
+                 let-innerIndex="index" *ngIf="list['treatment_list'].length>0">
+
+      <div class="form-group">
+        <label class="control-label col-lg-3 col-md-12 col-sm-12 col-xs-6" for="email">Treatment:</label>
+        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-6">
+          <div class="control-label">{{list['treatment_list'][innerIndex]['treatment']}}</div>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <div class="col-md-3 col-sm-12">Date Preformed:</div>
+        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-6">
+          <div class="control-label">{{list['treatment_list'][innerIndex]['treatment_date']}}
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-lg-3 col-md-12 col-sm-12 col-xs-6" for="">Notes:</label>
+        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-6">
+          <div class="control-label">{{list['treatment_list'][innerIndex]['treatment_note']}}
+          </div>
+        </div>
+      </div>
+    </ng-template>
+    <hr>
+
+    <h3 class="mrg_btm2">Allergy</h3>
+    <ng-template ngFor let-item [ngForOf]="createRange(list['allergy_list'].length)"
+                 let-innerIndex="index" *ngIf="list['allergy_list'].length>0">
+
+      <div class="form-group">
+        <label class="control-label col-lg-3 col-md-12 col-sm-12 col-xs-6" for="email">Allergy:</label>
+        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-6">
+          <div class="control-label">{{list['allergy_list'][innerIndex]['allegry']}}</div>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <div class="col-md-3 col-sm-12"></div>
+        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-6">
+          <div class="control-label">{{list['allergy_list'][innerIndex]['allergy_have']}}</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-lg-3 col-md-12 col-sm-12 col-xs-6" for="">Notes:</label>
+        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-6">
+          <div class="control-label">{{list['allergy_list'][innerIndex]['allergy_note']}}</div>
+        </div>
+      </div>
+    </ng-template>
+    <hr>
+
+  </form>
+</div>

@@ -1,0 +1,365 @@
+<div>
+  <section>
+    <h1 class="sub_head">Prescription List</h1>
+  </section>
+  <section class="content">
+    <div class="box" ngStyle.xs="padding:10px;">
+      <div fxLayout="row" fxLayout.xs="column" fxFlex="100">
+        <div fxLayout="column" fxFlex="50">
+          Please select prescription and click on the drop down icon for adherence data
+        </div>
+        <div fxLayout="column" fxFlex="50">
+          <a href="dashboard/select-patient"><button mat-raised-button color="primary" class="details_b" ngStyle.xs="float:none;margin-left:none;" style="float:right;background-color:#dd4b39;color:white;"><i class="fa fa-plus-circle"></i> Add New</button> </a>
+        </div>
+      </div>
+      <br/>
+
+      <ng-template ngFor let-item [ngForOf]="createRange(prescription_list.length)" let-currentIndex="index"
+                   *ngIf="prescription_list.length>0">
+
+        <div class="mrg2" fxLayout="row" fxFlex="100" style="margin-bottom:-1px;">
+          <div fxFlex="90" fxLayout="column">
+            {{ prescription_list[currentIndex]['values'][0]['changed_on_d'] | amDateFormat: 'DD-MM-YYYY'}}
+          </div>
+          <!--mobile menu-->
+          <div fxFlex="10" fxLayout="column" fxShow.xs="true" fxShow.lg="false" fxShow.md="false" fxShow.sm="false" fxShow.xl="false">
+            <button class="details_b" mat-button [matMenuTriggerFor]="menu" style="min-width:0px;height:25px;width:25px;background:#337ab7;color:white;margin-left:3px;"><i class="material-icons" style="margin-top:5px;margin-left:-10px;font-size:1.5em;">arrow_drop_down</i></button>
+            <mat-menu #menu="matMenu" [overlapTrigger]="false" xPosition="before" width="6" id="tooTough" >
+              <a [routerLink]="['/dashboard/prescription-view/'+prescription_list[currentIndex]['key']]" style="text-decoration:none"><button mat-menu-item class="menustyl"><i class="material-icons" aria-hidden="true">visibility</i>&nbsp;View</button></a>
+              <a [routerLink]="['/dashboard/prescription-edit/'+prescription_list[currentIndex]['key']]" style="text-decoration:none"><button mat-menu-item class="menustyl"><i class="material-icons" aria-hidden="true">edit</i>&nbsp;Edit</button></a>
+              <a [routerLink]="['/dashboard/prescription-mail/'+prescription_list[currentIndex]['key']]" style="text-decoration:none"><button mat-menu-item class="menustyl"><i class="material-icons" aria-hidden="true">email</i>&nbsp;Email</button></a>
+              <a href="/prescription-print/{{prescription_list[currentIndex]['key']}}" style="text-decoration:none"><button mat-menu-item class="menustyl"><i class="material-icons" aria-hidden="true">print</i>&nbsp;Print</button></a>
+            </mat-menu>
+          </div>
+
+        </div>
+        <div fxLayout="row" class="bor-drpart" fxFlex="100">
+
+          <div fxFlex="95">
+            <img src="assets/images/user_icon.jpg"  class="doc-img"/>
+            <span class="dr-name"> Patient Name: {{prescription_list[currentIndex]['values'][0]['patient_name'] | capitalize}}</span>
+          </div>
+          <!--desktop menu-->
+
+          <div fxShow.lg="true" fxShow.xl="true" fxShow.md="true" fxShow.sm="true" fxShow.xs="false" style="padding-left: 70%;">
+            <button mat-button class="details_b" [matMenuTriggerFor]="menu" style="min-width:0px;height:35px;width:35px;background:#337ab7;color:white;" ngStyle.lg="margin-left:35px;" ngStyle.md="margin-left:20px;" ngStyle.xl="margin-left:50px;"><i class="material-icons"  style="margin-top:5px;margin-left:-10px;font-size:1.5em;">arrow_drop_down</i></button>
+            <mat-menu #menu="matMenu" [overlapTrigger]="false" xPosition="before" width="6">
+              <a [routerLink]="['/dashboard/prescription-view/'+prescription_list[currentIndex]['key']]" style="text-decoration:none;font-size:14px;"><button mat-menu-item class="menustyl"><i class="material-icons" aria-hidden="true">visibility</i>&nbsp;View</button></a>
+              <a [routerLink]="['/dashboard/prescription-edit/'+prescription_list[currentIndex]['key']]" style="text-decoration:none;font-size:14px;"><button mat-menu-item class="menustyl"><i class="material-icons" aria-hidden="true">edit</i>&nbsp;Edit</button></a>
+              <a [routerLink]="['/dashboard/prescription-mail/'+prescription_list[currentIndex]['key']]" style="text-decoration:none;font-size:14px;"><button mat-menu-item class="menustyl"><i class="material-icons" aria-hidden="true">email</i>&nbsp;Email</button></a>
+              <a href="/prescription-print/{{prescription_list[currentIndex]['key']}}" style="text-decoration:none;font-size:14px;"><button mat-menu-item class="menustyl"><i class="material-icons" aria-hidden="true">print</i>&nbsp;Print</button></a>
+            </mat-menu>
+          </div>
+
+        </div>
+
+
+
+        <div fxLayout="column" [fxShow]="false" [fxShow.xs]="true" fxShow.lt-md="true">
+          <!--<div class="hospital_pan">-->
+          <div *ngFor="let med of prescription_list[currentIndex]['values']; let i=index">
+            <h3><strong>Medicine {{i+1}}: </strong></h3>
+            <ul class="prescrip_ul">
+              <li style="list-style-type: disc; margin: 0 17px 8px !important;"> {{med['drug_form']}}
+                {{med['name']}}
+                {{med['dose']}}{{med['unit']}} {{med['administer_route']}}
+                <!--<span *ngIf="time === 'AB'">After breakfast</span>
+                <span *ngIf="time === 'BB'">Before breakfast</span>
+                <span *ngIf="time === 'AL'">After lunch</span>
+                <span *ngIf="time === 'BL'">Before lunch</span>
+                <span *ngIf="time === 'AD'">After dinner</span>
+                <span *ngIf="time === 'BD'">Before dinner</span>-->
+              </li>
+            </ul>
+
+          </div>
+        </div>
+
+        <div fxLayout="row wrap" fxLayoutAlign="space-around center" fxShow.lt-sm="false"   fxShow.lt-md="false" >
+          <table>
+            <thead>
+            <tr>
+              <th>S.No</th>
+              <th>Medicine</th>
+              <th>Dosage</th>
+              <th>Route of administration</th>
+              <th>Frequency</th>
+              <th>Drug Form</th>
+              <th>Duration(Days)</th>
+              <th>No. of Units</th>
+              <th>Start Date(dd-mm-yyyy)</th>
+              <th>End Date(mm-dd-yy)</th>
+
+              <th>Special Instructions</th>
+              <th>Instructions</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <ng-template ngFor let-item1 [ngForOf]="Range(prescription_list[currentIndex]['values'].length)"
+                         let-innerIndex="index" *ngIf="prescription_list[currentIndex]['values'].length>0">
+
+              <tr>
+                <td><div class="txt">{{ innerIndex+1 }}</div></td>
+                <td><div class="txt">{{prescription_list[currentIndex]['values'][innerIndex]['name']}}</div></td>
+                <td><div class="txt">{{prescription_list[currentIndex]['values'][innerIndex]['dose']}} |
+                  {{prescription_list[currentIndex]['values'][innerIndex]['unit']}}
+                </div>
+                </td>
+                <td><div class="txt">{{prescription_list[currentIndex]['values'][innerIndex]['administer_route']}}</div></td>
+                <td><div class="txt">
+                  <div *ngIf="prescription_list[currentIndex]['values'][innerIndex]['frequency']==''">
+                    0
+                  </div>
+                  {{prescription_list[currentIndex]['values'][innerIndex]['frequency']}} (Morning) -
+                  <div *ngIf="prescription_list[currentIndex]['values'][innerIndex]['frequency_2']==''">
+                    0
+                  </div>
+                  {{prescription_list[currentIndex]['values'][innerIndex]['frequency_2']}} (Noon) -
+                  <div *ngIf="prescription_list[currentIndex]['values'][innerIndex]['frequency_3']==''">
+                    0
+                  </div>
+                  {{prescription_list[currentIndex]['values'][innerIndex]['frequency_3']}} (Night)
+                </div>
+                </td>
+                <td><div class="txt">{{prescription_list[currentIndex]['values'][innerIndex]['drug_form'] }}</div></td>
+                <td><div class="txt">{{prescription_list[currentIndex]['values'][innerIndex]['duration'] }}</div></td>
+                <td><div class="txt">{{prescription_list[currentIndex]['values'][innerIndex]['no_of_medicine'] }}</div></td>
+
+                <td><div class="txt">{{ prescription_list[currentIndex]['values'][innerIndex]['start_date_time'] | amDateFormat: 'DD-MM-YYYY'}}</div></td>
+
+                <td><div class="txt">{{prescription_list[currentIndex]['values'][innerIndex]['end_date_time'] | amDateFormat: 'DD-MM-YYYY' }}</div></td>
+
+                <td><div class="txt">{{prescription_list[currentIndex]['values'][innerIndex]['special_instruction'] }}</div></td>
+                <td><div class="txt">
+                  <div *ngIf="prescription_list[currentIndex]['values'][innerIndex]['AB']==1">
+                    After breakfast,
+                  </div>
+
+                  <div *ngIf="prescription_list[currentIndex]['values'][innerIndex]['BB']==1">
+                    Before breakfast,
+                  </div>
+                  <div *ngIf="prescription_list[currentIndex]['values'][innerIndex]['AL']==1">
+                    After lunch,
+                  </div>
+                  <div *ngIf="prescription_list[currentIndex]['values'][innerIndex]['BL']==1">
+                    Before Lunch,
+                  </div>
+                  <div *ngIf="prescription_list[currentIndex]['values'][innerIndex]['AD']==1">
+                    After Dinner,
+                  </div>
+                  <div *ngIf="prescription_list[currentIndex]['values'][innerIndex]['BD']==1">
+                    Before Dinner
+                  </div>
+                </div>
+
+                </td>
+                <!-- <td></td>
+                <td></td> -->
+              </tr>
+            </ng-template>
+
+            </tbody>
+          </table>
+
+        </div>
+      </ng-template>
+
+
+      <!--<div class="content-wrapper">-->
+      <!--&lt;!&ndash; Content Header (Page header) &ndash;&gt;-->
+      <!--<section class="content-header">-->
+      <!--<h2>-->
+      <!--Prescription List-->
+      <!--</h2>-->
+
+      <!--</section>-->
+      <!--<section class="content">-->
+
+      <!--<div class="box clearfix mrg_btm2">-->
+
+      <!--<p>Please select prescription and-->
+      <!--click on the drop down icon for adherence data</p>-->
+
+      <!--<div class="row">-->
+      <!--<div class="mrg_btm2">-->
+      <!--<div class="col-md-6">-->
+
+      <!--</div>-->
+
+      <!--<div class="col-md-6 text-right text_left_m">-->
+
+      <!--<div class="mrg2">-->
+      <!--<a [routerLink]="['/dashboard/select-patient']" id="select_patient">-->
+      <!--<button type="button"  mat-raised-button color="accent"><i class="material-icons">-->
+      <!--add_circle-->
+      <!--</i>-->
+      <!--Add New-->
+      <!--</button>-->
+      <!--</a>-->
+      <!--</div>-->
+
+      <!--</div>-->
+      <!--<div class="clearfix"></div>-->
+      <!--</div>-->
+      <!--</div>-->
+      <!--<ng-template ngFor let-item [ngForOf]="createRange(prescription_list.length)" let-currentIndex="index"-->
+      <!--*ngIf="prescription_list.length>0">-->
+      <!--<div class="mrg_btm2">-->
+      <!--<div class="">-->
+      <!--{{ prescription_list[currentIndex]['values'][0]['changed_on_d'] | amDateFormat: 'DD-MM-YYYY'}}-->
+      <!--</div>-->
+      <!--<div class="pres_patint">-->
+      <!--<img mat-card-image src="assets/styles/dashboard_assets/new/images/user_icon.jpg" width="50">-->
+
+      <!--&lt;!&ndash;<span>name</span>&ndash;&gt;-->
+      <!--&lt;!&ndash;<span>mobile_number</span>&ndash;&gt;-->
+      <!--<span>Patient Name :  {{prescription_list[currentIndex]['values'][0]['patient_name']}}</span>-->
+      <!--<div class="dropdown pull-right">-->
+      <!--&lt;!&ndash; style="padding: 12px 10px; margin-top: 10px;"&ndash;&gt;-->
+      <!--<mat-menu #appMenu="matMenu" yPosition="below">-->
+      <!--<button mat-menu-item><a [routerLink]="['/dashboard/prescription-view/'+prescription_list[currentIndex]['key']]">-->
+      <!--<i class="material-icons">-->
+      <!--visibility-->
+      <!--</i> View</a>-->
+      <!--</button>-->
+      <!--<button mat-menu-item><a [routerLink]="['/dashboard/prescription-edit/'+prescription_list[currentIndex]['key']]">-->
+      <!--<i class="material-icons">-->
+      <!--create-->
+      <!--</i>Edit</a>-->
+      <!--</button>-->
+
+      <!--<button mat-menu-item><a [routerLink]="['/dashboard/prescription-mail/'+prescription_list[currentIndex]['key']]">-->
+      <!--<i class="material-icons">-->
+      <!--mail-->
+      <!--</i>Email</a>-->
+      <!--</button>-->
+      <!--<button mat-menu-item><a href="/prescription-print/{{prescription_list[currentIndex]['key']}}">-->
+      <!--<i class="material-icons">-->
+      <!--print-->
+      <!--</i>Print</a>-->
+      <!--</button>-->
+      <!--</mat-menu>-->
+
+      <!--<button mat-icon-button [matMenuTriggerFor]="appMenu">-->
+      <!--<mat-icon>more_vert</mat-icon>-->
+      <!--</button>-->
+      <!--</div>-->
+      <!--</div>-->
+
+      <!--<section class="mobile hidden-md hidden-lg">-->
+      <!--<div class="hospital_pan">-->
+      <!--<div *ngFor="let med of prescription_list[currentIndex]['values']; let i=index">-->
+      <!--<h2><strong>Medicine {{i+1}}: </strong></h2>-->
+      <!--<ul class="prescrip_ul">-->
+      <!--<li style="list-style-type: disc; margin: 0 17px 8px !important;"> {{med['drug_form']}}-->
+      <!--{{med['name']}}-->
+      <!--{{med['dose']}}{{med['unit']}} {{med['administer_route']}}-->
+      <!--&lt;!&ndash;<span *ngIf="time === 'AB'">After breakfast</span>-->
+      <!--<span *ngIf="time === 'BB'">Before breakfast</span>-->
+      <!--<span *ngIf="time === 'AL'">After lunch</span>-->
+      <!--<span *ngIf="time === 'BL'">Before lunch</span>-->
+      <!--<span *ngIf="time === 'AD'">After dinner</span>-->
+      <!--<span *ngIf="time === 'BD'">Before dinner</span>&ndash;&gt;-->
+      <!--</li>-->
+      <!--</ul>-->
+
+      <!--</div>-->
+      <!--</div>-->
+      <!--</section>-->
+
+      <!--<section class="hidden-sm hidden-xs visible-md visible-lg">-->
+      <!--<div class="table-responsive">-->
+      <!--<table style="border-collapse:collapse;font-size:14px;">-->
+      <!--<thead>-->
+      <!--<tr class="headoftable">-->
+      <!--<th width="5%">S.No</th>-->
+      <!--<th width="10%">Medicine</th>-->
+      <!--<th width="10%">Dosage</th>-->
+      <!--<th width="10%">Route of administration</th>-->
+      <!--<th width="15%">Frequency</th>-->
+      <!--<th width="10%">Drug Form</th>-->
+      <!--<th width="10%">Duration(Days)</th>-->
+      <!--<th width="10%">No. of Units</th>-->
+      <!--<th width="10%">Start Date<br>(dd-mm-yyyy)</th>-->
+      <!--<th width="10%">End Date<br>(dd-mm-yyyy)</th>-->
+      <!--<th width="15%">Special Instructions</th>-->
+      <!--<th width="15%">Instructions</th>-->
+      <!--</tr>-->
+      <!--</thead>-->
+      <!--<tbody>-->
+
+      <!--<ng-template ngFor let-item1 [ngForOf]="Range(prescription_list[currentIndex]['values'].length)"-->
+      <!--let-innerIndex="index" *ngIf="prescription_list[currentIndex]['values'].length>0">-->
+
+      <!--<tr>-->
+      <!--<td><div class="txt">{{ innerIndex }}</div></td>-->
+      <!--<td><div class="txt">{{prescription_list[currentIndex]['values'][innerIndex]['name']}}</div></td>-->
+      <!--<td><div class="txt">{{prescription_list[currentIndex]['values'][innerIndex]['dose']}} |-->
+      <!--{{prescription_list[currentIndex]['values'][innerIndex]['unit']}}-->
+      <!--</div>-->
+      <!--</td>-->
+      <!--<td><div class="txt">{{prescription_list[currentIndex]['values'][innerIndex]['administer_route']}}</div></td>-->
+      <!--<td><div class="txt">-->
+      <!--<div *ngIf="prescription_list[currentIndex]['values'][innerIndex]['frequency']==''">-->
+      <!--0-->
+      <!--</div>-->
+      <!--{{prescription_list[currentIndex]['values'][innerIndex]['frequency']}} (Morning) - -->
+      <!--<div *ngIf="prescription_list[currentIndex]['values'][innerIndex]['frequency_2']==''">-->
+      <!--0-->
+      <!--</div>-->
+      <!--{{prescription_list[currentIndex]['values'][innerIndex]['frequency_2']}} (Noon) - -->
+      <!--<div *ngIf="prescription_list[currentIndex]['values'][innerIndex]['frequency_3']==''">-->
+      <!--0-->
+      <!--</div>-->
+      <!--{{prescription_list[currentIndex]['values'][innerIndex]['frequency_3']}} (Night)-->
+      <!--</div>-->
+      <!--</td>-->
+      <!--<td><div class="txt">{{prescription_list[currentIndex]['values'][innerIndex]['drug_form'] }}</div></td>-->
+      <!--<td><div class="txt">{{prescription_list[currentIndex]['values'][innerIndex]['duration'] }}</div></td>-->
+      <!--<td><div class="txt">{{prescription_list[currentIndex]['values'][innerIndex]['no_of_medicine'] }}</div></td>-->
+
+      <!--<td><div class="txt">{{ prescription_list[currentIndex]['values'][innerIndex]['start_date_time'] | amDateFormat: 'DD-MM-YYYY'}}</div></td>-->
+
+      <!--<td><div class="txt">{{prescription_list[currentIndex]['values'][innerIndex]['end_date_time'] | amDateFormat: 'DD-MM-YYYY' }}</div></td>-->
+
+      <!--<td><div class="txt">{{prescription_list[currentIndex]['values'][innerIndex]['special_instruction'] }}</div></td>-->
+      <!--<td><div class="txt">-->
+      <!--<div *ngIf="prescription_list[currentIndex]['values'][innerIndex]['AB']==1">-->
+      <!--After breakfast,-->
+      <!--</div>-->
+
+      <!--<div *ngIf="prescription_list[currentIndex]['values'][innerIndex]['BB']==1">-->
+      <!--Before breakfast,-->
+      <!--</div>-->
+      <!--<div *ngIf="prescription_list[currentIndex]['values'][innerIndex]['AL']==1">-->
+      <!--After lunch,-->
+      <!--</div>-->
+      <!--<div *ngIf="prescription_list[currentIndex]['values'][innerIndex]['BL']==1">-->
+      <!--Before Lunch,-->
+      <!--</div>-->
+      <!--<div *ngIf="prescription_list[currentIndex]['values'][innerIndex]['AD']==1">-->
+      <!--After Dinner,-->
+      <!--</div>-->
+      <!--<div *ngIf="prescription_list[currentIndex]['values'][innerIndex]['BD']==1">-->
+      <!--Before Dinner-->
+      <!--</div>-->
+      <!--</div>-->
+
+      <!--</td>-->
+      <!--&lt;!&ndash; <td></td>-->
+      <!--<td></td> &ndash;&gt;-->
+      <!--</tr>-->
+      <!--</ng-template>-->
+      <!--</tbody>-->
+      <!--</table>-->
+      <!--</div>-->
+      <!--</section>-->
+      <!--<div class="clearfix"></div>-->
+      <!--</div>-->
+
+      <!--</ng-template>-->
+      <!--</div>-->
+    </div>
+  </section>
+</div>

@@ -1,0 +1,76 @@
+<div class="pull-right" *ngIf="msgFromBuddy">
+  <i>Message from buddy: </i> {{msgFromBuddy}}
+  <a (click)="clearMsg()">
+    <img class="remove-btn" src="assets/images/remove-icon-png-22.png">
+  </a>
+</div>
+
+<div class="call_buttons btn-group">
+  <button class="btn btn-success" (click)="answerCall()" *ngIf="hasIncomingCall && !isCallEstablished"> Answer the video
+    call
+  </button>
+
+  <button class="btn btn-info" (click)="call()"
+          *ngIf="!isIncomingCallAnswered && !hasIncomingCall && !isCallEstablished">
+    Make a video call
+  </button>
+
+  <button class="btn btn-danger" (click)="hangUp()" *ngIf="isIncomingCallAnswered || isCallEstablished"> End video
+    call
+  </button>
+</div>
+
+<ng-container *ngIf="isIncomingCallAnswered && isVideoOn">
+
+  <div class="screenshot_buttons btn-group">
+    <button class="btn btn-primary btn-sm" (click)="takeScreenshot()"> Take
+      screenshot from buddy
+    </button>
+  </div>
+
+
+  <div class="screenshot_buttons btn-group form-inline">
+    <input [(ngModel)]="msgForBuddy" class="form-control col-lg-1">
+    <button class="btn btn-info btn-sm" (click)="sendSignalToBuddy()">
+      Send message
+    </button>
+  </div>
+
+</ng-container>
+
+<div class="video_toggle_buttons btn-group">
+  <button class="btn btn-warning btn-sm" (click)="removeVideo()" *ngIf="isIncomingCallAnswered && isVideoOn"> Remove
+    video
+    stream
+  </button>
+
+  <button class="btn btn-info btn-sm" (click)="showVideo()" *ngIf="isIncomingCallAnswered && !isVideoOn"> Show video
+    stream
+  </button>
+</div>
+
+<mat-card>
+  <mat-card-header *ngIf="hasIncomingCall && !isCallEstablished">
+    <div mat-card-avatar><img mat-card-image [src]="caller['image']" alt="Devidas"></div>
+    <mat-card-title>{{caller['pat_name']}}</mat-card-title>
+    <mat-card-subtitle>Incoming {{caller['consult_type']}} call.....</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div id="videos" class="row video-section" [hidden]="!isCallEstablished  && !isIncomingCallAnswered">
+      <!--<loading [class]="'subscriber'" *ngIf="!isCallAnswered && !isIncomingCallAnswered"></loading>-->
+      <div id="subscriber" class="subscriber" [hidden]="!isCallAnswered && !isIncomingCallAnswered"></div>
+      <div id="publisher" class="publisher"></div>
+
+
+      <div class="subscriber_screenshot_section" *ngIf="isIncomingCallAnswered && screenshotOfTheOtherUser">
+        <b>Scheenshot of the other person</b>
+        <img class="subscriber_screenshot" [src]="screenshotOfTheOtherUser">
+      </div>
+
+    </div>
+
+  </mat-card-content>
+
+</mat-card>
+
+

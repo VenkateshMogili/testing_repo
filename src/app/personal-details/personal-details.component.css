@@ -1,0 +1,80 @@
+.top-header1{
+  background-color:#0C58A5;
+  height:55px;
+}
+.head-login{
+  font-size: 23px;
+  font-weight: 400;
+  color: #000;
+  margin-bottom: 14px;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+.type-input{
+  background:none;
+  box-shadow: none;
+  border:none;
+}
+#sk{
+  width: 78px;
+  height: 34px;
+  margin-top: -37px;
+  text-decoration: none;
+  margin-left: 74px;
+  /*margin-left: 157px;
+  margin-top: 12px;*/
+}
+#sub{
+  /*margin-top: 12px;*/
+  /*margin-right: -110px;*/
+}
+.contain {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+
+}
+@media (max-width:600px) {
+  .contain {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .contain {
+    max-width: 220px;
+  }
+}
+
+@media (min-width: 992px) {
+  .contain {
+    max-width: 460px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .contain {
+    max-width: 440px;
+  }
+}
+
+.intro{
+  width: 100%;
+}
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+
+}
+button{
+  background-color: #0c58a5!important;
+}
+section {
+  margin: 0px 0 12px 0!important;
+}

@@ -1,0 +1,111 @@
+<!--<section class="top-header1">
+  <div class="container">
+    <div class="mrg2">
+      <div class="pull-left"><img src="assets/styles/new-home-page/single/images/Transparent.png" height="50"/></div>
+      <button class="pull-right btn btn-default btn-sm" style="margin: 10px 0;" (click)="logout()"><i
+        class="fa fa-power-off"></i> Logout
+      </button>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</section>-->
+<!--<section class="top-header1">-->
+  <!--<div class="container">-->
+    <!--<div fxLayout fxLayoutAlign="center center">-->
+      <!--<div fxFlex="100%">-->
+        <!--<img src="assets/styles/new-home-page/single/images/Transparent.png" height="50"/>-->
+      <!--</div>-->
+      <!--&lt;!&ndash;<span class="hello">&ndash;&gt;-->
+ <!--&lt;!&ndash;<button (click)="logout()" mat-button class="logout" style="padding: 0px; line-height: 32px;&ndash;&gt;-->
+<!--&lt;!&ndash;background-color: #ffffff!important;"><i class="fa fa-power-off" aria-hidden="true"></i> &nbsp;Log out</button></span>&ndash;&gt;-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</section>-->
+
+<section class="top-header1">
+  <div class="container">
+    <div fxLayout="row" fxLayoutAlign="center">
+      <div fxFlex="100" >
+        <img src="https://storage.googleapis.com/web-assets/dpm_doctor.png" height="60" style="    padding-left: 13%;"/>
+      </div>
+      <span class="hello" style="padding-top: 0.75%;">
+ <button (click)="logout()" mat-button class="logout" style="padding: 0px; line-height: 32px;background-color: #ffffff!important;">
+   <i class="fa fa-power-off" aria-hidden="true"></i> &nbsp;Log out</button></span>
+    </div>
+  </div>
+</section>
+
+
+
+<div fxFlex="100%" >
+  <div class="text-center" >
+
+    <h4 class="head-login" align="center">Please fill in your Professional details</h4>
+  </div>
+</div>
+
+<div class="contain" style="padding-bottom: 1%;">
+  <mat-card align="center">
+    <form [formGroup]="prescriptionForm" (ngSubmit)="onSubmit(prescriptionForm.value)" name="example-form" id="defaultForm"
+          novalidate #f="ngForm" enctype="multipart/form-data">
+      <h2 class="mrg_btm r_h4" align="center"><b>Professional Details</b></h2>
+      <p class="mrg_btm2" align="center">Year of starting Practice</p>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Year" type="number" class="type-input" name="year" formControlName="practise_year_start" required style="
+                                                     background-color: #fff;
+                                                     border: none;box-shadow: none;
+                                                     -webkit-transition: none;
+                                                     transition: none;">
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          Practice Year is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <p class="mrg_btm2">Clinic/Nursing Home/Hospital Details</p>
+
+      <div fxLayout="row">
+        <div fxFlex="100%" style="padding-bottom: 5%;">
+          <div>
+            <div formArrayName="professional_list">
+              <div *ngFor="let profession of hospital_list.controls; let j=index">
+                <div [formGroupName]="j" class="row">
+                  <app-profession [group]="hospital_list.controls[j]"></app-profession>
+                </div>
+                <!--<button *ngIf="hospital_list.controls.length>1"-->
+                        <!--class="btn btn-primary mrg_btm2" (click)="delete(j)" id="rm"><i class="fa fa-remove"></i> remove</button>-->
+                <!--<button class="btn btn-primary" type="button" id="one">profession {{j}}</button><br>-->
+                <div style="float:left; width: 69%;">
+                  <button  *ngIf="hospital_list.controls.length>1"  mat-raised-button color="primary"
+                           class="mrg_btm2" (click)="delete(j)" style="padding: 0px;background-color: red!important;"><i class="fa fa-remove"></i> remove
+                  </button>
+                  <button mat-raised-button class="pull-left" color="primary"
+                          type="button" style="padding: 0px;">profession {{j}}</button>
+                </div>
+                <div style="float: right; width: 31%;">
+                  <button (click)="addnew()" type="button"  mat-raised-button color="primary"> <i class="fa fa-plus" style="padding: 0px;"></i> Add
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--<div fxFlex="100%">-->
+            <!--<div class="pull-right" id="">-->
+              <!--<button (click)="addnew()" type="button" class="btn btn-primary mrg_btm2" id="ad"><i class="fa fa-plus"></i> Add-->
+              <!--</button><br>-->
+            <!--</div>-->
+          <!--</div>-->
+          <!--<a [routerLink]="['/dashboard']" style="text-decoration: none;">-->
+            <!--<div class="btn btn-primary" id="sk" align="text-center" style="margin-bottom: 20px;">skip</div>-->
+          <!--</a>-->
+          <!--<button mat-raised-button class="btn btn-info" name="signup" id="saveBtn" value="Sign up" type="submit">Submit</button>-->
+        </div>
+      </div>
+      <a [routerLink]="['/dashboard']" style="text-decoration: none;padding-right: 1%;">
+        <button mat-raised-button color="primary"  align="text-center">skip</button>
+      </a>
+      <button mat-raised-button color="primary" class="mrg_btm2" name="signup"  value="Sign up" type="submit" align="center"
+              style="padding: 0px;">Submit</button>
+    </form>
+  </mat-card>
+</div>

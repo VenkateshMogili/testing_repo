@@ -1,0 +1,112 @@
+<style>
+  @media (max-width:600px) {
+    .details_b{
+      height:34px!important;
+      line-height:10px!important;
+      font-size:12px!important;
+    }
+    .details_b span {
+      color: white!important;
+    }
+  }
+</style>
+<div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5%" fxFlex="100%" style="padding:10px">
+  <h4 mat-dialog-title color="primary">Add Hospital Details</h4>
+</div>
+<div fxLayout="row" fxFlex="100%">
+  <div fxLayout="column" class="container" fxLayoutAlign="center" fxFlex="100%">
+    <form id="hform" name="hform"  role="form" (ngSubmit)="add_hospital()" #fh="ngForm" novalidate>
+      <div fxLayout="column" fxFlex="100%">
+        <mat-form-field class="example_full_width">
+          <!--&lt;!&ndash;   <label for="exampleInputEmail1">Name</label> &ndash;&gt;-->
+          <input matInput placeholder="Enter Hospital Name" #clinic_name [(ngModel)]="model.clinic_name" name="clinic_name" [formControl]="clinicName">
+          <mat-error *ngIf="clinicName.hasError('required')">
+            Hospital Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="column" fxFlex="100%">
+        <mat-form-field class="example_full_width">
+          <!--&lt;!&ndash;     <label for="exampleInputPassword1">Address</label> &ndash;&gt;-->
+          <textarea matInput name="hospital_city" [formControl]="hAd1" [(ngModel)]="model.hospital_city"
+                    #hospital_city required  placeholder="Enter Hospital Address Line 1"></textarea>
+          <mat-error *ngIf="hAd1.hasError('required')">
+            Hospital Address Line 1 is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="column" fxFlex="100%">
+        <mat-form-field class="example_full_width">
+          <!--&lt;!&ndash;     <label for="exampleInputPassword1">Address</label> &ndash;&gt;-->
+          <textarea matInput id="caddress1" name="address2" [formControl]="hAd2" [(ngModel)]="model.address2"
+                    #address2 placeholder="Enter Hospital Address Line 2"></textarea>
+        </mat-form-field>
+      </div>
+
+
+      <div fxLayout="column" fxFlex="100%">
+        <mat-form-field class="example_full_width">
+          <!--&lt;!&ndash; <label for="exampleInputPassword1">City</label> &ndash;&gt;-->
+          <input matInput name="clinic_city" [formControl]="hCity" [(ngModel)]="model.clinic_city"
+                 #clinic_city required  placeholder="Enter Hospital City">
+          <mat-error *ngIf="hCity.hasError('required')">
+            Hospital City is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="column" fxFlex="100%">
+        <mat-form-field class="example_full_width">
+          <!--&lt;!&ndash;   <label for="exampleInputPassword1">State</label> &ndash;&gt;-->
+          <input matInput name="clinic_state" [formControl]="hState" [(ngModel)]="model.clinic_state"
+                 #clinic_state required  placeholder="Enter Hospital State">
+          <mat-error *ngIf="hState.hasError('required')">
+            Hospital State is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="column" fxFlex="100%">
+        <mat-form-field class="example_full_width">
+          <!--&lt;!&ndash;  <label for="exampleInputPassword1">Country</label> &ndash;&gt;-->
+          <input matInput name="hospital_city_c" [(ngModel)]="model.hospital_city_c"
+                 #hospital_city_c required [formControl]="hCountry" placeholder="Enter Hospital Country">
+          <mat-error *ngIf="hCountry.hasError('required')">
+            Hospital Country is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="column" fxFlex="100%">
+        <mat-form-field class="example_full_width">
+          <!--&lt;!&ndash; <label for="exampleInputPassword1">Pincode</label> &ndash;&gt;-->
+          <input matInput required placeholder="Pincode" type="number" [formControl]="pinCode" name="pin" [(ngModel)]="model.pin"
+                 #pin>
+          <mat-error *ngIf="pinCode.hasError('required')">
+            Pincode is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="column" fxFlex="100%">
+        <mat-form-field class="example_full_width">
+          <!--&lt;!&ndash; <label for="exampleInputEmail1">Phone Number</label> &ndash;&gt;-->
+          <input matInput name="clinic_ph" required  type="number" [(ngModel)]="model.clinic_ph" [formControl]="phoneNumber" #clinic_ph placeholder="Enter Hospital Phone Number">
+          <mat-error *ngIf="phoneNumber.hasError('required')">
+            Phone Number is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div fxLayout="row" fxLayoutGap="3%" fxFlex="100%">
+        <div class="item item1" fxFlex="100%" fxLayoutAlign="right">
+          <button mat-raised-button style="background:rgb(51, 122, 183);" type="submit" *ngIf="model.clinic_ph!=null && model.clinic_name!=null && model.hospital_city!=null && model.address2!=null && model.clinic_city!=null && model.clinic_state && model.hospital_city_c!=null && model.pin!=null && model.clinic_ph!=null; else condition2">Save Hospital Details</button>
+          <ng-template #condition2>
+            <button mat-raised-button  disabled class="details_b" style="color:white!important;">Save Hospital Details</button>
+          </ng-template>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

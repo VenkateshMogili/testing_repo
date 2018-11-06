@@ -1,0 +1,177 @@
+<div>
+  <section>
+    <h1 class="sub_head">Patient List
+
+      <span class="pull-right">
+        <a [routerLink]="['/dashboard/add-patient']"><button mat-raised-button color="primary" ngStyle.xs="font-size:14px;" class="details_b"><i class="material-icons">add</i>
+  Add New Patient</button></a></span>
+    </h1>
+  </section>
+
+  <section class="content">
+    <div class="box2">
+
+      <!--display in lg and xl-->
+      <mat-grid-list cols="4" rowHeight="300px" fxShow.lg="true" fxShow.xl="true" fxShow.md="false" fxShow.sm="false" fxShow.xs="false">
+        <ng-template ngFor let-item [ngForOf]="createRange(patient_list.length)" let-currentIndex="index"
+                     *ngIf="patient_list.length>0">
+          <mat-grid-tile>
+            <div style="text-align:center;align-content:center">
+              <img src="{{patient_list[currentIndex]['image']}}" alt="User profile picture" class="img-circle">
+              <div class="profile-username">{{patient_list[currentIndex]['name'] | capitalize}}</div>
+              <div class="p_style">{{patient_list[currentIndex]['email']}}</div>
+              <div class="p_style">+91 {{patient_list[currentIndex]['mobile_number']}}</div>
+              <div class="p_style">{{patient_list[currentIndex]['gender'] | capitalize}}, {{patient_list[currentIndex]['age']}} years old</div>
+              <div class="p_style"><a href="/dashboard/single-patient/{{patient_list[currentIndex]['patient_id_c']}}"><button *ngIf="!Button_config" mat-raised-button color="primary" class="details_bb">Details</button></a>
+                <button *ngIf="Button_config" mat-raised-button color="primary" (click)="sendMessage(currentIndex)" class="details_bb">select patient
+                </button>
+              </div>
+            </div>
+          </mat-grid-tile>
+        </ng-template>
+      </mat-grid-list>
+
+      <!--display in md-->
+      <mat-grid-list cols="3" rowHeight="300px" fxShow.lg="false" fxShow.xl="false" fxShow.md="true" fxShow.sm="false" fxShow.xs="false">
+        <ng-template ngFor let-item [ngForOf]="createRange(patient_list.length)" let-currentIndex="index"
+                     *ngIf="patient_list.length>0">
+          <mat-grid-tile>
+            <div style="text-align:center;align-content:center">
+              <img src="{{patient_list[currentIndex]['image']}}" alt="User profile picture" class="img-circle">
+              <div class="profile-username">{{patient_list[currentIndex]['name'] | capitalize}}</div>
+              <div class="p_style">{{patient_list[currentIndex]['email']}}</div>
+              <div class="p_style">+91 {{patient_list[currentIndex]['mobile_number']}}</div>
+              <div class="p_style">{{patient_list[currentIndex]['gender'] | capitalize}}, {{patient_list[currentIndex]['age']}} years old</div>
+              <div class="p_style"><a href="/dashboard/single-patient/{{patient_list[currentIndex]['patient_id_c']}}"><button *ngIf="!Button_config" mat-raised-button color="primary" class="details_bb">Details</button></a>
+                <button *ngIf="Button_config" mat-raised-button color="primary" (click)="sendMessage(currentIndex)" class="details_bb">select patient
+                </button>
+              </div>
+            </div>
+          </mat-grid-tile>
+        </ng-template>
+      </mat-grid-list>
+
+
+      <!--display in sm-->
+      <mat-grid-list cols="2" rowHeight="300px" fxShow.lg="false" fxShow.xl="false" fxShow.md="false" fxShow.sm="true" fxShow.xs="false">
+        <ng-template ngFor let-item [ngForOf]="createRange(patient_list.length)" let-currentIndex="index"
+                     *ngIf="patient_list.length>0">
+          <mat-grid-tile>
+            <div style="text-align:center;align-content:center">
+              <img src="{{patient_list[currentIndex]['image']}}" alt="User profile picture" class="img-circle">
+              <div class="profile-username">{{patient_list[currentIndex]['name'] | capitalize}}</div>
+              <div class="p_style">{{patient_list[currentIndex]['email']}}</div>
+              <div class="p_style">+91 {{patient_list[currentIndex]['mobile_number']}}</div>
+              <div class="p_style">{{patient_list[currentIndex]['gender'] | capitalize}}, {{patient_list[currentIndex]['age']}} years old</div>
+              <div class="p_style"><a href="/dashboard/single-patient/{{patient_list[currentIndex]['patient_id_c']}}"><button *ngIf="!Button_config" mat-raised-button color="primary" class="details_bb">Details</button></a>
+                <button *ngIf="Button_config" mat-raised-button color="primary" (click)="sendMessage(currentIndex)" class="details_bb">select patient
+                </button>
+              </div>
+            </div>
+          </mat-grid-tile>
+        </ng-template>
+      </mat-grid-list>
+
+
+      <!--display in xs-->
+      <mat-grid-list cols="2" rowHeight="200px" fxShow.lg="false" fxShow.xl="false" fxShow.md="false" fxShow.sm="false" fxShow.xs="true">
+        <ng-template ngFor let-item [ngForOf]="createRange(patient_list.length)" let-currentIndex="index"
+                     *ngIf="patient_list.length>0">
+          <mat-grid-tile class="gridtile">
+            <div style="text-align:center;align-content:center">
+              <img src="{{patient_list[currentIndex]['image']}}" alt="User profile picture" class="img-circle">
+              <div class="profile-username">{{patient_list[currentIndex]['name'] | capitalize}}</div>
+              <div class="p_style">{{patient_list[currentIndex]['email']}}</div>
+              <div class="p_style">+91 {{patient_list[currentIndex]['mobile_number']}}</div>
+              <div class="p_style">{{patient_list[currentIndex]['gender'] | capitalize}}, {{patient_list[currentIndex]['age']}} years old</div>
+              <div class="p_style"><a href="/dashboard/single-patient/{{patient_list[currentIndex]['patient_id_c']}}"><button *ngIf="!Button_config" mat-raised-button color="primary" class="details_bb">Details</button></a>
+                <button *ngIf="Button_config" mat-raised-button color="primary" (click)="sendMessage(currentIndex)" class="details_bb">select patient
+                </button>
+              </div>
+            </div>
+          </mat-grid-tile>
+        </ng-template>
+      </mat-grid-list>
+
+    </div>
+  </section>
+
+</div>
+<!--<div class="item item2" fxFlex="100%" fxLayout="row" fxLayoutAlign="center">-->
+<!--&lt;!&ndash; Main content &ndash;&gt;-->
+
+<!--<ng-template ngFor let-item [ngForOf]="createRange(patient_list.length)" let-currentIndex="index"-->
+<!--*ngIf="patient_list.length>0">-->
+
+<!--<div class="item item3" fxFlex="30%" fxLayout="column" class="patient_list" fxLayoutAlign="center">-->
+
+<!--<span>-->
+<!--<img src="{{patient_list[currentIndex]['image']}}"-->
+<!--alt="User profile picture">-->
+<!--</span>-->
+<!--<br/>-->
+<!--<span class="user_name">{{patient_list[currentIndex]['name'] | capitalize}}</span>-->
+<!--<br/>-->
+<!--<span>{{patient_list[currentIndex]['email']}}</span>-->
+<!--<br/>-->
+<!--<span>+91 {{patient_list[currentIndex]['mobile_number']}}</span>-->
+<!--<br/>-->
+<!--<span>{{patient_list[currentIndex]['gender']}},-->
+<!--{{patient_list[currentIndex]['age']}} years old-->
+<!--</span>-->
+<!--<br/><br/>-->
+<!--<span>-->
+<!--<a href="/dashboard/single-patient/{{patient_list[currentIndex]['patient_id_c']}}"><button *ngIf="!Button_config" mat-raised-button color="primary">Details</button></a>-->
+<!--<button *ngIf="Button_config" class="btn btn-primary" (click)="sendMessage(currentIndex)">select patient-->
+<!--</button>-->
+<!--</span>-->
+<!--</div>-->
+
+<!--</ng-template>-->
+<!--</div>-->
+
+<!--</div>-->
+<!--<div class="content-wrapper">-->
+<!--<section class="content-header">-->
+<!--<h1>Patient List-->
+
+<!--<span class="pull-right"><button type="button" class="btn btn-primary"><a-->
+<!--[routerLink]="['/dashboard/add-patient']"><i class="fa fa-plus"></i>-->
+<!--Add New Patient</a></button></span>-->
+
+<!--</h1>-->
+<!--</section>-->
+<!--<div class="clearfix"></div>-->
+<!--&lt;!&ndash; Main content &ndash;&gt;-->
+<!--<section class="content">-->
+<!--<div class="box2">-->
+<!--<ng-template ngFor let-item [ngForOf]="createRange(patient_list.length)" let-currentIndex="index"-->
+<!--*ngIf="patient_list.length>0">-->
+<!--<div class="col-md-3 col-sm-6 col-xs-12 patient_list">-->
+<!--<div>-->
+<!--<img class="profile-user-img img-responsive img-circle" src="{{patient_list[currentIndex]['image']}}"-->
+<!--alt="User profile picture">-->
+<!--</div>-->
+<!--<div class="profile-username mrg_btm3 text-center">{{patient_list[currentIndex]['name']}}</div>-->
+<!--<div class="text-muted mrg_btm3 text-center">{{patient_list[currentIndex]['email']}}</div>-->
+<!--<div class="text-muted mrg_btm3 text-center">+91 {{patient_list[currentIndex]['mobile_number']}}</div>-->
+<!--<div class="text-muted mrg_btm text-center">{{patient_list[currentIndex]['gender']}},-->
+<!--{{patient_list[currentIndex]['age']}} years old-->
+<!--</div>-->
+<!--<div class="text-center">-->
+<!--<button *ngIf="!Button_config" class="btn btn-primary"><a-->
+<!--href="/dashboard/single-patient/{{patient_list[currentIndex]['patient_id_c']}}">Details</a>-->
+<!--</button>-->
+<!--<button *ngIf="Button_config" class="btn btn-primary" (click)="sendMessage(currentIndex)">select patient-->
+<!--</button>-->
+<!--</div>-->
+<!--<div class="clearfix"></div>-->
+<!--</div>-->
+<!--</ng-template>-->
+<!--<div class="clearfix"></div>-->
+<!--</div>-->
+<!--</section>-->
+<!--&lt;!&ndash; /.content &ndash;&gt;-->
+<!--</div>&lt;!&ndash; /.content-wrapper &ndash;&gt;-->
+
+

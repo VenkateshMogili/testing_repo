@@ -1,0 +1,198 @@
+<!-- Content Wrapper. Contains page content -->
+<div>
+  <!-- Content Header (Page header) -->
+  <section>
+    <h1 class="sub_head">Consultation Invoice</h1>
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="box">
+      <!-- title row -->
+      <div fxLayout="row" fxFlex="100%" fxLayout.xs="column" style="padding:0px 4px;">
+        <div fxLayout="column" fxFlex="50%" fxFlexAlign.xs="center center">
+          <div style="margin-top: 10px;"><img src="https://storage.googleapis.com/web-assets/dpm_doctor.png"
+                                              height="80"/>
+            <!-- <small class="pull-right">TheRightDoctors|Digital Health Invoice No. {{$id}}</small><hr> -->
+          </div>
+        </div>
+
+        <div fxLayout="column" fxFlex="50%">
+          <div style="margin-top: 10px;text-align:right;" ngStyle.xs="text-align: left">
+            <b>Right Doctors Healthcare Technologies Pvt Ltd</b><br/>
+            Begumpet <br>
+            Hyderabad, Telangana - 500016 <br>
+            Ph No: 040 66901907<br>
+          </div>
+        </div>
+        <!-- /.col -->
+      </div>
+      <br/>
+      <mat-divider></mat-divider>
+      <br/>
+
+      <ng-template ngFor let-item [ngForOf]="Range(invoice_list.length)" let-currentIndex="index"
+                   *ngIf="invoice_list.length>0">
+
+        <!-- info row -->
+        <div fxLayout="row" fxFlex="100%" fxLayout.xs="column" style="padding:0px 4px;">
+          <!-- /.col -->
+          <div fxLayout="column" fxFlex="100%">
+            <div style="margin-top:10px; text-align:left;" ngStyle.xs="text-align: left">
+              <!-- <b>Booking ID:</b> TRDINVOICE02987<br> -->
+              <span><b>Payment date:</b>{{ date | amDateFormat: 'DD-MM-YYYY'}} (dd-mm-yyyy)</span><br>
+              <span><b>Payment by:</b> {{invoice_list[currentIndex]['patient_name'] | titlecase}} </span><br>
+              <span><b>Payment to:</b> Dr. {{ user['userinfo'][0]['name']}}
+              {{ user['userinfo'][0]['lname']}} </span><br>
+            </div>
+          </div>
+          <div fxLayout="column" fxFlex="100%">
+
+            <div style="margin-top:10px;text-align:right;" ngStyle.xs="text-align: left">
+              <span><b>GST No.</b> 36AAGCR4927EIZC</span><br/>
+              <span><b>Company: </b>Right Doctors Healthcare Technologies</span><br/>
+              <span><b>PAN No.</b>AAGCR4927E </span><br/>
+            </div>
+          </div>
+        </div>
+        <br/>
+        <mat-divider></mat-divider>
+        <br/>
+        <!-- /.row -->
+
+        <!-- Table row -->
+        <div fxLayout="column" fxFlex="100%" style="padding:0px 4px;">
+          <div fxLayout="row" fxFlex="100%" fxLayoutAlign="left">
+
+            <h2 class="text-bold" style="margin-top: 0;" ngStyle.xs="font-size:16px;">Booking Details</h2>
+          </div>
+          <div fxLayout="row" fxFlex="100%">
+            <table>
+              <thead>
+              <tr>
+                <th width="10%" style="color: rgba(0,0,0,.87);">S.No.</th>
+                <th width="40%" style="color: rgba(0,0,0,.87);">Title</th>
+                <th style="color: rgba(0,0,0,.87);">Value</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>1</td>
+                <td ngStyle.xs="font-size:12px;">Patient Name</td>
+                <td ngStyle.xs="font-size:12px;">{{invoice_list[currentIndex]['patient_name'] | titlecase}}</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td ngStyle.xs="font-size:12px;">Consultation Type</td>
+                <td ngStyle.xs="font-size:12px;">{{invoice_list[currentIndex]['booking_type'] | titlecase}} Consult</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td ngStyle.xs="font-size:12px;">Date</td>
+                <td ngStyle.xs="font-size:12px;">{{invoice_list[currentIndex]['appoinment_date'] | amDateFormat: 'DD-MM-YYYY'}} (dd-mm-yyyy)</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td ngStyle.xs="font-size:12px;">Time</td>
+                <td ngStyle.xs="font-size:12px;">{{invoice_list[currentIndex]['start_time']}}(Hrs)</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td ngStyle.xs="font-size:12px;">Consultation Duration</td>
+                <td ngStyle.xs="font-size:12px;">15 Mins</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td ngStyle.xs="font-size:12px;">Amount</td>
+                <td ngStyle.xs="font-size:12px;">Rs.{{invoice_list[currentIndex]['fee']}}.00</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <br/>
+          <mat-divider></mat-divider>
+          <br/>
+
+          <div fxLayout="column" fxFlex="100%" fxLayoutAlign="left">
+            <div fxLayout="row" fxFlex="100%">
+              <h2 class="text-bold" style="margin-top: 0;" ngStyle.xs="font-size:16px;">Payment Summary</h2>
+            </div>
+            <div fxLayout="row" fxFlex="100%">
+              <table class="table">
+                <thead>
+                <tr>
+                  <th width="10%" style="color: rgba(0,0,0,.87);">S.No.</th>
+                  <th width="40%" style="color: rgba(0,0,0,.87);">Title</th>
+                  <th style="color: rgba(0,0,0,.87);">Value</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr style="background-color: #f9f9f9;">
+                  <td>1</td>
+                  <td class="text-bold" ngStyle.xs="font-size:12px;">Fees Amount</td>
+                  <td ngStyle.xs="font-size:12px;">Rs.{{invoice_list[currentIndex]['fee']}}.00</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                  <td>2</td>
+                  <td class="text-bold" ngStyle.xs="font-size:12px;">Internet Handling Fees</td>
+                  <td ngStyle.xs="font-size:12px;">Rs.{{invoice_list[currentIndex]['inc']}}</td>
+                </tr>
+                <tr>
+                  <td style="border: none">2.1</td>
+                  <td style="border: none" ngStyle.xs="font-size:12px;">Booking Fees</td>
+                  <td style="border: none" ngStyle.xs="font-size:12px;">Rs.{{invoice_list[currentIndex]['bf']}}</td>
+                </tr>
+                <tr>
+                  <td style="border-top: none">2.2</td>
+                  <td style="border-top: none" ngStyle.xs="font-size:12px;">GST @ 18%</td>
+                  <td style="border-top: none" ngStyle.xs="font-size:12px;">Rs.{{invoice_list[currentIndex]['stb']}}</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                  <td>3</td>
+                  <td class="text-bold" ngStyle.xs="font-size:12px;">Payment Gateway Charges</td>
+                  <td ngStyle.xs="font-size:12px;">Rs.{{invoice_list[currentIndex]['tpgc']}}</td>
+                </tr>
+                <tr>
+                  <td style="border: none">3.1</td>
+                  <td style="border: none" ngStyle.xs="font-size:12px;">Payment Gateway Charges</td>
+                  <td style="border: none" ngStyle.xs="font-size:12px;">Rs.{{invoice_list[currentIndex]['pg']}}</td>
+                </tr>
+                <tr>
+                  <td style="border-top: none">3.2</td>
+                  <td style="border-top: none" ngStyle.xs="font-size:12px;">GST @ 18%</td>
+                  <td style="border-top: none" ngStyle.xs="font-size:12px;">Rs.{{invoice_list[currentIndex]['stp']}}</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                  <td style="border-top: 3px solid #333; border-bottom: 3px solid #333;"></td>
+                  <td class="text-bold" style="border-top: 3px solid #333; border-bottom: 3px solid #333;" ngStyle.xs="font-size:12px;">AMOUNT PAID
+                  </td>
+                  <td class="text-bold" style="border-top: 3px solid #333; border-bottom: 3px solid #333;" ngStyle.xs="font-size:12px;">
+                    Rs.{{invoice_list[currentIndex]['total']}}
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+            <br/>
+            <div fxLayout="row" fxFlex="100%" fxLayoutAlign="left">
+              <small>Note: This is an electronically generated invoice and does not require a physical signature.</small>
+            </div>
+            <br/>
+            <!-- /.col -->
+          </div>
+
+          <!-- /.row -->
+
+          <!-- this row will not appear when printing -->
+          <div fxLayout="row" fxFlex="10%">
+            <a href="consultation/invoice/print/{{id}}/{{b_id}}/{{b_date}}"
+               target="_blank"><button mat-raised-button class="details_b"><i class="material-icons">print</i> Print</button></a>
+          </div>
+
+        </div>
+      </ng-template>
+
+    </div>
+  </section><!-- /.content -->
+</div><!-- /.content-wrapper -->
+

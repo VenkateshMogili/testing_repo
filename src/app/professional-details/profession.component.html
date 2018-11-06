@@ -1,0 +1,83 @@
+<div [formGroup]="medForm">
+  <div fxFlex="column">
+
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Name of Clinic/Nursing Home/Hospital" type="text" class="type-input"
+               formControlName="clinic_name"  required>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          Name of clinic is <strong>required</strong>
+        </mat-error>
+      </mat-form-field><br>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="phone number" type="number"
+               formControlName="clinic_ph" name="phoneNumber"  required pattern="[0-9]*" required style="
+                                                     background-color: #fff;
+                                                     border: none;box-shadow: none;
+                                                     -webkit-transition: none;
+                                                     transition: none;">
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          Phone Number is <strong>required</strong>
+        </mat-error>
+      </mat-form-field><br>
+
+      <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Address" formControlName="hospital_city" required></textarea>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          Address is <strong>required</strong>
+        </mat-error>
+      </mat-form-field><br>
+
+      <div class="md-form">
+        <mat-form-field class="example-full-width">
+          <!--<mat-select  formControlName="hospital_city_c" placeholder="Select country">-->
+            <!--<mat-option value="">Select Country</mat-option>-->
+          <!--</mat-select>-->
+
+          <mat-select placeholder="Select Country" #t2 (selectionChange)="onChange(t2.value)"
+                      formControlName="hospital_city_c" name="country" [(ngModel)]="doc_model.country">
+            <mat-option *ngFor="let country of all_countries" value="{{country.country_id}}">{{country.country_name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="md-form">
+        <mat-form-field class="example-full-width">
+          <!--<mat-select  formControlName="clinic_state" placeholder="Select state">-->
+            <!--<mat-option value="">Select State</mat-option>-->
+          <!--</mat-select>-->
+          <mat-select placeholder="Select City" name="state" #t3 (selectionChange)="onSelectstate(t3.value)"
+                      [(ngModel)]="doc_model.state" formControlName="clinic_state">
+            <mat-option *ngFor="let state of all_states" value="{{state.state_id}}">{{state.state_name}}</mat-option>
+          </mat-select>
+
+        </mat-form-field>
+      </div>
+
+      <div class="md-form">
+        <mat-form-field class="example-full-width">
+          <!--<mat-select   formControlName="clinic_city"  placeholder="Select city">-->
+            <!--<mat-option value="">Select State</mat-option>-->
+          <!--</mat-select>-->
+          <mat-select placeholder="Select City" name="city" #t4 (selectionChange)="onSelectcity(t4.value)"
+                      [(ngModel)]="doc_model.city" formControlName="clinic_city">
+            <mat-option *ngFor="let city of all_cities" value="{{city.city_id}}">{{city.city_name}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Pincode" type="number" formControlName="pin" required
+               pattern="[0-9]*" required style="
+                                                     background-color: #fff;
+                                                     border: none;box-shadow: none;
+                                                     -webkit-transition: none;
+                                                     transition: none;">
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          Pincode is <strong>required</strong>
+        </mat-error>
+      </mat-form-field><br>
+  </div>
+</div>

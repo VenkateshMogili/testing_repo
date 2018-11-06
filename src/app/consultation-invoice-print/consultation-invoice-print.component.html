@@ -1,0 +1,423 @@
+
+<style type="text/css">
+  /* Client-specific Styles */
+  div, p, a, li, td { -webkit-text-size-adjust:none; }
+  #outlook a {padding:0;} /* Force Outlook to provide a "view in browser" menu link. */
+  html{width: 100%; }
+  body{background: #ddd; width:100% !important; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; margin:0; padding:0;}
+  /* Prevent Webkit and Windows Mobile platforms from changing default font sizes, while not breaking desktop design. */
+  .ExternalClass {width:100%;} /* Force Hotmail to display emails at full width */
+  .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;} /* Force Hotmail to display normal line spacing. */
+  #backgroundTable {margin:0; padding:0; width:100% !important; line-height: 100% !important;}
+  img {outline:none; text-decoration:none;border:none; -ms-interpolation-mode: bicubic;}
+  a img {border:none;}
+  .image_fix {display:block;}
+  p {margin: 0;}
+  table td {border-collapse: collapse;}
+  table { border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; }
+  /*STYLES*/
+  table[class=full] { width: 100%; clear: both; }
+  /*IPAD STYLES*/
+  @media  only screen and (max-width: 640px) {
+    a[href^="tel"], a[href^="sms"] {
+      text-decoration: none;
+      color: #33b9ff; /* or whatever your want */
+      pointer-events: none;
+      cursor: default;
+    }
+    .mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
+      text-decoration: default;
+      color: #33b9ff !important;
+      pointer-events: auto;
+      cursor: default;
+    }
+    /*table[class=devicewidth] {width: 440px!important;}*/
+    /*table[class=devicewidthinner] {width: 420px!important;}*/
+    img[class=banner] {width: 440px!important;height:220px!important;}
+    img[class=col2img] {width: 440px!important;height:220px!important;}
+
+
+  }
+  /*IPHONE STYLES*/
+  @media  only screen and (max-width: 480px) {
+    a[href^="tel"], a[href^="sms"] {
+      text-decoration: none;
+      color: #33b9ff; /* or whatever your want */
+      pointer-events: none;
+      cursor: default;
+    }
+    .mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
+      text-decoration: default;
+      color: #33b9ff !important;
+      pointer-events: auto;
+      cursor: default;
+    }
+    /*table[class=devicewidth] {width: 280px!important;}*/
+    /*table[class=devicewidthinner] {width: 280px!important;}*/
+    img[class=banner] {width: 280px!important;height:140px!important;}
+    img[class=col2img] {width: 280px!important;height:140px!important;}
+
+
+  }
+</style>
+
+
+<div onload="window.print();">
+  <!--&lt;!&ndash; Start of preheader &ndash;&gt;-->
+  <!--<table width="100%" bgcolor="#ddd" cellpadding="0" cellspacing="0" border="0" id="backgroundTable" st-sortable="preheader" >-->
+    <!--<tbody>-->
+    <!--<tr>-->
+      <!--<td>-->
+        <!--<table cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth">-->
+          <!--<tbody>-->
+          <!--<tr>-->
+            <!--<td width="100%">-->
+              <!--<table cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth">-->
+                <!--<tbody>-->
+                <!--&lt;!&ndash; Spacing &ndash;&gt;-->
+                <!--<tr>-->
+                  <!--<td width="100%" height="20"></td>-->
+                <!--</tr>-->
+                <!--&lt;!&ndash; Spacing &ndash;&gt;-->
+
+                <!--&lt;!&ndash; Spacing &ndash;&gt;-->
+                <!--<tr>-->
+                  <!--<td width="100%" height="20"></td>-->
+                <!--</tr>-->
+                <!--&lt;!&ndash; Spacing &ndash;&gt;-->
+                <!--</tbody>-->
+              <!--</table>-->
+            <!--</td>-->
+          <!--</tr>-->
+          <!--</tbody>-->
+        <!--</table>-->
+      <!--</td>-->
+    <!--</tr>-->
+    <!--</tbody>-->
+  <!--</table>-->
+  <!--&lt;!&ndash; End of preheader &ndash;&gt;-->
+
+  <!--<table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#ddd" st-sortable="footer" id="backgroundTable">-->
+    <!--<tbody>-->
+    <!--<tr>-->
+      <!--<td>-->
+        <!--<table cellspacing="0" cellpadding="0" border="0" bgcolor="#333" align="center" class="devicewidth">-->
+          <!--<tbody>-->
+          <!--<tr>-->
+            <!--<td width="100%">-->
+              <!--<table cellspacing="0" cellpadding="0" border="0" bgcolor="#333" align="center" class="devicewidth">-->
+                <!--<tbody>-->
+                <!--&lt;!&ndash; Spacing &ndash;&gt;-->
+                <!--<tr>-->
+                  <!--<td height="15">&nbsp;</td>-->
+                <!--</tr>-->
+                <!--&lt;!&ndash; Spacing &ndash;&gt;-->
+                <!--</tbody>-->
+              <!--</table>-->
+            <!--</td>-->
+          <!--</tr>-->
+          <!--</tbody>-->
+        <!--</table>-->
+      <!--</td>-->
+    <!--</tr>-->
+    <!--</tbody>-->
+  <!--</table>-->
+
+  <!-- Start of header -->
+  <table width="100%" bgcolor="#ddd" cellpadding="0" cellspacing="0" border="0" id="backgroundTable" st-sortable="footer">
+    <tbody>
+    <tr>
+      <td>
+        <table bgcolor="#fff" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth">
+          <tbody>
+          <tr>
+            <td width="100%">
+              <table cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth">
+                <tbody>
+                <!-- Spacing -->
+                <tr>
+                  <td height="20" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                </tr>
+                <!-- Spacing -->
+                <tr>
+                  <td>
+                    <!-- heading -->
+                    <table width="560" align="" cellpadding="0" cellspacing="0" border="0" class="devicewidthinner">
+                      <tbody>
+                      <!-- Title -->
+                      <tr>
+                        <td width="20"></td>
+                        <td style="font-family: Tahoma, Geneva, sans-serif; font-size: 24px; color: #333; line-height: 34px;"><img src="https://storage.googleapis.com/web-assets/dpm_patient.png" height="80"></td>
+                        <td width="20"></td>
+                      </tr>
+                      <!-- End of Title -->
+                      </tbody>
+                    </table>
+                    <!-- end of Heading -->
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <!-- End of header -->
+  <ng-template ngFor let-item [ngForOf]="Range(invoice_list.length)" let-currentIndex="index" *ngIf="invoice_list.length>0">
+
+    <!-- start of Full text -->
+    <table width="100%" bgcolor="#ddd" cellpadding="0" cellspacing="0" border="0" id="backgroundTable" st-sortable="full-text">
+      <tbody>
+      <tr>
+        <td>
+          <table cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth">
+            <tbody>
+            <tr>
+              <td width="100%">
+                <table bgcolor="#ffffff" width="560" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth">
+                  <tbody>
+
+                  <!-- Spacing -->
+                  <tr>
+                    <td height="10" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                  </tr>
+                  <!-- Spacing -->
+                  <tr>
+                    <td>
+                      <table align="" cellpadding="0" cellspacing="0" border="0" class="devicewidthinner">
+                        <tbody>
+                        <tr>
+                          <td width="20"></td>
+                          <td style="font-family: Tahoma, Geneva, sans-serif; font-size: 14px; color: #333; line-height: 24px; border-bottom: 1px solid #ccc; padding-bottom: 10px;">
+                            <b>Payment date:</b>{{date | amDateFormat:'DD-MM-YYYY'}} (dd-mm-yyyy)<br>
+                            <b>Payment by:</b> {{invoice_list[currentIndex]['patient_name']}} <br>
+                            <b>Payment to:</b> Dr. {{ user['userinfo'][0]['name']}}
+                            {{ user['userinfo'][0]['l_name']}} <br>
+                          </td>
+                          <td width="20"></td>
+                        </tr>
+                        <tr><td height="10"></td></tr>
+                        <!-- Title -->
+                        <tr>
+                          <td width="20"></td>
+                          <td style="font-family: Tahoma, Geneva, sans-serif; font-size: 14px; color: #333; line-height: 24px; border-bottom: 1px solid #ccc; padding-bottom: 10px;">
+                            <b>GST Tax#</b> 36AAGCR4927EIZC<br/>
+                            <b>Company: </b>Right Doctors Healthcare Technologies<br/>
+                            <b>PAN No.</b>AAGCR4927E <br/>
+                          </td>
+                          <td width="20"></td>
+                        </tr>
+                        <!-- End of Title -->
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+
+                  <!-- Spacing -->
+                  <tr>
+                    <td height="10" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                  </tr>
+                  <!-- Spacing -->
+
+                  <tr>
+                    <td>
+                      <table cellpadding="0" border="0" class="devicewidthinner" style="font-family: Tahoma, Geneva, sans-serif; font-size: 16px; line-height: 26px; width: 100%; font-weight: bold;">
+                        <tbody>
+                        <!-- Title -->
+                        <tr>
+                          <td width="20"></td>
+                          <td>Booking Details</td>
+                          <td width="20"></td>
+                        </tr>
+                        </tbody>
+                      </table>
+
+                      <table cellpadding="0" cellspacing="0" border="0" class="devicewidthinner">
+                        <tbody>
+                        <!-- Title -->
+                        <tr>
+                          <td width="20"></td>
+                          <td style="font-family: Tahoma, Geneva, sans-serif; font-size: 14px; color: #333; line-height: 24px; border-bottom: 1px solid #ccc; padding-bottom: 10px;">
+                            <table class="table table-striped" style="font-family: Tahoma, Geneva, sans-serif; font-size: 14px; line-height: 24px; width: 100%;">
+                              <tbody>
+                              <tr>
+                                <td>Patient Name</td>
+                                <td style="text-align: right;">{{invoice_list[currentIndex]['patient_name']}}</td>
+                              </tr>
+                              <tr>
+                                <td>Consultation Type</td>
+                                <td style="text-align: right;">{{invoice_list[currentIndex]['booking_type']}} Consult</td>
+                              </tr>
+                              <tr>
+                                <td>Date</td>
+                                <td style="text-align: right;">{{invoice_list[currentIndex]['appoinment_date'] | amDateFormat:'DD-MM-YYYY'}} (dd-mm-yyyy)</td>
+                              </tr>
+                              <tr>
+                                <td>Time</td>
+                                <td style="text-align: right;">{{invoice_list[currentIndex]['start_time']}}(Hrs)</td>
+                              </tr>
+                              <tr>
+                                <td>Consultation Duration</td>
+                                <td style="text-align: right;">15 Mins</td>
+                              </tr>
+                              <tr>
+                                <td>Amount</td>
+                                <td style="text-align: right;">Rs.{{invoice_list[currentIndex]['fee']}}.00</td>
+                              </tr>
+                              </tbody>
+                            </table>
+
+                          </td>
+                          <td width="20"></td>
+                        </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <table width="100%" align="" cellpadding="0" cellspacing="0" border="0" class="devicewidthinner" style="font-family: Tahoma, Geneva, sans-serif; font-size: 16px; line-height: 26px; width: 100%; font-weight: bold;">
+                        <tbody>
+                        <tr><td height="10"></td></tr>
+                        <!-- Title -->
+                        <tr>
+                          <td width="20"></td>
+                          <td>Payment Summary</td>
+                          <td width="20"></td>
+                        </tr>
+                        </tbody>
+                      </table>
+
+                      <table align="" cellpadding="0" cellspacing="0" border="0" class="devicewidthinner">
+                        <tbody>
+                        <!-- Title -->
+                        <tr>
+                          <td width="20"></td>
+                          <td>
+                            <table class="table table-striped" style="font-family: Tahoma, Geneva, sans-serif; font-size: 14px; line-height: 24px; width: 100%;">
+                              <tbody>
+                              <tr>
+                                <td><b>Fees Amount</b></td>
+                                <td style="text-align: right;">Rs.{{invoice_list[currentIndex]['fee']}}.00</td>
+                              </tr>
+                              <tr>
+                                <td><b>Internet Handling Fees</b></td>
+                                <td style="text-align: right;">Rs.{{invoice_list[currentIndex]['inc']}}</td>
+                              </tr>
+                              <tr>
+                                <td>Booking Fees</td>
+                                <td style="text-align: right;">Rs.{{invoice_list[currentIndex]['bf']}}</td>
+                              </tr>
+                              <tr>
+                                <td>GST @ 18%</td>
+                                <td style="text-align: right;">Rs.{{invoice_list[currentIndex]['stb']}}</td>
+                              </tr>
+                              <tr>
+                                <td><b>Payment Gateway Charges</b></td>
+                                <td style="text-align: right;">Rs.{{invoice_list[currentIndex]['tpgc']}}</td>
+                              </tr>
+                              <tr>
+                                <td>Payment Gateway Charges</td>
+                                <td style="text-align: right;">Rs.{{invoice_list[currentIndex]['pg']}}</td>
+                              </tr>
+                              <tr>
+                                <td>GST @ 18%</td>
+                                <td style="text-align: right;">Rs.{{invoice_list[currentIndex]['stp']}}</td>
+                              </tr>
+                              <tr>
+                                <td style="border-top: 3px solid #333; border-bottom: 3px solid #333;"><b>Amount Paid</b></td>
+                                <td style="border-top: 3px solid #333;border-bottom: 3px solid #333; text-align: right;">Rs.{{$app['total']}}</td>
+                              </tr>
+                              </tbody>
+                            </table>
+
+                          </td>
+                          <td width="20"></td>
+                        </tr>
+                        <tr>
+                          <td height="30">&nbsp;</td>
+                        </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+
+
+
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <!-- End of Full Text -->
+  </ng-template>
+  <!--&lt;!&ndash; Start of footer &ndash;&gt;-->
+  <!--<table width="100%" bgcolor="#ddd" cellpadding="0" cellspacing="0" border="0" id="backgroundTable" st-sortable="footer">-->
+    <!--<tbody>-->
+    <!--<tr>-->
+      <!--<td>-->
+        <!--<table width="560" bgcolor="#333" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth">-->
+          <!--<tbody>-->
+          <!--<tr>-->
+            <!--<td width="100%">-->
+              <!--<table bgcolor="#333" width="560" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth">-->
+                <!--<tbody>-->
+                <!--&lt;!&ndash; Spacing &ndash;&gt;-->
+                <!--<tr>-->
+                  <!--<td height="15">&nbsp;</td>-->
+                <!--</tr>-->
+                <!--&lt;!&ndash; Spacing &ndash;&gt;-->
+                <!--</tbody>-->
+              <!--</table>-->
+            <!--</td>-->
+          <!--</tr>-->
+          <!--</tbody>-->
+        <!--</table>-->
+      <!--</td>-->
+    <!--</tr>-->
+    <!--</tbody>-->
+  <!--</table>-->
+  <!--&lt;!&ndash; End of footer &ndash;&gt;-->
+  <!--<table width="100%" bgcolor="#ddd" cellpadding="0" cellspacing="0" border="0" id="backgroundTable" st-sortable="preheader" >-->
+    <!--<tbody>-->
+    <!--<tr>-->
+      <!--<td>-->
+        <!--<table width="560" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth">-->
+          <!--<tbody>-->
+          <!--<tr>-->
+            <!--<td width="100%">-->
+              <!--<table width="560" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth">-->
+                <!--<tbody>-->
+                <!--&lt;!&ndash; Spacing &ndash;&gt;-->
+                <!--<tr>-->
+                  <!--<td width="100%" height="20"></td>-->
+                <!--</tr>-->
+                <!--&lt;!&ndash; Spacing &ndash;&gt;-->
+                <!--&lt;!&ndash; Spacing &ndash;&gt;-->
+                <!--<tr>-->
+                  <!--<td width="100%" height="20"></td>-->
+                <!--</tr>-->
+                <!--&lt;!&ndash; Spacing &ndash;&gt;-->
+                <!--</tbody>-->
+              <!--</table>-->
+            <!--</td>-->
+          <!--</tr>-->
+          <!--</tbody>-->
+        <!--</table>-->
+      <!--</td>-->
+    <!--</tr>-->
+    <!--</tbody>-->
+  <!--</table>-->
+
+</div>

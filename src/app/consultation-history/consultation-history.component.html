@@ -1,0 +1,63 @@
+<!-- Content Wrapper. Contains page content -->
+<div>
+  <!-- Content Header (Page header) -->
+  <section>
+    <h1 class="sub_head">
+      {{type}} consultation history
+    </h1>
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+
+    <div class="box">
+
+      <div fxLayout="column" fxLayout.xs="column">
+        <div fxFlex="100" *ngIf="consultation_history.length>0">
+          <table ngStyle.xs="font-size:7px">
+
+            <thead>
+            <tr>
+              <th>S.No.</th>
+              <!--<th width="10%">Patient ID</th>-->
+              <th>Patient Name</th>
+              <th>Consultation type</th>
+              <th>Date (dd-mm-yyyy)</th>
+              <th>Time</th>
+              <th>Fee</th>
+              <th>Duration</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- <ng-template ngFor let-item [ngForOf]="Range(consultation_history.length)" let-currentIndex="index">-->
+
+            <tr *ngFor="let $item of consultation_history | paginate: { itemsPerPage: 10, currentPage: p } ; let i=index">
+              <td>{{i+1}}</td>
+              <!--<td>{{$item['patient_id_c']}}</td>-->
+              <td>{{$item['patient_name']}}</td>
+              <td>{{$item['booking_type']}} consult</td>
+              <td>{{ $item['appoinment_date'] | amDateFormat: 'DD-MM-YYYY'}}</td>
+              <td>{{$item['start_time']}}</td>
+              <td>{{$item['fee']}}</td>
+              <td>15mins</td>
+            </tr>
+            <!--  </ng-template>-->
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+        <div fxFlex="100">
+          <div style="float: right" *ngIf="consultation_history.length>0">
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+          </div>
+          <div *ngIf="consultation_history.length<=0"> You don't have completed consultations</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
+

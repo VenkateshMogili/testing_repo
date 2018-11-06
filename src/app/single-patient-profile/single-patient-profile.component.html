@@ -1,0 +1,958 @@
+<!--<div id="profile" class="tabcontent">
+  <div class="">
+
+    <div class="imge imge_profile">
+      <img src="{{patients[0]['image']}}">
+    </div>
+    <div *ngIf="patients[0]['image'].length<0">
+      <img src="assets/dashboard_assets/dashboard/images/user_icon.jpg" class="" width="50">
+    </div>
+    <!--Vertical Tab-->
+<!--<div id="parentVerticalTab">
+  <ul class="resp-tabs-list hor_1">
+    <!--<li><a [routerLink]="['about']">About</a></li>
+    <li><a [routerLink]="['health']">My Health</a></li>
+    <li><a [routerLink]="['life-style']">My Lifesyle</a></li>
+    <li><a [routerLink]="['family-health-history']">My Family History</a></li>
+    <li><a [routerLink]="['contact']">Contact</a></li>-->
+<!-- <li>About</li>
+ <li>My Health</li>
+ <li>My Lifesyle</li>
+ <li>My Family History</li>
+ <li>Contact</li>
+</ul>
+<div class="resp-tabs-container hor_1">
+<!-- <router-outlet></router-outlet>-->
+<!-- <div>
+   <form class="form-horizontal form-horizontal2">
+     <h3 class="mrg_btm2"><strong>About</strong></h3>
+     <div class="form-group">
+       <label class="control-label col-lg-3 col-md-12 col-sm-12 col-sm-3 col-xs-5">Name:</label>
+       <div class="col-lg-9 col-md-12 col-sm-12 col-xs-7">
+         <div class="control-label">{{patients[0]['name']}} {{patients[0]['l_name'] }}</div>
+       </div>
+     </div>
+
+     <div class="form-group">
+       <label class="control-label col-lg-3 col-md-12 col-sm-12 col-xs-5">Gender:</label>
+       <div class="col-lg-9 col-md-12 col-sm-12 col-xs-7">
+         <div class="control-label">{{patients[0]['gender'] }}</div>
+       </div>
+     </div>
+     <div class="form-group">
+       <label class="control-label col-lg-3 col-md-12 col-sm-12 col-xs-5">Date of Birth:</label>
+       <div class="col-lg-9 col-md-12 col-sm-12 col-xs-7">
+         <div class="control-label">{{patients[0]['dob'] | amDateFormat: 'DD-MM-YYYY'}}</div>
+       </div>
+     </div>
+
+     <div class="form-group">
+       <label class="control-label col-lg-3 col-md-12 col-sm-12 col-xs-5">Age:</label>
+       <div class="col-lg-9 col-md-12 col-sm-12 col-xs-7">
+         <div class="control-label">{{patients[0]['age']}}</div>
+       </div>
+     </div>
+
+     <div class="form-group">
+       <label class="control-label col-lg-3 col-md-12 col-sm-12 col-xs-5">Location:</label>
+       <div class="col-lg-9 col-md-12 col-sm-12 col-xs-7">
+         <div class="control-label">{{patients[0]['location']}}</div>
+       </div>
+     </div>
+
+     <div class="form-group">
+       <label class="control-label col-lg-3 col-md-12 col-sm-12 col-xs-5">Ethnicity:</label>
+       <div class="col-lg-9 col-md-12 col-sm-12 col-xs-7">
+         <div class="control-label">{{patients[0]['ethnicity']}}</div>
+       </div>
+     </div>
+
+     <div class="form-group">
+       <label class="control-label col-lg-3 col-md-12 col-sm-12 col-xs-5">Height:</label>
+       <div class="col-lg-9 col-md-12 col-sm-12 col-xs-7">
+         <div class="control-label">{{patients[0]['height']}}</div>
+       </div>
+     </div>
+
+     <div class="form-group">
+       <label class="control-label col-lg-3 col-md-12 col-sm-12 col-xs-5">Weight:</label>
+       <div class="col-lg-9 col-md-12 col-sm-12 col-xs-7">
+         <div class="control-label">{{patients[0]['weight']}}</div>
+       </div>
+     </div>
+
+     <div class="form-group">
+       <label class="control-label col-lg-3 col-md-12 col-sm-12 col-xs-5">BMI:</label>
+       <div class="col-lg-9 col-md-12 col-sm-12 col-xs-7">
+         <div class="control-label">{{patients[0]['bmi'] }}</div>
+       </div>
+     </div>
+
+   </form>
+ </div>
+
+ <div>
+   <form class="form-horizontal form-horizontal2">
+     <h3 class="mrg_btm2"><strong>My Health</strong></h3>
+
+     <h3 class="mrg_btm2"><strong>Conditions and Symptoms</strong></h3>
+     <ng-template ngFor let-item [ngForOf]="createRange(list['health_list'].length)"
+                  let-innerIndex="index">
+
+       <!--  @foreach($health_list as $health)-->
+<!--<div class="form-group">
+  <label class="control-label col-lg-3 col-md-12 col-sm-12 col-xs-6">Conditions:</label>
+  <div class="col-lg-9 col-md-12 col-sm-12 col-xs-6">
+    <div class="control-label">{{list['health_list'][innerIndex]['conditions_symptoms']}}
+    </div>
+  </div>
+</div>
+
+
+<div class="form-group">
+  <<label class="control-label col-lg-3 col-md-12 col-sm-12 col-xs-6">Conditions Have:</label>
+  <div class="col-lg-9 col-md-12 col-sm-12 col-xs-6">
+    <div class="control-label">{{list['health_list'][innerIndex]['conditions_have']}}</div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="control-label col-lg-3 col-md-12 col-sm-12 col-xs-6">Notes:</label>
+  <div class="col-lg-9 col-md-12 col-sm-12 col-xs-6">
+    <div class="control-label">{{list['health_list'][innerIndex]['conditions_note']}}</div>
+  </div>
+</div>
+</ng-template>
+<hr>
+
+
+<h3 class="mrg_btm2"><strong>Medications</strong></h3>
+<ng-template ngFor let-item [ngForOf]="createRange(list['medication_list'].length)"
+          let-innerIndex="index" *ngIf="list['medication_list'].length>0">
+
+<div class="form-group">
+  <label class="control-label col-lg-3 col-md-12 col-sm-12 col-xs-6">Medicine:</label>
+  <div class="col-lg-9 col-md-12 col-sm-12 col-xs-6">
+    <div class="control-label">{{list['medication_list'][innerIndex]['medication']}}</div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="control-label col-lg-3 col-md-12 col-sm-12 col-xs-6">Medication Take:</label>
+  <div class="col-lg-9 col-md-12 col-sm-12 col-xs-6">
+    <div class="control-label">{{list['medication_list'][innerIndex]['medication_take']}}
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="control-label col-lg-3 col-md-12 col-sm-12 col-xs-6">Notes:</label>
+  <div class="col-lg-9 col-md-12 col-sm-12 col-xs-6">
+    <div class="control-label">{{list['medication_list'][innerIndex]['medication_note']}}
+    </div>
+  </div>
+</div>
+</ng-template>
+<hr>
+
+<h3 class="mrg_btm2"><strong>Treatment or Procedure</strong></h3>
+<ng-template ngFor let-item [ngForOf]="createRange(list['treatment_list'].length)"
+           let-innerIndex="index" *ngIf="list['treatment_list'].length>0">
+
+<div class="form-group">
+  <label class="control-label col-lg-3 col-md-12 col-sm-12 col-xs-6">Treatment:</label>
+  <div class="col-lg-9 col-md-12 col-sm-12 col-xs-6">
+    <div class="control-label">{{list['treatment_list'][innerIndex]['treatment']}}</div>
+  </div>
+</div>
+
+
+<div class="form-group">
+  <div class="col-md-3 col-sm-12">Date Preformed:</div>
+  <div class="col-lg-9 col-md-12 col-sm-12 col-xs-6">
+    <div class="control-label">{{list['treatment_list'][innerIndex]['treatment_date']}}
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="control-label col-lg-3 col-md-12 col-sm-12 col-xs-6">Notes:</label>
+  <div class="col-lg-9 col-md-12 col-sm-12 col-xs-6">
+    <div class="control-label">{{list['treatment_list'][innerIndex]['treatment_note']}}
+    </div>
+  </div>
+</div>
+</ng-template>
+<hr>
+
+<h3 class="mrg_btm2"><strong>Allergy</strong></h3>
+<ng-template ngFor let-item [ngForOf]="createRange(list['allergy_list'].length)"
+           let-innerIndex="index" *ngIf="list['allergy_list'].length>0">
+
+<div class="form-group">
+  <label class="control-label col-lg-3 col-md-12 col-sm-12 col-xs-6">Allergy:</label>
+  <div class="col-lg-9 col-md-12 col-sm-12 col-xs-6">
+    <div class="control-label">{{list['allergy_list'][innerIndex]['allegry']}}</div>
+  </div>
+</div>
+
+
+<div class="form-group">
+  <label class="control-label col-lg-3 col-md-12 col-sm-12 col-xs-6">Allergy Have:</label>
+  <div class="col-lg-9 col-md-12 col-sm-12 col-xs-6">
+    <div class="control-label">{{list['allergy_list'][innerIndex]['allergy_have']}}</div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="control-label col-lg-3 col-md-12 col-sm-12 col-xs-6">Notes:</label>
+  <div class="col-lg-9 col-md-12 col-sm-12 col-xs-6">
+    <div class="control-label">{{list['allergy_list'][innerIndex]['allergy_note']}}</div>
+  </div>
+</div>
+</ng-template>
+<hr>
+
+</form>
+</div>
+
+<div>
+<form class="form-horizontal form-horizontal2">
+<h3 class="mrg_btm2"><strong>My Lifestyle</strong></h3>
+
+<div class="form-group">
+<h4 class="col-md-12 col-sm-12 col-xs-12">Do you get at least 7 hours of sleep daily?</h4>
+<div class="col-md-12 col-sm-12 col-xs-12">
+  <div class="control-label">{{patients[0]['sleep_daily'] }}</div>
+</div>
+</div>
+
+
+<div class="form-group">
+<h4 class="col-md-12 col-sm-12 col-xs-12">Do you exercise?</h4>
+<div class="col-md-12 col-sm-12 col-xs-12">
+  <div class="control-label">{{patients[0]['exercise'] }}</div>
+</div>
+</div>
+
+<div class="form-group">
+<h4 class="col-md-12 col-sm-12 col-xs-12">Do you get yearly flu shots?</h4>
+<div class="col-md-12 col-sm-12 col-xs-12">
+  <div class="control-label">{{patients[0]['yearly_flu_shots']}}</div>
+</div>
+</div>
+
+<div class="form-group">
+<h4 class="col-md-12 col-sm-12 col-xs-12">Do you smoke or use tobacco?</h4>
+<div class="col-md-12 col-sm-12 col-xs-12">
+  <div class="control-label">{{patients[0]['smoke_tobacco'] }}</div>
+</div>
+</div>
+
+<div class="form-group">
+<h4 class="col-md-12 col-sm-12 col-xs-12">Do you drink alcohol?</h4>
+<div class="col-md-12">
+  <div class="control-label">{{patients[0]['alcohol']}}</div>
+</div>
+</div>
+
+<div class="form-group">
+<h4 class="col-md-12 col-sm-12 col-xs-12">Do you use recreational drugs?</h4>
+<div class="col-md-12 col-sm-12 col-xs-12">
+  <div class="control-label">{{patients[0]['drugs']}}</div>
+</div>
+</div>
+
+</form>
+</div>
+
+<div>
+<form class="form-horizontal form-horizontal2">
+<h3 class="mrg_btm2" style="margin: 0 0 13px 0;"><strong>My Family History</strong></h3>
+
+<h4>Conditions that caused a close relative to pass away before the age of 60:</h4>
+<ng-template ngFor let-item [ngForOf]="createRange(list['pr_list'].length)"
+           let-innerIndex="index" *ngIf="list['pr_list'].length>0">
+
+<div class="form-group">
+  <label class="control-label col-lg-3 col-md-12 col-sm-12 col-xs-6">conditions:</label>
+  <div class="col-lg-9 col-md-12 col-sm-12 col-xs-6">
+    <div class="control-label">
+      {{list['pr_list'][innerIndex]['relative_pass_away_condition']}}
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="control-label col-lg-3 col-md-12 col-sm-12 col-xs-6">Relation:</label>
+  <div class="col-lg-9 col-md-12 col-sm-12 col-xs-6">
+    <div class="control-label">
+      {{list['pr_list'][innerIndex]['relative_pass_away_relation']}}
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="control-label col-lg-3 col-md-12 col-sm-12 col-xs-6">Age:</label>
+  <div class="col-lg-9 col-md-12 col-sm-12 col-xs-6">
+    <div class="control-label">{{list['pr_list'][innerIndex]['relative_pass_away_age']}}
+    </div>
+  </div>
+</div>
+</ng-template>
+<hr>
+
+
+<h4>Do your living grandparents, parents or siblings have any major medical conditions
+(life-threatening or otherwise?)</h4>
+<ng-template ngFor let-item [ngForOf]="createRange(list['lr_list'].length)"
+           let-innerIndex="index" *ngIf="list['lr_list'].length>0">
+
+<div class="form-group">
+  <label class="control-label col-lg-3 col-md-12 col-sm-12 col-xs-6">conditions:</label>
+  <div class="col-lg-9 col-md-12 col-sm-12 col-xs-6">
+    <div class="control-label">{{list['lr_list'][innerIndex]['relative_live_condition']}}
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="control-label col-lg-3 col-md-12 col-sm-12 col-xs-6">Relation:</label>
+  <div class="col-lg-9 col-md-12 col-sm-12 col-xs-6">
+    <div class="control-label">{{list['lr_list'][innerIndex]['relative_live_relation']}}
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="control-label col-lg-3 col-md-12 col-sm-12 col-xs-6">Age:</label>
+  <div class="col-lg-9 col-md-12 col-sm-12 col-xs-6">
+    <div class="control-label">{{list['lr_list'][innerIndex]['relative_live_age']}}</div>
+  </div>
+</div>
+</ng-template>
+<hr>
+</form>
+</div>
+
+<div>
+
+<form class="form-horizontal form-horizontal2">
+<h3 class="mrg_btm2"><strong>Contact Information</strong></h3>
+<div class="form-group">
+<label class="control-label col-lg-3 col-md-12 col-sm-12 col-xs-6">Address:</label>
+<div class="col-lg-9 col-md-12 col-sm-12 col-xs-6">
+  <div class="control-label">{{patients[0]['paddress']}} {{patients[0]['street'] }}</div>
+</div>
+</div>
+
+<div class="form-group">
+<label class="control-label col-lg-3 col-md-12 col-sm-12 col-xs-6">Country:</label>
+<div class="col-lg-9 col-md-12 col-sm-12 col-xs-6">
+  <div class="control-label">{{patients[0]['country']}}</div>
+</div>
+</div>
+
+<div class="form-group">
+<label class="control-label col-lg-3 col-md-12 col-sm-12 col-xs-6">State:</label>
+<div class="col-lg-9 col-md-12 col-sm-12 col-xs-6">
+  <div class="control-label">{{patients[0]['state']}}</div>
+</div>
+</div>
+
+<div class="form-group">
+<label class="control-label col-lg-3 col-md-12 col-sm-12 col-xs-6">City:</label>
+<div class="col-lg-9 col-md-12 col-sm-12 col-xs-6">
+  <div class="control-label">{{patients[0]['city']}}</div>
+</div>
+</div>
+
+<div class="form-group">
+<label class="control-label col-lg-3 col-md-12 col-sm-12 col-xs-6">Zip Code:</label>
+<div class="col-lg-9 col-md-12 col-sm-12 col-xs-6">
+  <div class="control-label">{{patients[0]['zip']}}</div>
+</div>
+</div>
+
+<div class="form-group">
+<label class="control-label col-lg-3 col-md-12 col-sm-12 col-xs-6">Mobile Number:</label>
+<div class="col-lg-9 col-md-12 col-sm-12 col-xs-6">
+  <div class="control-label">{{patients[0]['mobile_number']}}</div>
+</div>
+</div>
+
+<div class="form-group">
+<label class="control-label col-lg-3 col-md-12 col-sm-12 col-xs-6">Email Id:</label>
+<div class="col-lg-9 col-md-12 col-sm-12 col-xs-6">
+  <div class="control-label">{{patients[0]['email']}}</div>
+</div>
+</div>
+
+</form>
+</div>
+
+</div>
+</div>
+</div>
+</div>-->
+
+<div fxLayout="column" fxLayoutAlign="center center" class="mar-top-img" fxShow.xs="false">
+
+  <img src="assets/dashboard_assets/dashboard/images/user_icon.jpg" class="img-profile" width="100">
+
+</div>
+<div fxLayout="row" fxShow.xs="false">
+  <div fxFlex="10" fxShow.xs="false"></div>
+  <div fxFlex="80">
+    <mat-card>
+      <mat-card-content>
+        <h2 class="example-h2">Profile</h2>
+        <mat-tab-group class="demo-tab-group">
+          <mat-tab label="About">
+            <div class="demo-tab-content">
+              <div fxLayout="row">
+                <div fxFlex="20" class="value-proflle">
+                  <mat-list>
+                    <mat-list-item>  Name: </mat-list-item>
+                  </mat-list>
+                </div>
+                <div fxFlex="80" class="mat-list-value">
+                  <mat-list>
+                    <mat-list-item> {{patients[0]['name']}} {{patients[0]['l_name'] }}</mat-list-item>
+                  </mat-list>
+                </div>
+              </div>
+              <div fxLayout="row">
+                <div fxFlex="20" class="value-proflle">
+                  <mat-list>
+                    <mat-list-item>Gender:</mat-list-item>
+                  </mat-list>
+                </div>
+                <div fxFlex="80" class="mat-list-value">
+                  <mat-list>
+                    <mat-list-item>
+                      {{patients[0]['gender'] }}</mat-list-item>
+                  </mat-list>
+                </div>
+              </div>
+              <div fxLayout="row">
+                <div fxFlex="20" class="value-proflle">
+                  <mat-list><mat-list-item>
+                    Date of Birth:</mat-list-item></mat-list>
+                </div>
+                <div fxFlex="80" class="mat-list-value">
+                  <mat-list><mat-list-item>
+                    {{patients[0]['dob'] | amDateFormat: 'DD-MM-YYYY'}}</mat-list-item></mat-list>
+                </div>
+              </div>
+              <div fxLayout="row">
+                <div fxFlex="20" class="value-proflle">
+                  <mat-list><mat-list-item>
+                    Age: </mat-list-item></mat-list>
+                </div>
+                <div fxFlex="80" class="mat-list-value">
+                  <mat-list> <mat-list-item>{{patients[0]['age']}}</mat-list-item></mat-list>
+
+                </div>
+              </div>
+              <div fxLayout="row">
+                <div fxFlex="20" class="value-proflle">
+                  <mat-list><mat-list-item>
+                    Location:</mat-list-item></mat-list>
+                </div>
+                <div fxFlex="80" class="mat-list-value">
+                  <mat-list><mat-list-item>
+                    {{patients[0]['location']}}</mat-list-item></mat-list>
+
+                </div>
+              </div>
+              <div fxLayout="row">
+                <div fxFlex="20" class="value-proflle">
+                  <mat-list>
+                    <mat-list-item>Height:</mat-list-item> </mat-list>
+
+                </div>
+                <div fxFlex="80" class="mat-list-value">
+                  <mat-list>
+                    <mat-list-item> {{patients[0]['height']}} </mat-list-item>
+                  </mat-list>
+                </div>
+              </div>
+              <div fxLayout="row">
+                <div fxFlex="20" class="value-proflle">
+                  <mat-list>
+                    <mat-list-item>
+                      Weight: </mat-list-item>
+                  </mat-list>
+                </div>
+                <div fxFlex="80" class="mat-list-value">
+                  <mat-list>
+                    <mat-list-item>{{patients[0]['weight']}}  </mat-list-item></mat-list>
+                </div>
+              </div>
+              <div fxLayout="row">
+                <div fxFlex="20" class="value-proflle">
+                  <mat-list>
+                    <mat-list-item> BMI: </mat-list-item>
+                  </mat-list>
+                </div>
+                <div fxFlex="80" class="mat-list-value">
+                  <mat-list>
+                    <mat-list-item> {{patients[0]['bmi'] }} </mat-list-item>
+                  </mat-list>
+                </div>
+              </div>
+            </div>
+
+
+          </mat-tab>
+          <mat-tab label="My Health">
+            <div class="demo-tab-content">
+              <h3 class="mrg_btm2" style="padding-top: 2%;text-align: center;"><strong>Conditions and Symptoms</strong></h3>
+              <ng-template ngFor let-item [ngForOf]="createRange(list['health_list'].length)"
+                           let-innerIndex="index">
+                <div fxLayout="row">
+                  <div fxFlex="50" class="value-proflle">
+                    <mat-list>
+                      <mat-list-item> Conditions: </mat-list-item>
+                    </mat-list>
+                  </div>
+                  <div fxFlex="50" class="mat-list-value">
+                    <mat-list>
+                      <mat-list-item>{{list['health_list'][innerIndex]['conditions_symptoms']}}</mat-list-item>
+                    </mat-list>
+                  </div>
+                </div>
+                <div fxLayout="row">
+                  <div fxFlex="50" class="value-proflle">
+                    <mat-list>
+                      <mat-list-item> Conditions Have: </mat-list-item>
+                    </mat-list>
+                  </div>
+                  <div fxFlex="50" class="mat-list-value">
+                    <mat-list>
+                      <mat-list-item>{{list['health_list'][innerIndex]['conditions_have']}}</mat-list-item>
+                    </mat-list>
+                  </div>
+                </div>
+                <div fxLayout="row">
+                  <div fxFlex="50" class="value-proflle">
+                    <mat-list>
+                      <mat-list-item> Notes: </mat-list-item>
+                    </mat-list>
+                  </div>
+                  <div fxFlex="50" class="mat-list-value">
+                    <mat-list>
+                      <mat-list-item>{{list['health_list'][innerIndex]['conditions_note']}}</mat-list-item>
+                    </mat-list>
+                  </div>
+                </div>
+
+              </ng-template>
+              <h3 class="mrg_btm2" style="padding-top: 2%;text-align: center;"><strong>Medications</strong></h3>
+              <ng-template ngFor let-item [ngForOf]="createRange(list['medication_list'].length)"
+                           let-innerIndex="index" *ngIf="list['medication_list'].length>0">
+                <div fxLayout="row">
+                  <div fxFlex="50" class="value-proflle">
+                    <mat-list>
+                      <mat-list-item> Medicine: </mat-list-item>
+                    </mat-list>
+                  </div>
+                  <div fxFlex="50" class="mat-list-value">
+                    <mat-list>
+                      <mat-list-item>{{list['medication_list'][innerIndex]['medication']}}</mat-list-item>
+                    </mat-list>
+                  </div>
+                </div>
+                <div fxLayout="row">
+                  <div fxFlex="50" class="value-proflle">
+                    <mat-list>
+                      <mat-list-item> Medication Take: </mat-list-item>
+                    </mat-list>
+                  </div>
+                  <div fxFlex="50" class="mat-list-value">
+                    <mat-list>
+                      <mat-list-item>{{list['medication_list'][innerIndex]['medication_take']}}</mat-list-item>
+                    </mat-list>
+                  </div>
+                </div>
+                <div fxLayout="row">
+                  <div fxFlex="50" class="value-proflle">
+                    <mat-list>
+                      <mat-list-item> Notes: </mat-list-item>
+                    </mat-list>
+                  </div>
+                  <div fxFlex="50" class="mat-list-value">
+                    <mat-list>
+                      <mat-list-item>{{list['medication_list'][innerIndex]['medication_note']}}</mat-list-item>
+                    </mat-list>
+                  </div>
+                </div>
+
+              </ng-template>
+
+
+
+
+              <h3 class="mrg_btm2" style="padding-top: 2%;text-align: center;"><strong>Treatment or Procedure</strong></h3>
+              <ng-template ngFor let-item [ngForOf]="createRange(list['treatment_list'].length)"
+                           let-innerIndex="index" *ngIf="list['treatment_list'].length>0">
+                <div fxLayout="row">
+                  <div fxFlex="50" class="value-proflle">
+                    <mat-list>
+                      <mat-list-item> Treatment: </mat-list-item>
+                    </mat-list>
+                  </div>
+                  <div fxFlex="50" class="mat-list-value">
+                    <mat-list>
+                      <mat-list-item>{{list['treatment_list'][innerIndex]['treatment']}}</mat-list-item>
+                    </mat-list>
+                  </div>
+                </div>
+                <div fxLayout="row">
+                  <div fxFlex="50" class="value-proflle">
+                    <mat-list>
+                      <mat-list-item>Date Preformed:</mat-list-item>
+                    </mat-list>
+                  </div>
+                  <div fxFlex="50" class="mat-list-value">
+                    <mat-list>
+                      <mat-list-item>{{list['treatment_list'][innerIndex]['treatment_date']}}</mat-list-item>
+                    </mat-list>
+                  </div>
+                </div>
+                <div fxLayout="row">
+                  <div fxFlex="50" class="value-proflle">
+                    <mat-list>
+                      <mat-list-item> Notes: </mat-list-item>
+                    </mat-list>
+                  </div>
+                  <div fxFlex="50" class="mat-list-value">
+                    <mat-list>
+                      <mat-list-item>{{list['treatment_list'][innerIndex]['treatment_note']}}</mat-list-item>
+                    </mat-list>
+                  </div>
+                </div>
+
+              </ng-template>
+
+
+
+
+              <h3 class="mrg_btm2" style="padding-top: 2%;text-align: center;"><strong>Allergy</strong></h3>
+              <ng-template ngFor let-item [ngForOf]="createRange(list['allergy_list'].length)"
+                           let-innerIndex="index" *ngIf="list['allergy_list'].length>0">
+                <div fxLayout="row">
+                  <div fxFlex="50" class="value-proflle">
+                    <mat-list>
+                      <mat-list-item> Allergy: </mat-list-item>
+                    </mat-list>
+                  </div>
+                  <div fxFlex="50" class="mat-list-value">
+                    <mat-list>
+                      <mat-list-item>{{list['allergy_list'][innerIndex]['allegry']}}</mat-list-item>
+                    </mat-list>
+                  </div>
+                </div>
+                <div fxLayout="row">
+                  <div fxFlex="50" class="value-proflle">
+                    <mat-list>
+                      <mat-list-item>Allergy Have:</mat-list-item>
+                    </mat-list>
+                  </div>
+                  <div fxFlex="50" class="mat-list-value">
+                    <mat-list>
+                      <mat-list-item>{{list['allergy_list'][innerIndex]['allergy_note']}}</mat-list-item>
+                    </mat-list>
+                  </div>
+                </div>
+                <div fxLayout="row">
+                  <div fxFlex="50" class="value-proflle">
+                    <mat-list>
+                      <mat-list-item> Notes: </mat-list-item>
+                    </mat-list>
+                  </div>
+                  <div fxFlex="50" class="mat-list-value">
+                    <mat-list>
+                      <mat-list-item>{{list['allergy_list'][innerIndex]['allergy_note']}}</mat-list-item>
+                    </mat-list>
+                  </div>
+                </div>
+
+              </ng-template>
+
+
+            </div>
+
+
+          </mat-tab>
+          <mat-tab label="My Lifesyle" >
+            <div class="demo-tab-content">
+              <div fxLayout="row">
+                <div fxFlex="50" class="value-proflle">
+                  <mat-list>
+                    <mat-list-item>  Do you get at least 7 hours of sleep daily? </mat-list-item>
+                  </mat-list>
+                </div>
+                <div fxFlex="50" class="mat-list-value">
+                  <mat-list>
+                    <mat-list-item> {{patients[0]['sleep_daily'] }}</mat-list-item>
+                  </mat-list>
+                </div>
+              </div>
+              <div fxLayout="row">
+                <div fxFlex="50" class="value-proflle">
+                  <mat-list>
+                    <mat-list-item>Do you exercise?</mat-list-item>
+                  </mat-list>
+                </div>
+                <div fxFlex="50" class="mat-list-value">
+                  <mat-list>
+                    <mat-list-item>
+                      {{patients[0]['exercise'] }}</mat-list-item>
+                  </mat-list>
+                </div>
+              </div>
+              <div fxLayout="row">
+                <div fxFlex="50" class="value-proflle">
+                  <mat-list><mat-list-item>
+                    Do you get yearly flu shots?:</mat-list-item></mat-list>
+                </div>
+                <div fxFlex="50" class="mat-list-value">
+                  <mat-list><mat-list-item>
+                    {{patients[0]['yearly_flu_shots']}}</mat-list-item></mat-list>
+                </div>
+              </div>
+              <div fxLayout="row">
+                <div fxFlex="50" class="value-proflle">
+                  <mat-list><mat-list-item>
+                    Do you smoke or use tobacco? </mat-list-item></mat-list>
+                </div>
+                <div fxFlex="50" class="mat-list-value">
+                  <mat-list> <mat-list-item>{{patients[0]['smoke_tobacco'] }}</mat-list-item></mat-list>
+
+                </div>
+              </div>
+              <div fxLayout="row">
+                <div fxFlex="50" class="value-proflle">
+                  <mat-list><mat-list-item>
+                    Do you drink alcohol?</mat-list-item></mat-list>
+                </div>
+                <div fxFlex="50" class="mat-list-value">
+                  <mat-list><mat-list-item>
+                    {{patients[0]['alcohol']}}</mat-list-item></mat-list>
+
+                </div>
+              </div>
+              <div fxLayout="row">
+                <div fxFlex="50" class="value-proflle">
+                  <mat-list>
+                    <mat-list-item>Do you use recreational drugs?</mat-list-item> </mat-list>
+
+                </div>
+                <div fxFlex="50" class="mat-list-value">
+                  <mat-list>
+                    <mat-list-item> {{patients[0]['mobile_number']}} </mat-list-item>
+                  </mat-list>
+                </div>
+              </div>
+
+
+            </div>
+
+          </mat-tab>
+          <mat-tab label="My Family History">
+
+            <div class="demo-tab-content">
+              <h3 style="text-align: center;padding-top: 2%;">Conditions that caused a close relative to pass away before the age of 60:</h3>
+              <ng-template ngFor let-item [ngForOf]="createRange(list['pr_list'].length)"
+                           let-innerIndex="index" *ngIf="list['pr_list'].length>0">
+                <div fxLayout="row">
+                  <div fxFlex="50" class="value-proflle">
+                    <mat-list>
+                      <mat-list-item> conditions: </mat-list-item>
+                    </mat-list>
+                  </div>
+                  <div fxFlex="50" class="mat-list-value">
+                    <mat-list>
+                      <mat-list-item>{{list['pr_list'][innerIndex]['relative_pass_away_condition']}}</mat-list-item>
+                    </mat-list>
+                  </div>
+                </div>
+                <div fxLayout="row">
+                  <div fxFlex="50" class="value-proflle">
+                    <mat-list>
+                      <mat-list-item>Relation: </mat-list-item>
+                    </mat-list>
+                  </div>
+                  <div fxFlex="50" class="mat-list-value">
+                    <mat-list>
+                      <mat-list-item>{{list['pr_list'][innerIndex]['relative_pass_away_relation']}}</mat-list-item>
+                    </mat-list>
+                  </div>
+                </div>
+                <div fxLayout="row">
+                  <div fxFlex="50" class="value-proflle">
+                    <mat-list>
+                      <mat-list-item>Age: </mat-list-item>
+                    </mat-list>
+                  </div>
+                  <div fxFlex="50" class="mat-list-value">
+                    <mat-list>
+                      <mat-list-item>{{list['pr_list'][innerIndex]['relative_pass_away_age']}}</mat-list-item>
+                    </mat-list>
+                  </div>
+                </div>
+              </ng-template>
+
+
+
+              <h3 style="text-align: center;padding-top: 2%;">Do your living grandparents, parents or siblings have any major medical conditions
+                (life-threatening or otherwise?)</h3>
+              <ng-template ngFor let-item [ngForOf]="createRange(list['lr_list'].length)"
+                           let-innerIndex="index" *ngIf="list['lr_list'].length>0">
+                <div fxLayout="row">
+                  <div fxFlex="50" class="value-proflle">
+                    <mat-list>
+                      <mat-list-item> conditions: </mat-list-item>
+                    </mat-list>
+                  </div>
+                  <div fxFlex="50" class="mat-list-value">
+                    <mat-list>
+                      <mat-list-item>{{list['lr_list'][innerIndex]['relative_live_condition']}}</mat-list-item>
+                    </mat-list>
+                  </div>
+                </div>
+                <div fxLayout="row">
+                  <div fxFlex="50" class="value-proflle">
+                    <mat-list>
+                      <mat-list-item>Relation: </mat-list-item>
+                    </mat-list>
+                  </div>
+                  <div fxFlex="50" class="mat-list-value">
+                    <mat-list>
+                      <mat-list-item>{{list['lr_list'][innerIndex]['relative_live_relation']}}</mat-list-item>
+                    </mat-list>
+                  </div>
+                </div>
+                <div fxLayout="row">
+                  <div fxFlex="50" class="value-proflle">
+                    <mat-list>
+                      <mat-list-item>Age: </mat-list-item>
+                    </mat-list>
+                  </div>
+                  <div fxFlex="50" class="mat-list-value">
+                    <mat-list>
+                      <mat-list-item>{{list['lr_list'][innerIndex]['relative_live_age']}}</mat-list-item>
+                    </mat-list>
+                  </div>
+                </div>
+              </ng-template>
+            </div>
+
+
+          </mat-tab>
+          <mat-tab label="Contact">
+            <div class="demo-tab-content">
+              <div fxLayout="row">
+                <div fxFlex="20" class="value-proflle">
+                  <mat-list>
+                    <mat-list-item>  Address: </mat-list-item>
+                  </mat-list>
+                </div>
+                <div fxFlex="80" class="mat-list-value">
+                  <mat-list>
+                    <mat-list-item> {{patients[0]['paddress']}} {{patients[0]['street'] }}</mat-list-item>
+                  </mat-list>
+                </div>
+              </div>
+              <div fxLayout="row">
+                <div fxFlex="20" class="value-proflle">
+                  <mat-list>
+                    <mat-list-item>Country:</mat-list-item>
+                  </mat-list>
+                </div>
+                <div fxFlex="80" class="mat-list-value">
+                  <mat-list>
+                    <mat-list-item>
+                      {{patients[0]['country']}}</mat-list-item>
+                  </mat-list>
+                </div>
+              </div>
+              <div fxLayout="row">
+                <div fxFlex="20" class="value-proflle">
+                  <mat-list><mat-list-item>
+                    State:</mat-list-item></mat-list>
+                </div>
+                <div fxFlex="80" class="mat-list-value">
+                  <mat-list><mat-list-item>
+                    {{patients[0]['state']}}</mat-list-item></mat-list>
+                </div>
+              </div>
+              <div fxLayout="row">
+                <div fxFlex="20" class="value-proflle">
+                  <mat-list><mat-list-item>
+                    City: </mat-list-item></mat-list>
+                </div>
+                <div fxFlex="80" class="mat-list-value">
+                  <mat-list> <mat-list-item>{{patients[0]['city']}}</mat-list-item></mat-list>
+
+                </div>
+              </div>
+              <div fxLayout="row">
+                <div fxFlex="20" class="value-proflle">
+                  <mat-list><mat-list-item>
+                    Zip Code:</mat-list-item></mat-list>
+                </div>
+                <div fxFlex="80" class="mat-list-value">
+                  <mat-list><mat-list-item>
+                    {{patients[0]['zip']}}</mat-list-item></mat-list>
+
+                </div>
+              </div>
+              <div fxLayout="row">
+                <div fxFlex="20" class="value-proflle">
+                  <mat-list>
+                    <mat-list-item>Mobile Number:</mat-list-item> </mat-list>
+
+                </div>
+                <div fxFlex="80" class="mat-list-value">
+                  <mat-list>
+                    <mat-list-item> {{patients[0]['mobile_number']}} </mat-list-item>
+                  </mat-list>
+                </div>
+              </div>
+              <div fxLayout="row">
+                <div fxFlex="20" class="value-proflle">
+                  <mat-list>
+                    <mat-list-item>
+                      Email Id: </mat-list-item>
+                  </mat-list>
+                </div>
+                <div fxFlex="80" class="mat-list-value">
+                  <mat-list>
+                    <mat-list-item>{{patients[0]['email']}}  </mat-list-item></mat-list>
+                </div>
+              </div>
+
+            </div>
+
+          </mat-tab>
+
+        </mat-tab-group>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+  <div fxFlex="10" fxShow.xs="false"></div>
+
+</div>
+<div fxLayout="column"  fxShow="false"   fxShow.xs="true"  >
+  <mat-list class="list-item-response">
+    <a  [routerLink]="['/dashboard/profile-m']"><mat-list-item>Profile  </mat-list-item></a>
+    <a  [routerLink]="['/dashboard/profile-myhealth']"> <mat-list-item> My health</mat-list-item></a>
+    <a  [routerLink]="['/dashboard/profile-mylifestyle']"> <mat-list-item>My life style </mat-list-item></a>
+    <a  [routerLink]="['/dashboard/profile-myfamily']"><mat-list-item>My Family History  </mat-list-item></a>
+    <a  [routerLink]="['/dashboard/profile-contact']"><mat-list-item> Contact  </mat-list-item></a>
+  </mat-list>
+</div>

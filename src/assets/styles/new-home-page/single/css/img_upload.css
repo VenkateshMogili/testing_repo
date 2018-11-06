@@ -1,0 +1,95 @@
+.image-uploader {
+  position: relative;
+  text-align: center;
+}
+
+.image-uploader:not(.filled) {
+  opacity: 0.7;
+  cursor: pointer;
+  background: #fff;
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1) inset;
+}
+
+.image-uploader:not(.filled):hover {
+  opacity: 1;
+}
+
+.image-uploader:not(.filled):hover .image {
+  border: 3px dashed #bbb !important;
+}
+
+.image-uploader.filled {
+  cursor: move;
+}
+
+.image-uploader .image {
+  overflow: hidden;
+  border: 1px solid #aaa;
+}
+
+.image-uploader .image {
+  width: 150px;
+  height: 150px;
+}
+
+.image-uploader.filled label {
+  display: none;
+}
+
+.image-uploader label {
+  display: block;
+  color: #888;
+  font-size: 0.9em;
+  margin: 1em;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.image-uploader img {
+  border: none;
+}
+
+.image-uploader #uploader {
+  display: none;
+}
+
+.image-uploader .zoom {
+  position: absolute;
+  top: 0;
+  left: -35px;
+}
+
+.image-uploader .zoom .plus {
+  background: url(http://s.cdpn.io/24822/zoom-in.png) center no-repeat;
+}
+
+.image-uploader .zoom .minus {
+  background: url(http://s.cdpn.io/24822/zoom-out.png) center no-repeat;
+}
+
+.image-uploader .zoom .close {
+  background: url(http://s.cdpn.io/24822/close-widget.png) center no-repeat;
+}
+
+.image-uploader .zoom .plus,
+.image-uploader .zoom .minus,
+.image-uploader .zoom .close {
+  cursor: pointer;
+  opacity: 0.7;
+  padding: 2px;
+  font-size: 20px;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+}
+
+.image-uploader .zoom .plus:hover,
+.image-uploader .zoom .minus:hover,
+.image-uploader .zoom .close:hover {
+  opacity: 1;
+}
+
+.droppable .image {
+  border: 2px dashed #ccc !important;
+}

@@ -1,0 +1,73 @@
+
+  <div fxLayout="row" fxLayout.xs="column" class="list-que">
+    <div fxFlex="50" class="question">
+      <mat-list>
+        <mat-list-item>  Do you get at least 7 hours of sleep daily? </mat-list-item>
+      </mat-list>
+    </div>
+    <div fxFlex="50" class="value-proflle">
+      <mat-list>
+        <mat-list-item> {{patients[0]['sleep_daily'] }}</mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayout.xs="column">
+    <div fxFlex="50"  class="question">
+      <mat-list>
+        <mat-list-item>Do you exercise?</mat-list-item>
+      </mat-list>
+    </div>
+    <div fxFlex="50" class="value-proflle">
+      <mat-list>
+        <mat-list-item>
+          {{patients[0]['exercise'] }}</mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayout.xs="column">
+    <div fxFlex="50"  class="question">
+      <mat-list><mat-list-item>
+        Do you get yearly flu shots?:</mat-list-item></mat-list>
+    </div>
+    <div fxFlex="50"class="value-proflle">
+      <mat-list><mat-list-item>
+        {{patients[0]['yearly_flu_shots']}}</mat-list-item></mat-list>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayout.xs="column">
+    <div fxFlex="50" class="question">
+      <mat-list><mat-list-item>
+        Do you smoke or use tobacco? </mat-list-item></mat-list>
+    </div>
+    <div fxFlex="50" class="value-proflle">
+      <mat-list> <mat-list-item>{{patients[0]['smoke_tobacco'] }}</mat-list-item></mat-list>
+
+    </div>
+  </div>
+  <div fxLayout="row" fxLayout.xs="column">
+    <div fxFlex="50" class="question">
+      <mat-list><mat-list-item>
+        Do you drink alcohol?</mat-list-item></mat-list>
+    </div>
+    <div fxFlex="50" class="value-proflle">
+      <mat-list><mat-list-item>
+        {{patients[0]['alcohol']}}</mat-list-item></mat-list>
+
+    </div>
+  </div>
+  <div fxLayout="row" fxLayout.xs="column">
+    <div fxFlex="50" class="question">
+      <mat-list>
+        <mat-list-item>Do you use recreational drugs?</mat-list-item> </mat-list>
+
+    </div>
+    <div fxFlex="50" class="value-proflle">
+      <mat-list>
+        <mat-list-item> {{patients[0]['mobile_number']}} </mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+
+
+
+

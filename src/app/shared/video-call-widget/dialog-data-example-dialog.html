@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>Select Message</h1>
+<mat-form-field>
+    <mat-select [(value)]="data.end_call_msg">
+      <mat-option value="completed">completed consultation</mat-option>
+     <mat-option value="call_back">Call Back Busy!</mat-option>
+
+    </mat-select>
+  </mat-form-field>
+  <div>
+    <button mat-button [mat-dialog-close]="data.end_call_msg">Ok</button>
+  </div>
+
+

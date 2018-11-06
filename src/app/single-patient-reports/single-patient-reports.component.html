@@ -1,0 +1,37 @@
+<div id="reports" class="tabcontent">
+  <div>
+    <h1 class="sub_head">All Reports</h1>
+    <section class="content">
+      <div class="box">
+
+    <ng-template ngFor let-item [ngForOf]="createRange(list['report_list'].length)" let-innerIndex="index"
+                 *ngIf="list['report_list'].length>0">
+
+      <div>
+        <div class="mrg_btm2" fxLayout="row" fxLayoutGap="2px">
+          <label fxLayout="column" fxFlex="40"><b>Name of the report</b></label>
+          <label fxLayout="column" fxFlex="60">{{list['report_list'][innerIndex]['report_name']}}</label>
+        </div>
+        <div class="mrg_btm2" fxLayout="row" fxLayoutGap="2px">
+          <label fxLayout="column" fxFlex="40"><b>Date performed</b></label>
+          <label fxLayout="column" fxFlex="60">{{list['report_list'][innerIndex]['date_performed'] | amDateFormat: 'DD-MM-YYYY'}}</label>
+        </div>
+        <div class="mrg_btm2" fxLayout="row" fxLayoutGap="2px">
+          <label fxLayout="column" fxFlex="40"><b>Impression</b></label>
+          <label fxLayout="column" fxFlex="60">{{list['report_list'][innerIndex]['impression']}}</label>
+        </div>
+
+        <div>
+          <div class="mrg_btm2" fxLayout="row" fxLayoutGap="2px">
+            <label fxLayout="column" fxFlex="40"><b>Attachment</b></label>
+            <div fxLayout="column" fxFlex="60"><a href="{{list['report_list'][innerIndex]['attachments']}}" target="_blank"><img src="{{list['report_list'][innerIndex]['attachments']}}" style="width:30%"></a></div>
+          </div>
+        </div>
+
+      </div>
+      <mat-divider></mat-divider>
+    </ng-template>
+  </div>
+    </section>
+  </div>
+</div>

@@ -1,0 +1,223 @@
+<!--<div class="">-->
+  <!--<section class="content-header">-->
+    <!--<h2 class="modal-title text-bold text-primary">Edit Hospital Details</h2>-->
+  <!--</section>-->
+  <!--<section class="content">-->
+    <!--<form id="hform" name="hform" enctype="multipart/form-data" (ngSubmit)="update()" novalidate-->
+          <!--#fh="ngForm">-->
+      <!--&lt;!&ndash;<div class="form-group">-->
+        <!--&lt;!&ndash;   <label for="exampleInputEmail1">Name</label> &ndash;&gt;-->
+        <!--<input type="text" class="form-control" placeholder="Enter Hospital Name" name="clinic_name"-->
+               <!--[(ngModel)]="model.clinic_name" #clinic_name="ngModel" required>-->
+      <!--</div>&ndash;&gt;-->
+      <!--<mat-form-field >-->
+        <!--<input matInput type="text" class="type-input" placeholder="Enter Hospital Name" name="clinic_name"-->
+               <!--[(ngModel)]="model.clinic_name" #clinic_name="ngModel" required>-->
+      <!--</mat-form-field><br>-->
+      <!--&lt;!&ndash;<div class="form-group">-->
+        <!--&lt;!&ndash;     <label for="exampleInputPassword1">Address</label> &ndash;&gt;-->
+        <!--<textarea class="form-control" name="hospital_city" [(ngModel)]="model.hospital_city"-->
+                  <!--#hospital_city="ngModel" placeholder=" Enter Hospital Address Line 1"></textarea>-->
+      <!--</div>&ndash;&gt;-->
+
+      <!--<mat-form-field >-->
+        <!--<textarea matInput class="type-input" name="hospital_city" [(ngModel)]="model.hospital_city"-->
+                  <!--#hospital_city="ngModel" placeholder=" Enter Hospital Address Line 1"></textarea>-->
+      <!--</mat-form-field><br>-->
+
+     <!--&lt;!&ndash; <div class="form-group">-->
+        <!--&lt;!&ndash;     <label for="exampleInputPassword1">Address</label> &ndash;&gt;-->
+        <!--<textarea class="form-control" id="caddress1" name="address2" [(ngModel)]="model.address2"-->
+                  <!--#address2="ngModel" placeholder=" Enter Hospital Address Line 2"></textarea>-->
+      <!--</div>&ndash;&gt;-->
+      <!--<mat-form-field>-->
+        <!--<textarea matInput class="type-input" id="caddress1" name="address2" [(ngModel)]="model.address2"-->
+                  <!--#address2="ngModel" placeholder=" Enter Hospital Address Line 2"></textarea>-->
+      <!--</mat-form-field><br>-->
+
+      <!--&lt;!&ndash;<div class="form-group">-->
+        <!--&lt;!&ndash; <label for="exampleInputPassword1">City</label> &ndash;&gt;-->
+        <!--<input type="text" class="form-control" name="clinic_city" [(ngModel)]="model.clinic_city"-->
+               <!--#clinic_city="ngModel" placeholder="Enter Hospital City">-->
+      <!--</div>&ndash;&gt;-->
+
+      <!--<mat-form-field>-->
+        <!--<input type="text" matInput class="type-input" name="clinic_city" [(ngModel)]="model.clinic_city"-->
+               <!--#clinic_city="ngModel" placeholder="Enter Hospital City">-->
+      <!--</mat-form-field><br>-->
+      <!--&lt;!&ndash;<div class="form-group">-->
+        <!--&lt;!&ndash;   <label for="exampleInputPassword1">State</label> &ndash;&gt;-->
+        <!--<input type="text" class="form-control" name="clinic_state" [(ngModel)]="model.clinic_state"-->
+               <!--#clinic_state="ngModel" placeholder="Enter Hospital State">-->
+      <!--</div>&ndash;&gt;-->
+
+      <!--<mat-form-field>-->
+        <!--<input type="text" matInput class="type-input" name="clinic_state" [(ngModel)]="model.clinic_state"-->
+               <!--#clinic_state="ngModel" placeholder="Enter Hospital State">-->
+      <!--</mat-form-field><br>-->
+
+      <!--&lt;!&ndash;<div class="form-group">-->
+        <!--&lt;!&ndash;  <label for="exampleInputPassword1">Country</label> &ndash;&gt;-->
+        <!--<input type="text" class="form-control" name="hospital_city_c" [(ngModel)]="model.hospital_city_c"-->
+               <!--#hospital_city_c="ngModel" placeholder="Enter Hospital Country">-->
+      <!--</div>&ndash;&gt;-->
+      <!--<mat-form-field>-->
+        <!--<input type="text" matInput class="type-input" name="hospital_city_c" [(ngModel)]="model.hospital_city_c"-->
+               <!--#hospital_city_c="ngModel" placeholder="Enter Hospital Country">-->
+      <!--</mat-form-field><br>-->
+
+      <!--&lt;!&ndash;<div class="form-group">-->
+        <!--&lt;!&ndash; <label for="exampleInputPassword1">Pincode</label> &ndash;&gt;-->
+        <!--<input type="text" class="form-control" placeholder="Pincode" name="pin" [(ngModel)]="model.pin"-->
+               <!--#pin="ngModel">-->
+      <!--</div>&ndash;&gt;-->
+      <!--<mat-form-field>-->
+        <!--<input type="text" matInput class="type-input" placeholder="Pincode" name="pin" [(ngModel)]="model.pin"-->
+               <!--#pin="ngModel" pattern="[0-9]*" required >-->
+      <!--</mat-form-field><br>-->
+
+      <!--<mat-form-field>-->
+        <!--&lt;!&ndash; <label for="exampleInputEmail1">Phone Number</label> &ndash;&gt;-->
+        <!--<input type="text" name="clinic_ph" matInput class="type-input" [(ngModel)]="model.clinic_ph"-->
+               <!--#clinic_ph="ngModel" placeholder="Enter Hospital Phone Number" pattern="[0-9]*" required >-->
+      <!--</mat-form-field><br>-->
+
+      <!--<div class="">-->
+        <!--<button type="submit" style="width: 103px;height: 40px;background-color: #0d47a1; border-radius: 5px; color: white;" >Save Hospital details</button>-->
+      <!--</div>-->
+    <!--</form>-->
+  <!--</section>-->
+<!--</div>-->
+
+
+<div fxLayout="row" fxLayoutAlign="center">
+  <h3 class="personal"><strong>Edit Hospital Details</strong></h3>
+</div>
+<div fxLayout="row" fxLayout.xs = "column" class="marg-top">
+  <div fxFlex="20" fxShow.xs="false">
+  </div>
+  <div fxFlex="60">
+    <form id="hform" name="hform" enctype="multipart/form-data" (ngSubmit)="update()" novalidate
+          #fh="ngForm">
+    <div fxLayout="row" fxLayout.xs = "column">
+
+      <div fxFlex="40" fxFlex.xs = "100" style="padding-top: 2%;">
+        Enter Hospital Name:
+      </div>
+      <div fxFlex="60" fxFlex.xs = "100">
+        <div class="example-form">
+          <mat-form-field class="example-full-width">
+            <input matInput name="clinic_name"
+                   [(ngModel)]="model.clinic_name" #clinic_name="ngModel" required>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+
+      <div fxLayout="row" fxLayout.xs = "column">
+
+        <div fxFlex="40" fxFlex.xs = "100" style="padding-top: 2%;">
+          Enter Hospital Address Line 1:
+        </div>
+        <div fxFlex="60" fxFlex.xs = "100">
+          <div class="example-form">
+            <mat-form-field class="example-full-width">
+              <textarea matInput name="hospital_city" [(ngModel)]="model.hospital_city"
+                        #hospital_city="ngModel"></textarea>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayout.xs = "column">
+
+        <div fxFlex="40" fxFlex.xs = "100" style="padding-top: 2%;">
+          Enter Hospital Address Line 2:
+        </div>
+        <div fxFlex="60" fxFlex.xs = "100">
+          <div class="example-form">
+            <mat-form-field class="example-full-width">
+              <textarea  matInput id="caddress1" name="address2" [(ngModel)]="model.address2"
+                        #address2="ngModel"></textarea>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayout.xs = "column">
+
+        <div fxFlex="40" fxFlex.xs = "100" style="padding-top: 2%;">
+          Enter Hospital City:
+        </div>
+        <div fxFlex="60" fxFlex.xs = "100">
+          <div class="example-form">
+            <mat-form-field class="example-full-width">
+              <input matInput class="type-input" name="clinic_city" [(ngModel)]="model.clinic_city"
+                     #clinic_city="ngModel" >
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayout.xs = "column">
+
+        <div fxFlex="40" fxFlex.xs = "100" style="padding-top: 2%;">
+          Enter Hospital State:
+        </div>
+        <div fxFlex="60" fxFlex.xs = "100">
+          <div class="example-form">
+            <mat-form-field class="example-full-width">
+              <input matInput class="type-input" name="clinic_state" [(ngModel)]="model.clinic_state"
+                     #clinic_state="ngModel">
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayout.xs = "column">
+
+        <div fxFlex="40" fxFlex.xs = "100" style="padding-top: 2%;">
+          Enter Hospital Country:
+        </div>
+        <div fxFlex="60" fxFlex.xs = "100">
+          <div class="example-form">
+            <mat-form-field class="example-full-width">
+              <input matInput class="type-input" name="hospital_city_c" [(ngModel)]="model.hospital_city_c"
+                     #hospital_city_c="ngModel">
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+      <div fxLayout="row" fxLayout.xs = "column">
+
+        <div fxFlex="40" fxFlex.xs = "100" style="padding-top: 2%;">
+          Pincode:
+        </div>
+        <div fxFlex="60" fxFlex.xs = "100">
+          <div class="example-form">
+            <mat-form-field class="example-full-width">
+              <input type="number" matInput class="type-input" name="pin" [(ngModel)]="model.pin"
+                     #pin="ngModel" pattern="[0-9]*" required >
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+      <div fxLayout="row" fxLayout.xs = "column">
+
+        <div fxFlex="40" fxFlex.xs = "100" style="padding-top: 2%;">
+          Enter Hospital Phone Number:
+        </div>
+        <div fxFlex="60" fxFlex.xs = "100">
+          <div class="example-form">
+            <mat-form-field class="example-full-width">
+              <input type="number" name="clinic_ph" matInput class="type-input" [(ngModel)]="model.clinic_ph"
+                     #clinic_ph="ngModel"  pattern="[0-9]*" required >
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <button mat-raised-button color="primary">Save Hospital details</button>
+
+    </form>
+  </div>
+</div>
+

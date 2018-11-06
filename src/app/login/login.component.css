@@ -1,0 +1,80 @@
+.top-header1{
+  background-color:#0C58A5;
+
+}
+.marg-top{
+  margin-top:20px;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+
+}
+
+@media (max-width:600px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+.logo-img{
+  width:60px;
+  height:60px;
+}
+.type-input{
+  background:none;
+  box-shadow: none;
+  border:none;
+}
+.login{
+  background:#0c58a5;
+  color:#fff;
+  margin-top:10px;
+
+}
+.head-login{
+  font-size: 23px;
+  font-weight: 400;
+  color: #000;
+  margin-bottom: 14px;
+}
+@media (max-width: 599px){
+
+  .mat-card {
+    padding: 24px 16px;
+    margin-left:7px;
+    margin-right:7px;
+  }
+}
+section{
+  margin: 0px 0 12px 0!important;
+}

@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+}
+
+h1 {
+  margin: 0 0 0 10px;
+  line-height: 2em;
+}
+
+/* important for Mozilla and jQuery el.outerWidth(); */
+div {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* when fallback margin offset is used, we animate the change */
+.css3transition {
+  -moz-transition: margin .2s;
+  -webkit-transition: margin .2s;
+  -ms-transition: margin .2s;
+  -o-transition: margin .2s;
+  transition: margin .2s;
+}
+
+.clearfix {
+  display: inline-block;
+}
+
+/* start commented backslash hack \*/
+* html .clearfix {
+  height: 1%;
+}
+
+.clearfix {
+  display: block;
+}
+

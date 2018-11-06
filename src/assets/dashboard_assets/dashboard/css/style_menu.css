@@ -1,0 +1,27 @@
+/* additional sections */
+
+#box1 {
+  background: darkblue;
+  color: white;
+  display: table;
+  height: 300px;
+  width: 100%;
+}
+
+.goToTop {
+  position: fixed;
+  top: 0;
+  height: 70px;
+  z-index: 1;
+}
+
+nav {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+}
+
+nav li {
+  background: #f8f8f8;
+}

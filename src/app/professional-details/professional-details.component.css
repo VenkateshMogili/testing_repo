@@ -1,0 +1,115 @@
+.top-header1{
+  background-color:#0C58A5;
+
+}
+.contain {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+@media (max-width:600px) {
+  .contain {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .contain {
+    max-width: 220px;
+  }
+}
+
+@media (min-width: 992px) {
+  .contain {
+    max-width: 460px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .contain {
+    max-width: 441px;
+  }
+}
+.logo-img{
+  width:60px;
+  height:60px;
+}
+.type-input{
+  background:none;
+  box-shadow: none;
+  border:none;
+}
+.login{
+  background:#0c58a5;
+  color:#fff;
+  margin-top:10px;
+
+}
+.head-login{
+  font-size: 20px;
+  font-weight: 400;
+  color: #000;
+  margin-bottom: 14px;
+}
+
+@media (max-width: 599px){
+  .mat-card {
+    padding: 24px 16px;
+    margin-left:10px;
+    margin-right:10px;
+
+  }
+}
+
+#add{
+  margin-top: -35px;
+  margin-right: 29px;}
+#ad{
+  width:70px;
+  height: 35px;
+  margin-top: -44px;
+  margin-right: 28px;
+}
+#sk{
+  width:70px;
+  height: 35px;
+  margin-left: 175px;
+  margin-top: 27px;
+  color: black;
+}
+#saveBtn{
+  margin-bottom: -12px;
+  margin-top: -20px;
+}
+#one{
+  width:80px;
+  height: 35px;
+}
+#rm{
+  width:70px;
+  height: 35px;
+  margin-top: 20px;
+}
+.example-full-width{
+  width: 100%;
+}
+.contain{
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 3px!important;
+  padding-left: 3px!important;
+}
+button{
+  background-color: #0c58a5!important;
+}
+section {
+  margin: 0px 0 12px 0!important;
+}
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+
+}

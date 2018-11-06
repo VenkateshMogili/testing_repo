@@ -1,0 +1,252 @@
+/*@media (max-width: 991px) {*/
+/*.text_left_m {*/
+/*text-align: left !important;*/
+/*}*/
+/*.box{*/
+/*padding: 10px;*/
+/*}*/
+/*}*/
+/*.mat-card-image{*/
+/*border-radius: 100px;*/
+/*}*/
+/*.material-icons{*/
+/*margin-top:15px;*/
+/*margin-left:-30px;*/
+/*margin:10px;*/
+/*font-size:1em;*/
+/*}*/
+/*th{*/
+/*font-size:10px;*/
+/*}*/
+/*!**/
+/*!* Structure *!*/
+/*.example-container {*/
+/*display: flex;*/
+/*flex-direction: column;*/
+/*min-width: 300px;*/
+/*max-height: 500px;*/
+/*overflow: auto;*/
+/*}*/
+
+/*.example-header {*/
+/*min-height: 64px;*/
+/*padding: 8px 24px 0;*/
+/*}*/
+
+/*.mat-form-field {*/
+/*font-size: 14px;*/
+/*width: 100%;*/
+/*}*/
+.content-wrapper{
+  padding:25px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+/* Zebra striping */
+tr:nth-of-type(odd) {
+  background: #f3f3f3;
+}
+th {
+  background: #fff;
+  color: #000;
+  font-weight: bold;
+}
+td, th {
+  padding: 6px;
+  border: 1px solid #ccc;
+  text-align: center;
+  font-size:14px;
+}
+
+.txt{
+  font-size: 12px;
+  line-height: 24px;
+  text-align: center;
+}
+.btn-dec{
+  min-width:0px;
+  height:35px;
+  width:35px;
+  background:#337ab7;
+  color:white;
+}
+.btn-dec2{
+  min-width:0px;
+  height:35px;
+  width:35px;
+  background:#337ab7;
+  color:white;
+}
+
+
+
+
+.div-content{
+  text-align: center;
+  vertical-align: middle;
+}
+.div-content div{
+  border:1px solid #ccc;
+  padding:5px 8px;
+  height:56px;
+  font-weight:600;
+}
+.body-content div{
+  text-align:center;
+  border:1px solid #ccc;
+  padding:5px 8px;
+  height: 200px;
+}
+@media screen and (max-width: 600px){
+  .body-content div{
+    display:none;
+  }
+  .div-content div{
+    display:none;
+  }
+  .doc-img
+  {
+    height:30px!important;
+    width:30px!important;
+  }
+  .btn-dec{
+    min-width:0px;
+    height:35px;
+    width:35px;
+    background:#337ab7;
+    color:white;
+    margin-left:5px;
+  }
+  .dr-name{
+    position: relative;
+    /* top: -13px; */
+    bottom: 10px!important;
+    left: 1px;
+    font-size: 12px!important;
+    color: #0e80f2;
+  }
+  td, th {
+    padding: 6px;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-size:12px;
+  }
+  @media screen and (min-width:1200px){
+    .btn-dec{
+      min-width:0px;
+      height:35px;
+      width:35px;
+      background:#337ab7;
+      color:white;
+      margin-left:20px;
+    }
+  }
+  @media screen and (max-width: 1914px){
+    .btn-dec{
+      min-width:0px;
+      height:35px;
+      width:35px;
+      background:#337ab7;
+      color:white;
+      margin-left:50px;
+    }
+  }
+
+
+
+
+}
+.medicine1 {
+  font-size:16px;
+  font-weight:600;
+
+}
+.doc-img
+{
+  height:50px;
+  width:50px;
+}
+.bor-drpart{
+  border:1px solid #ccc;
+  padding: 10px 10px 3px 10px;
+  margin-bottom:15px;
+}
+.dr-name{
+  position: relative;
+  /* top: -13px; */
+  bottom: 20px;
+  left: 5px;
+  font-size: 14px;
+  color: #0e80f2;
+}
+.material-icons{
+  margin:10px;
+  font-size:1em;
+}
+.prescrip_ul li{
+  font-size:15px
+}
+.menustyl{
+  line-height:1px;
+  height:30px;
+  font-size:14px;
+}
+#tooTough{
+  min-width: 112px;
+  max-width: 140px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  max-height: calc(100vh - 48px);
+  border-radius: 2px;
+  outline: 0;
+}
+@media (max-width : 599px){
+  .mat-menu-panel{
+    opacity: 1;
+    transform: scale(1, 1);
+    position: absolute;
+    width: 280px;
+    top: 39px;
+    right:21px !important;
+  }
+  /*.mat-menu-content {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }*/
+
+
+
+}
+.mat-menu-panel{
+  opacity: 1;
+  transform: scale(1, 1);
+  position: absolute;
+  width: 280px;
+  top: 39px;
+  right: 117px;
+}
+.mat-menu-content {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+@media (max-width: 320px){
+  .details_b{
+    margin-left:-4px!important;
+    height:30px!important;
+  }
+  h3 strong, .prescrip_ul li{
+    font-size:14px;
+  }
+}
+/*.box{*/
+  /*padding: 0px!important;*/
+/*}*/
+/*.box{*/
+  /*width: 100%!important;*/
+/*}*/

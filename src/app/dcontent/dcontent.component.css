@@ -1,0 +1,68 @@
+.example-warning{
+  background:tomato;
+  color:white;
+}
+
+.hospital_pan34 {
+  margin: 10px 0;
+  padding: 10px 10px;
+  background: #fafafa;
+}
+
+@media (max-width: 991px) {
+  .hospital_pan34 {
+    margin: 10px 0;
+    padding: 0px;
+    background: #fafafa;
+  }
+}
+.vdo_inr_line{
+  padding-bottom: 60px;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.mat-dialog-container {
+  box-shadow: 0 11px 15px -7px rgba(0,0,0,.2), 0 24px 38px 3px rgba(0,0,0,.14), 0 9px 46px 8px rgba(0,0,0,.12);
+  display: block;
+  padding: 24px;
+  border-radius: 2px;
+  box-sizing: border-box;
+  overflow: auto;
+  outline: 0;
+  width: 100%;
+  height: auto;
+}
+.sp{
+  text-align: center;
+}
+button{
+  background-color: #0c58a5!important;
+}
+.mat-checkbox-inner-container {
+  display: inline-block;
+  height: 16px!important;
+  line-height: 0;
+  margin: auto;
+  margin-right: 8px;
+  order: 0;
+  position: relative;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 16px!important;
+  flex-shrink: 0;
+}
+.example-form {
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}

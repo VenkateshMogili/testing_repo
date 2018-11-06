@@ -1,0 +1,138 @@
+<!--<section class="top-header1">
+  <div class="container">
+    <div class="mrg2">
+      <div class="pull-left"><img src="assets/styles/new-home-page/single/images/Transparent.png" height="50"/></div>
+      <button class="pull-right btn btn-default btn-sm" style="margin: 10px 0;" (click)="logout()"><i
+        class="fa fa-power-off"></i> Logout
+      </button>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</section>-->
+<!--<section class="top-header1">-->
+  <!--&lt;!&ndash;<span class="hello">&ndash;&gt;-->
+ <!--&lt;!&ndash;<button (click)="logout()" mat-button class="logout" style="padding: 0px; line-height: 32px;&ndash;&gt;-->
+<!--&lt;!&ndash;background-color: #ffffff!important;"><i class="fa fa-power-off" aria-hidden="true"></i> &nbsp;Log out</button></span>&ndash;&gt;-->
+<!--</section>-->
+
+
+<section class="top-header1">
+  <div class="container">
+    <div fxLayout="row" fxLayoutAlign="center">
+      <div fxFlex="100" >
+        <img src="https://storage.googleapis.com/web-assets/dpm_doctor.png" height="60" style="    padding-left: 13%;"/>
+      </div>
+      <span class="hello" style="padding-top: 0.75%;">
+ <button (click)="logout()" mat-button class="logout" style="padding: 0px; line-height: 32px;background-color: #ffffff!important;">
+   <i class="fa fa-power-off" aria-hidden="true"></i> &nbsp;Log out</button></span>
+    </div>
+  </div>
+</section>
+
+<div fxFlex="100%">
+  <div class="text-center">
+    <h4 class="head-login" align="center"><b>Please fill your educational details</b></h4>
+  </div>
+</div>
+<div class="contain" style="padding-bottom: 1%;">
+  <div>
+    <mat-card align="center" style="padding-bottom: 10%">
+      <form [formGroup]="prescriptionForm" (ngSubmit)="onSubmit(prescriptionForm.value)" id="provisionalform" novalidate #f="ngForm">
+        <h4 class="mrg_btm r_h4">Educational Details</h4>
+        <p class="mrg_btm2">Highest Degree</p>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Name of degree" formControlName="qualification" required>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Degree Name <strong>required</strong>
+          </mat-error>
+        </mat-form-field><br>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Year" formControlName="pass_year" type="number" maxlength="4" required style="
+                                                     background-color: #ffffff;
+                                                     border: none;box-shadow: none;
+                                                     -webkit-transition: none;
+                                                     transition: none;">
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Passing Year is <strong>required</strong>
+          </mat-error>
+        </mat-form-field><br>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Institution" formControlName="college" required>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Insttution Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field><br>
+        <!--<div fxLayout="row">-->
+          <!--<div fxFlex="100%">-->
+            <!--<div>-->
+              <!--<div formArrayName="education_list">-->
+                <!--<div *ngFor="let education of education_list.controls; let j=index">-->
+                  <!--<div [formGroupName]="j" class="row">-->
+                    <!--<app-education [group]="education_list.controls[j]"></app-education>-->
+                  <!--</div>-->
+                  <!--<button  *ngIf="education_list.controls.length>1"  mat-raised-button color="primary"-->
+                           <!--class="mrg_btm2" (click)="delete(j)"><i class="fa fa-remove"></i> remove-->
+                  <!--</button>-->
+                  <!--<button mat-raised-button class="pull-left" color="primary"-->
+                          <!--type="button" id="" >education {{j}}</button><br>-->
+                <!--</div>-->
+
+                  <!--<div class="pull-right" id="add">-->
+                    <!--<button (click)="addnew()" type="button"  mat-raised-button color="primary"> <i class="fa fa-plus"></i> Add-->
+                    <!--</button><br>-->
+                  <!--</div>-->
+
+              <!--</div>-->
+            <!--</div>-->
+
+          <!--</div>-->
+        <!--</div>-->
+
+
+        <div fxFlex="row" style="overflow:hidden; padding-bottom: 5%;">
+          <div>
+          <div formArrayName="education_list">
+          <div *ngFor="let education of degree_list.controls; let j=index">
+          <div [formGroupName]="j" class="row">
+          <app-education [group]="degree_list.controls[j]"></app-education>
+          </div>
+            <div style="float:left;width: 69%;">
+          <button  *ngIf="degree_list.controls.length>1"  mat-raised-button color="primary"
+          class="mrg_btm2" (click)="delete(j)" style="padding: 0px;background-color: red!important;"><i class="fa fa-remove"></i> remove
+          </button>
+          <button mat-raised-button class="pull-left" color="primary" style="padding: 0px;"
+          type="button" id="" >education {{j}}</button>
+            </div>
+            <div style="float: right; width: 31%;">
+              <button style="padding: 0px;" (click)="addnew()" type="button"  mat-raised-button color="primary"> <i class="fa fa-plus"></i> Add
+              </button>
+            </div>
+          </div>
+
+          </div>
+          </div>
+
+
+        </div>
+
+
+
+
+        <!--<a [routerLink]="['/dashboard']" style="text-decoration: none;color: black">-->
+          <!--<button mat-raised-button color="primary" id="sk">skip</button>-->
+        <!--</a>-->
+        <!--<button mat-raised-button color="primary" class="mrg_btm2" name="signup" value="Sign up" align="center">Submit</button>-->
+        <a [routerLink]="['/dashboard']" style="text-decoration: none;padding-right: 0.5%;">
+          <button mat-raised-button color="primary" style="color: #ffffff;">skip</button>
+        </a>
+        <button mat-raised-button color="primary" class="mrg_btm2" name="signup" value="Sign up" align="center"
+        type="submit" style="padding: 0px;color: #ffffff;">Submit</button>
+      </form>
+      <br>
+      <br>
+      <br>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,518 @@
+<div>
+  <!-- Main content start -->
+  <section style="margin: 6px;">
+
+    <!--<button id="openModal" #openModal [hidden]="true"-->
+            <!--data-toggle="modal" data-target="#doc_pay_modal"></button>-->
+
+    <!--<div class="modal fade" id="doc_pay_modal" role="dialog">-->
+      <!--<div class="modal-dialog">-->
+        <!--<div class="modal-content">-->
+          <!--<div class="modal-header">-->
+            <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+            <!--<h4 class="modal-title">Choose your payment option</h4>-->
+          <!--</div>-->
+          <!--<div class="modal-body">-->
+            <!--<p class="mrg_btm2">Please choose your plan to enable digital prescription, data dashboard, online-->
+              <!--appointments, video consult, tele consult, priority consult </p>-->
+            <!--<button id="pay_fee_monthly" type="button" (click)="open_pay_monthly()" class="btn btn-primary mrg_btm">-->
+              <!--Click to pay monthly-->
+            <!--</button>-->
+            <!--<button id="pay_fee_anually" type="button" (click)="open_pay_anually()" class="btn btn-primary mrg_btm">-->
+              <!--Click to pay automatically-->
+            <!--</button>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+
+
+
+
+    <!--<button mat-raised-button color="primary" id="openModal" #openModal [hidden]="true"-->
+            <!--data-toggle="modal" data-target="#doc_pay_modal"></button>-->
+
+
+    <div class="container">
+      <div class="prescriptn" >
+        <div class="vdo_inr_line2 mrg_btm2" style="overflow: hidden;">
+
+          <div>
+
+            <div fxLayoutAlign="center" style="    padding-bottom: 20px;">
+
+              <div class="hospital_pan text-center"><h1 class="prescrip_doc_name"  style="margin-bottom: 10px;">Dr {{user['userinfo'][0]['name']}}  </h1>
+                <h2 style="text-align: center;"><span *ngFor="let degree of user['degree_list']">{{degree['degree']}},</span> {{user['userinfo'][0]['specialty']}}</h2>
+              </div>
+            </div>
+
+            <div class="pdg1 mrg_btm2">
+
+              <div>
+                <div class="hospital_pan">
+                  <div class="pull-right">
+                    <h2>Reg No:
+                      {{user['userinfo'][0]['licence_number']}}/{{user['userinfo'][0]['gender']}}</h2>
+                    <h2><i class="fa fa-phone"></i> : +(91)-{{user['userinfo'][0]['mobile']}}</h2>
+                    <h2><i class="fa fa-envelope"></i> : {{user['userinfo'][0]['email']}}</h2>
+                  </div>
+                </div>
+              </div>
+
+              <!--<div fxLayoutAlign="left" >-->
+                <!--<div class="hospital_pan" *ngIf="hos1">-->
+                  <!--<h2>{{hos1['cn']}}</h2>-->
+                  <!--<h2>{{hos1['hc']}} </h2><h2> <i class="fa fa-phone"></i> :-->
+                  <!--{{hos1['cp']}}</h2>-->
+                  <!--<h2>{{hos1['doctor_hospital_list_id']}}</h2>-->
+                  <!--&lt;!&ndash;<button *ngIf="selectPatient.hasOwnProperty('patient_id_c')"&ndash;&gt;-->
+                  <!--&lt;!&ndash;data-toggle="modal" data-target="#myModal1">Edit&ndash;&gt;-->
+                  <!--&lt;!&ndash;</button>&ndash;&gt;-->
+
+                  <!--<div></div>-->
+                <!--</div>-->
+              <!--</div>-->
+              <div fxLayoutAlign="left" *ngIf="!soh">
+                <div class="hospital_pan">
+                  <h2>{{left1}}</h2>
+                  <h2>{{left2}} </h2><h2> <i class="fa fa-phone"></i> :
+                  {{left3}}</h2>
+                  <!--<h2>{{hos['doctor_hospital_list_id']}}</h2>-->
+                  <!--<button *ngIf="selectPatient.hasOwnProperty('patient_id_c')"-->
+                  <!--data-toggle="modal" data-target="#myModal1">Edit-->
+                  <!--</button>-->
+
+                  <div></div>
+                </div>
+              </div>
+              <div fxLayoutAlign="left" *ngIf="soh">
+                <div class="hospital_pan">
+                  <h2>{{hos['cn']}}</h2>
+                  <h2>{{hos['hc']}} </h2><h2> <i class="fa fa-phone"></i> :
+                  {{hos['cp']}}</h2>
+                  <!--<h2>{{hos['doctor_hospital_list_id']}}</h2>-->
+                  <!--<button *ngIf="selectPatient.hasOwnProperty('patient_id_c')"-->
+                  <!--data-toggle="modal" data-target="#myModal1">Edit-->
+                  <!--</button>-->
+
+                  <div></div>
+                </div>
+              </div>
+              <div class="container" fxLayout="row" fxLayout.xs="row" fxLayoutAlign.xs="center center">
+                <a style="padding-right: 3px;"><button *ngIf="selectPatient.hasOwnProperty('patient_id_c')"
+                           mat-raised-button color="primary"
+                           data-target="#myModal1" (click)="editP()">Edit</button></a>
+                <!--<button *ngIf="selectPatient.hasOwnProperty('patient_id_c')"-->
+                <!--data-toggle="modal" data-target="#myModal2">Add-->
+                <!--</button>-->
+                <button *ngIf="selectPatient.hasOwnProperty('patient_id_c')"
+                        mat-raised-button color="primary"
+                        data-target="#myModal2" (click)="addP()">Add</button>
+              </div>
+
+              <!-- Modal1 -->
+              <div class="modal fade" id="myModal1" role="dialog">
+                <div class="modal-dialog">
+
+                  <!-- Modal content-->
+                  <!--<div class="modal-content">-->
+                  <!--<div class="modal-header">-->
+                  <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+                  <!--<h4 class="modal-title text-bold text-primary">Choose Hospital</h4>-->
+                  <!--</div>-->
+                  <!--<div class="modal-body">-->
+                  <!--<div>-->
+                  <!--<div *ngFor="let hospital of user['hosp_list']">-->
+                  <!--<form role="form">-->
+                  <!--<div>-->
+                  <!--<input data-dismiss="modal"-->
+                  <!--(click)="change_hospital(hospital['doctor_hospital_list_id'])" type="radio"-->
+                  <!--value="{{hospital['doctor_hospital_list_id']">{{hospital['cn']}} Hospital-->
+                  <!--</div>-->
+                  <!--<div class="form-group">-->
+                  <!--<label>Name</label>-->
+                  <!--<input type="text" class="form-control" value="{{hospital['cn']}}">-->
+                  <!--</div>-->
+                  <!--<div class="form-group">-->
+                  <!--<label>Address</label>-->
+                  <!--<textarea class="form-control">{{hospital['cn']}} {{hospital['hc']}}, {{hospital['cc']}} {{hospital['cs']}} {{hospital['hcc']}} {{hospital['cpn']}}</textarea>-->
+                  <!--</div>-->
+                  <!--<div class="form-group">-->
+                  <!--<label>Phone Number</label>-->
+                  <!--<input type="text" class="form-control" value="{{hospital['cp']}}">-->
+                  <!--</div>-->
+                  <!--</form>-->
+                  <!--</div>-->
+                  <!--</div>-->
+                  <!--</div>-->
+                  <!--<div class="modal-footer">-->
+                  <!--&lt;!&ndash; <div style="margin-bottom: 5px;">-->
+                  <!--<small class="text-primary">(Click on any one Radio Button  to choose hospital)</small>-->
+                  <!--</div>&ndash;&gt;-->
+                  <!--&lt;!&ndash;<button type="submit" class="btn btn-primary">Add new Hospital</button>&ndash;&gt;-->
+                  <!--</div>-->
+                  <!--</div>-->
+
+                </div>
+              </div>
+
+              <!-- Modal2 -->
+              <div class="modal fade" id="myModal2" role="dialog">
+                <div class="modal-dialog">
+
+                  <!-- Modal content-->
+                  <!--<div class="modal-content">-->
+                  <!--<div class="modal-header">-->
+                  <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+                  <!--<h4 class="modal-title text-bold text-primary">Add Hospital Details</h4>-->
+                  <!--</div>-->
+                  <!--<div class="modal-body">-->
+                  <!--<form name="form" (ngSubmit)="add_hos()" id="loginform" novalidate #f="ngForm">-->
+                  <!--<div class="form-group">-->
+                  <!--<label>Name</label>-->
+                  <!--<input type="text" id="clinic_name" name="clinic_name" [(ngModel)]="model.clinic_name"-->
+                  <!--#clinic_name="ngModel" class="form-control" required>-->
+                  <!--<div *ngIf="clinic_name.invalid && (clinic_name.dirty || clinic_name.touched)"-->
+                  <!--class="alert alert-danger">-->
+                  <!--<div *ngIf="clinic_name.errors.required">-->
+                  <!--Name is required.-->
+                  <!--</div>-->
+                  <!--</div>-->
+                  <!--</div>-->
+
+                  <!--<div class="form-group">-->
+                  <!--<label>Hospital City</label>-->
+                  <!--<textarea class="form-control" name="hospital_city" required-->
+                  <!--[(ngModel)]="model.hospital_city" #hospital_city="ngModel"></textarea>-->
+                  <!--<div *ngIf="hospital_city.invalid && (hospital_city.dirty || hospital_city.touched)"-->
+                  <!--class="alert alert-danger">-->
+                  <!--<div *ngIf="hospital_city.errors.required">-->
+                  <!--Hospital City is required.-->
+                  <!--</div>-->
+                  <!--</div>-->
+                  <!--</div>-->
+
+                  <!--<div class="form-group">-->
+                  <!--<label>Hospital city code </label>-->
+                  <!--<textarea class="form-control" name=" hospital_city_c" required-->
+                  <!--[(ngModel)]="model.hospital_city_c" #hospital_city_c="ngModel"></textarea>-->
+                  <!--<div-->
+                  <!--*ngIf=" hospital_city_c.invalid && ( hospital_city_c.dirty ||  hospital_city_c.touched)"-->
+                  <!--class="alert alert-danger">-->
+                  <!--<div *ngIf=" hospital_city_c.errors.required">-->
+                  <!--Hospital City code is required.-->
+                  <!--</div>-->
+                  <!--</div>-->
+                  <!--</div>-->
+
+
+                  <!--<div class="form-group">-->
+                  <!--<label>Clinic City</label>-->
+                  <!--<textarea class="form-control" name="clinic_city" required [(ngModel)]="model.clinic_city"-->
+                  <!--#clinic_city="ngModel"></textarea>-->
+                  <!--<div *ngIf="clinic_city.invalid && (clinic_city.dirty || clinic_city.touched)"-->
+                  <!--class="alert alert-danger">-->
+                  <!--<div *ngIf="clinic_city.errors.required">-->
+                  <!--Clinic City is required.-->
+                  <!--</div>-->
+                  <!--</div>-->
+                  <!--</div>-->
+
+
+                  <!--<div class="form-group">-->
+                  <!--<label>State</label>-->
+                  <!--<textarea class="form-control" name="clinic_state" required [(ngModel)]="model.clinic_state"-->
+                  <!--#clinic_state="ngModel"></textarea>-->
+                  <!--<div *ngIf="clinic_state.invalid && (clinic_state.dirty || clinic_state.touched)"-->
+                  <!--class="alert alert-danger">-->
+                  <!--<div *ngIf="clinic_state.errors.required">-->
+                  <!--State is required.-->
+                  <!--</div>-->
+                  <!--</div>-->
+                  <!--</div>-->
+
+
+                  <!--<div class="form-group">-->
+                  <!--<label>Pin</label>-->
+                  <!--<textarea class="form-control" name="pin" required [(ngModel)]="model.pin"-->
+                  <!--#pin="ngModel"></textarea>-->
+                  <!--<div *ngIf="pin.invalid && (pin.dirty || pin.touched)"-->
+                  <!--class="alert alert-danger">-->
+                  <!--<div *ngIf="pin.errors.required">-->
+                  <!--Pin is required.-->
+                  <!--</div>-->
+                  <!--</div>-->
+                  <!--</div>-->
+
+                  <!--<div class="form-group">-->
+                  <!--<label>Phone Number</label>-->
+                  <!--<input type="text" class="form-control" name="clinic_ph" [(ngModel)]="model.clinic_ph"-->
+                  <!--#clinic_ph="ngModel" required>-->
+                  <!--<div *ngIf="clinic_ph.invalid && (clinic_ph.dirty || clinic_ph.touched)"-->
+                  <!--class="alert alert-danger">-->
+                  <!--<div *ngIf="clinic_ph.errors.required">-->
+                  <!--Phone No is required.-->
+                  <!--</div>-->
+                  <!--</div>-->
+                  <!--</div>-->
+
+                  <!--<div class="modal-footer">-->
+                  <!--<button type="submit" [disabled]="!f.form.valid" class="btn btn-primary">Add Hospital-->
+                  <!--</button>-->
+                  <!--</div>-->
+                  <!--</form>-->
+                  <!--</div>-->
+                  <!--</div>-->
+
+                </div>
+              </div>
+
+              <div></div>
+            </div>
+
+          </div>
+
+          <div></div>
+
+        </div>
+
+        <div>
+          <div>
+
+            <div class="pdg1">
+
+              <div class="mrg_btm2 vdo_inr_line">
+                <div>
+                  <div>
+                    <div class="hospital_pan hospital_pan_m" *ngIf="selectPatient.hasOwnProperty('patient_id_c')">
+                      <!--<button class="btn btn-primary btn-sm" (click)="router.navigate(['/dashboard/select-patient'])">Change Patient</button>
+                     -->
+                      <h3>Patient Details</h3>
+                      <h2>{{selectPatient['name']}}, {{selectPatient['age']}} Years, {{selectPatient['gender']}} (ID:
+                        {{selectPatient['patient_id_c']}})</h2>
+                      <h2>4-30/2 Banjara Hills, Hyderabad - 500030</h2>
+                      <h2>+(91)-{{selectPatient['mobile_number']}}</h2>
+                      <h2>{{selectPatient['email']}}</h2>
+                      <h2>Medical History: Diabetes, Tuberculosis</h2>
+                    </div>
+                  </div>
+
+                  <div class="container">
+
+                    <div class="pull-right pull_center_m" *ngIf="(user['subscription'][0]['ACCOUNT_STATUS']=='active' &&
+          user['userinfo'][0]['cnfm_ref1']=='true' &&
+          user['userinfo'][0]['cnfm_ref2']=='true' && user['userinfo'][0]['cnfm_ref3']=='true')">
+                      <!-- <h3>Choose Patient</h3> -->
+
+
+                      <a [routerLink]="['select-patient']" id="select_patient" style="text-decoration: none;padding-right: 3px;" ngStyle.xs  = "padding-right: 1%;" >
+
+                        <button mat-raised-button color="primary">Select Patient</button>
+                      </a>
+                      <a [routerLink]="['add-patient']" style="text-decoration: none;">
+                        <button mat-raised-button color="primary">Add New Patient</button>
+                      </a>
+
+                    </div>
+
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+
+              <form [formGroup]="prescriptionForm" (ngSubmit)="onSubmit(prescriptionForm.value)" novalidate>
+                <div>
+                  <div>
+                    <div class="hospital_pan">
+                      <h4>Clinical Impression</h4>
+                      <div class="hospital_pan34">
+                        <label>Patient Clinical Impression</label>
+
+                        <div fxLayoutAlign="center" >
+                          <!--<textarea formControlName="clinical_impression" rows="4"-->
+                                    <!--style="resize: none;"-->
+                                    <!--placeholder="Describe Clinical Impression of patient"></textarea>-->
+
+                          <mat-form-field class="example-full-width" *ngIf="!selectPatient.hasOwnProperty('patient_id_c')" matTooltip="Please select patient before adding prescriptions" matTooltipPosition="above">
+                            <textarea matInput  rows="4"
+                                      [disabled]="true"
+                                      placeholder="Describe Clinical Impression of patient"></textarea>
+                          </mat-form-field>
+
+                          <mat-form-field class="example-full-width" *ngIf="selectPatient.hasOwnProperty('patient_id_c')">
+                            <textarea matInput  formControlName="clinical_impression" rows="4"
+                                      style="resize: none;"
+                                      placeholder="Describe Clinical Impression of patient"></textarea>
+                          </mat-form-field>
+
+                        </div>
+                        <div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <div>
+
+                    <div class="hospital_pan">
+                      <h4>Prescription</h4>
+                      <div class="hospital_pan2" id="presc">
+                        <div formArrayName="medicine_list">
+                          <div *ngFor="let medicine of medicine_list.controls; let j=index">
+                            <div [formGroupName]="j" class="row">
+                              <medicine [group]="medicine_list.controls[j]"></medicine>
+                            </div>
+                            <!--<button *ngIf="medicine_list.controls.length > 1" (click)="deleteRow(j)"-->
+                            <!--&gt;<i class="fa fa-remove"></i> remove-->
+                            <!--</button>-->
+                            <a style="padding-right: 3px;"><button *ngIf="medicine_list.controls.length > 1" (click)="deleteRow(j)"
+                                                                   mat-raised-button color="primary" type="button" style="min-width:83px;background-color: red!important;">remove</button></a>
+                            <!--<label class="btn btn-danger">medicine {{j}}</label>-->
+
+                            <span *ngIf="!selectPatient.hasOwnProperty('patient_id_c')" matTooltip="Please select patient before adding prescriptions" matTooltipPosition="above"><button mat-raised-button color="primary" [disabled]="true">medicine {{j}}</button></span>
+                            <button mat-raised-button color="primary" *ngIf="selectPatient.hasOwnProperty('patient_id_c')">medicine {{j}}</button>
+                            <div class="pull-right">
+                              <span *ngIf="!selectPatient.hasOwnProperty('patient_id_c')" matTooltip="Please select patient before adding prescriptions" matTooltipPosition="above">
+                                <button  (click)="addNewRow()" class="btn btn-danger"
+                                       mat-raised-button color="primary" type="button" [disabled]="true">
+                                add
+                              </button>
+                              </span>
+                              <button  (click)="addNewRow()" class="btn btn-danger"
+                                                              mat-raised-button color="primary" type="button"
+                                                              *ngIf="selectPatient.hasOwnProperty('patient_id_c')">
+                                add
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!--<div>-->
+                        <!--<div class=" pull-right">-->
+                          <!--&lt;!&ndash;<button type="button" (click)="addNewRow()" class="btn btn-danger"><i&ndash;&gt;-->
+                          <!--&lt;!&ndash;class="fa fa-plus"></i> add&ndash;&gt;-->
+                          <!--&lt;!&ndash;</button>&ndash;&gt;-->
+                          <!--<button (click)="addNewRow()" class="btn btn-danger"-->
+                                  <!--mat-raised-button color="primary">add</button>-->
+                        <!--</div>-->
+                      <!--</div>-->
+
+                      <div></div>
+                      <hr style="margin-bottom: 0;">
+                      <div></div>
+
+                    </div>
+                  </div>
+                </div>
+
+
+                <div>
+                  <div>
+                    <div class="hospital_pan">
+                      <h4>Investigations</h4>
+                      <div class="hospital_pan34">
+
+                        <label>Investigation Name</label>
+                        <!--<div>-->
+                        <!--<input type="text" class="form-control" placeholder="Enter Investigation Name"-->
+                        <!--formControlName="investigation_name"/>-->
+                        <!--</div>-->
+                        <div fxLayoutAlign="center" >
+
+                          <mat-form-field class="example-full-width" *ngIf="!selectPatient.hasOwnProperty('patient_id_c')" matTooltip="Please select patient before adding prescriptions" matTooltipPosition="above">
+                            <textarea  matInput [disabled]="true" rows="4"
+                                       placeholder="Enter Investigation Name"></textarea>
+                          </mat-form-field>
+
+                          <mat-form-field class="example-full-width" *ngIf="selectPatient.hasOwnProperty('patient_id_c')">
+                            <textarea matInput formControlName="investigation_name"
+                                      style="resize: none;" rows="4"
+                                      placeholder="Enter Investigation Name"></textarea>
+                          </mat-form-field>
+                        </div>
+                        <!--<div class="clearfix"></div>-->
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <div>
+                    <div class="hospital_pan">
+                      <h4>Notes</h4>
+                      <div class="hospital_pan34">
+                        <div class="">
+                          <div class="">
+                            <label>Add Notes</label>
+                            <!--<div>-->
+                            <!--<textarea class="form-control" rows="4" style="resize: none;" placeholder="Add Notes"-->
+                            <!--formControlName="doctor_note"></textarea>-->
+                            <!--</div>-->
+                            <div fxLayoutAlign="center" >
+
+                              <mat-form-field class="example-full-width" *ngIf="!selectPatient.hasOwnProperty('patient_id_c')" matTooltip="Please select patient before adding prescriptions" matTooltipPosition="above">
+                            <textarea matInput rows="4"
+                                      [disabled]="true"
+                                      placeholder="Add Notes"></textarea>
+                              </mat-form-field>
+                              <mat-form-field class="example-full-width" *ngIf="selectPatient.hasOwnProperty('patient_id_c')">
+                            <textarea matInput formControlName="doctor_note" rows="4"
+                                      style="resize: none;"
+                                      placeholder="Add Notes"></textarea>
+                              </mat-form-field>
+
+
+                            </div>
+                          </div>
+                          <!--<div class="clearfix"></div>-->
+                        </div>
+
+                        <!--<div class="clearfix"></div>-->
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div>
+                  <div>
+
+                    <div class="hospital_pan2" style="margin: 0 0 20px 0; padding: 0 20px;">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+
+                      <div></div>
+                      <div>
+                        <button *ngIf="selectPatient.hasOwnProperty('patient_id_c')" type="submit" mat-raised-button color="primary"
+                                class="btn btn-primary btn-lg"><i class="fa fa-floppy-o"
+                                                                  style="margin-right: 10px; font-size: 18px;"></i>Save
+                          and Preview
+                        </button>
+                        <!--<button type="button" (click)="preview(prescriptionForm.value)" class="btn btn-primary btn-lg"><i class="fa fa-floppy-o"  style="margin-right: 10px; font-size: 18px;"></i>Preview</button>-->
+                      </div>
+                      <div></div>
+                      <div></div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <!-- /.col -->
+
+
+    <!-- /.row -->
+  </section><!-- /.content -->
+</div>
+<!-- /.content-wrapper end -->

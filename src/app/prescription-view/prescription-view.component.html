@@ -1,0 +1,469 @@
+<!--<div class="content-wrapper" style="min-height: 382px;">-->
+
+<!--&lt;!&ndash; Main content &ndash;&gt;-->
+<!--<section class="content">-->
+
+<!--<div class="pres_print_pan">-->
+<!--<div class="prescriptn">-->
+
+<!--<div class="vdo_inr_line2 mrg_btm2">-->
+
+<!--<div class="row">-->
+
+<!--<div class="pdg1">-->
+
+<!--<div class="col-md-12 col-sm-12 col-xs-12">-->
+
+<!--<div class="hospital_pan text-center"><h1 class="prescrip_doc_name">Dr. {{ doc_details[0]['name'] }}-->
+<!--{{ doc_details[0]['lname'] }}</h1>-->
+<!--<h2>{{ doc_details[0]['qualification'] }}, {{degree_list}}, {{ doc_details[0]['specialty'] }}-->
+
+<!--</h2>-->
+
+<!--</div>-->
+<!--</div>-->
+
+<!--<div class="col-md-6 col-sm-6 col-xs-6 pull-right">-->
+<!--<div class="hospital_pan pull-right">-->
+<!--<h2>Reg NO:{{ doc_details[0]['licence_number']}} </h2>-->
+<!--<h2><i class="fa fa-phone"></i> : +(91)-{{ doc_details[0]['mobile']}}</h2>-->
+<!--<h2><i class="fa fa-envelope"></i> : {{ doc_details[0]['email']}} </h2>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--<div class="col-md-6 col-sm-6 col-xs-6 pull-left">-->
+<!--<div class="hospital_pan">-->
+<!--<h2>{{hospital_list[0]['cn']}} </h2>-->
+<!--<h2>{{hospital_list[0]['hc']}}-->
+<!--</h2>-->
+<!--<h2><i class="fa fa-phone"></i> : {{hospital_list[0]['cp']}} </h2>-->
+
+<!--<div class="clearfix"></div>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--<div class="clearfix"></div>-->
+<!--</div>-->
+
+<!--</div>-->
+
+<!--<div class="clearfix"></div>-->
+
+<!--</div>-->
+
+<!--<div class="row">-->
+
+<!--<div class="pdg1">-->
+
+<!--<div class="col-md-12 col-sm-12 col-md-xs-12">-->
+<!--<div class="hospital_pan text-center">-->
+<!--<h1 class="prescrip_doc_name">Patient Details</h1>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--<div class="col-md-6 col-sm-6 col-xs-6 pull-right">-->
+<!--<div class="hospital_pan pull-right">-->
+
+<!--<h2><strong>B. Group</strong> : NA</h2>-->
+<!--<h2><strong>Address</strong> : {{prescription[0]['paddress']}},-->
+<!--{{prescription[0]['city']}}</h2>-->
+<!--<h2><strong>Presenting Illness</strong> : {{ prescription[0]['med_history']}}</h2>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--<div class="col-md-6 col-sm-6 col-xs-6 pull-left">-->
+<!--<div class="hospital_pan">-->
+<!--<h2><strong>Name</strong> : {{prescription[0]['patient_name']}}</h2>-->
+<!--<h2><strong>Age/Sex</strong> : {{prescription[0]['age'] }} year(s)/{{prescription[0]['gender']}}</h2>-->
+<!--<h2><strong><i class="fa fa-phone"></i></strong> : +(91)-{{ prescription[0]['patient_mobile']}}</h2>-->
+<!--<h2><strong><i class="fa fa-envelope"></i></strong> : {{ prescription[0]['patient_email']}}</h2>-->
+<!--<div class="clearfix"></div>-->
+<!--</div></div>-->
+
+<!--<div class="clearfix"></div>-->
+<!--</div>-->
+
+<!--</div>-->
+
+<!--<div class="clearfix"></div>-->
+<!--<hr class="hr_color_db">-->
+
+<!--&lt;!&ndash;<div class="pdg1">-->
+
+<!--<div class="row">-->
+
+<!--<div class="col-md-4 col-sm-4 col-xs-4 pull-right presc_center_m">-->
+<!--<div class="hospital_pan pull-right presc_center_m">-->
+
+<!--</div>-->
+<!--</div>-->
+
+<!--<div class="col-md-8 col-sm-8 col-md-xs-8 pull-left presc_center_m">-->
+<!--<div class="hospital_pan pull-left presc_center_m">-->
+<!--<h3>Patient Details</h3>-->
+<!--<h2>{{ prescription[0]['patient_name']}}, {{ prescription[0]['age']}} Years, {{-->
+<!--prescription[0]['gender']}} (ID: {{prescription[0]['patient_id_c']}}) </h2>-->
+
+<!--<h2>{{prescription[0]['paddress']}}-->
+<!--{{ prescription[0]['pcity'] }}-->
+<!--{{prescription[0]['pstate']}},-->
+<!--{{prescription[0]['pcountry']}} - -->
+<!--{{prescription[0]['pzip']}} </h2>-->
+
+<!--<h2> <i class="fa fa-phone"></i> : +(91)-{{ prescription[0]['patient_mobile']}}</h2>-->
+<!--<h2>Email Id: {{ prescription[0]['patient_email']}}</h2>-->
+<!--<h2 class="mrg_no">Medical History: {{ prescription[0]['med_history']}}</h2>-->
+
+<!--</div>-->
+<!--</div>-->
+
+<!--</div>-->
+
+<!--<hr class="hr_color_db">-->
+
+<!--</div>&ndash;&gt;-->
+
+<!--<div class="pdg1">-->
+
+<!--<form id="defaultForm" method="post" class="form-horizontal">-->
+
+
+<!--<div class="row">-->
+<!--<div class="col-md-12">-->
+<!--<div class="hospital_pan"><h3 class="font_h1">Clinical Impression</h3>-->
+<!--<h2>{{ prescription[0]['clinical_impression']}}</h2>-->
+<!--</div>-->
+
+<!--<hr class="hr_color_db">-->
+
+<!--<div class="hospital_pan"><h3 class="font_h1">Prescripion(R<sub>X</sub>)</h3>-->
+<!--<div *ngFor="let $med of prescription; let i=index">-->
+<!--<h2><strong>Medicine {{i+1}}: </strong></h2>-->
+<!--<div class="col-lg-6 col-md-6 col-sm-12">-->
+
+<!--<div class="form-group">-->
+<!--<label class="col-md-4 col-xs-6 control-label">Medicine Name: </label>-->
+<!--<div class="col-md-8 col-xs-6 control-label p_align">-->
+<!--{{$med['medicine']}} {{$med['drug_form']}}-->
+<!--</div>-->
+<!--<div class="clearfix"></div>-->
+<!--</div>-->
+<!--<div class="form-group">-->
+<!--<label class="col-md-4 col-xs-6 control-label">Dose: </label>-->
+<!--<div class="col-md-8 col-xs-6 control-label p_align">-->
+<!--{{$med['dose']}} {{$med['unit']}}-->
+<!--</div>-->
+<!--<div class="clearfix"></div>-->
+<!--</div>-->
+<!--<div class="form-group">-->
+<!--<label class="col-md-4 col-xs-6 control-label">Route: </label>-->
+<!--<div class="col-md-8 col-xs-6 control-label p_align">-->
+<!--{{$med['administer_route']}}-->
+<!--</div>-->
+<!--<div class="clearfix"></div>-->
+<!--</div>-->
+
+
+<!--</div>-->
+<!--<div class="col-lg-6 col-md-6 col-sm-12">-->
+
+<!--<div class="form-group">-->
+<!--<label class="col-md-4 col-xs-6 control-label">Frequency: </label>-->
+<!--<div class="col-md-8 col-xs-6 control-label p_align">-->
+<!--<span *ngIf="$med['frequency'].toString().length>0">{{$med['drug_form']}} {{ $med['frequency']}}(Morning)-->
+<!--<span *ngIf="$med['AB']==1">After breakfast,-->
+<!--</span><span *ngIf="$med['BB']==1">Before breakfast,</span> - </span><br>-->
+<!--<span *ngIf="$med['frequency_2'].toString().length>0">{{$med['drug_form']}} {{ $med['frequency_2']}}(Noon)-->
+<!--<span *ngIf="$med['AL']==1">After lunch,</span>-->
+<!--<span *ngIf="$med['BL']==1">Before lunch,</span> - </span> <br>-->
+<!--<span *ngIf="$med['frequency_3'].toString().length>0">{{$med['drug_form']}} {{ $med['frequency_3']}}(Night)-->
+<!--<span *ngIf="$med['AD']==1">After dinner,</span>-->
+<!--<span *ngIf="$med['BD']==1">Before dinner,</span>-->
+<!--</span>-->
+<!--</div>-->
+<!--<div class="clearfix"></div>-->
+<!--</div>-->
+
+<!--<div class="form-group">-->
+<!--<label class="col-md-4 col-xs-6 control-label">Special Instruction: </label>-->
+<!--<div class="col-md-8 col-xs-6 control-label p_align">-->
+<!--{{$med['special_instruction']}}-->
+<!--</div>-->
+<!--<div class="clearfix"></div>-->
+<!--</div>-->
+<!--<div class="form-group">-->
+<!--<label class="col-md-4 col-xs-6 control-label">Duration: </label>-->
+<!--<div class="col-md-8 col-xs-6 control-label p_align">-->
+<!--<span *ngIf="$med['start_date_time'] != '0000-00-00'">{{$med['start_date_time'] | amDateFormat: 'DD-MM-YYYY'}} to </span>-->
+<!--<span *ngIf="$med['end_date_time'] != '0000-00-00'">{{ $med['end_date_time'] | amDateFormat: 'DD-MM-YYYY'}} </span>-->
+
+<!--</div>-->
+<!--<div class="clearfix"></div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--&lt;!&ndash;<ul class="prescrip_ul">-->
+<!--<li *ngFor="let $med of prescription">-->
+<!--{{$med['drug_form']}},-->
+<!--{{$med['medicine']}},-->
+<!--{{$med['dose']}}{{$med['unit']}},-->
+<!--<span *ngIf="$med['frequency'].toString().length>0"> {{ $med['frequency']}}(Morning) - </span>-->
+<!--<span *ngIf="$med['frequency_2'].toString().length>0"> {{ $med['frequency_2']}}(Noon) - </span>-->
+<!--<span *ngIf="$med['frequency_3'].toString().length>0"> {{ $med['frequency_3']}}(Night)</span>-->
+<!--<span *ngIf="$med['AB']==1">After breakfast,</span>-->
+<!--<span *ngIf="$med['BB']==1">Before breakfast,</span>-->
+<!--<span *ngIf="$med['AL']==1">After lunch,</span>-->
+<!--<span *ngIf="$med['BL']==1">Before lunch,</span>-->
+<!--<span *ngIf="$med['AD']==1">After dinner,</span>-->
+<!--<span *ngIf="$med['BD']==1">Before dinner,</span>-->
+<!--{{$med['administer_route']}},-->
+<!--{{$med['duration']}} days,-->
+<!--{{$med['no_of_medicine']}} units,-->
+<!--<span *ngIf="$med['start_date_time'] != '0000-00-00'">{{$med['start_date_time'] | amDateFormat: 'DD-MM-YYYY'}} - </span>-->
+<!--<span *ngIf="$med['end_date_time'] != '0000-00-00'">{{ $med['end_date_time'] | amDateFormat: 'DD-MM-YYYY'}} </span>-->
+<!--{{$med['special_instruction']}}.-->
+<!--</li>-->
+<!--</ul>&ndash;&gt;-->
+
+<!--<h2><strong>Investigations:</strong> {{ prescription[0]['investigation_name']}}</h2>-->
+<!--<h2><strong>Notes:</strong> {{ prescription[0]['doctor_note']}}</h2>-->
+<!--</div>-->
+
+<!--<hr class="hr_color_db">-->
+<!--<a [routerLink]="['/dashboard/prescription-edit/'+key]">-->
+<!--<button type="button" class="btn btn-info mrg_btm2" id="edit"><i class="fa fa-pencil"-->
+<!--style="margin-right: 10px; font-size: 18px;"></i>Edit-->
+<!--</button>-->
+<!--</a>-->
+<!--<a [routerLink]="['/dashboard/prescription-mail/'+key]">-->
+<!--<button type="button" class="btn btn-primary mrg_btm2" id="email"><i-->
+<!--class="fa fa-envelope" style="margin-right: 10px; font-size: 18px;"></i>Email-->
+<!--</button>-->
+<!--</a>-->
+<!--<a [routerLink]="['/prescription-print/'+key]">-->
+<!--<button type="button" class="btn btn-primary mrg_btm2" id="print"><i-->
+<!--class="fa fa-print" style="margin-right: 10px; font-size: 18px;"></i>Print-->
+<!--</button>-->
+<!--</a>-->
+
+<!--</div>-->
+<!--</div>-->
+
+<!--</form>-->
+
+<!--</div>-->
+
+<!--<div class="clearfix"></div>-->
+<!--</div>-->
+
+<!--<div class="row">-->
+<!--<div class="mrg_btm2">-->
+
+<!--<div class="col-md-6">-->
+<!--<div id="skew1" style="width: 100%">-->
+<!--<div class="skew_inner1">-->
+<!--<div class="skew_inner_text1">-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--<div class="col-md-6">-->
+<!--<div id="skew2" class="skew_back2">-->
+<!--<div class="skew_inner2 skew_back2">-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="clearfix"></div>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--</div>-->
+
+<!--</section>-->
+<!--</div>-->
+
+<!--Angular Material Design-->
+<div style="padding:10px;">
+  <div style="background-color:#fff;">
+
+    <!--row-1-->
+    <div class="pdivider">
+      <!--doctor name-->
+      <div fxLayout="row" fxFlex="100%" fxLayoutAlign="center center">
+        <div style="text-align:center" class="hospital_pan">
+          <h1 class="prescrip_doc_name">Dr. {{ doc_details[0]['name'] }}
+            {{ doc_details[0]['lname'] }}</h1>
+          <h2>{{ doc_details[0]['qualification'] }}, {{degree_list}}, {{ doc_details[0]['specialty'] }}</h2>
+        </div>
+      </div>
+      <!--end of doctor name-->
+
+      <!--hospital details-->
+      <div fxLayout="row" fxFlex="100">
+
+        <div fxLayout="column" fxFlex="50" class="hospital_pan">
+          <h2>{{hospital_list[0]['cn'] | titlecase}}</h2>
+          <h2>{{hospital_list[0]['hc'] | titlecase}}</h2>
+          <h2><i class="fa fa-phone"></i>&nbsp;:&nbsp;{{hospital_list[0]['cp']}}</h2>
+        </div>
+
+        <div fxLayout="column" class="hospital_pan" fxFlex="50" fxFlexOffset.xl="77" fxFlexOffset.lg="70" fxFlexOffset.md="65" fxFlexOffset.sm="55" fxFlexOffset.xs="13">
+          <h2>Reg NO: {{ doc_details[0]['licence_number']}}</h2>
+          <h2><i  class="fa fa-phone"></i>&nbsp;:&nbsp;+(91)-{{ doc_details[0]['mobile']}}</h2>
+          <h2><i class="fa fa-envelope" ngStyle.xs="display:inline;"></i>&nbsp;:{{ doc_details[0]['email'] | lowercase}}</h2>
+        </div>
+
+      </div>
+      <!--end of hospital details-->
+    </div>
+    <!--end of row-1-->
+    <mat-divider style="border-top-width:2px;background:#666"></mat-divider>
+    <br>
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <div class="hospital_pan">
+        <h1 class="prescrip_doc_name">Patient Details</h1>
+      </div>
+    </div>
+
+    <div class="pdivider">
+
+      <div fxLayout="row" fxFlex="100">
+        <div fxLayout="column" fxFlex="50" class="hospital_pan">
+          <h2><b>Name :</b> {{prescription[0]['patient_name'] | capitalize}}</h2>
+          <h2><b>Age/Sex :</b> {{prescription[0]['age'] }} year(s)/{{prescription[0]['gender'] | capitalize}}</h2>
+          <h2><i class="fa fa-phone"></i>&nbsp;:&nbsp; +(91)-{{ prescription[0]['patient_mobile']}}</h2>
+          <h2><i class="fa fa-envelope" ngStyle.xs="display:inline"></i>&nbsp;:{{ prescription[0]['patient_email'] | lowercase}}</h2>
+        </div>
+
+        <div fxLayout="column" class="hospital_pan" fxFlex="50" fxFlexOffset.xl="77" fxFlexOffset.lg="70" fxFlexOffset.md="65" fxFlexOffset.sm="55" fxFlexOffset.xs="15">
+          <h2><b>B. Group :</b> NA</h2>
+          <h2><b>Address :</b> {{prescription[0]['paddress'] | titlecase}}, {{prescription[0]['city'] | capitalize}}</h2>
+          <h2><b>Presenting Illness :</b> {{ prescription[0]['med_history'] | capitalize}}</h2>
+        </div>
+      </div>
+      <br/>
+
+    </div>
+    <mat-divider></mat-divider>
+
+    <div class="pdivider">
+      <form id="defaultForm" method="post" class="form-horizontal">
+        <div fxLayout="column" class="clinical-impression">
+          <h3 class="font_h1">Clinical Impression</h3>
+          <p>{{ prescription[0]['clinical_impression']}}</p>
+        </div>
+
+        <mat-divider></mat-divider>
+        <br/>
+        <h3 class="font_h1">Prescripion(RX)</h3>
+        <!--col for mediline-list-->
+
+        <!--Medicine list-->
+        <div *ngFor="let $med of prescription; let i=index">
+          <div fxLayout="row" fxFlex="100">
+            <h4 style="margin-top:5px;"><strong>Medicine {{i+1}}: </strong></h4>
+          </div>
+
+
+          <div fxLayout="row" fxLayout.xs="column" fxFlex="100">
+
+            <div fxLayout="column" fxFlex="50">
+
+              <div fxLayout="row" style="margin-top:5px;margin-left:5px;">
+                <div fxLayout="column" fxFlex="50">
+                  <p><b>Medicine Name:</b></p>
+                </div>
+                <div fxLayour="column" fxFlex="50">
+                  <span>{{$med['medicine']}} {{$med['drug_form']}}</span>
+                </div>
+              </div>
+
+              <div fxLayout="row" style="margin-top:5px;margin-left:5px;">
+                <div fxLayout="column" fxFlex="50">
+                  <p><b>Dose:</b></p>
+                </div>
+                <div fxLayout="column" fxFlex="50">
+                  <span>{{$med['dose']}} {{$med['unit']}}</span>
+                </div>
+              </div>
+
+              <div fxLayout="row" style="margin-top:5px;margin-left:5px;">
+                <div fxLayout="column" fxFlex="50">
+                  <p><b>Route:</b></p>
+                </div>
+                <div fxLayout="column" fxFlex="50">
+                  <span>{{$med['administer_route']}}</span>
+                </div>
+              </div>
+
+            </div>
+
+            <div fxLayout="column" fxFlex="50">
+
+              <div fxLayout="row" style="margin-top:5px;margin-left:5px;">
+                <div fxLayout="column" fxFlex="50">
+                  <p><b>Frequency:</b> </p>
+                </div>
+                <div fxLayour="column" fxFlex="50">
+                  <p><span *ngIf="$med['frequency'].toString().length>0">{{$med['drug_form']}} {{ $med['frequency']}}(Morning)
+                            <span *ngIf="$med['AB']==1">After breakfast,
+                          </span><span *ngIf="$med['BB']==1">Before breakfast,</span> - </span><br>
+                    <span *ngIf="$med['frequency_2'].toString().length>0">{{$med['drug_form']}} {{ $med['frequency_2']}}(Noon)
+                            <span *ngIf="$med['AL']==1">After lunch,</span>
+                          <span *ngIf="$med['BL']==1">Before lunch,</span> - </span> <br>
+                    <span *ngIf="$med['frequency_3'].toString().length>0">{{$med['drug_form']}} {{ $med['frequency_3']}}(Night)
+                          <span *ngIf="$med['AD']==1">After dinner,</span>
+                          <span *ngIf="$med['BD']==1">Before dinner,</span>
+                          </span> </p>
+                </div>
+              </div>
+
+              <div fxLayout="row" style="margin-top:5px;margin-left:5px;">
+                <div fxLayout="column" fxFlex="50">
+                  <p><b>Special Instruction:</b></p>
+                </div>
+                <div fxLayour="column" fxFlex="50">
+                  <p> <span>{{$med['special_instruction']}}</span></p>
+                </div>
+              </div>
+
+              <div fxLayout="row" style="margin-top:5px;margin-left:5px;">
+                <div fxLayout="column" fxFlex="50">
+                  <p><b>Duration:</b></p>
+                </div>
+                <div fxLayour="column" fxFlex="50">
+                  <p> <span *ngIf="$med['start_date_time'] != '0000-00-00'">{{$med['start_date_time'] | amDateFormat: 'DD-MM-YYYY'}} to </span>
+                    <span *ngIf="$med['end_date_time'] != '0000-00-00'">{{ $med['end_date_time'] | amDateFormat: 'DD-MM-YYYY'}} </span></p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!--medicine list end-->
+
+        <br>
+        <h4><b>Investigations:</b> <span>{{ prescription[0]['investigation_name']}}</span></h4>
+        <h4><b>Notes:</b> <span>{{ prescription[0]['doctor_note']}}</span></h4>
+        <br/>
+        <mat-divider></mat-divider>
+        <br/>
+        <div fxLayout="row" fxFlex="100" fxLayoutAlign.xs="center center">
+          <a [routerLink]="['/dashboard/prescription-edit/'+key]">
+            <button mat-raised-button color="primary" id="edit"><i class="material-icons" style="margin-right: 10px; font-size: 18px;">edit</i>Edit
+            </button>
+          </a>
+          <a [routerLink]="['/dashboard/prescription-mail/'+key]">
+            <button mat-raised-button color="primary" id="email"><i class="material-icons" style="margin-right: 10px; font-size: 18px;">email</i>Email
+            </button>
+          </a>
+          <a [routerLink]="['/prescription-print/'+key]">
+            <button mat-raised-button color="primary" id="print"><i class="material-icons" style="margin-right: 10px; font-size: 18px;">print</i>Print
+            </button>
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

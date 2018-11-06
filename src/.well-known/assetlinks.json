@@ -1,0 +1,7 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.therightdoctors.dpmdoctor",
+    "sha256_cert_fingerprints": ["32:45:46:7A:B8:71:28:2A:0D:AD:5A:64:5F:98:25:DC:3D:84:75:55:22:65:FC:D0:84:8E:0D:D2:41:9A:FD:09"]}
+}]

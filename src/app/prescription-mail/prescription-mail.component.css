@@ -1,0 +1,8 @@
+@media (max-width:600px){
+  .box{
+    padding:10px;
+  }
+  h1{
+    font-size:14px;
+  }
+}

@@ -1,0 +1,50 @@
+<section class="top-header1">
+  <div class="container">
+    <div fxLayout="row" fxLayoutAlign="center">
+      <div fxFlex="100" >
+        <img src="assets/styles/new-home-page/single/images/new_dpm.jpg" height="60"/>
+      </div>
+      <a [routerLink]="['/doctor-quick-registration']">
+        <div class="pull-right logtxt" style="color: white;margin-top: 22px;"> Register</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<div fxlayout="column"
+     fxlayoutalign=""
+     style="flex-direction:column;
+         box-sizing: border-box;
+         display: flex;max-width: 100%;place-content: center;align-items: center;">
+  <div fxFlex="100%" >
+    <div class="text-center" style="padding-top: 13px;">
+
+      <h4 class="head-login">{{ title }}</h4>
+    </div>
+  </div>
+
+  <div fxLayout="row" fxFlex="50%">
+    <mat-card>
+      <p style="color:red" *ngIf="message">{{message}}</p>
+      <form class="example-form" (ngSubmit)="login()" id="loginform" novalidate #f="ngForm">
+        <mat-form-field class="example-full-width">
+          <input matInput class="type-input" type="email" placeholder="Email Address"
+                 name="email" [(ngModel)]="model.email" #email="ngModel" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$">
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Valid email address is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Password"  type="password" class="type-input" name="password" [(ngModel)]="model.password" #password="ngModel" required>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Password is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <p class="mrg_btm" style="font-size: 16px;">Forgot password? <a [routerLink]="['/doctor/forgot/password']" style="text-decoration: none;">Click Here</a></p>
+        <div style="text-align: center"> <button mat-raised-button class="login" type="submit" [disabled]="!f.form.valid">Log In</button></div>
+      </form>
+    </mat-card>
+  </div>
+  <p class="text-center" style="font-size: 16px;padding-top: 18px;">Not a member? <a [routerLink]="['/doctor-quick-registration']" style="text-decoration: none;">Register</a></p>
+</div>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Sample Unit Test Report - Tested By: Venkatesh Mogili</title>
+    <style type="text/css">html,body{font-family:Arial,sans-serif;font-size:1rem;margin:0;padding:0;}body{padding:10px 40px;}h1{margin-bottom:0;}h2{margin-top:0;margin-bottom:0;color:#999;}table{width:100%;margin-top:20px;margin-bottom:20px;table-layout:fixed;}tr.header{background:#ddd;font-weight:bold;border-bottom:none;}td{padding:7px;border-top:none;border-left:1px black solid;border-bottom:1px black solid;border-right:none;word-break:break-all;word-wrap:break-word;}tr.pass td{color:#003b07;background:#86e191;}tr.skip td{color:#7d3a00;background:#ffd24a;}tr.fail td{color:#5e0e00;background:#ff9c8a;}tr:first-child td{border-top:1px black solid;}td:last-child{border-right:1px black solid;}tr.overview{font-weight:bold;color:#777;}tr.overview td{padding-bottom:0px;border-bottom:none;}tr.system-out td{color:#777;}tr.system-errors td{color:#f00;}hr{height:2px;margin:30px 0;background:#000;border:none;}section{margin-top:40px;}h3{margin:6px 0;}.overview{color:#333;font-weight:bold;}.system-out{margin:0.4rem 0;}.system-errors{color:#a94442}.spec{padding:0.8rem;margin:0.3rem 0;}.spec--pass{color:#3c763d;background-color:#dff0d8;border:1px solid #d6e9c6;}.spec--skip{color:#8a6d3b;background-color:#fcf8e3;border:1px solid #faebcc;}.spec--fail{color:#a94442;background-color:#f2dede;border:1px solid #ebccd1;}.spec--group{color:#636363;background-color:#f0f0f0;border:1px solid #e6e6e6;margin:0;}.spec--group:not(:first-of-type){margin:20px 0 0 0;}.spec__title{display:inline;}.spec__suite{display:inline;}.spec__descrip{font-weight:normal;}.spec__status{float:right;}.spec__log{padding-left: 2.3rem;}.hidden{display:none;}body.compact .spec p{margin-top:0;margin-bottom:0.5rem;}body.compact .spec,body.compact tr,body.compact .overview,body.compact .system-out,body.compact .system-errors{font-size:0.85rem;}body.compact .spec{padding:0.3rem 0.5rem;}body.compact section{margin-top:30px;}</style>
+  </head>
+  <body class="compact">
+    <h1>Sample Unit Test Report</h1>
+    <h2>Tested By: Venkatesh Mogili</h2>
+    <table cellspacing="0" cellpadding="0" border="0">
+      <tr class="overview">
+        <td colspan="3" title="Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36">Browser: Chrome 70.0.3538 (Windows 7 0.0.0)</td>
+      </tr>
+      <tr class="overview">
+        <td colspan="3">Timestamp: 2018-11-6 18:14:15</td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          4 tests / 
+          1 errors / 
+          4 failures / 
+          0 skipped / 
+          runtime: 0.561s
+        </td>
+      </tr>
+      <tr class="header">
+        <td>Status</td>
+        <td>Spec</td>
+        <td>Suite / Results</td>
+      </tr>
+      <tr class="fail">
+        <td>Failed</td>
+        <td>form should be valid and logged in successfully</td>
+        <td>
+          LoginComponent
+          <br />Failed: Unexpected value 'DecoratorFactory' imported by the module 'DynamicTestModule'. Please add a @NgModule annotation.
+Error: Unexpected value 'DecoratorFactory' imported by the module 'DynamicTestModule'. Please add a @NgModule annotation.
+    at syntaxError (http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:1021:1)
+    at http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:10604:1
+    at &lt;Jasmine&gt;
+    at CompileMetadataResolver.push../node_modules/@angular/compiler/fesm5/compiler.js.CompileMetadataResolver.getNgModuleMetadata (http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:10579:1)
+    at JitCompiler.push../node_modules/@angular/compiler/fesm5/compiler.js.JitCompiler._loadModules (http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:24566:1)
+    at JitCompiler.push../node_modules/@angular/compiler/fesm5/compiler.js.JitCompiler._compileModuleAndAllComponents (http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:24554:1)
+    at JitCompiler.push../node_modules/@angular/compiler/fesm5/compiler.js.JitCompiler.compileModuleAndAllComponentsAsync (http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:24513:1)
+    at CompilerImpl.push../node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js.CompilerImpl.compileModuleAndAllComponentsAsync (http://localhost:9876/node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js?:153:1)
+    at TestingCompilerImpl.push../node_modules/@angular/platform-browser-dynamic/fesm5/testing.js.TestingCompilerImpl.compileModuleAndAllComponentsAsync (http://localhost:9876/node_modules/@angular/platform-browser-dynamic/fesm5/testing.js?:107:1)
+    at TestBedViewEngine.push../node_modules/@angular/core/fesm5/testing.js.TestBedViewEngine.compileComponents (http://localhost:9876/node_modules/@angular/core/fesm5/testing.js?:1638:1)
+
+          <br />Error: Unexpected value 'DecoratorFactory' imported by the module 'DynamicTestModule'. Please add a @NgModule annotation.
+    at syntaxError (http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:1021:1)
+    at http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:10604:1
+    at &lt;Jasmine&gt;
+    at CompileMetadataResolver.push../node_modules/@angular/compiler/fesm5/compiler.js.CompileMetadataResolver.getNgModuleMetadata (http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:10579:1)
+    at JitCompiler.push../node_modules/@angular/compiler/fesm5/compiler.js.JitCompiler._loadModules (http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:24566:1)
+    at JitCompiler.push../node_modules/@angular/compiler/fesm5/compiler.js.JitCompiler._compileModuleAndAllComponents (http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:24554:1)
+    at JitCompiler.push../node_modules/@angular/compiler/fesm5/compiler.js.JitCompiler.compileModuleAndAllComponentsSync (http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:24510:1)
+    at CompilerImpl.push../node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js.CompilerImpl.compileModuleAndAllComponentsSync (http://localhost:9876/node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js?:146:1)
+    at TestingCompilerImpl.push../node_modules/@angular/platform-browser-dynamic/fesm5/testing.js.TestingCompilerImpl.compileModuleAndAllComponentsSync (http://localhost:9876/node_modules/@angular/platform-browser-dynamic/fesm5/testing.js?:104:1)
+    at TestBedViewEngine.push../node_modules/@angular/core/fesm5/testing.js.TestBedViewEngine._initIfNeeded (http://localhost:9876/node_modules/@angular/core/fesm5/testing.js?:1652:1)
+
+          <br />Failed: Cannot read property 'model' of undefined
+    at &lt;Jasmine&gt;
+    at UserContext.&lt;anonymous&gt; (http://localhost:9876/src/app/login/login.component.spec.ts?:89:15)
+    at ZoneDelegate../node_modules/zone.js/dist/zone.js.ZoneDelegate.invoke (http://localhost:9876/node_modules/zone.js/dist/zone.js?:388:1)
+    at AsyncTestZoneSpec.push../node_modules/zone.js/dist/zone-testing.js.AsyncTestZoneSpec.onInvoke (http://localhost:9876/node_modules/zone.js/dist/zone-testing.js?:713:1)
+    at ProxyZoneSpec.push../node_modules/zone.js/dist/zone-testing.js.ProxyZoneSpec.onInvoke (http://localhost:9876/node_modules/zone.js/dist/zone-testing.js?:285:1)
+    at ZoneDelegate../node_modules/zone.js/dist/zone.js.ZoneDelegate.invoke (http://localhost:9876/node_modules/zone.js/dist/zone.js?:387:1)
+    at Zone../node_modules/zone.js/dist/zone.js.Zone.runGuarded (http://localhost:9876/node_modules/zone.js/dist/zone.js?:151:1)
+    at runInTestZone (http://localhost:9876/node_modules/zone.js/dist/zone-testing.js?:841:1)
+    at UserContext.&lt;anonymous&gt; (http://localhost:9876/node_modules/zone.js/dist/zone-testing.js?:775:1)
+    at ZoneDelegate../node_modules/zone.js/dist/zone.js.ZoneDelegate.invoke (http://localhost:9876/node_modules/zone.js/dist/zone.js?:388:1)
+    at ProxyZoneSpec.push../node_modules/zone.js/dist/zone-testing.js.ProxyZoneSpec.onInvoke (http://localhost:9876/node_modules/zone.js/dist/zone-testing.js?:288:1)
+
+        </td>
+      </tr>
+      <tr class="fail">
+        <td>Failed</td>
+        <td>should have the form title Log in as Doctor</td>
+        <td>
+          LoginComponent
+          <br />Failed: Unexpected value 'DecoratorFactory' imported by the module 'DynamicTestModule'. Please add a @NgModule annotation.
+Error: Unexpected value 'DecoratorFactory' imported by the module 'DynamicTestModule'. Please add a @NgModule annotation.
+    at syntaxError (http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:1021:1)
+    at http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:10604:1
+    at &lt;Jasmine&gt;
+    at CompileMetadataResolver.push../node_modules/@angular/compiler/fesm5/compiler.js.CompileMetadataResolver.getNgModuleMetadata (http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:10579:1)
+    at JitCompiler.push../node_modules/@angular/compiler/fesm5/compiler.js.JitCompiler._loadModules (http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:24566:1)
+    at JitCompiler.push../node_modules/@angular/compiler/fesm5/compiler.js.JitCompiler._compileModuleAndAllComponents (http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:24554:1)
+    at JitCompiler.push../node_modules/@angular/compiler/fesm5/compiler.js.JitCompiler.compileModuleAndAllComponentsAsync (http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:24513:1)
+    at CompilerImpl.push../node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js.CompilerImpl.compileModuleAndAllComponentsAsync (http://localhost:9876/node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js?:153:1)
+    at TestingCompilerImpl.push../node_modules/@angular/platform-browser-dynamic/fesm5/testing.js.TestingCompilerImpl.compileModuleAndAllComponentsAsync (http://localhost:9876/node_modules/@angular/platform-browser-dynamic/fesm5/testing.js?:107:1)
+    at TestBedViewEngine.push../node_modules/@angular/core/fesm5/testing.js.TestBedViewEngine.compileComponents (http://localhost:9876/node_modules/@angular/core/fesm5/testing.js?:1638:1)
+
+          <br />Error: Unexpected value 'DecoratorFactory' imported by the module 'DynamicTestModule'. Please add a @NgModule annotation.
+    at syntaxError (http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:1021:1)
+    at http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:10604:1
+    at &lt;Jasmine&gt;
+    at CompileMetadataResolver.push../node_modules/@angular/compiler/fesm5/compiler.js.CompileMetadataResolver.getNgModuleMetadata (http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:10579:1)
+    at JitCompiler.push../node_modules/@angular/compiler/fesm5/compiler.js.JitCompiler._loadModules (http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:24566:1)
+    at JitCompiler.push../node_modules/@angular/compiler/fesm5/compiler.js.JitCompiler._compileModuleAndAllComponents (http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:24554:1)
+    at JitCompiler.push../node_modules/@angular/compiler/fesm5/compiler.js.JitCompiler.compileModuleAndAllComponentsSync (http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:24510:1)
+    at CompilerImpl.push../node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js.CompilerImpl.compileModuleAndAllComponentsSync (http://localhost:9876/node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js?:146:1)
+    at TestingCompilerImpl.push../node_modules/@angular/platform-browser-dynamic/fesm5/testing.js.TestingCompilerImpl.compileModuleAndAllComponentsSync (http://localhost:9876/node_modules/@angular/platform-browser-dynamic/fesm5/testing.js?:104:1)
+    at TestBedViewEngine.push../node_modules/@angular/core/fesm5/testing.js.TestBedViewEngine._initIfNeeded (http://localhost:9876/node_modules/@angular/core/fesm5/testing.js?:1652:1)
+
+          <br />Failed: Cannot read property 'title' of undefined
+    at &lt;Jasmine&gt;
+    at UserContext.&lt;anonymous&gt; (http://localhost:9876/src/app/login/login.component.spec.ts?:75:22)
+    at ZoneDelegate../node_modules/zone.js/dist/zone.js.ZoneDelegate.invoke (http://localhost:9876/node_modules/zone.js/dist/zone.js?:388:1)
+    at AsyncTestZoneSpec.push../node_modules/zone.js/dist/zone-testing.js.AsyncTestZoneSpec.onInvoke (http://localhost:9876/node_modules/zone.js/dist/zone-testing.js?:713:1)
+    at ProxyZoneSpec.push../node_modules/zone.js/dist/zone-testing.js.ProxyZoneSpec.onInvoke (http://localhost:9876/node_modules/zone.js/dist/zone-testing.js?:285:1)
+    at ZoneDelegate../node_modules/zone.js/dist/zone.js.ZoneDelegate.invoke (http://localhost:9876/node_modules/zone.js/dist/zone.js?:387:1)
+    at Zone../node_modules/zone.js/dist/zone.js.Zone.runGuarded (http://localhost:9876/node_modules/zone.js/dist/zone.js?:151:1)
+    at runInTestZone (http://localhost:9876/node_modules/zone.js/dist/zone-testing.js?:841:1)
+    at UserContext.&lt;anonymous&gt; (http://localhost:9876/node_modules/zone.js/dist/zone-testing.js?:775:1)
+    at ZoneDelegate../node_modules/zone.js/dist/zone.js.ZoneDelegate.invoke (http://localhost:9876/node_modules/zone.js/dist/zone.js?:388:1)
+    at ProxyZoneSpec.push../node_modules/zone.js/dist/zone-testing.js.ProxyZoneSpec.onInvoke (http://localhost:9876/node_modules/zone.js/dist/zone-testing.js?:288:1)
+
+        </td>
+      </tr>
+      <tr class="fail">
+        <td>Failed</td>
+        <td>should call the login method</td>
+        <td>
+          LoginComponent
+          <br />Failed: Unexpected value 'DecoratorFactory' imported by the module 'DynamicTestModule'. Please add a @NgModule annotation.
+Error: Unexpected value 'DecoratorFactory' imported by the module 'DynamicTestModule'. Please add a @NgModule annotation.
+    at syntaxError (http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:1021:1)
+    at http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:10604:1
+    at &lt;Jasmine&gt;
+    at CompileMetadataResolver.push../node_modules/@angular/compiler/fesm5/compiler.js.CompileMetadataResolver.getNgModuleMetadata (http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:10579:1)
+    at JitCompiler.push../node_modules/@angular/compiler/fesm5/compiler.js.JitCompiler._loadModules (http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:24566:1)
+    at JitCompiler.push../node_modules/@angular/compiler/fesm5/compiler.js.JitCompiler._compileModuleAndAllComponents (http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:24554:1)
+    at JitCompiler.push../node_modules/@angular/compiler/fesm5/compiler.js.JitCompiler.compileModuleAndAllComponentsAsync (http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:24513:1)
+    at CompilerImpl.push../node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js.CompilerImpl.compileModuleAndAllComponentsAsync (http://localhost:9876/node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js?:153:1)
+    at TestingCompilerImpl.push../node_modules/@angular/platform-browser-dynamic/fesm5/testing.js.TestingCompilerImpl.compileModuleAndAllComponentsAsync (http://localhost:9876/node_modules/@angular/platform-browser-dynamic/fesm5/testing.js?:107:1)
+    at TestBedViewEngine.push../node_modules/@angular/core/fesm5/testing.js.TestBedViewEngine.compileComponents (http://localhost:9876/node_modules/@angular/core/fesm5/testing.js?:1638:1)
+
+          <br />Error: Unexpected value 'DecoratorFactory' imported by the module 'DynamicTestModule'. Please add a @NgModule annotation.
+    at syntaxError (http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:1021:1)
+    at http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:10604:1
+    at &lt;Jasmine&gt;
+    at CompileMetadataResolver.push../node_modules/@angular/compiler/fesm5/compiler.js.CompileMetadataResolver.getNgModuleMetadata (http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:10579:1)
+    at JitCompiler.push../node_modules/@angular/compiler/fesm5/compiler.js.JitCompiler._loadModules (http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:24566:1)
+    at JitCompiler.push../node_modules/@angular/compiler/fesm5/compiler.js.JitCompiler._compileModuleAndAllComponents (http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:24554:1)
+    at JitCompiler.push../node_modules/@angular/compiler/fesm5/compiler.js.JitCompiler.compileModuleAndAllComponentsSync (http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:24510:1)
+    at CompilerImpl.push../node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js.CompilerImpl.compileModuleAndAllComponentsSync (http://localhost:9876/node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js?:146:1)
+    at TestingCompilerImpl.push../node_modules/@angular/platform-browser-dynamic/fesm5/testing.js.TestingCompilerImpl.compileModuleAndAllComponentsSync (http://localhost:9876/node_modules/@angular/platform-browser-dynamic/fesm5/testing.js?:104:1)
+    at TestBedViewEngine.push../node_modules/@angular/core/fesm5/testing.js.TestBedViewEngine._initIfNeeded (http://localhost:9876/node_modules/@angular/core/fesm5/testing.js?:1652:1)
+
+          <br />Failed: Cannot read property 'detectChanges' of undefined
+    at &lt;Jasmine&gt;
+    at UserContext.&lt;anonymous&gt; (http://localhost:9876/src/app/login/login.component.spec.ts?:79:13)
+    at ZoneDelegate../node_modules/zone.js/dist/zone.js.ZoneDelegate.invoke (http://localhost:9876/node_modules/zone.js/dist/zone.js?:388:1)
+    at AsyncTestZoneSpec.push../node_modules/zone.js/dist/zone-testing.js.AsyncTestZoneSpec.onInvoke (http://localhost:9876/node_modules/zone.js/dist/zone-testing.js?:713:1)
+    at ProxyZoneSpec.push../node_modules/zone.js/dist/zone-testing.js.ProxyZoneSpec.onInvoke (http://localhost:9876/node_modules/zone.js/dist/zone-testing.js?:285:1)
+    at ZoneDelegate../node_modules/zone.js/dist/zone.js.ZoneDelegate.invoke (http://localhost:9876/node_modules/zone.js/dist/zone.js?:387:1)
+    at Zone../node_modules/zone.js/dist/zone.js.Zone.runGuarded (http://localhost:9876/node_modules/zone.js/dist/zone.js?:151:1)
+    at runInTestZone (http://localhost:9876/node_modules/zone.js/dist/zone-testing.js?:841:1)
+    at UserContext.&lt;anonymous&gt; (http://localhost:9876/node_modules/zone.js/dist/zone-testing.js?:775:1)
+    at ZoneDelegate../node_modules/zone.js/dist/zone.js.ZoneDelegate.invoke (http://localhost:9876/node_modules/zone.js/dist/zone.js?:388:1)
+    at ProxyZoneSpec.push../node_modules/zone.js/dist/zone-testing.js.ProxyZoneSpec.onInvoke (http://localhost:9876/node_modules/zone.js/dist/zone-testing.js?:288:1)
+
+        </td>
+      </tr>
+      <tr class="fail">
+        <td>Failed</td>
+        <td>should create</td>
+        <td>
+          LoginComponent
+          <br />Failed: Unexpected value 'DecoratorFactory' imported by the module 'DynamicTestModule'. Please add a @NgModule annotation.
+Error: Unexpected value 'DecoratorFactory' imported by the module 'DynamicTestModule'. Please add a @NgModule annotation.
+    at syntaxError (http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:1021:1)
+    at http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:10604:1
+    at &lt;Jasmine&gt;
+    at CompileMetadataResolver.push../node_modules/@angular/compiler/fesm5/compiler.js.CompileMetadataResolver.getNgModuleMetadata (http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:10579:1)
+    at JitCompiler.push../node_modules/@angular/compiler/fesm5/compiler.js.JitCompiler._loadModules (http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:24566:1)
+    at JitCompiler.push../node_modules/@angular/compiler/fesm5/compiler.js.JitCompiler._compileModuleAndAllComponents (http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:24554:1)
+    at JitCompiler.push../node_modules/@angular/compiler/fesm5/compiler.js.JitCompiler.compileModuleAndAllComponentsAsync (http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:24513:1)
+    at CompilerImpl.push../node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js.CompilerImpl.compileModuleAndAllComponentsAsync (http://localhost:9876/node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js?:153:1)
+    at TestingCompilerImpl.push../node_modules/@angular/platform-browser-dynamic/fesm5/testing.js.TestingCompilerImpl.compileModuleAndAllComponentsAsync (http://localhost:9876/node_modules/@angular/platform-browser-dynamic/fesm5/testing.js?:107:1)
+    at TestBedViewEngine.push../node_modules/@angular/core/fesm5/testing.js.TestBedViewEngine.compileComponents (http://localhost:9876/node_modules/@angular/core/fesm5/testing.js?:1638:1)
+
+          <br />Error: Unexpected value 'DecoratorFactory' imported by the module 'DynamicTestModule'. Please add a @NgModule annotation.
+    at syntaxError (http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:1021:1)
+    at http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:10604:1
+    at &lt;Jasmine&gt;
+    at CompileMetadataResolver.push../node_modules/@angular/compiler/fesm5/compiler.js.CompileMetadataResolver.getNgModuleMetadata (http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:10579:1)
+    at JitCompiler.push../node_modules/@angular/compiler/fesm5/compiler.js.JitCompiler._loadModules (http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:24566:1)
+    at JitCompiler.push../node_modules/@angular/compiler/fesm5/compiler.js.JitCompiler._compileModuleAndAllComponents (http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:24554:1)
+    at JitCompiler.push../node_modules/@angular/compiler/fesm5/compiler.js.JitCompiler.compileModuleAndAllComponentsSync (http://localhost:9876/node_modules/@angular/compiler/fesm5/compiler.js?:24510:1)
+    at CompilerImpl.push../node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js.CompilerImpl.compileModuleAndAllComponentsSync (http://localhost:9876/node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js?:146:1)
+    at TestingCompilerImpl.push../node_modules/@angular/platform-browser-dynamic/fesm5/testing.js.TestingCompilerImpl.compileModuleAndAllComponentsSync (http://localhost:9876/node_modules/@angular/platform-browser-dynamic/fesm5/testing.js?:104:1)
+    at TestBedViewEngine.push../node_modules/@angular/core/fesm5/testing.js.TestBedViewEngine._initIfNeeded (http://localhost:9876/node_modules/@angular/core/fesm5/testing.js?:1652:1)
+
+          <br />Expected undefined to be truthy.
+    at &lt;Jasmine&gt;
+    at UserContext.&lt;anonymous&gt; (http://localhost:9876/src/app/login/login.component.spec.ts?:71:23)
+    at ZoneDelegate../node_modules/zone.js/dist/zone.js.ZoneDelegate.invoke (http://localhost:9876/node_modules/zone.js/dist/zone.js?:388:1)
+    at ProxyZoneSpec.push../node_modules/zone.js/dist/zone-testing.js.ProxyZoneSpec.onInvoke (http://localhost:9876/node_modules/zone.js/dist/zone-testing.js?:288:1)
+    at ZoneDelegate../node_modules/zone.js/dist/zone.js.ZoneDelegate.invoke (http://localhost:9876/node_modules/zone.js/dist/zone.js?:387:1)
+
+        </td>
+      </tr>
+      <tr class="system-out">
+        <td colspan="3"><strong>System output:</strong><br />Chrome 70.0.3538 (Windows 7 0.0.0) WARN: '
+It looks like you're using the development build of the Firebase JS SDK.
+When deploying Firebase apps to production, it is advisable to only import
+the individual SDK components you intend to use.
+
+For the module builds, these are available in the following manner
+(replace <PACKAGE> with the name of a component - i.e. auth, database, etc):
+
+CommonJS Modules:
+const firebase = require('firebase/app');
+require('firebase/<PACKAGE>');
+
+ES Modules:
+import firebase from 'firebase/app';
+import 'firebase/<PACKAGE>';
+
+Typescript:
+import * as firebase from 'firebase/app';
+import 'firebase/<PACKAGE>';
+'
+</td>
+      </tr>
+    </table>
+    <hr/>
+  </body>
+</html>

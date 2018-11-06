@@ -1,0 +1,905 @@
+<!--<nav class="navbar navbar-inverse nav_panel">
+  <div class="container">
+    <div class="mrg2">
+      <div class="pull-left"><img src="assets/styles/new-home-page/single/images/Transparent.png" height="50"/></div>
+      <button class="pull-right btn btn-default btn-sm" style="margin: 10px 0;" (click)="logout()"><i
+        class="fa fa-power-off"></i> Logout
+      </button>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</nav>
+
+<section class="back2">
+  <section class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="text-center">
+          <h4 class="mrg_btm2 r_h4">References for provisional approval</h4>
+          <p class="text-center mrg_btm2">Please fill in details of other doctors who can confirm your credentials</p>
+
+        </div>
+      </div>
+
+      <div class="col-md-6 col-md-offset-3 col-sm-12 col-sm-offset-0 ">
+        <div class="white">
+
+          <form name="form" (ngSubmit)="onSubmit()" id="provisionalform" novalidate #f="ngForm"
+                enctype="multipart/form-data">
+
+            &lt;!&ndash;<h4 class="mrg_btm r_h4">provisional Reference</h4> &ndash;&gt;
+
+            <p class="mrg_btm2">Reference one</p>
+
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="First Name" name="ref_fname1"
+                     [(ngModel)]="provisional_model.ref_fname1" #ref_fname1="ngModel">
+            </div>
+
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Last Name" name="ref_lname1"
+                     [(ngModel)]="provisional_model.ref_lname1" #ref_lname1="ngModel">
+            </div>
+
+            <div class="form-group">
+              <select class="form-control" name="ref_speciality1"
+                      [(ngModel)]="provisional_model.ref_speciality1" #ref_speciality1="ngModel">
+                <option value="0" disabled selected>Speciality</option>
+                <option value="Acupressurist">Acupressurist</option>
+                <option value="Aesthetic Medicine Specialist">Aesthetic Medicine Specialist</option>
+                <option value="Allergist/Immunologist">Allergist/Immunologist</option>
+                <option value="Alternative Medicine Specialist">Alternative Medicine Specialist</option>
+                <option value="Anesthesiologist">Anesthesiologist</option>
+                <option value="Audiologist">Audiologist</option>
+                <option value="Ayurveda Specialist">Ayurveda Specialist</option>
+                <option value="Bariatrician">Bariatrician</option>
+                <option value="Cardiologist">Cardiologist</option>
+                <option value="Cosmetic Physician">Cosmetic Physician</option>
+                <option value="Cosmetic/Plastic Surgeon">Cosmetic/Plastic Surgeon</option>
+                <option value="Dentist">Dentist</option>
+                <option value="Dermatologist">Dermatologist</option>
+                <option value="Diabetologist">Diabetologist</option>
+                <option value="Dietitian/Nutritionist">Dietitian/Nutritionist</option>
+                <option value="Ear-Nose-Throat (ENT) Specialist">Ear-Nose-Throat (ENT) Specialist</option>
+                <option value="">Endocrinologist</option>
+                <option value="Endocrinologist">Epidemiologist</option>
+                <option value="Gastroenterologist">Gastroenterologist</option>
+                <option value="General Physician">General Physician</option>
+                <option value="General Surgeon">General Surgeon</option>
+                <option value="Geneticist">Geneticist</option>
+                <option value="Geriatrician">Geriatrician</option>
+                <option value="Gynaecologist">Gynaecologist</option>
+                <option value="Hematologist">Hematologist</option>
+                <option value="Hepatologist">Hepatologist</option>
+                <option value="Homeopath">Homeopath</option>
+                <option value="IVF Specialist">IVF Specialist</option>
+                <option value="Integrated Medicine Specialist">Integrated Medicine Specialist</option>
+                <option value="Internal Medicine Specialist">Internal Medicine Specialist</option>
+                <option value="Microbiologist">Microbiologist</option>
+                <option value="Mother and Child Care">Mother and Child Care</option>
+                <option value="Nephrologist">Nephrologist</option>
+                <option value="Neurologist">Neurologist</option>
+                <option value="Neurosurgeon">Neurosurgeon</option>
+                <option value="Non-invasive Cardiologist">Non-invasive Cardiologist</option>
+                <option value="Nuclear Medicine Physician">Nuclear Medicine Physician</option>
+                <option value="Obstetrician">Obstetrician</option>
+                <option value="Occupational Therapist">Occupational Therapist</option>
+                <option value="Oncologist">Oncologist</option>
+                <option value="Ophthalmologist">Ophthalmologist</option>
+                <option value="Optometrist">Optometrist</option>
+                <option value="Oral And Maxillofacial Surgeon">Oral And Maxillofacial Surgeon</option>
+                <option value="Orthopedist">Orthopedist</option>
+                <option value="PMR (Physical Medicine &amp; Rehabilitation) Specialist">PMR (Physical Medicine &amp;
+                  Rehabilitation) Specialist
+                </option>
+                <option value="Pain Management Specialist">Pain Management Specialist</option>
+                <option value="Pathologist">Pathologist</option>
+                <option value="Pediatric Surgeon">Pediatric Surgeon</option>
+                <option value="Pediatrician">Pediatrician</option>
+                <option value="Phlebologist">Phlebologist</option>
+                <option value="Physiotherapist">Physiotherapist</option>
+                <option value="Podiatrist">Podiatrist</option>
+                <option value="Proctologist">Proctologist</option>
+                <option value="Psychiatrist">Psychiatrist</option>
+                <option value="Psychologist">Psychologist</option>
+                <option value="Pulmonologist">Pulmonologist</option>
+                <option value="Radiologist">Radiologist</option>
+                <option value="Rheumatologist">Rheumatologist</option>
+                <option value="Robotic Surgeon">Robotic Surgeon</option>
+                <option value="Sexologist">Sexologist</option>
+                <option value="Siddha Specialist">Siddha Specialist</option>
+                <option value="Somnologist">Somnologist</option>
+                <option value="Speech Therapist">Speech Therapist</option>
+                <option value="Toxicologist">Toxicologist</option>
+                <option value="Trichologist">Trichologist</option>
+                <option value="Unani Specialist">Unani Specialist</option>
+                <option value="Urologist">Urologist</option>
+                <option value="Venereologist">Venereologist</option>
+                <option value="Veterinarian">Veterinarian</option>
+                <option value="other">Other</option>
+
+              </select>
+            </div>
+
+            &lt;!&ndash;<div class="form-group"><input type="text" name ="othersp1" id="othersp1" class="form-control" placeholder="Other Speciality" style="display:none">
+            </div>&ndash;&gt;
+
+            <div class="form-group">
+              <input type="text" class="form-control mrg_top_m" placeholder="Email Id" name="ref_email1"
+                     [(ngModel)]="provisional_model.ref_email1" #ref_email1="ngModel">
+            </div>
+            <div class="form-group">
+
+
+              <select class="form-control" name="ref_phone1_country_code"
+                      [(ngModel)]="provisional_model.ref_phone1_country_code" #ref_phone1_country_code="ngModel">
+                <option value="0" disabled selected>Country code</option>
+                <option value="+91"> India +91</option>
+                <option value="+1"> +1 United state +1</option>
+                <option value="+44">+44 United Kingdom</option>
+                <option value="+971"> +971 United Arab Emirates</option>
+                <option value="+92">+92 pakistan</option>
+                <option value="+977"> +977 Nepal</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control mrg_top_m" placeholder="Mobile Number" name="ref_phone1"
+                     [(ngModel)]="provisional_model.ref_phone1" #ref_phone1="ngModel">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control mrg_top_m" placeholder="hospital" name="ref_hospital1"
+                     [(ngModel)]="provisional_model.ref_hospital1" #ref_hospital1="ngModel">
+            </div>
+            <p class="mrg_btm2">Reference two</p>
+
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="First Name" name="ref_fname2"
+                     [(ngModel)]="provisional_model.ref_fname2" #ref_fname2="ngModel">
+            </div>
+
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Last Name" name="ref_lname2"
+                     [(ngModel)]="provisional_model.ref_lname2" #ref_lname2="ngModel">
+            </div>
+
+            <div class="form-group">
+              <select class="form-control" name="ref_speciality2"
+                      [(ngModel)]="provisional_model.ref_speciality2" #ref_speciality2="ngModel">
+                <option value="0" disabled selected>Speciality</option>
+                <option value="Acupressurist">Acupressurist</option>
+                <option value="Aesthetic Medicine Specialist">Aesthetic Medicine Specialist</option>
+                <option value="Allergist/Immunologist">Allergist/Immunologist</option>
+                <option value="Alternative Medicine Specialist">Alternative Medicine Specialist</option>
+                <option value="Anesthesiologist">Anesthesiologist</option>
+                <option value="Audiologist">Audiologist</option>
+                <option value="Ayurveda Specialist">Ayurveda Specialist</option>
+                <option value="Bariatrician">Bariatrician</option>
+                <option value="Cardiologist">Cardiologist</option>
+                <option value="Cosmetic Physician">Cosmetic Physician</option>
+                <option value="Cosmetic/Plastic Surgeon">Cosmetic/Plastic Surgeon</option>
+                <option value="Dentist">Dentist</option>
+                <option value="Dermatologist">Dermatologist</option>
+                <option value="Diabetologist">Diabetologist</option>
+                <option value="Dietitian/Nutritionist">Dietitian/Nutritionist</option>
+                <option value="Ear-Nose-Throat (ENT) Specialist">Ear-Nose-Throat (ENT) Specialist</option>
+                <option value="">Endocrinologist</option>
+                <option value="Endocrinologist">Epidemiologist</option>
+                <option value="Gastroenterologist">Gastroenterologist</option>
+                <option value="General Physician">General Physician</option>
+                <option value="General Surgeon">General Surgeon</option>
+                <option value="Geneticist">Geneticist</option>
+                <option value="Geriatrician">Geriatrician</option>
+                <option value="Gynaecologist">Gynaecologist</option>
+                <option value="Hematologist">Hematologist</option>
+                <option value="Hepatologist">Hepatologist</option>
+                <option value="Homeopath">Homeopath</option>
+                <option value="IVF Specialist">IVF Specialist</option>
+                <option value="Integrated Medicine Specialist">Integrated Medicine Specialist</option>
+                <option value="Internal Medicine Specialist">Internal Medicine Specialist</option>
+                <option value="Microbiologist">Microbiologist</option>
+                <option value="Mother and Child Care">Mother and Child Care</option>
+                <option value="Nephrologist">Nephrologist</option>
+                <option value="Neurologist">Neurologist</option>
+                <option value="Neurosurgeon">Neurosurgeon</option>
+                <option value="Non-invasive Cardiologist">Non-invasive Cardiologist</option>
+                <option value="Nuclear Medicine Physician">Nuclear Medicine Physician</option>
+                <option value="Obstetrician">Obstetrician</option>
+                <option value="Occupational Therapist">Occupational Therapist</option>
+                <option value="Oncologist">Oncologist</option>
+                <option value="Ophthalmologist">Ophthalmologist</option>
+                <option value="Optometrist">Optometrist</option>
+                <option value="Oral And Maxillofacial Surgeon">Oral And Maxillofacial Surgeon</option>
+                <option value="Orthopedist">Orthopedist</option>
+                <option value="PMR (Physical Medicine &amp; Rehabilitation) Specialist">PMR (Physical Medicine &amp;
+                  Rehabilitation) Specialist
+                </option>
+                <option value="Pain Management Specialist">Pain Management Specialist</option>
+                <option value="Pathologist">Pathologist</option>
+                <option value="Pediatric Surgeon">Pediatric Surgeon</option>
+                <option value="Pediatrician">Pediatrician</option>
+                <option value="Phlebologist">Phlebologist</option>
+                <option value="Physiotherapist">Physiotherapist</option>
+                <option value="Podiatrist">Podiatrist</option>
+                <option value="Proctologist">Proctologist</option>
+                <option value="Psychiatrist">Psychiatrist</option>
+                <option value="Psychologist">Psychologist</option>
+                <option value="Pulmonologist">Pulmonologist</option>
+                <option value="Radiologist">Radiologist</option>
+                <option value="Rheumatologist">Rheumatologist</option>
+                <option value="Robotic Surgeon">Robotic Surgeon</option>
+                <option value="Sexologist">Sexologist</option>
+                <option value="Siddha Specialist">Siddha Specialist</option>
+                <option value="Somnologist">Somnologist</option>
+                <option value="Speech Therapist">Speech Therapist</option>
+                <option value="Toxicologist">Toxicologist</option>
+                <option value="Trichologist">Trichologist</option>
+                <option value="Unani Specialist">Unani Specialist</option>
+                <option value="Urologist">Urologist</option>
+                <option value="Venereologist">Venereologist</option>
+                <option value="Veterinarian">Veterinarian</option>
+                <option value="other">Other</option>
+
+              </select>
+            </div>
+
+            &lt;!&ndash;<div class="form-group"><input type="text" name ="othersp2" id="othersp2" class="form-control" placeholder="Other Speciality" style="display:none">
+            </div>&ndash;&gt;
+
+            <div class="form-group">
+              <input type="text" class="form-control mrg_top_m" placeholder="Email Id" name="ref_email2"
+                     [(ngModel)]="provisional_model.ref_email2" #ref_email2="ngModel">
+            </div>
+            <div class="form-group">
+
+              <select class="form-control" name="ref_phone2_country_code"
+                      [(ngModel)]="provisional_model.ref_phone2_country_code" #ref_phone2_country_code="ngModel">
+                <option value="0" disabled selected>Country code</option>
+                <option value="+91"> India +91</option>
+                <option value="+1"> +1 United state +1</option>
+                <option value="+44">+44 United Kingdom</option>
+                <option value="+971"> +971 United Arab Emirates</option>
+                <option value="+92">+92 pakistan</option>
+                <option value="+977"> +977 Nepal</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control mrg_top_m" placeholder="Mobile Number" name="ref_phone2"
+                     [(ngModel)]="provisional_model.ref_phone2" #ref_phone2="ngModel">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control mrg_top_m" placeholder="hospital" name="ref_hospital2"
+                     [(ngModel)]="provisional_model.ref_hospital2" #ref_hospital2="ngModel">
+            </div>
+            <p class="mrg_btm2">Reference three</p>
+
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="First Name" name="ref_fname3"
+                     [(ngModel)]="provisional_model.ref_fname3" #ref_fname3="ngModel">
+            </div>
+
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Last Name" name="ref_lname3"
+                     [(ngModel)]="provisional_model.ref_lname3" #ref_lname3="ngModel">
+            </div>
+
+            <div class="form-group">
+              <select class="form-control" name="ref_speciality3"
+                      [(ngModel)]="provisional_model.ref_speciality3" #ref_speciality3="ngModel">
+                <option value="0" disabled selected>Speciality</option>
+                <option value="Acupressurist">Acupressurist</option>
+                <option value="Aesthetic Medicine Specialist">Aesthetic Medicine Specialist</option>
+                <option value="Allergist/Immunologist">Allergist/Immunologist</option>
+                <option value="Alternative Medicine Specialist">Alternative Medicine Specialist</option>
+                <option value="Anesthesiologist">Anesthesiologist</option>
+                <option value="Audiologist">Audiologist</option>
+                <option value="Ayurveda Specialist">Ayurveda Specialist</option>
+                <option value="Bariatrician">Bariatrician</option>
+                <option value="Cardiologist">Cardiologist</option>
+                <option value="Cosmetic Physician">Cosmetic Physician</option>
+                <option value="Cosmetic/Plastic Surgeon">Cosmetic/Plastic Surgeon</option>
+                <option value="Dentist">Dentist</option>
+                <option value="Dermatologist">Dermatologist</option>
+                <option value="Diabetologist">Diabetologist</option>
+                <option value="Dietitian/Nutritionist">Dietitian/Nutritionist</option>
+                <option value="Ear-Nose-Throat (ENT) Specialist">Ear-Nose-Throat (ENT) Specialist</option>
+                <option value="">Endocrinologist</option>
+                <option value="Endocrinologist">Epidemiologist</option>
+                <option value="Gastroenterologist">Gastroenterologist</option>
+                <option value="General Physician">General Physician</option>
+                <option value="General Surgeon">General Surgeon</option>
+                <option value="Geneticist">Geneticist</option>
+                <option value="Geriatrician">Geriatrician</option>
+                <option value="Gynaecologist">Gynaecologist</option>
+                <option value="Hematologist">Hematologist</option>
+                <option value="Hepatologist">Hepatologist</option>
+                <option value="Homeopath">Homeopath</option>
+                <option value="IVF Specialist">IVF Specialist</option>
+                <option value="Integrated Medicine Specialist">Integrated Medicine Specialist</option>
+                <option value="Internal Medicine Specialist">Internal Medicine Specialist</option>
+                <option value="Microbiologist">Microbiologist</option>
+                <option value="Mother and Child Care">Mother and Child Care</option>
+                <option value="Nephrologist">Nephrologist</option>
+                <option value="Neurologist">Neurologist</option>
+                <option value="Neurosurgeon">Neurosurgeon</option>
+                <option value="Non-invasive Cardiologist">Non-invasive Cardiologist</option>
+                <option value="Nuclear Medicine Physician">Nuclear Medicine Physician</option>
+                <option value="Obstetrician">Obstetrician</option>
+                <option value="Occupational Therapist">Occupational Therapist</option>
+                <option value="Oncologist">Oncologist</option>
+                <option value="Ophthalmologist">Ophthalmologist</option>
+                <option value="Optometrist">Optometrist</option>
+                <option value="Oral And Maxillofacial Surgeon">Oral And Maxillofacial Surgeon</option>
+                <option value="Orthopedist">Orthopedist</option>
+                <option value="PMR (Physical Medicine &amp; Rehabilitation) Specialist">PMR (Physical Medicine &amp;
+                  Rehabilitation) Specialist
+                </option>
+                <option value="Pain Management Specialist">Pain Management Specialist</option>
+                <option value="Pathologist">Pathologist</option>
+                <option value="Pediatric Surgeon">Pediatric Surgeon</option>
+                <option value="Pediatrician">Pediatrician</option>
+                <option value="Phlebologist">Phlebologist</option>
+                <option value="Physiotherapist">Physiotherapist</option>
+                <option value="Podiatrist">Podiatrist</option>
+                <option value="Proctologist">Proctologist</option>
+                <option value="Psychiatrist">Psychiatrist</option>
+                <option value="Psychologist">Psychologist</option>
+                <option value="Pulmonologist">Pulmonologist</option>
+                <option value="Radiologist">Radiologist</option>
+                <option value="Rheumatologist">Rheumatologist</option>
+                <option value="Robotic Surgeon">Robotic Surgeon</option>
+                <option value="Sexologist">Sexologist</option>
+                <option value="Siddha Specialist">Siddha Specialist</option>
+                <option value="Somnologist">Somnologist</option>
+                <option value="Speech Therapist">Speech Therapist</option>
+                <option value="Toxicologist">Toxicologist</option>
+                <option value="Trichologist">Trichologist</option>
+                <option value="Unani Specialist">Unani Specialist</option>
+                <option value="Urologist">Urologist</option>
+                <option value="Venereologist">Venereologist</option>
+                <option value="Veterinarian">Veterinarian</option>
+                <option value="other">Other</option>
+
+              </select>
+            </div>
+
+            &lt;!&ndash;<div class="form-group"><input type="text" name ="othersp3" id="othersp3" class="form-control" placeholder="Other Speciality" style="display:none">
+            </div>&ndash;&gt;
+            <div class="form-group">
+              <input type="text" class="form-control mrg_top_m" placeholder="Email Id" name="ref_email3"
+                     [(ngModel)]="provisional_model.ref_email3" #ref_email3="ngModel">
+            </div>
+            <div class="form-group">
+              &lt;!&ndash;<label class="col-lg-3 control-label">Country code</label> &ndash;&gt;
+
+              <select class="form-control" name="ref_phone3_country_code"
+                      [(ngModel)]="provisional_model.ref_phone3_country_code" #ref_phone3_country_code="ngModel">
+                <option value="0" disabled selected>Country code</option>
+                <option value="+91"> India +91</option>
+                <option value="+1"> +1 United state +1</option>
+                <option value="+44">+44 United Kingdom</option>
+                <option value="+971"> +971 United Arab Emirates</option>
+                <option value="+92">+92 pakistan</option>
+                <option value="+977"> +977 Nepal</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control mrg_top_m" placeholder="Mobile Number" name="ref_phone3"
+                     [(ngModel)]="provisional_model.ref_phone3" #ref_phone3="ngModel">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control mrg_top_m" placeholder="hospital" name="ref_hospital3"
+                     [(ngModel)]="provisional_model.ref_hospital3" #ref_hospital3="ngModel">
+            </div>
+            <a [routerLink]="['/dashboard']">
+              <div class="btn btn-info">skip</div>
+            </a>
+            &lt;!&ndash;<a href="/opm/doctor/dashboard"><div class="btn btn-info">skip</div></a>&ndash;&gt;
+
+            <button type="submit" class="btn btn-primary" name="signup" value="Sign up">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    &lt;!&ndash;<div class="lmodal" style="display: none">
+      <div class="lcenter">
+        <img alt="loader"/>
+      </div>
+    </div>&ndash;&gt;
+
+  </section>
+</section>-->
+<!--<section class="top-header1">
+  <div class="container">
+    <div class="mrg2">
+      <div class="pull-left"><img src="assets/styles/new-home-page/single/images/Transparent.png" height="50"/></div>
+      <button class="pull-right btn btn-default btn-sm" style="margin: 10px 0;" (click)="logout()"><i
+        class="fa fa-power-off"></i> Logout
+      </button>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</section>-->
+<!--<section class="top-header1">-->
+  <!--<div class="container">-->
+    <!--<div fxLayout fxLayoutAlign="center center">-->
+      <!--<div fxFlex="100%">-->
+        <!--<img src="assets/styles/new-home-page/single/images/Transparent.png" height="50"/>-->
+      <!--</div>-->
+      <!--&lt;!&ndash;<button class="pull-right btn btn-default btn-sm" style="margin: 10px 0;margin-right: 13px;" (click)="logout()"><i&ndash;&gt;-->
+        <!--&lt;!&ndash;class="fa fa-power-off"></i> Logout&ndash;&gt;-->
+      <!--&lt;!&ndash;</button>&ndash;&gt;-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</section>-->
+
+
+<section class="top-header1">
+  <div class="container">
+    <div fxLayout="row" fxLayoutAlign="center">
+      <div fxFlex="100" >
+        <img src="https://storage.googleapis.com/web-assets/dpm_doctor.png" height="60" style="    padding-left: 13%;"/>
+      </div>
+      <span class="hello" style="padding-top: 0.75%;">
+ <button (click)="logout()" mat-button class="logout" style="padding: 0px; line-height: 32px;background-color: #ffffff!important;">
+   <i class="fa fa-power-off" aria-hidden="true"></i> &nbsp;Log out</button></span>
+    </div>
+  </div>
+</section>
+
+
+
+<div fxLayout="row">
+  <div fxFlex="100%" >
+    <div class="text-center">
+      <h4 class="mrg_btm2 r_h4" align="center" id="head-login">References for provisional approval</h4>
+      <p class="text-center mrg_btm2" align="center">Please fill in details of other doctors who can confirm your credentials</p>
+    </div>
+  </div>
+</div>
+
+<div class="contain" style="padding-bottom: 1%;">
+  <div fxLayout="column" style="max-width: 104%">
+    <mat-card align="center">
+      <form name="example-form" (ngSubmit)="onSubmit()" id="provisionalform" novalidate #f="ngForm"
+            enctype="multipart/form-data">
+        <h4 class="mrg_btm r_h4">Provisional Reference</h4>
+        <p class="mrg_btm2">Reference one</p>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="First name" class="type-input" type="text"
+                 name="ref_fname1" [(ngModel)]="provisional_model.ref_fname1" #ref_fname1="ngModel" required>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            First Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field><br>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Last name" class="type-input" type="text"
+                 name="ref_lname1" [(ngModel)]="provisional_model.ref_lname1" #ref_lname1="ngModel" required>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Last Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <div class="md-form">
+          <mat-form-field class="example-full-width">
+            <mat-select  name="ref_speciality1" placeholder="Speciality"
+                         [(ngModel)]="provisional_model.ref_speciality1" #ref_speciality1="ngModel">
+              <mat-option value="0" disabled selected>Speciality</mat-option>
+              <mat-option value="Acupressurist">Acupressurist</mat-option>
+              <mat-option value="Aesthetic Medicine Specialist">Aesthetic Medicine Specialist</mat-option>
+              <mat-option value="Allergist/Immunologist">Allergist/Immunologist</mat-option>
+              <mat-option value="Alternative Medicine Specialist">Alternative Medicine Specialist</mat-option>
+              <mat-option value="Anesthesiologist">Anesthesiologist</mat-option>
+              <mat-option value="Audiologist">Audiologist</mat-option>
+              <mat-option value="Ayurveda Specialist">Ayurveda Specialist</mat-option>
+              <mat-option value="Bariatrician">Bariatrician</mat-option>
+              <mat-option value="Cardiologist">Cardiologist</mat-option>
+              <mat-option value="Cosmetic Physician">Cosmetic Physician</mat-option>
+              <mat-option value="Cosmetic/Plastic Surgeon">Cosmetic/Plastic Surgeon</mat-option>
+              <mat-option value="Dentist">Dentist</mat-option>
+              <mat-option value="Dermatologist">Dermatologist</mat-option>
+              <mat-option value="Diabetologist">Diabetologist</mat-option>
+              <mat-option value="Dietitian/Nutritionist">Dietitian/Nutritionist</mat-option>
+              <mat-option value="Ear-Nose-Throat (ENT) Specialist">Ear-Nose-Throat (ENT) Specialist</mat-option>
+              <mat-option value="">Endocrinologist</mat-option>
+              <mat-option value="Endocrinologist">Epidemiologist</mat-option>
+              <mat-option value="Gastroenterologist">Gastroenterologist</mat-option>
+              <mat-option value="General Physician">General Physician</mat-option>
+              <mat-option value="General Surgeon">General Surgeon</mat-option>
+              <mat-option value="Geneticist">Geneticist</mat-option>
+              <mat-option value="Geriatrician">Geriatrician</mat-option>
+              <mat-option value="Gynaecologist">Gynaecologist</mat-option>
+              <mat-option value="Hematologist">Hematologist</mat-option>
+              <mat-option value="Hepatologist">Hepatologist</mat-option>
+              <mat-option value="Homeopath">Homeopath</mat-option>
+              <mat-option value="IVF Specialist">IVF Specialist</mat-option>
+              <mat-option value="Integrated Medicine Specialist">Integrated Medicine Specialist</mat-option>
+              <mat-option value="Internal Medicine Specialist">Internal Medicine Specialist</mat-option>
+              <mat-option value="Microbiologist">Microbiologist</mat-option>
+              <mat-option value="Mother and Child Care">Mother and Child Care</mat-option>
+              <mat-option value="Nephrologist">Nephrologist</mat-option>
+              <mat-option value="Neurologist">Neurologist</mat-option>
+              <mat-option value="Neurosurgeon">Neurosurgeon</mat-option>
+              <mat-option value="Non-invasive Cardiologist">Non-invasive Cardiologist</mat-option>
+              <mat-option value="Nuclear Medicine Physician">Nuclear Medicine Physician</mat-option>
+              <mat-option value="Obstetrician">Obstetrician</mat-option>
+              <mat-option value="Occupational Therapist">Occupational Therapist</mat-option>
+              <mat-option value="Oncologist">Oncologist</mat-option>
+              <mat-option value="Ophthalmologist">Ophthalmologist</mat-option>
+              <mat-option value="Optometrist">Optometrist</mat-option>
+              <mat-option value="Oral And Maxillofacial Surgeon">Oral And Maxillofacial Surgeon</mat-option>
+              <mat-option value="Orthopedist">Orthopedist</mat-option>
+              <mat-option value="PMR (Physical Medicine &amp; Rehabilitation) Specialist">PMR (Physical Medicine &amp;
+                Rehabilitation) Specialist
+              </mat-option>
+              <mat-option value="Pain Management Specialist">Pain Management Specialist</mat-option>
+              <mat-option value="Pathologist">Pathologist</mat-option>
+              <mat-option value="Pediatric Surgeon">Pediatric Surgeon</mat-option>
+              <mat-option value="Pediatrician">Pediatrician</mat-option>
+              <mat-option value="Phlebologist">Phlebologist</mat-option>
+              <mat-option value="Physiotherapist">Physiotherapist</mat-option>
+              <mat-option value="Podiatrist">Podiatrist</mat-option>
+              <mat-option value="Proctologist">Proctologist</mat-option>
+              <mat-option value="Psychiatrist">Psychiatrist</mat-option>
+              <mat-option value="Psychologist">Psychologist</mat-option>
+              <mat-option value="Pulmonologist">Pulmonologist</mat-option>
+              <mat-option value="Radiologist">Radiologist</mat-option>
+              <mat-option value="Rheumatologist">Rheumatologist</mat-option>
+              <mat-option value="Robotic Surgeon">Robotic Surgeon</mat-option>
+              <mat-option value="Sexologist">Sexologist</mat-option>
+              <mat-option value="Siddha Specialist">Siddha Specialist</mat-option>
+              <mat-option value="Somnologist">Somnologist</mat-option>
+              <mat-option value="Speech Therapist">Speech Therapist</mat-option>
+              <mat-option value="Toxicologist">Toxicologist</mat-option>
+              <mat-option value="Trichologist">Trichologist</mat-option>
+              <mat-option value="Unani Specialist">Unani Specialist</mat-option>
+              <mat-option value="Urologist">Urologist</mat-option>
+              <mat-option value="Venereologist">Venereologist</mat-option>
+              <mat-option value="Veterinarian">Veterinarian</mat-option>
+              <mat-option value="other">Other</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Email Id" class="type-input" placeholder="Email Address"
+                 name="ref_email1" [(ngModel)]="provisional_model.ref_email1" #ref_email1="ngModel" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$">
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Valid email address is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <div class="md-form">
+          <mat-form-field class="example-full-width">
+            <mat-select  name="ref_phone1_country_code"  placeholder="Country code"
+                         [(ngModel)]="provisional_model.ref_phone1_country_code" #ref_phone1_country_code="ngModel">
+              <mat-option value="0" disabled selected>Country code</mat-option>
+              <mat-option value="+91"> India +91</mat-option>
+              <mat-option value="+1"> +1 United state +1</mat-option>
+              <mat-option value="+44">+44 United Kingdom</mat-option>
+              <mat-option value="+971"> +971 United Arab Emirates</mat-option>
+              <mat-option value="+92">+92 pakistan</mat-option>
+              <mat-option value="+977"> +977 Nepal</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Mobile Number" class="type-input" type="number"
+                 name="ref_phone1" [(ngModel)]="provisional_model.ref_phone1" #ref_phone1="ngModel" required
+                 pattern="[0-9]*" required style="
+                                                     background-color: #fff;
+                                                     border: none;box-shadow: none;
+                                                     -webkit-transition: none;
+                                                     transition: none;">
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Mobile Number is <strong>required</strong>
+          </mat-error>
+        </mat-form-field><br>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Hospital" class="type-input"
+                 name="ref_hospital1" [(ngModel)]="provisional_model.ref_hospital1" #ref_hospital1="ngModel" required>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Hospital is <strong>required</strong>
+          </mat-error>
+        </mat-form-field><br>
+
+        <p class="mrg_btm2">Reference two</p>
+
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="First Name" class="type-input" type="text"
+                 name="ref_fname2" [(ngModel)]="provisional_model.ref_fname2" #ref_fname2="ngModel" required>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            First Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field><br>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Last Name" class="type-input" type="text"
+                 name="ref_lname2" [(ngModel)]="provisional_model.ref_lname2" #ref_lname2="ngModel" required>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Last Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field><br>
+
+        <div class="md-form">
+          <mat-form-field class="example-full-width">
+            <mat-select  name="ref_speciality2" placeholder="Speciality"
+                         [(ngModel)]="provisional_model.ref_speciality2" #ref_speciality2="ngModel">
+              <mat-option value="0" disabled selected>Speciality</mat-option>
+              <mat-option value="Acupressurist">Acupressurist</mat-option>
+              <mat-option value="Aesthetic Medicine Specialist">Aesthetic Medicine Specialist</mat-option>
+              <mat-option value="Allergist/Immunologist">Allergist/Immunologist</mat-option>
+              <mat-option value="Alternative Medicine Specialist">Alternative Medicine Specialist</mat-option>
+              <mat-option value="Anesthesiologist">Anesthesiologist</mat-option>
+              <mat-option value="Audiologist">Audiologist</mat-option>
+              <mat-option value="Ayurveda Specialist">Ayurveda Specialist</mat-option>
+              <mat-option value="Bariatrician">Bariatrician</mat-option>
+              <mat-option value="Cardiologist">Cardiologist</mat-option>
+              <mat-option value="Cosmetic Physician">Cosmetic Physician</mat-option>
+              <mat-option value="Cosmetic/Plastic Surgeon">Cosmetic/Plastic Surgeon</mat-option>
+              <mat-option value="Dentist">Dentist</mat-option>
+              <mat-option value="Dermatologist">Dermatologist</mat-option>
+              <mat-option value="Diabetologist">Diabetologist</mat-option>
+              <mat-option value="Dietitian/Nutritionist">Dietitian/Nutritionist</mat-option>
+              <mat-option value="Ear-Nose-Throat (ENT) Specialist">Ear-Nose-Throat (ENT) Specialist</mat-option>
+              <mat-option value="">Endocrinologist</mat-option>
+              <mat-option value="Endocrinologist">Epidemiologist</mat-option>
+              <mat-option value="Gastroenterologist">Gastroenterologist</mat-option>
+              <mat-option value="General Physician">General Physician</mat-option>
+              <mat-option value="General Surgeon">General Surgeon</mat-option>
+              <mat-option value="Geneticist">Geneticist</mat-option>
+              <mat-option value="Geriatrician">Geriatrician</mat-option>
+              <mat-option value="Gynaecologist">Gynaecologist</mat-option>
+              <mat-option value="Hematologist">Hematologist</mat-option>
+              <mat-option value="Hepatologist">Hepatologist</mat-option>
+              <mat-option value="Homeopath">Homeopath</mat-option>
+              <mat-option value="IVF Specialist">IVF Specialist</mat-option>
+              <mat-option value="Integrated Medicine Specialist">Integrated Medicine Specialist</mat-option>
+              <mat-option value="Internal Medicine Specialist">Internal Medicine Specialist</mat-option>
+              <mat-option value="Microbiologist">Microbiologist</mat-option>
+              <mat-option value="Mother and Child Care">Mother and Child Care</mat-option>
+              <mat-option value="Nephrologist">Nephrologist</mat-option>
+              <mat-option value="Neurologist">Neurologist</mat-option>
+              <mat-option value="Neurosurgeon">Neurosurgeon</mat-option>
+              <mat-option value="Non-invasive Cardiologist">Non-invasive Cardiologist</mat-option>
+              <mat-option value="Nuclear Medicine Physician">Nuclear Medicine Physician</mat-option>
+              <mat-option value="Obstetrician">Obstetrician</mat-option>
+              <mat-option value="Occupational Therapist">Occupational Therapist</mat-option>
+              <mat-option value="Oncologist">Oncologist</mat-option>
+              <mat-option value="Ophthalmologist">Ophthalmologist</mat-option>
+              <mat-option value="Optometrist">Optometrist</mat-option>
+              <mat-option value="Oral And Maxillofacial Surgeon">Oral And Maxillofacial Surgeon</mat-option>
+              <mat-option value="Orthopedist">Orthopedist</mat-option>
+              <mat-option value="PMR (Physical Medicine &amp; Rehabilitation) Specialist">PMR (Physical Medicine &amp;
+                Rehabilitation) Specialist
+              </mat-option>
+              <mat-option value="Pain Management Specialist">Pain Management Specialist</mat-option>
+              <mat-option value="Pathologist">Pathologist</mat-option>
+              <mat-option value="Pediatric Surgeon">Pediatric Surgeon</mat-option>
+              <mat-option value="Pediatrician">Pediatrician</mat-option>
+              <mat-option value="Phlebologist">Phlebologist</mat-option>
+              <mat-option value="Physiotherapist">Physiotherapist</mat-option>
+              <mat-option value="Podiatrist">Podiatrist</mat-option>
+              <mat-option value="Proctologist">Proctologist</mat-option>
+              <mat-option value="Psychiatrist">Psychiatrist</mat-option>
+              <mat-option value="Psychologist">Psychologist</mat-option>
+              <mat-option value="Pulmonologist">Pulmonologist</mat-option>
+              <mat-option value="Radiologist">Radiologist</mat-option>
+              <mat-option value="Rheumatologist">Rheumatologist</mat-option>
+              <mat-option value="Robotic Surgeon">Robotic Surgeon</mat-option>
+              <mat-option value="Sexologist">Sexologist</mat-option>
+              <mat-option value="Siddha Specialist">Siddha Specialist</mat-option>
+              <mat-option value="Somnologist">Somnologist</mat-option>
+              <mat-option value="Speech Therapist">Speech Therapist</mat-option>
+              <mat-option value="Toxicologist">Toxicologist</mat-option>
+              <mat-option value="Trichologist">Trichologist</mat-option>
+              <mat-option value="Unani Specialist">Unani Specialist</mat-option>
+              <mat-option value="Urologist">Urologist</mat-option>
+              <mat-option value="Venereologist">Venereologist</mat-option>
+              <mat-option value="Veterinarian">Veterinarian</mat-option>
+              <mat-option value="other">Other</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div><br>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Email Id" class="type-input" type="text"
+                 name="ref_email2" [(ngModel)]="provisional_model.ref_email2" #ref_email2="ngModel" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$">
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Valid email address is <strong>required</strong>
+          </mat-error>
+        </mat-form-field><br>
+
+        <div class="md-form">
+          <mat-form-field class="example-full-width">
+            <mat-select  name="ref_phone2_country_code" placeholder="Country code"
+                         [(ngModel)]="provisional_model.ref_phone2_country_code" #ref_phone2_country_code="ngModel">
+              <mat-option value="0" disabled selected>Country code</mat-option>
+              <mat-option value="+91"> India +91</mat-option>
+              <mat-option value="+1"> +1 United state +1</mat-option>
+              <mat-option value="+44">+44 United Kingdom</mat-option>
+              <mat-option value="+971"> +971 United Arab Emirates</mat-option>
+              <mat-option value="+92">+92 pakistan</mat-option>
+              <mat-option value="+977"> +977 Nepal</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div><br>
+
+        <mat-form-field class="example-full-width">
+          <input matInput class="type-input" type="number" placeholder="Mobile Number" name="ref_phone2"
+                 [(ngModel)]="provisional_model.ref_phone2" #ref_phone2="ngModel" required pattern="[0-9]*" required style="
+                                                     background-color: #fff;
+                                                     border: none;box-shadow: none;
+                                                     -webkit-transition: none;
+                                                     transition: none;">
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Mobile Number is <strong>required</strong>
+          </mat-error>
+        </mat-form-field><br>
+
+        <mat-form-field class="example-full-width">
+          <input matInput class="type-input" type="text" placeholder="hospital" name="ref_hospital2"
+                 [(ngModel)]="provisional_model.ref_hospital2" #ref_hospital2="ngModel" required>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Hospital is <strong>required</strong>
+          </mat-error>
+        </mat-form-field><br>
+
+        <p class="mrg_btm2">Reference three</p>
+
+        <mat-form-field class="example-full-width">
+          <input matInput class="type-input" type="text" placeholder="First Name" name="ref_fname3"
+                 [(ngModel)]="provisional_model.ref_fname3" #ref_fname3="ngModel" required>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            First Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field><br>
+
+        <mat-form-field class="example-full-width">
+          <input matInput class="type-input" type="text" placeholder="Last Name" name="ref_lname3"
+                 [(ngModel)]="provisional_model.ref_lname3" #ref_lname3="ngModel" required>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Last Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field><br>
+
+        <div class="md-form">
+          <mat-form-field class="example-full-width">
+            <mat-select name="ref_speciality3" placeholder="Speciality"
+                        [(ngModel)]="provisional_model.ref_speciality3" #ref_speciality3="ngModel">
+              <mat-option value="0" disabled selected>Speciality</mat-option>
+              <mat-option value="Acupressurist">Acupressurist</mat-option>
+              <mat-option value="Aesthetic Medicine Specialist">Aesthetic Medicine Specialist</mat-option>
+              <mat-option value="Allergist/Immunologist">Allergist/Immunologist</mat-option>
+              <mat-option value="Alternative Medicine Specialist">Alternative Medicine Specialist</mat-option>
+              <mat-option value="Anesthesiologist">Anesthesiologist</mat-option>
+              <mat-option value="Audiologist">Audiologist</mat-option>
+              <mat-option value="Ayurveda Specialist">Ayurveda Specialist</mat-option>
+              <mat-option value="Bariatrician">Bariatrician</mat-option>
+              <mat-option value="Cardiologist">Cardiologist</mat-option>
+              <mat-option value="Cosmetic Physician">Cosmetic Physician</mat-option>
+              <mat-option value="Cosmetic/Plastic Surgeon">Cosmetic/Plastic Surgeon</mat-option>
+              <mat-option value="Dentist">Dentist</mat-option>
+              <mat-option value="Dermatologist">Dermatologist</mat-option>
+              <mat-option value="Diabetologist">Diabetologist</mat-option>
+              <mat-option value="Dietitian/Nutritionist">Dietitian/Nutritionist</mat-option>
+              <mat-option value="Ear-Nose-Throat (ENT) Specialist">Ear-Nose-Throat (ENT) Specialist</mat-option>
+              <mat-option value="">Endocrinologist</mat-option>
+              <mat-option value="Endocrinologist">Epidemiologist</mat-option>
+              <mat-option value="Gastroenterologist">Gastroenterologist</mat-option>
+              <mat-option value="General Physician">General Physician</mat-option>
+              <mat-option value="General Surgeon">General Surgeon</mat-option>
+              <mat-option value="Geneticist">Geneticist</mat-option>
+              <mat-option value="Geriatrician">Geriatrician</mat-option>
+              <mat-option value="Gynaecologist">Gynaecologist</mat-option>
+              <mat-option value="Hematologist">Hematologist</mat-option>
+              <mat-option value="Hepatologist">Hepatologist</mat-option>
+              <mat-option value="Homeopath">Homeopath</mat-option>
+              <mat-option value="IVF Specialist">IVF Specialist</mat-option>
+              <mat-option value="Integrated Medicine Specialist">Integrated Medicine Specialist</mat-option>
+              <mat-option value="Internal Medicine Specialist">Internal Medicine Specialist</mat-option>
+              <mat-option value="Microbiologist">Microbiologist</mat-option>
+              <mat-option value="Mother and Child Care">Mother and Child Care</mat-option>
+              <mat-option value="Nephrologist">Nephrologist</mat-option>
+              <mat-option value="Neurologist">Neurologist</mat-option>
+              <mat-option value="Neurosurgeon">Neurosurgeon</mat-option>
+              <mat-option value="Non-invasive Cardiologist">Non-invasive Cardiologist</mat-option>
+              <mat-option value="Nuclear Medicine Physician">Nuclear Medicine Physician</mat-option>
+              <mat-option value="Obstetrician">Obstetrician</mat-option>
+              <mat-option value="Occupational Therapist">Occupational Therapist</mat-option>
+              <mat-option value="Oncologist">Oncologist</mat-option>
+              <mat-option value="Ophthalmologist">Ophthalmologist</mat-option>
+              <mat-option value="Optometrist">Optometrist</mat-option>
+              <mat-option value="Oral And Maxillofacial Surgeon">Oral And Maxillofacial Surgeon</mat-option>
+              <mat-option value="Orthopedist">Orthopedist</mat-option>
+              <mat-option value="PMR (Physical Medicine &amp; Rehabilitation) Specialist">PMR (Physical Medicine &amp;
+                Rehabilitation) Specialist
+              </mat-option>
+              <mat-option value="Pain Management Specialist">Pain Management Specialist</mat-option>
+              <mat-option value="Pathologist">Pathologist</mat-option>
+              <mat-option value="Pediatric Surgeon">Pediatric Surgeon</mat-option>
+              <mat-option value="Pediatrician">Pediatrician</mat-option>
+              <mat-option value="Phlebologist">Phlebologist</mat-option>
+              <mat-option value="Physiotherapist">Physiotherapist</mat-option>
+              <mat-option value="Podiatrist">Podiatrist</mat-option>
+              <mat-option value="Proctologist">Proctologist</mat-option>
+              <mat-option value="Psychiatrist">Psychiatrist</mat-option>
+              <mat-option value="Psychologist">Psychologist</mat-option>
+              <mat-option value="Pulmonologist">Pulmonologist</mat-option>
+              <mat-option value="Radiologist">Radiologist</mat-option>
+              <mat-option value="Rheumatologist">Rheumatologist</mat-option>
+              <mat-option value="Robotic Surgeon">Robotic Surgeon</mat-option>
+              <mat-option value="Sexologist">Sexologist</mat-option>
+              <mat-option value="Siddha Specialist">Siddha Specialist</mat-option>
+              <mat-option value="Somnologist">Somnologist</mat-option>
+              <mat-option value="Speech Therapist">Speech Therapist</mat-option>
+              <mat-option value="Toxicologist">Toxicologist</mat-option>
+              <mat-option value="Trichologist">Trichologist</mat-option>
+              <mat-option value="Unani Specialist">Unani Specialist</mat-option>
+              <mat-option value="Urologist">Urologist</mat-option>
+              <mat-option value="Venereologist">Venereologist</mat-option>
+              <mat-option value="Veterinarian">Veterinarian</mat-option>
+              <mat-option value="other">Other</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div><br>
+
+        <mat-form-field class="example-full-width">
+          <input matInput class="type-input" type="text" placeholder="Email Id" name="ref_email3"
+                 [(ngModel)]="provisional_model.ref_email3" #ref_email3="ngModel" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$">
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Valid email address is <strong>required</strong>
+          </mat-error>
+        </mat-form-field><br>
+
+        <div class="md-form">
+          <mat-form-field class="example-full-width">
+            <mat-select  name="ref_phone3_country_code" placeholder="County code"
+                         [(ngModel)]="provisional_model.ref_phone3_country_code" #ref_phone3_country_code="ngModel">
+              <mat-option value="0" disabled selected>Country code</mat-option>
+              <mat-option value="+91"> India +91</mat-option>
+              <mat-option value="+1"> +1 United state +1</mat-option>
+              <mat-option value="+44">+44 United Kingdom</mat-option>
+              <mat-option value="+971"> +971 United Arab Emirates</mat-option>
+              <mat-option value="+92">+92 pakistan</mat-option>
+              <mat-option value="+977"> +977 Nepal</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div><br>
+
+        <mat-form-field class="example-full-width">
+          <input matInput class="type-input" type="number" placeholder="Mobile Number" name="ref_phone3"
+                 [(ngModel)]="provisional_model.ref_phone3" #ref_phone3="ngModel" required pattern="[0-9]*" required style="
+                                                     background-color: #fff;
+                                                     border: none;box-shadow: none;
+                                                     -webkit-transition: none;
+                                                     transition: none;">
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Mobile Number is <strong>required</strong>
+          </mat-error>
+        </mat-form-field><br>
+
+        <mat-form-field class="example-full-width">
+          <input matInput class="type-input" type="text" placeholder="hospital" name="ref_hospital3"
+                 [(ngModel)]="provisional_model.ref_hospital3" #ref_hospital3="ngModel" required>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Hospital is <strong>required</strong>
+          </mat-error>
+        </mat-form-field><br>
+
+        <a [routerLink]="['/dashboard']" style="text-decoration: none; padding-right: 1%;">
+          <!--<div class="btn btn-info" id="sk">skip</div>-->
+          <button mat-raised-button color="primary" type="button" id="sk">Skip</button>
+        </a>
+
+        <button mat-raised-button color="primary" type="submit"  name="signup" value="Sign up" id="su">Submit</button>
+      </form>
+    </mat-card>
+  </div>
+</div>

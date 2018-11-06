@@ -1,0 +1,20 @@
+<button mat-raised-button color="primary" id="openModal" #openModal [hidden]="true"
+        data-toggle="modal" data-target="#doc_pay_modal"></button>
+
+
+<div class="modal-body" fxLayout="row">
+  <div fxFlex="92">
+    <p class="mrg_btm2">Please give 3 provisional references and your details should be verified by reference. To go Provisional reference page click belown</p>
+
+  </div>
+  <div fxFlex="5"><button mat-raised-button style="color: red;min-width: 0px;height: 0px;width: 22px;" (click) = "pay()">X</button></div>
+
+</div>
+<div fxFlex="row">
+  <a [routerLink]="['/provisional-details']">
+    <button mat-raised-button color="primary" (click) = "pay()" type="button" style="margin-bottom: 1%;background-color: #0c58a5!important;">
+      Click here
+    </button>
+  </a>
+</div>
+

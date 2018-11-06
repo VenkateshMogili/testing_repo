@@ -1,0 +1,34 @@
+/* Main ................ */
+main {
+  margin: 20px auto;
+}
+
+/* aside */
+aside {
+  float: left;
+}
+
+.inside {
+  background-color: #f4f4f4;
+  padding: 10px;
+}
+
+#sidebar.sticky {
+  float: none;
+  position: fixed;
+  top: 20px;
+  z-index: 6;
+  left: auto;
+}
+
+/* main content */
+.main_content {
+  float: right;
+}
+
+/* Footer .............. */
+footer {
+  background-color: #999;
+  height: 300px;
+  width: 100%;
+}

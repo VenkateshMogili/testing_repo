@@ -1,0 +1,23 @@
+.mat-tab-nav-bar.mat-primary .mat-tab-link:not(.mat-tab-disabled):focus{
+  background-color: #3c8dbc;
+  color: #fff;
+}
+
+@media (max-width: 599px){
+  .mat-tab-link {
+    min-width: 40px!important;
+    padding: 0 10px;
+    height:40px;
+  }
+
+  .persona {
+    font-size: 18px;
+    margin-top: 22px;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+
+}
+a{
+  padding: 0px!important;
+}

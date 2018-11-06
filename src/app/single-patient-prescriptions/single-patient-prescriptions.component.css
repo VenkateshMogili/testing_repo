@@ -1,0 +1,80 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+/* Zebra striping */
+tr:nth-of-type(odd) {
+  background: #f3f3f3;
+}
+th {
+  background: #fff;
+  color: #000;
+  font-weight: bold;
+}
+td, th {
+  padding: 6px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.icon-style{
+  background: #416bc7;
+  color: #fff;
+  padding: 8px;
+  border-radius: 4px;}
+.border-part{
+  border:1px solid #ccc;
+  padding:6px;
+  margin:20px 0px;
+}
+.drop-down-list mat-list-item{
+
+  height:30px;
+
+}
+.medicine1 {
+  font-size:16px;
+  font-weight:600;
+
+}
+.icon-class {
+  background: #2279ad;
+  color: #fff;
+  vertical-align: middle;
+  text-align: center;
+  padding: 7px 6px 6px;
+
+}
+
+
+@media(max-width:599px){
+  .border-part {
+    border: 1px solid #ccc;
+    padding: 3px;
+    margin: 10px 8px;
+    border-radius: 5px;
+  }
+  .content-medicine{
+    padding:5px 10px;
+  }
+  .mat-icon {
+    background-repeat: no-repeat;
+    display: inline-block;
+    fill: currentColor;
+    height: 15px;
+    width: 15px;
+  }
+  .mat-icon-button .mat-icon, .mat-icon-button i {
+    line-height: 15px;
+    font-size: 18px;
+    text-align: center;
+  }
+
+
+
+
+
+}
+.content-medicine{
+  padding:10px;
+}

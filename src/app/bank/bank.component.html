@@ -1,0 +1,274 @@
+<section class="top-header1">
+  <div class="container">
+    <div fxLayout="row" fxLayoutAlign="center">
+      <div fxFlex="100" >
+        <img src="https://storage.googleapis.com/web-assets/dpm_doctor.png" height="60" style="    padding-left: 13%;"/>
+      </div>
+      <span class="hello" style="padding-top: 0.75%;">
+ <button (click)="logout()" mat-button class="logout" style="padding: 0px; line-height: 32px;background-color: #ffffff!important;">
+   <i class="fa fa-power-off" aria-hidden="true"></i> &nbsp;Log out</button></span>
+    </div>
+  </div>
+</section>
+
+<!--<div class="contain" style="    padding-bottom: 20px;">-->
+  <!--<section class="back2">-->
+    <!--<section class="container">-->
+      <!--<div class="row">-->
+
+          <!--<div class=" text-center">-->
+            <!--<h4 class="mrg_btm2 r_h4">Please fill in your Bank Account details</h4>-->
+
+          <!--</div>-->
+
+
+        <!--<div class="col-md-6 col-md-offset-3 col-sm-12 col-sm-offset-0">-->
+          <!--<div class="white">-->
+
+            <!--<form id="defaultForm" method="post">-->
+
+              <!--<h4 class="mrg_btm r_h4">Bank Account Details</h4>-->
+
+              <!--<div class="form-group">-->
+                <!--<input type="text" class="form-control" id="bank_name" name="bank_name" placeholder="Bank Name">-->
+              <!--</div>-->
+
+              <!--<div class="form-group">-->
+                <!--<input type="text" class="form-control" id="ac_no" name="ac_no" placeholder="Bank Account Number">-->
+              <!--</div>-->
+
+              <!--<div class="form-group">-->
+                <!--<input type="text" class="form-control" id="re_ac_no" name="re_ac_no" placeholder="Re-enter Bank Account Number">-->
+              <!--</div>-->
+
+              <!--<div class="form-group">-->
+                <!--<input type="text" class="form-control" id="ac_hname" name="ac_hname" placeholder="Account Holder Name">-->
+              <!--</div>-->
+
+              <!--<div class="form-group"><textarea class="form-control" id="b_ad1" name="b_ad1" style="resize: none; height: 60px;" placeholder="Bank Address Line 1"></textarea></div>-->
+
+              <!--<div class="form-group"><textarea class="form-control" id="b_ad2" name="b_ad2" style="resize: none; height: 60px;" placeholder="Bank Address Line 2"></textarea></div>-->
+
+              <!--<div class="form-group"><textarea class="form-control" id="b_ad3" name="b_ad3" style="resize: none; height: 60px;" placeholder="Bank Address Line 3"></textarea></div>-->
+
+
+              <!--<div class="form-group">-->
+                <!--<select class="form-control" name="tt" ng-model="selectedcountry" ng-change="getstates(selectedcountry)" ng-options="country as country.country_name for country in countrys">-->
+                  <!--<option value="">Select Country</option>-->
+                <!--</select>-->
+
+              <!--</div>-->
+              <!--<input name="cou" id="cou" value="@{{selectedcountry.country_name}}" style="display:none">-->
+
+              <!--<div class="form-group">-->
+                <!--<select class="form-control" name="selectedstate" id="selectedstate" ng-model="selectedstate" ng-change="getcities(selectedstate)" ng-options="state as state.state_name for state in states">-->
+                  <!--<option value="">Select State</option>-->
+                <!--</select>-->
+
+              <!--</div>-->
+              <!--<input name="sta" id="sta" value="@{{selectedstate.state_name}}" style="display:none">-->
+              <!--<div class="form-group">-->
+                <!--<select class="form-control" name="selectedcity" id="selectedcity" ng-model="selectedcity"  ng-options="city as city.city_name for city in cities">-->
+                  <!--<option value="">Select City</option>-->
+                <!--</select>-->
+
+              <!--</div>-->
+              <!--<input name="ci" id="ci" value="@{{selectedcity.city_name}}" style="display:none">-->
+
+              <!--<div class="form-group">-->
+                <!--<input type="text" class="form-control" id="b_pin" name="b_pin" placeholder="Bank Address Pincode">-->
+              <!--</div>-->
+
+              <!--<div class="form-group">-->
+                <!--<input type="text" class="form-control" id="b_type" name="b_type" placeholder="Bank Account Type">-->
+              <!--</div>-->
+
+              <!--<div class="form-group">-->
+                <!--<input type="text" class="form-control" id="b_ifsc_code" name="b_ifsc_code" placeholder="Branch IFSC Code">-->
+              <!--</div>-->
+
+              <!--<hr>-->
+
+              <!--<h4 class="mrg_btm r_h4">Documents Uploads</h4>-->
+
+              <!--<div class="form-group"><p class="mrg_btm2">Upload scanned copy of your Cancelled Cheque</p><input type="file" class="upld" id="cancelled_cheque" name="cancelled_cheque"><div class="clearfix"></div></div>-->
+
+              <!--<div class="form-group"><p class="mrg_btm2">Upload scanned copy of your PAN Card</p><input type="file" class="upld" id="pan_card" name="pan_card"><div class="clearfix"></div></div>-->
+
+              <!--<div class="form-group"><p class="mrg_btm2">Upload scanned copy of your Address Proof (Voter ID, Aadhar Card, Driving License)</p><input type="file" class="upld" id="address_proof" name="address_proof"><div class="clearfix"></div></div>-->
+              <!--<a href="/doctor/skip/set_up_process"><div class="btn btn-info">skip</div></a>-->
+              <!--&lt;!&ndash;<a href="/opm/doctor/skip/bank_details_setup"><div class="btn btn-info">Skip</div></a>&ndash;&gt;-->
+              <!--<button class="btn btn-primary" name="signup" id="bsubmit" value="Sign up">Submit</button>-->
+
+            <!--</form>-->
+
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="lmodal" style="display: none">-->
+        <!--<div class="lcenter">-->
+          <!--<img alt="loader" src="/loader/loader.svg"/>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</section>-->
+  <!--</section>-->
+<!--</div>-->
+
+
+<div class="contain" style="padding-bottom: 1%;">
+  <div fxLayout="column" style="max-width: 104%">
+    <mat-card align="center">
+      <form name="example-form" (ngSubmit)="onSubmit()" id="bankdetails" novalidate #f="ngForm"
+            enctype="multipart/form-data">
+        <h4 class="mrg_btm r_h4">Please fill in your Bank Account details</h4>
+
+        <mat-form-field class="example-full-width">
+          <input matInput id="bank_name" name="bank_name" placeholder="Bank Name" [(ngModel)]="bank_details.bank_name" #bank_name="ngModel" required>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Bank Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field><br>
+
+        <mat-form-field class="example-full-width">
+          <input matInput id="ac_no" name="ac_no" placeholder="Bank Account Number" type="number" [(ngModel)]="bank_details.ac_number" #ac_number="ngModel" required style="
+                                                     background-color: #fff;
+                                                     border: none;box-shadow: none;
+                                                     -webkit-transition: none;
+                                                     transition: none;">
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Bank Account Number is <strong>required</strong>
+          </mat-error>
+        </mat-form-field><br>
+
+
+
+        <!--<mat-form-field class="example-full-width">-->
+          <!--<input matInput id="re_ac_no" name="re_ac_no" placeholder="Re-enter Bank Account Number" type="number" required style="-->
+                                                     <!--background-color: #fff;-->
+                                                     <!--border: none;box-shadow: none;-->
+                                                     <!-- -webkit-transition: none;-->
+                                                     <!--transition: none;">-->
+          <!--<mat-error *ngIf="emailFormControl.hasError('required')">-->
+            <!--Re-enter Bank Account Number is <strong>required</strong>-->
+          <!--</mat-error>-->
+        <!--</mat-form-field><br>-->
+
+
+        <mat-form-field class="example-full-width">
+          <input matInput id="ac_hname" name="ac_hname" [(ngModel)]="bank_details.ac_hname" #ac_hname="ngModel" placeholder="Account Holder Name" required>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Account Holder Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field><br>
+
+        <mat-form-field class="example-full-width">
+          <input matInput  name="aadhaar_card_number" [(ngModel)]="bank_details.aadhaar_card_number" #aadhaar_card_number="ngModel" placeholder="Aadhaar Card Number" required>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Aadaar Card Number is <strong>required</strong>
+          </mat-error>
+        </mat-form-field><br>
+
+        <mat-form-field class="example-full-width">
+          <input matInput  name="pan_card_number" [(ngModel)]="bank_details.pan_card_number" #pan_card_number="ngModel" placeholder="PAN Card Number" required>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            PAN Card Number is <strong>required</strong>
+          </mat-error>
+
+        </mat-form-field><br>
+
+        <mat-form-field class="example-full-width">
+          <textarea matInput id="b_ad1" name="b_ad1" [(ngModel)]="bank_details.b_ad1" #b_ad1="ngModel" placeholder="Bank Address Line 1" required></textarea>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+           Bank Address is <strong>required</strong>
+          </mat-error>
+        </mat-form-field><br>
+
+
+        <mat-form-field class="example-full-width">
+          <textarea matInput id="b_ad2" name="b_ad2" [(ngModel)]="bank_details.b_ad2" #b_ad2="ngModel" placeholder="Bank Address Line 2"></textarea>
+        </mat-form-field><br>
+
+        <mat-form-field class="example-full-width">
+          <textarea matInput id="b_ad3" name="b_ad3" [(ngModel)]="bank_details.b_ad3" #b_ad3="ngModel" placeholder="Bank Address Line 3"></textarea>
+        </mat-form-field><br>
+
+        <mat-form-field class="example-full-width">
+          <mat-select placeholder="select country" (selectionChange)="onSelect(country.value)" name="country" [(ngModel)]="bank_details.country" #country>
+            <mat-option *ngFor="let country of all_countries" [value]="country.country_id">{{country.country_name}}</mat-option>
+          </mat-select>
+        </mat-form-field><br>
+
+        <mat-form-field class="example-full-width">
+          <mat-select placeholder="select state"  (selectionChange)="onSelectstate(state.value)" name="state"
+                      [(ngModel)]="bank_details.state" #state>
+            <mat-option value="select state">select state</mat-option>
+            <mat-option *ngFor="let state of all_states" [value]="state.state_id">{{state.state_name}}</mat-option >
+          </mat-select>
+        </mat-form-field><br>
+
+        <mat-form-field class="example-full-width">
+          <mat-select placeholder="select city" (selectionChange)="onSelectcity(city.value)" name="city" #city>
+            <mat-option value="select city">select city</mat-option>
+            <mat-option *ngFor="let city of all_cities" [value]="city.city_id">{{city.city_name}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput id="b_pin" name="b_pin" [(ngModel)]="bank_details.b_pin" #b_pin="ngModel" placeholder="Bank Address Pincode" type="number" required style="
+                                                     background-color: #fff;
+                                                     border: none;box-shadow: none;
+                                                     -webkit-transition: none;
+                                                     transition: none;">
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+           Bank Address Pin Code is <strong>required</strong>
+          </mat-error>
+        </mat-form-field><br>
+
+
+        <mat-form-field class="example-full-width">
+          <input matInput id="b_type" name="b_type" [(ngModel)]="bank_details.b_type" #b_type="ngModel" placeholder="Bank Account Type" required>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+           Bank Account Type is <strong>required</strong>
+          </mat-error>
+        </mat-form-field><br>
+
+        <mat-form-field class="example-full-width">
+          <input matInput id="b_ifsc_code" [(ngModel)]="bank_details.b_ifsc_code" #b_ifsc_code="ngModel" name="b_ifsc_code" placeholder="Branch IFSC Code" required>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+           Branch IFSC Code is <strong>required</strong>
+          </mat-error>
+        </mat-form-field><br>
+        <!--<h4 class="mrg_btm r_h4" style="text-align: center">Documents Uploads</h4>-->
+        <!--<p class="mrg_btm2" style="text-align: left;">Upload scanned copy of your Cancelled Cheque</p>-->
+        <!--<input type="file" class="inputFile" id="cancelled_cheque" name="cancelled_cheque" (change)="selectFile($event)" style="float:left;">-->
+
+        <!--<input type="hidden" value="{{uploadedfile}}" name="image" [(ngModel)]="model.image" #image="ngModel">-->
+
+        <!--<p class="mrg_btm2" style="text-align: left;">Upload scanned copy of your PAN Card</p>-->
+        <!--<input type="file" class="inputFile" (change)="selectFile($event)" id="pan_card" name="pan_card" style="float:left;">-->
+
+        <!--<input type="hidden" value="{{uploadedfile}}" name="image" [(ngModel)]="model.image" #image="ngModel">-->
+
+        <!--<p class="mrg_btm2" style="text-align: left;">Upload scanned copy of your Address Proof (Voter ID, Aadhar Card, Driving License)</p>-->
+        <!--<input type="file" class="inputFile" (change)="selectFile($event)" id="address_proof" name="address_proof" style="float:left;">-->
+
+        <!--<input type="hidden" value="{{uploadedfile}}" name="image" [(ngModel)]="model.image" #image="ngModel">-->
+
+
+        <!--<div class="form-group"><p class="mrg_btm2">Upload scanned copy of your Cancelled Cheque</p><input type="file" class="upld" id="cancelled_cheque" name="cancelled_cheque"><div class="clearfix"></div></div>-->
+
+        <!--<div class="form-group"><p class="mrg_btm2">Upload scanned copy of your PAN Card</p><input type="file" class="upld" id="pan_card" name="pan_card"><div class="clearfix"></div></div>-->
+
+        <!--<div class="form-group"><p class="mrg_btm2">Upload scanned copy of your Address Proof (Voter ID, Aadhar Card, Driving License)</p><input type="file" class="upld" id="address_proof" name="address_proof"><div class="clearfix"></div></div>-->
+
+
+        <a [routerLink]="['/dashboard']" style="text-decoration: none; padding-right: 1%;">
+          <!--<div class="btn btn-info" id="sk">skip</div>-->
+          <button mat-raised-button color="primary" type="button" id="sk">Skip</button>
+        </a>
+
+        <button mat-raised-button color="primary" type="submit"  name="signup" value="Sign up" id="su">Submit</button>
+      </form>
+    </mat-card>
+  </div>
+</div>

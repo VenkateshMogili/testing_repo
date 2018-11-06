@@ -1,0 +1,23 @@
+@media (max-width: 767px) {
+  .text_left_m {
+    text-align: left !important;
+    margin-top: 0px;
+  }
+  .box{
+    padding: 10px;
+  }
+  hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 0;
+    border-top: 1px solid #eee;
+  }
+}
+@media (max-width:600px){
+  td,th{
+    font-size:12px;
+  }
+  td b{
+    font-size:12px!important;
+  }
+}

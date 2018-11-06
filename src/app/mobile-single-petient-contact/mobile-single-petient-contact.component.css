@@ -1,0 +1,15 @@
+.list-about-profile mat-list-item{
+  height:35px !important;
+  border-bottom: 1px dotted #ccc;
+  font-size:14px;
+}
+.list-about{
+  padding:10px;
+}
+.list-about-profile span{
+  color: #0a97b9;
+  padding-left:15px;
+}
+.example-form{
+  width: 100%;
+}

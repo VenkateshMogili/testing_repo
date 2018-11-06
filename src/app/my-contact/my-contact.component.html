@@ -1,0 +1,24 @@
+<div class="content-wrapper">
+  <section class="clr-back">
+    <h2 class="mrg_btm2" style="text-align: center;">My Contact Information</h2>
+
+    <div fxLayout="row" fxLayoutAlign="end center">
+    </div>
+    <div fxLayout="column">
+
+      <mat-list  class="list-about">
+        <mat-list-item style="height: auto!important;"><div fxFlex="40"><b>Address:</b></div><div fxFlex="60" class="pull-right"><span>{{patients[0]['paddress']}} {{patients[0]['street'] }}</span></div> </mat-list-item>
+        <mat-list-item><div fxFlex="40"><b>Country:</b></div><div fxFlex="60" class="pull-right"><span> {{patients[0]['country']}}</span></div> </mat-list-item>
+        <mat-list-item><div fxFlex="40"><b>State:</b></div><div fxFlex="60" class="pull-right"><span>{{patients[0]['state']}}</span></div> </mat-list-item>
+
+        <mat-list-item><div fxFlex="40"><b>City:</b></div><div fxFlex="60" class="pull-right"><span>{{patients[0]['city']}} </span></div> </mat-list-item>
+        <mat-list-item><div fxFlex="40"><b>Zip Code:</b></div><div fxFlex="60" class="pull-right"><span>{{patients[0]['zip']}} </span></div> </mat-list-item>
+        <mat-list-item><div fxFlex="40"><b>Mobile Number:</b></div><div fxFlex="60" class="pull-right"><span>{{patients[0]['mobile_number']}}</span></div> </mat-list-item>
+        <mat-list-item><div fxFlex="40"><b>Email Id:</b></div><div fxFlex="60" class="pull-right"><span> {{patients[0]['email']}} </span></div> </mat-list-item>
+
+      </mat-list>
+
+
+    </div>
+  </section>
+</div>

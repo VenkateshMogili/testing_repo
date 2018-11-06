@@ -1,0 +1,275 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.row {
+  display: block;
+  clear: both;
+}
+
+@media (max-width:400px) {
+
+  .subscriber {
+    width: 292px !important;
+    height: 450px !important;
+  }
+
+  .publisher {
+    width: 150px !important;
+    height: 170px !important;
+    right: 245px !important;
+    bottom: 0;
+  }
+
+  .video-section {
+    margin: 0px !important; ;
+    width: 536px !important;
+    height: 450px !important;
+    position: relative;
+  }
+
+}
+
+.video-section {
+  margin: 10px;
+  width: 1050px;
+  height: 450px;
+  position: relative;
+}
+
+.subscriber {
+  width: 500px;
+  height: 450px;
+  display: inline-block;
+  background: #c8cbd1;
+  border: 1px solid;
+  box-shadow: 5px 5px 5px #888888;
+}
+
+.subscriber_loading_text {
+  color: #888888;
+  font-size: large;
+  position: absolute;
+  top: 200px;
+  left: 215px;
+  width: 100%;
+}
+
+.publisher {
+  width: 250px;
+  height: 200px;
+  display: inline-block;
+  background: #b6a6fc;
+  position: absolute;
+  right: 270px;
+  bottom: 0
+}
+
+.subscriber_screenshot_section {
+  width: 250px;
+  height: 220px;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  text-align: center
+}
+
+.buddy_screenshot {
+  border: 2px solid cornflowerblue;
+}
+
+.subscriber_screenshot {
+  width: 250px;
+  height: 200px;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  box-shadow: 4px 4px 4px #53575e;
+}
+
+.btn-group {
+  display: block !important;
+  clear: both !important;
+  margin: 5px !important;
+}
+
+.btn-group button {
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+  margin-bottom: 10px;
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+.remove-btn {
+  height: 40px;
+  width: 40px;
+}
+
+.sub_head{
+  margin-left: 14px;
+  margin-top: 5px;
+  margin-right: 14px;
+  text-align: center;
+}
+.details_b{
+  color:white;
+  background-color:#3c8dbc;
+}
+.details_b span{
+  color:white!important;
+}
+.details_bb span{
+  color:white!important;
+}
+@media (max-width:600px){
+  .content span{
+    font-size:12px;
+  }
+  .details_bb span{
+    color:white!important;
+  }
+  .details_b span{
+    color:white!important;
+    font-size:12px!important;
+    line-height:10px!important;
+  }
+  .details_b{
+    height:34px!important;
+    line-height:10px!important;
+  }
+}
+
+.mat-menu-panel1{
+  opacity:1;
+  transform:scale(1,1);
+  position:absolute!important;
+  width:280px;
+  top:17px;
+  left:-110px;
+}
+.mat-menu-panel2{
+  opacity:1;
+  transform:scale(1,1);
+  position:absolute!important;
+  width:280px;
+  top:17px;
+  left:-110px;
+}
+.mat-menu-panel3{
+  opacity:1;
+  transform:scale(1,1);
+  position:absolute!important;
+  width:280px;
+  top:17px;
+  left:-145px;
+}
+
+@media (max-width:600px){
+  .mat-menu-panel1{
+    opacity:1;
+    transform:scale(1,1);
+    position:absolute!important;
+    width:280px;
+    top:17px;
+    left:-110px;
+  }
+  .mat-menu-panel2{
+    opacity:1;
+    transform:scale(1,1);
+    position:absolute!important;
+    width:280px;
+    top:17px;
+    left:-100px;
+  }
+  .mat-menu-panel3{
+    opacity:1;
+    transform:scale(1,1);
+    position:absolute!important;
+    width:280px;
+    top:17px;
+    left:-175px;
+  }
+}
+
+@media (max-width:320px){
+  .mat-menu-panel1{
+    opacity:1;
+    transform:scale(1,1);
+    position:absolute!important;
+    width:280px;
+    top:17px;
+    left:-70px;
+  }
+  .mat-menu-panel2{
+    opacity:1;
+    transform:scale(1,1);
+    position:absolute!important;
+    width:280px;
+    top:17px;
+    left:-110px;
+  }
+  .mat-menu-panel3{
+    opacity:1;
+    transform:scale(1,1);
+    position:absolute!important;
+    width:280px;
+    top:17px;
+    left:-195px;
+  }
+}
+@media (max-width:375px){
+  .mat-menu-panel1{
+    opacity:1;
+    transform:scale(1,1);
+    position:absolute!important;
+    width:280px;
+    top:17px;
+    left:-70px;
+  }
+  .mat-menu-panel2{
+    opacity:1;
+    transform:scale(1,1);
+    position:absolute!important;
+    width:280px;
+    top:17px;
+    left:-110px;
+  }
+  .mat-menu-panel3{
+    opacity:1;
+    transform:scale(1,1);
+    position:absolute!important;
+    width:280px;
+    top:17px;
+    left:-175px;
+  }
+}
+.box{
+  width:94%!important;
+
+}
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+}
+
+.loads{
+  color: #ff42e6;
+  font-size:2em;
+  -webkit-animation:loadss 10s 1;
+  animation:loadss 10s 1;
+}
+@keyframes loadss {
+  50%{-webkit-transform:rotate(1440deg);}
+}

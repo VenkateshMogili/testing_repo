@@ -1,0 +1,35 @@
+<div [formGroup]="medForm">
+  <div fxFlex="column" align="center">
+
+
+      <p class="mrg_btm2">Add Degree(optional)</p>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Name of degree" class="type-input"
+               formControlName="degree1" required>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          Degree Name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field><br>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Year" class="type-input"
+               formControlName="pass_year1" required type="number" style="
+                                                     background-color: #ffffff;
+                                                     border: none;box-shadow: none;
+                                                     -webkit-transition: none;
+                                                     transition: none;">
+        <mat-error *ngIf="emailFormControl.hasError('required')" >
+          Passing Year is <strong>required</strong>
+        </mat-error>
+      </mat-form-field><br>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Institution" class="type-input"
+               formControlName="college1" required>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          Institution Name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+  </div>
+</div>

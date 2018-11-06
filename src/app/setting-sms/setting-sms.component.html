@@ -1,0 +1,52 @@
+<!--<div fxLayout="row" fxLayoutAlign="center">-->
+  <!--<h3 class="personal">SMS notification</h3>-->
+<!--</div>-->
+
+<!--<div fxLayout="row" fxLayout.xs="column" class="marg-top">-->
+  <!--<div fxFlex="20" fxShow.xs="false"></div>-->
+  <!--<div class="pers">-->
+    <!--<div fxLayout="row" fxLayout.xs="column">-->
+      <!--<div fxFlex="100" fxFlex.xs="100" >-->
+
+        <!--Do you want to get SMS notifications? :-->
+
+      <!--</div>-->
+
+
+    <!--</div>-->
+    <!--<div fxFlex="60" fxFlex.xs="100">-->
+
+
+      <!--<mat-radio-group>-->
+        <!--<mat-radio-button class="example-margin" value="active" name="sms_notification"-->
+                          <!--[(ngModel)]="model.sms_notification" #sms_notification="ngModel" data-bv-field="">Yes</mat-radio-button>-->
+        <!--<mat-radio-button class="example-margin" value="deactive" name="sms_notification"-->
+                          <!--[(ngModel)]="model.sms_notification" #sms_notification="ngModel" data-bv-field="">No</mat-radio-button>-->
+      <!--</mat-radio-group>-->
+
+    <!--</div>-->
+    <!--<div fxLayout="row" style="padding-top: 5%;">-->
+      <!--<button mat-raised-button class="btn-save" (click)="onsubbmit()">Submit</button></div>-->
+  <!--</div>-->
+  <!--<div fxFlex="20" fxShow.xs="false"></div>-->
+<!--</div>-->
+
+
+
+<h3 class="personal"><strong>SMS Notification</strong></h3>
+
+<div fxLayout="row">
+
+  <section class="example-section">
+    <label class="example-margin">Do you want to get SMS notifications?</label>
+    <mat-radio-group [(ngModel)]="model.sms_notification" #sms_notification="ngModel" value="{{model.sms_notification}}">
+      <mat-radio-button class="example-margin" value="active" name="sms_notification"
+                         data-bv-field="">Yes</mat-radio-button>
+      <mat-radio-button class="example-margin" value="deactive" name="sms_notification"
+                          data-bv-field="">No</mat-radio-button>
+    </mat-radio-group>
+  </section>
+</div>
+<br>
+<div fxLayout="row">
+  <button mat-raised-button class="btn-save" (click)="onsubbmit()">Submit</button></div>

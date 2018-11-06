@@ -1,0 +1,46 @@
+<div id="payment_history" class="tabcontent" ng-controller="myCtrls">
+<section class="content">
+  <div class="box">
+
+  <div *ngIf="prescription_list.length>0">
+    <table>
+      <thead>
+      <tr>
+        <th ngStyle.xs="width:10%"> Appointment ID</th>
+        <!-- <th width="20%">Patient Name</th> -->
+        <th ngStyle.xs="width:10%">Consultation type</th>
+        <th ngStyle.xs="width:5%">Amount</th>
+        <!--  <th width="10%">mobile</th> -->
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <ng-template ngFor let-item1 [ngForOf]="Range(prescription_list.length)" let-currentIndex="index">
+
+
+        <tr *ngIf="prescription_list[currentIndex]['payment_flag']=='done'">
+          <td>{{prescription_list[currentIndex]['booking_id']}}</td>
+
+          <td class="mailbox-subject"><b>{{prescription_list[currentIndex]['booking_type']}} consult</b>
+          </td>
+          <td>{{prescription_list[currentIndex]['fee']}}</td>
+
+          <td>
+            <button mat-raised-button class="details_b">show invoice</button>
+          </td>
+
+        </tr>
+
+      </ng-template>
+
+      </tbody>
+      <!--<modal visible="showModal">
+        Any additional data / buttons
+      </modal>-->
+
+    </table>
+  </div>
+
+</div>
+</section>
+</div>

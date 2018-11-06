@@ -1,0 +1,103 @@
+<!-- Content Wrapper. Contains page content -->
+<div>
+  <!-- Content Header (Page header) -->
+  <section>
+    <h1 class="sub_head" style="text-align: center;">
+      All Questions
+    </h1>
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+
+    <div class="box clearfix">
+
+      <div fxShow.xs="true" fxShow="false">
+        <div *ngFor="let item of quesans_arr; let j=index">
+          <div fxLayout="row" fxFlex="100">
+            <div fxLayout="column" fxFlex="10">
+              <span><strong>{{j+1}}) </strong></span>
+            </div>
+
+            <div fxLayout="column" fxFlex="90" fxLayoutGap.xs="10px">
+              <div fxLayout="row" style="padding: 0px 0px 12px 0px;">
+                <div fxLayout="column" fxFlex="25"> <span>Patient Name:</span></div>
+                <div fxLayout="column" fxFlex="65"> <b>{{item['pat_name']}}</b></div>
+              </div>
+              <div fxLayout="row" style="padding: 12px 0px 0px 0px;">
+                <div fxLayout="column" fxFlex="25"><span>Question:</span></div>
+                <div fxLayout="column" fxFlex="65"><b>{{item['question']}}</b></div>
+              </div>
+              <div fxLayout="row" style="padding: 12px 0px 0px 0px;">
+                <div fxLayout="column" fxFlex="25"><span>Date:</span></div>
+                <div fxLayout="column" fxFlex="65"><b>{{item['asked_on'] | amDateFormat:'DD-MM-YYYY'}}</b></div>
+              </div>
+              <div fxLayout="row" fxFlex="100" fxLayoutAlign="center center" *ngIf="item['got_answer_flag']==='true'">
+                  <button (click)="function(item['q_id'])" mat-raised-button class="details_b">View Answer</button>
+              </div>
+              <div fxLayout="row" fxFlex="100" fxLayoutAlign="center center" *ngIf="item['got_answer_flag']==='false'">
+                <a [routerLink]="['/dashboard/question/reply/'+item['q_id']]" class="la">Click here to reply</a>
+              </div>
+            </div>
+
+          </div>
+          <mat-divider></mat-divider>
+
+        </div>
+      </div>
+      <!--<td *ngIf="quesans_arr.length>0" class="table-responsive">-->
+      <div class="table-responsive" fxShow.xs="false">
+        <table ngStyle.xs="font-size:13px">
+
+          <thead>
+          <tr>
+
+            <th>Patient Name</th>
+            <th>Question</th>
+            <th>Date</th>
+            <th>Edit</th>
+
+          </tr>
+
+          </thead>
+          <tbody>
+
+          <tr *ngFor="let $item of quesans_arr | paginate: { itemsPerPage: 10, currentPage: p }">
+
+            <td>{{$item['pat_name']}}</td>
+            <td style="font-size: 13px;">{{$item['question']}}</td>
+
+            <td>{{ $item['asked_on'] | amDateFormat:'DD-MM-YYYY'}}</td>
+            <td *ngIf="$item['got_answer_flag']==='true'">
+              <button (click)="function($item['q_id'])"  mat-raised-button color="primary" ngStyle.xs = "height:24px;min-width:16px;" style="background:rgb(51, 122, 183);"><h6 ngStyle.xs = "font-size: 9px;" style="margin-left: -5px;color: white;">To
+                view the<br> answer</h6></button>
+            </td>
+            <td *ngIf="$item['got_answer_flag']==='false'"><a
+              [routerLink]="['/dashboard/question/reply/'+$item['q_id']]"> Click here to reply</a></td>
+
+          </tr>
+          <!--<tr>
+            <th width="10%">Answers</th>
+          </tr>
+          <tr>
+            <td>
+              <div *ngIf="ans_arr">
+                <div *ngFor="let data of ans_arr">
+                  {{data.answer}}
+                </div>
+
+              </div>
+            </td>
+          </tr>-->
+
+          </tbody>
+
+        </table>
+      </div>
+      <div style="float: right">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
+      <br/>
+    </div>
+  </section>
+</div><!-- /.content-wrapper -->

@@ -1,0 +1,460 @@
+@font-face {
+  font-family: 'ubuntu_condensedregular';
+  src: url('ubuntu-c-webfont.eot');
+  src: url('ubuntu-c-webfont.eot?#iefix') format('embedded-opentype'),
+  url('ubuntu-c-webfont.woff2') format('woff2'),
+  url('ubuntu-c-webfont.woff') format('woff'),
+  url('ubuntu-c-webfont.ttf') format('truetype'),
+  url('ubuntu-c-webfont.svg#ubuntu_condensedregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+.container {
+  max-width: 1100px;
+}
+
+img {
+  width: 100%;
+}
+
+.line1 {
+  border-right: 1px solid #dbdbdb;
+}
+
+.gap1 {
+  margin-bottom: 20px !important;
+}
+
+.navbar-header {
+  float: none;
+}
+
+.navbar-brand {
+  padding: 0;
+}
+
+.navbar-default {
+  margin-bottom: 0;
+  border: none;
+  margin-bottom: 10px;
+
+}
+
+.navbar-default {
+  background: #f1f1f1;
+}
+
+.tp_rt {
+  float: right;
+}
+
+.login, .signup, .hire, .nine {
+  float: left;
+  font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.login {
+  background: url(/newimages/login.png) no-repeat;
+  border: none;
+  padding-left: 25px;
+  color: #aeaeae;
+  margin: 26px 0;
+}
+
+.signup {
+  background: url(/newimages/signup.jpg) no-repeat;
+  border: none;
+  height: 30px;
+  width: 105px;
+  color: #fff;
+  padding-right: 20px;
+  margin: 21px 20px;
+}
+
+.hire {
+  background: url(/newimages/hire.jpg) no-repeat;
+  border: none;
+  height: 30px;
+  width: 157px;
+  margin: 21px 20px 21px 0;
+}
+
+.nine {
+  margin: 25px 0;
+}
+
+.insight {
+  margin-top: 15px;
+}
+
+.logo_name {
+  color: #fff;
+  font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px 0 15px;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #6a6a6a;
+  font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+  font-size: 14px;
+  padding: 20px;
+  -webkit-transition: all 0.6s ease-in-out 0s; /* For Safari 3.1 to 6.0 */
+  transition: width all 0.6s ease-in-out 0s;
+  border-bottom: 1px solid #f8f8f8;
+
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > li > a:hover {
+  color: #6a6a6a;
+  background-color: #e8e8e8;
+  border-bottom: 1px solid #0E80F2;
+
+}
+
+.caret {
+  margin-left: 6px;
+}
+
+.dm {
+  float: left;
+}
+
+.dm li a {
+  color: #6a6a6a;
+  font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+  font-size: 14px;
+  padding: 10px 20px;
+  float: left;
+}
+
+.dropdown-menu {
+  width: 230px;
+}
+
+.vid2 h1 {
+  background-color: #cc1318;
+  color: #fff;
+  font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 10px 20px;
+  margin: 0;
+}
+
+.vid2 {
+  position: relative;
+}
+
+.mrg_tp {
+  margin-top: 10px;
+}
+
+.col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9 {
+  padding: 0 10px;
+}
+
+.row {
+  margin: 0 -10px;
+}
+
+.back1 {
+  background-color: #f1f1f1;
+  padding: 30px 0;
+}
+
+.back2 {
+  background-color: #fff;
+
+  padding: 30px 0;
+}
+
+.hdg1 {
+  font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 0;
+  margin: 0 0 10px 0;
+  color: #6b6b6b;
+  position: relative;
+  overflow: hidden;
+}
+
+.line {
+
+  border-bottom: 3px solid #d7d7d7;
+  border-top: 3px solid #d7d7d7;
+  height: 7px;
+  position: absolute;
+  width: 100%;
+  position: absolute;
+  margin: 10px 20px;
+}
+
+.hdg2 {
+  font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px 20px;
+  background: #f1f1f1;
+  color: #323232;
+  margin: 0 0 10px 0;
+}
+
+.box1 {
+  padding: 10px 0;
+  color: #323232;
+  background-color: #fff;
+  font-size: 19px;
+  font-family: 'ubuntu_condensedregular';
+}
+
+.box1 span {
+  font-size: 16px;
+  color: #6b6b6b;
+}
+
+.box2 {
+  padding: 10px;
+  color: #434343;
+  background-color: #f1f1f1;
+  font-size: 12px;
+  font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.butn1 {
+  text-align: center;
+}
+
+.butn1 input {
+  padding: 8px 16px;
+  border: none;
+
+  background-color: #cc1318;
+  color: #fff;
+  font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  -webkit-box-shadow: 4px 4px 0 0 #3c3c3c; /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow: 4px 4px 0 0 #3c3c3c; /* Firefox 3.5 - 3.6 */
+  box-shadow: 4px 4px 0 0 #3c3c3c; /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+  -webkit-transition: all 0.6s ease-in-out 0s; /* For Safari 3.1 to 6.0 */
+  transition: width all 0.6s ease-in-out 0s;
+}
+
+.box3 {
+  color: #323232;
+  font-size: 18px;
+  font-family: 'ubuntu_condensedregular';
+  border-top: 1px solid #dbdbdb;
+  float: left;
+  margin-bottom: 10px;
+}
+
+.box_big3 {
+
+}
+
+.box_big4 {
+  padding: 0 10px;
+  background-color: #f1f1f1;
+}
+
+.ftr {
+  background: url(../images/footer.jpg);
+  padding-bottom: 20px;
+}
+
+.logo2 {
+  text-align: center;
+  padding: 30px 0 20px;
+}
+
+.logo2 img {
+  width: 73px;
+  height: 73px;
+}
+
+.social_links {
+  text-align: center;
+  margin: 0 auto;
+  width: 312px;
+  padding: 0;
+  list-style-type: none;
+}
+
+.sl1 {
+  background: url(../images/social_links.png);
+  width: 40px;
+  height: 33px;
+  margin: 0 6px;
+  float: left;
+}
+
+.sl2 {
+  background: url(../images/social_links.png) 19% 0;
+  width: 40px;
+  height: 33px;
+  margin: 0 6px;
+  float: left;
+}
+
+.sl3 {
+  background: url(../images/social_links.png) 40% 0;
+  width: 40px;
+  height: 33px;
+  margin: 0 6px;
+  float: left;
+}
+
+.sl4 {
+  background: url(../images/social_links.png) 60% 0;
+  width: 40px;
+  height: 33px;
+  margin: 0 6px;
+  float: left;
+}
+
+.sl5 {
+  background: url(../images/social_links.png) 79% 0;
+  width: 40px;
+  height: 33px;
+  margin: 0 6px;
+  float: left;
+}
+
+.sl6 {
+  background: url(../images/social_links.png) 100% 0;
+  width: 40px;
+  height: 33px;
+  margin: 0 6px;
+  float: left;
+}
+
+.links_ftr {
+  text-align: center;
+  font-size: 12px;
+  font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+  font-weight: 400;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.links_ftr a {
+  color: #fff;
+}
+
+.butn1 input:hover {
+  background-color: #ccc;
+  color: #3c3c3c;
+  -webkit-box-shadow: 3px 3px 0 0 #3c3c3c; /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow: 3px 3px 0 0 #3c3c3c; /* Firefox 3.5 - 3.6 */
+  box-shadow: 3px 3px 0 0 #3c3c3c; /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+
+.navbar-header {
+  background-color: #fff;
+  border-top: 2px solid #cc1318;
+  padding-bottom: 15px;
+}
+
+.navbar-brand {
+  float: none;
+
+}
+
+.navbar-brand > img {
+  display: inherit;
+  width: auto;
+  margin-right: 20px;
+}
+
+.navbar-default .navbar-brand, .navbar-default .navbar-brand:hover {
+  color: #fff !important;
+}
+
+.container-fluid > .navbar-collapse, .container-fluid > .navbar-header, .container > .navbar-collapse, .container > .navbar-header {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.search {
+  float: right;
+  margin: 15px;
+  width: 200px;
+  border: 1px solid #aeaeae;
+  padding: 4px 14px;
+  border-radius: 6px;
+  color: #b6b5b5;
+  background: #fff url(/newimages/search.png) 94% 50% no-repeat;
+  -webkit-transition: all 0.3s ease-in-out 0s; /* For Safari 3.1 to 6.0 */
+  transition: width all 0.3s ease-in-out 0s;
+}
+
+.si {
+
+@media screen and (max-width: 1009px) {
+
+  .navbar-header {
+    text-align: left;
+  }
+
+  .logo_name {
+    text-align: center;
+  }
+
+  .container-fluid > .navbar-collapse, .container-fluid > .navbar-header, .container > .navbar-collapse, .container > .navbar-header {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .navbar-toggle {
+    margin-bottom: 13px;
+    margin-top: 14px;
+  }
+
+  .navbar-nav {
+    margin: 0;
+  }
+
+  .search {
+    width: 96%;
+    padding: 8px 20px;
+    background-position: 98% 50%;
+    float: left;
+  }
+
+}
+
+@media screen and (max-width: 991px) {
+
+  .vid2 {
+    margin: 20px 0 15px;
+  }
+
+  .box3 {
+    width: 98%;
+  }
+
+  .box3 p {
+    margin: 10px 0 0 0;
+  }
+
+}
+
+@media screen and (max-width: 708px) {
+  .logo_name {
+    font-size: 14px;
+  }
+
+  @media screen and (max-width: 550px) {
+    .logo_name {
+      font-size: 0;
+    }

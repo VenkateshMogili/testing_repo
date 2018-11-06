@@ -1,0 +1,29 @@
+.top-header1{
+  background-color:#0C58A5;
+
+}
+.head-login{
+  font-size: 23px;
+  font-weight: 400;
+  color: #000;
+  margin-bottom: 14px;
+}
+#head{
+  font-size: 23px;
+  font-weight: 400;
+  color: #000;
+  padding-left: 200px;
+  margin-bottom: 14px;
+}
+.type-input{
+  background:none;
+  box-shadow: none;
+  border:none;
+}
+.example-full-width{
+  display: block;
+  position: relative;
+  flex: auto;
+  min-width: 0;
+  width: 100%;
+}

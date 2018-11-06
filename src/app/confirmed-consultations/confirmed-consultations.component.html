@@ -1,0 +1,126 @@
+<!-- Content Wrapper. Contains page content -->
+<div>
+  <!-- Content Header (Page header) -->
+  <section>
+    <h1 class="sub_head">
+      Scheduled {{type}} Consultations
+    </h1>
+  </section>
+
+  <!-- Main content -->
+
+  <section class="content">
+    <div class="box">
+
+    <div fxLayout="column" fxFlex="100%" fxLayout.xs="column">
+
+      <div fxFlex="100" *ngIf="confirmed_consultations.length>0">
+        <table ngStyle.xs="font-size:10px">
+
+          <thead>
+          <tr>
+            <th>S.No.</th>
+            <!--<th width="10%">Patient ID</th>-->
+            <th>Patient Name</th>
+            <th>Consultation type</th>
+            <th>Date (dd-mm-yyyy)</th>
+            <th>Time</th>
+            <th>Fee</th>
+          </tr>
+          </thead>
+          <tbody>
+          <!-- <ng-template ngFor let-item [ngForOf]="Range(confirmed_consultations.length)" let-currentIndex="index">-->
+
+          <tr *ngFor="let $item of confirmed_consultations | paginate: { itemsPerPage: 10, currentPage: p }; let i=index">
+            <td>{{i+1}}</td>
+            <!--<td>{{$item['patient_id_c']}}</td>-->
+            <td>{{$item['patient_name']}}</td>
+            <td>{{$item['booking_type']}} consult</td>
+            <td>{{ $item['appoinment_date'] | amDateFormat: 'DD-MM-YYYY'}}</td>
+            <td>{{$item['start_time']}}</td>
+            <td>{{$item['fee']}}</td>
+          </tr>
+          <!--</ng-template>-->
+
+
+          </tbody>
+
+        </table>
+      </div>
+
+      <div fxFlex="100">
+        <div style="float: right" *ngIf="confirmed_consultations.length>0">
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+
+        <div *ngIf="confirmed_consultations.length<=0"> You don't have confirmed consultations </div>
+      </div>
+
+    </div>
+    </div>
+  </section>
+</div><!-- /.content-wrapper -->
+
+
+
+
+<!--&lt;!&ndash; Content Wrapper. Contains page content &ndash;&gt;-->
+<!--<div class="content-wrapper">-->
+<!--&lt;!&ndash; Content Header (Page header) &ndash;&gt;-->
+<!--<section class="content-header">-->
+<!--<h1>-->
+<!--Scheduled {{type}} Consultations-->
+<!--</h1>-->
+<!--</section>-->
+
+<!--&lt;!&ndash; Main content &ndash;&gt;-->
+<!--<section class="content">-->
+
+<!--<div class="box clearfix">-->
+
+<!--<div class="table-responsive" *ngIf="confirmed_consultations.length>0">-->
+<!--<table id="tableData2" class="table table-bordered table-striped" >-->
+
+<!--<thead>-->
+<!--<tr>-->
+<!--<th width="20%">S.No.</th>-->
+<!--&lt;!&ndash;<th width="10%">Patient ID</th>&ndash;&gt;-->
+<!--<th width="20%">Patient Name</th>-->
+<!--<th width="20%">Consultation type</th>-->
+<!--<th width="20%">Date (dd-mm-yyyy)</th>-->
+<!--<th width="10%">Time</th>-->
+<!--<th width="10%">Fee</th>-->
+<!--</tr>-->
+<!--</thead>-->
+<!--<tbody>-->
+<!--&lt;!&ndash; <ng-template ngFor let-item [ngForOf]="Range(confirmed_consultations.length)" let-currentIndex="index">&ndash;&gt;-->
+
+<!--<tr *ngFor="let $item of confirmed_consultations | paginate: { itemsPerPage: 10, currentPage: p }; let i=index">-->
+<!--<td>{{i+1}}</td>-->
+<!--&lt;!&ndash;<td>{{$item['patient_id_c']}}</td>&ndash;&gt;-->
+<!--<td class="mailbox-name"><b>{{$item['patient_name']}}</b></td>-->
+<!--<td class="mailbox-subject"><b>{{$item['booking_type']}} consult</b></td>-->
+<!--<td>{{ $item['appoinment_date'] | amDateFormat: 'DD-MM-YYYY'}}</td>-->
+<!--<td>{{$item['start_time']}}</td>-->
+<!--<td>{{$item['fee']}}</td>-->
+<!--</tr>-->
+<!--&lt;!&ndash;</ng-template>&ndash;&gt;-->
+
+
+<!--</tbody>-->
+
+<!--</table>-->
+<!--</div>-->
+
+
+<!--<div style="float: right" *ngIf="confirmed_consultations.length>0">-->
+<!--<pagination-controls (pageChange)="p = $event"></pagination-controls>-->
+<!--</div>-->
+
+<!--<div *ngIf="confirmed_consultations.length<=0"> You don't have confirmed consultations </div>-->
+
+<!--</div>-->
+<!--</section>-->
+<!--</div>&lt;!&ndash; /.content-wrapper &ndash;&gt;-->
+
+

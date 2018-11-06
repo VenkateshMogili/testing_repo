@@ -1,0 +1,48 @@
+<div class="content-wrapper" style="min-height: 382px;">
+
+  <!-- Main content -->
+  <section class="content">
+
+    <div class="hospital_pan">
+      <h3 class="font_h1 mrg_btm2">Your Patient adherence data at a glance</h3>
+      <!--<p class="mrg_btm2">Taking your medicines regularly ensures your health and well being.
+        Please do not forget to take them on time.</p>
+      <p class="mrg_btm2">Recording your medicine intake data through the reminder notifications helps your doctor manage your condition better.</p>-->
+      <ng-template ngFor let-item1 [ngForOf]="Range(list.length)" let-innerIndex="index" *ngIf="list.length>0">
+        <div>
+          <h2><strong>Medicine {{i+1}}: </strong></h2>
+          <!-- <div class="col-lg-12 col-md-12 col-sm-12">-->
+          <ul class="prescrip_ul">
+            <li><img src="https://storage.googleapis.com/web-assets/images/right_icon.png"> {{list[innerIndex]['drug_form']}}
+              {{list[innerIndex]['name']}}
+              {{list[innerIndex]['dose']}}{{list[innerIndex]['unit']}} {{list[innerIndex]['administer_route']}}
+              <span *ngIf="list[innerIndex]['time'] === 'AB'">After breakfast</span>
+              <span *ngIf="list[innerIndex]['time'] === 'BB'">Before breakfast</span>
+              <span *ngIf="list[innerIndex]['time'] === 'AL'">After lunch</span>
+              <span *ngIf="list[innerIndex]['time'] === 'BL'">Before lunch</span>
+              <span *ngIf="list[innerIndex]['time'] === 'AD'">After dinner</span>
+              <span *ngIf="list[innerIndex]['time'] === 'BD'">Before dinner</span>
+              {{list[innerIndex]['start_date_time'] | amDateFormat: 'DD-MM-YYYY'}}
+            </li>
+
+          </ul>
+
+        </div>
+      </ng-template>
+    </div>
+
+    <div *ngIf="v">
+      <div style="display: block">
+        <canvas baseChart
+                [datasets]="barChartData"
+                [labels]="barChartLabels"
+                [options]="barChartOptions"
+                [legend]="barChartLegend"
+                [chartType]="barChartType"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas>
+      </div>
+      <!-- <button (click)="randomize()">Update</button>-->
+    </div>
+  </section>
+</div>

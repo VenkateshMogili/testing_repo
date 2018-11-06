@@ -1,0 +1,34 @@
+@media (max-width:599px) {
+  .clr-back {
+    background: #fff;
+    padding: 10px 20px;
+  }
+}
+.border-part{
+  border-bottom:1px solid #ccc;
+}
+.blood{
+  font-weight:500;
+  margin-top:15px;
+}
+.bp-date mat-list-item{
+  font-size:14px;
+}
+@media (max-width:599px){
+  .mat-raised-button{
+    line-height: 32px;
+    padding: 0 12px;
+  }
+  .bp-date mat-list-item{
+    height:34px !important;
+  }
+
+
+
+}
+h2{
+  font-size: 140%;
+}
+span{
+  padding-left: 10%;
+}

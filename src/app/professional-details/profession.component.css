@@ -1,0 +1,37 @@
+.marg-top{
+  margin-top:20px;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 50%;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+
+}
+.type-input{
+  background:none;
+  box-shadow: none;
+  border:none;
+}
+
+@media (max-width: 599px){
+  .mat-card {
+    padding: 24px 16px;
+    margin-left:10px;
+    margin-right:10px;
+
+  }
+}
+.example-full-width{
+  width: 100%;
+}

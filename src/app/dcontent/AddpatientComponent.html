@@ -1,0 +1,154 @@
+<div>
+  <div>
+    <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+    <h4>Add Hospital Details</h4>
+  </div>
+  <div>
+    <form name="form" (ngSubmit)="add_hos()" id="loginform" novalidate #f="ngForm">
+      <div>
+        <!--<label>Name</label>-->
+        <!--<input type="text" id="clinic_name" name="clinic_name" [(ngModel)]="model.clinic_name"-->
+        <!--#clinic_name="ngModel" required>-->
+        <!--<div *ngIf="clinic_name.invalid && (clinic_name.dirty || clinic_name.touched)">-->
+        <!--<div *ngIf="clinic_name.errors.required">-->
+        <!--Name is required.-->
+        <!--</div>-->
+        <!--</div>-->
+
+        <!--<mat-form-field [(ngModel)]="model.clinic_name" #clinic_name="ngModel" style="width: 100%;">-->
+        <!--<input matInput placeholder="Name">-->
+        <!--<mat-error *ngIf="emailFormControl.hasError('required')">-->
+        <!--Name is <strong>required</strong>-->
+        <!--</mat-error>-->
+        <!--</mat-form-field>-->
+        <mat-form-field name="clinic_name" [(ngModel)]="model.clinic_name" #clinic_name="ngModel" required style="width: 100%;">
+          <input matInput placeholder="Name" id="clinic_name" name="hospital_city" required [(ngModel)]="model.clinic_name" #clinic_name="ngModel">
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+      </div>
+
+      <div>
+        <!--<label>Hospital City</label>-->
+        <!--<textarea name="hospital_city" required-->
+        <!--[(ngModel)]="model.hospital_city" #hospital_city="ngModel"></textarea>-->
+        <!--<div *ngIf="hospital_city.invalid && (hospital_city.dirty || hospital_city.touched)">-->
+        <!--<div *ngIf="hospital_city.errors.required">-->
+        <!--Hospital City is required.-->
+        <!--</div>-->
+        <!--</div>-->
+        <mat-form-field style="width: 100%;">
+          <input matInput placeholder="Hospital City" name="hospital_city" required [(ngModel)]="model.hospital_city" #hospital_city="ngModel">
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Hospital City is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <!--<label>Hospital city code </label>-->
+        <!--<textarea name=" hospital_city_c" required-->
+        <!--[(ngModel)]="model.hospital_city_c" #hospital_city_c="ngModel"></textarea>-->
+        <!--<div-->
+        <!--*ngIf=" hospital_city_c.invalid && ( hospital_city_c.dirty ||  hospital_city_c.touched)">-->
+        <!--<div *ngIf=" hospital_city_c.errors.required">-->
+        <!--Hospital City code is required.-->
+        <!--</div>-->
+        <!--</div>-->
+        <mat-form-field style="width: 100%;">
+          <input matInput placeholder="Hospital city code" name=" hospital_city_c" required [(ngModel)]="model.hospital_city_c" #hospital_city_c="ngModel">
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Hospital city code is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+
+      <div>
+        <!--<label>Clinic City</label>-->
+        <!--<textarea name="clinic_city" required [(ngModel)]="model.clinic_city"-->
+        <!--#clinic_city="ngModel"></textarea>-->
+        <!--<div *ngIf="clinic_city.invalid && (clinic_city.dirty || clinic_city.touched)"-->
+        <!--class="alert alert-danger">-->
+        <!--<div *ngIf="clinic_city.errors.required">-->
+        <!--Clinic City is required.-->
+        <!--</div>-->
+        <!--</div>-->
+        <mat-form-field style="width: 100%;">
+          <input matInput placeholder="Clinic City" name="clinic_city" required [(ngModel)]="model.clinic_city" #clinic_city="ngModel">
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Clinic City is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+
+      <div>
+        <!--<label>State</label>-->
+        <!--<textarea name="clinic_state" required [(ngModel)]="model.clinic_state"-->
+        <!--#clinic_state="ngModel"></textarea>-->
+        <!--<div *ngIf="clinic_state.invalid && (clinic_state.dirty || clinic_state.touched)"-->
+        <!--class="alert alert-danger">-->
+        <!--<div *ngIf="clinic_state.errors.required">-->
+        <!--State is required.-->
+        <!--</div>-->
+        <!--</div>-->
+        <mat-form-field style="width: 100%;">
+          <input matInput placeholder="State" name="clinic_state" required [(ngModel)]="model.clinic_state" #clinic_state="ngModel">
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            State is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+
+      <div>
+        <!--<label>Pin</label>-->
+        <!--<textarea name="pin" required [(ngModel)]="model.pin"-->
+        <!--#pin="ngModel"></textarea>-->
+        <!--<div *ngIf="pin.invalid && (pin.dirty || pin.touched)">-->
+        <!--<div *ngIf="pin.errors.required">-->
+        <!--Pin is required.-->
+        <!--</div>-->
+        <!--</div>-->
+        <mat-form-field style="width: 100%;">
+          <input matInput placeholder="Pin" name="pin" required [(ngModel)]="model.pin" #pin="ngModel">
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Pin is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <!--<label>Phone Number</label>-->
+        <!--<input type="text" name="clinic_ph" [(ngModel)]="model.clinic_ph"-->
+        <!--#clinic_ph="ngModel" required>-->
+        <!--<div *ngIf="clinic_ph.invalid && (clinic_ph.dirty || clinic_ph.touched)">-->
+        <!--<div *ngIf="clinic_ph.errors.required">-->
+        <!--Phone No is required.-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<mat-form-field style="width: 100%;">-->
+        <!--<input matInput placeholder="Phone Number" name="clinic_ph" [(ngModel)]="model.clinic_ph" #clinic_ph="ngModel">-->
+        <!--<mat-error *ngIf="emailFormControl.hasError('required')">-->
+        <!--Phone Number is <strong>required</strong>-->
+        <!--</mat-error>-->
+        <!--</mat-form-field>-->
+        <mat-form-field style="width: 100%;">
+          <input matInput placeholder="Phone Number" name="Phone Number" required [(ngModel)]="model.clinic_ph" #clinic_ph="ngModel">
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Phone Number is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <!--<button type="submit" [disabled]="!f.form.valid" >Add Hospital-->
+        <!--</button>-->
+        <button mat-raised-button color="primary" data-dismiss="modal" >Add Hospital</button>
+      </div>
+    </form>
+  </div>
+</div>

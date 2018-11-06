@@ -1,0 +1,176 @@
+.top-header1{
+  background-color:#0C58A5;
+  line-height: 0px;
+
+}
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  width: 100%;
+}
+.marg-top{
+  margin-top:20px;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+.rad{
+  margin-left: 20px;
+}
+.example-full-width {
+  width: 100%;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+
+}
+
+@media (max-width:600px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+.logo-img{
+  width:60px;
+  height:60px;
+}
+.type-input{
+  background:none;
+  box-shadow: none;
+  border:none;
+}
+.login{
+  background:#0c58a5;
+  color:#fff;
+  margin-top:10px;
+
+}
+.contain {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+
+}
+
+@media (max-width:600px) {
+  .contain {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .contain {
+    max-width: 220px;
+  }
+}
+
+@media (min-width: 992px) {
+  .contain {
+    max-width: 460px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .contain {
+    max-width: 579px;
+  }
+}
+.mat-raised-button {
+  color: currentColor;
+}
+#b{
+  padding-left: 483px;
+}
+.form-group{
+  padding-right: 363px;
+}
+#a{
+  padding-right: 363px;
+}
+.ri{
+  padding-right: 363px;
+}
+#pa{
+  padding-left: 390px;
+}
+.head-login{
+  font-size: 23px;
+  font-weight: 400;
+  color: #000;
+  margin-bottom: 14px;
+  padding-left: 380px;
+}
+#head{
+  font-size: 23px;
+  font-weight: 400;
+  color: #000;
+  margin-bottom: 14px;
+}
+
+@media (max-width: 599px){
+
+  .mat-card {
+    padding: 24px 16px;
+    margin-left:-6px;
+    margin-right:-6px;
+  }
+  .abc{
+    padding-left: 104px;
+  }
+}
+.mat-form-field-infix {
+  display: block;
+  position: relative;
+  flex: auto;
+  min-width: 0;
+  width: 390px;
+}
+mat-form-field {
+  font-size: inherit;
+  font-weight: 400;
+  line-height: 1.125;
+  font-family: Roboto,"Helvetica Neue",sans-serif;
+  width: 478px;
+}
+.mat-checkbox-layout {
+  cursor: inherit;
+  align-items: baseline;
+  vertical-align: middle;
+  display: inline-flex;
+  white-space: unset;
+}
+section{
+  margin: 0px 0 12px 0!important;
+}
+button{
+  background-color: #0c58a5!important;
+}

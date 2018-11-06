@@ -1,0 +1,50 @@
+<div style="min-height: 382px;">
+  <section>
+    <h1 class="sub_head">{{ques[0]['pat_name']}} ask you a question
+    </h1>
+  </section>
+
+  <section class="content">
+
+    <div class="box clearfix" ngStyle.xs="width:94%">
+
+      <div fxLayout="row">
+        <div fxFlex="100%">
+
+          <form name="ansform" (ngSubmit)="post_answer()" #f="ngForm">
+            <div fxLayout="column">
+              <div>
+                <h4 class="mrg_btm2" fxFlex="100%">Q. {{ques[0]['question']}}</h4>
+
+              </div>
+                <div>
+                  <label>Attachment</label>
+                  <div>
+                    <a href="{{ques[0]['coded_img']}}" target="_blank"><img src="{{ques[0]['coded_img']}}" class="report_border" style="width:30%"/></a></div>
+                </div>
+            </div>
+            <div>
+              <div fxLayout fxLayout.xs="column">
+                <label fxFlex="5%" fxLayout="column" style="margin-top:10px;">Answer</label>
+                <div fxFlex="95%" fxLayout="column">
+                  <mat-form-field style="width:100%;">
+                  <textarea matInput placeholder="Enter your answer" class="example-full-width" name="answer" [(ngModel)]="amodel.answer"
+                            rows="4" #answer="ngModel"></textarea>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+
+            <div fxLayoutGap="10px">
+              <button mat-raised-button class="details_b" type="submit" [disabled]="!f.form.valid">Submit</button>
+              <button mat-raised-button class="details_b" id="resetBtn" type="button">Reset</button>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+</div>
